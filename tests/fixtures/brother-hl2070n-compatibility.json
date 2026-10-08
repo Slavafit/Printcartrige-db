@@ -1,0 +1,18 @@
+[
+  {
+    "printerManufacturer": "Brother",
+    "printerModel": "Brother HL-2070N",
+    "cartridgeManufacturer": "Brother",
+    "cartridgePartNumber": "TN-2000",
+    "productType": "toner",
+    "isGenuineOem": true,
+    "sourceName": "Brother España official printer page",
+    "sourceUrl": "https://store.brother.es/devices/laser/hl/hl2070n",
+    "sourceType": "official-manufacturer",
+    "evidenceType": "explicit-compatibility",
+    "evidence": "Task-provided manually verified example: the official Brother España printer page explicitly identifies genuine TN-2000 toner for Brother HL-2070N.",
+    "verificationStatus": "verified",
+    "region": "ES",
+    "verifiedAt": "2026-10-08T00:00:00.000Z"
+  }
+]

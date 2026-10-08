@@ -9,11 +9,16 @@ export interface ImportRecord {
   cartridgePartNumber?: string;
   cartridgeKind?: CartridgeKind;
   cartridgeColor?: string;
+  yieldPages?: number;
   sourceName?: string;
   sourceUrl?: string;
   verificationStatus?: VerificationStatus;
   region?: string;
   isGenuineOem?: boolean;
+  evidence?: string;
+  verifiedAt?: string;
+  sourceType?: 'official-manufacturer' | 'other';
+  evidenceType?: 'explicit-compatibility' | 'product-page-only' | 'other';
 }
 
 export interface ValidationIssue { row: number; field?: string; message: string }
