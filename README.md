@@ -59,6 +59,15 @@ SQLite enables foreign keys. Compatibility rows cascade when a printer or cartri
 
 See [docs/collectors.md](docs/collectors.md). Collectors produce the neutral import shape; they do not write SQLite directly. This keeps manufacturer-specific scraping and access constraints outside the trusted persistence layer.
 
+Official-source research is in [docs/data-sources.md](docs/data-sources.md). The first working collector reads public Kyocera Europe toner pages discovered through the official sitemap:
+
+```bash
+pnpm collect:kyocera -- --max-models 200 --delay-ms 500 --retries 3
+pnpm db import data/official/kyocera-eu.json --dry-run
+```
+
+Collection is rate-limited, retried, capped at 200 unique models, and resumable through an ignored local checkpoint. It exports JSON and CSV without automatically writing the production database.
+
 ## Current limitations
 
 - No frontend, HTTP API, authentication, or authorization.
