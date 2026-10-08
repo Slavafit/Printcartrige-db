@@ -1,0 +1,35 @@
+[
+  {
+    "printerManufacturer": "Example Printer Corp",
+    "printerModel": "Demo Print 1000",
+    "hasReplaceableCartridges": true,
+    "cartridgeManufacturer": "Example Printer Corp",
+    "cartridgePartNumber": "SYN-INK-01-BK",
+    "cartridgeKind": "ink",
+    "cartridgeColor": "black",
+    "sourceName": "Synthetic test source",
+    "sourceUrl": "https://example.invalid/synthetic/demo-print-1000",
+    "verificationStatus": "unverified",
+    "region": "TEST",
+    "isGenuineOem": true
+  },
+  {
+    "printerManufacturer": "Example Printer Corp",
+    "printerModel": "Demo Print 1000",
+    "hasReplaceableCartridges": true,
+    "cartridgeManufacturer": "Example Printer Corp",
+    "cartridgePartNumber": "SYN-INK-01-C",
+    "cartridgeKind": "ink",
+    "cartridgeColor": "cyan",
+    "sourceName": "Synthetic test source",
+    "sourceUrl": "https://example.invalid/synthetic/demo-print-1000",
+    "verificationStatus": "unverified",
+    "region": "TEST",
+    "isGenuineOem": true
+  },
+  {
+    "printerManufacturer": "Fictional Thermal Devices",
+    "printerModel": "Label Demo NC-1",
+    "hasReplaceableCartridges": false
+  }
+]

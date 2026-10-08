@@ -1,0 +1,3 @@
+printerManufacturer,printerModel,hasReplaceableCartridges,cartridgeManufacturer,cartridgePartNumber,cartridgeKind,cartridgeColor,sourceName,sourceUrl,verificationStatus,region,isGenuineOem
+Example Laser Ltd,Test Laser 200,true,Example Laser Ltd,SYN-TONER-200-BK,toner,black,Synthetic CSV source,https://example.invalid/synthetic/test-laser-200,unverified,TEST,true
+Fictional Thermal Devices,Label Demo NC-2,false,,,,,,,,,
