@@ -37,7 +37,7 @@ pnpm db update manufacturers 1 '{"name":"Renamed Manufacturer"}'
 pnpm db delete manufacturers 1
 ```
 
-Valid tables are `manufacturers`, `printers`, `cartridges`, `data_sources`, and `compatibility`. Foreign-key and uniqueness constraints still apply. On PowerShell, store complex JSON in a variable if shell quoting is inconvenient.
+Valid tables are `manufacturers`, `printers`, `cartridges`, `data_sources`, `printer_sources`, and `compatibility`. Foreign-key and uniqueness constraints still apply. On PowerShell, store complex JSON in a variable if shell quoting is inconvenient.
 
 ## Import fields
 
@@ -51,6 +51,7 @@ Printer models and cartridge part numbers are normalized for matching while thei
 - `printers`: unique by manufacturer and normalized model; supports `has_replaceable_cartridges = 0`.
 - `cartridges`: unique by manufacturer and normalized part number; kind is constrained to `ink` or `toner`.
 - `data_sources`: reusable source identity and canonical URL.
+- `printer_sources`: printer provenance with exact source URL, region, and verification status.
 - `compatibility`: many-to-many printer/cartridge evidence. Each row stores source URL, source reference, verification status, region, and OEM status.
 
 SQLite enables foreign keys. Compatibility rows cascade when a printer or cartridge is deleted, while referenced manufacturers and sources are protected.
@@ -67,6 +68,35 @@ pnpm db import data/official/kyocera-eu.json --dry-run
 ```
 
 Collection is rate-limited, retried, capped at 200 unique models, and resumable through an ignored local checkpoint. It exports JSON and CSV without automatically writing the production database.
+
+## Brother España sitemap importer
+
+The offline Brother importer creates provisional printer records from the official Brother España sitemap. The source was downloaded manually from `https://store.brother.es/sitemap.xml` and committed unchanged as `data/sitemap.xml`. The importer never requests Brother's website and does not create cartridge compatibility records.
+
+On Windows PowerShell, validate the sitemap without changing or creating the default database:
+
+```powershell
+pnpm.cmd db import:brother-sitemap data/sitemap.xml --dry-run
+```
+
+Import into the default `printcartridge.sqlite` database:
+
+```powershell
+pnpm.cmd db import:brother-sitemap data/sitemap.xml
+pnpm.cmd db list printers
+```
+
+Use another database without risking an existing one:
+
+```powershell
+pnpm.cmd db --db .\tmp\brother-verification.sqlite import:brother-sitemap data/sitemap.xml
+```
+
+The committed sitemap currently contains 1,999 URLs: 662 Brother device pages, 439 unique accepted laser/inkjet/fax printer models, and 1,560 rejected URLs. Rejections include 1,337 unrelated non-device pages, 221 unsupported device categories, and two ambiguous bundle slugs. The full JSON command output includes every rejected URL and reason, duplicate counts, existing models, insert counts, errors, and the final Brother model count.
+
+Model names come only from URL slugs—for example, `hl2070n` becomes `Brother HL-2070N`—so their `printer_sources.verification_status` is `unverified`. URL categories are used only to select likely printer product pages; they are not stored as authoritative printer technology. Existing printer rows and verified provenance are preserved. Label/mobile printers, scanners, stamp creators, bundles, malformed entries, and non-Brother domains are reported rather than silently accepted.
+
+The additive `printer_sources` schema migration associates a printer with an exact source URL, region, and verification status without fabricating a cartridge relationship. Run `pnpm.cmd db init` on an existing database to apply this idempotent migration independently.
 
 ## Current limitations
 

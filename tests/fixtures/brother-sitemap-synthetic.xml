@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Synthetic non-production sitemap fixture. -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://store.brother.es/devices/laser/hl/hl2070n</loc></url>
+  <url><loc>https://store.brother.es/devices/laser/hl/hl2070n</loc></url>
+  <url><loc>https://store.brother.es/devices/laser/legacy/hl2070n?variant=legacy</loc></url>
+  <url><loc>https://store.brother.es/devices/inkjet/mfcj/mfcj1050dw</loc></url>
+  <url><loc>https://store.brother.es/devices/laser/dcp/dcp1612w-bundle</loc></url>
+  <url><loc>https://store.brother.es/devices/label-printer/pt/pt1230pc</loc></url>
+  <url><loc>https://store.brother.es/supplies/tn2000</loc></url>
+  <url><loc>https://example.invalid/devices/laser/hl/hl9999</loc></url>
+  <url><loc>not a URL</loc></url>
+</urlset>

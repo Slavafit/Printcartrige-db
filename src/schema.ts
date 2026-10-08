@@ -55,8 +55,22 @@ CREATE TABLE IF NOT EXISTS compatibility (
   UNIQUE (printer_id, cartridge_id, source_url, region)
 );
 
+-- Additive migration for printer records discovered independently of cartridge compatibility.
+CREATE TABLE IF NOT EXISTS printer_sources (
+  id INTEGER PRIMARY KEY,
+  printer_id INTEGER NOT NULL REFERENCES printers(id) ON DELETE CASCADE,
+  source_id INTEGER NOT NULL REFERENCES data_sources(id) ON DELETE RESTRICT,
+  source_url TEXT NOT NULL,
+  verification_status TEXT NOT NULL CHECK (verification_status IN ('unverified', 'verified', 'rejected')),
+  region TEXT NOT NULL,
+  created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  UNIQUE (printer_id, source_url, region)
+);
+
 CREATE INDEX IF NOT EXISTS idx_printers_manufacturer ON printers(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_cartridges_manufacturer ON cartridges(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_printer ON compatibility(printer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_cartridge ON compatibility(cartridge_id);
+CREATE INDEX IF NOT EXISTS idx_printer_sources_printer ON printer_sources(printer_id);
 `;

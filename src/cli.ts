@@ -1,4 +1,6 @@
 #!/usr/bin/env node
+import { existsSync } from 'node:fs';
+import { importBrotherSitemap } from './brother-sitemap.js';
 import { CartridgeDatabase, type EntityName } from './database.js';
 import { exportFile } from './exporter.js';
 import { importFile } from './importer.js';
@@ -7,10 +9,14 @@ const argv = process.argv.slice(2);
 const dbFlag = argv.indexOf('--db');
 const dbPath = dbFlag >= 0 ? argv.splice(dbFlag, 2)[1] : 'printcartridge.sqlite';
 const command = argv.shift();
-const database = new CartridgeDatabase(dbPath);
+const brotherDryRun = command === 'import:brother-sitemap' && argv.includes('--dry-run');
+const useReadOnlyDatabase = brotherDryRun && dbPath !== ':memory:' && existsSync(dbPath);
+const database = useReadOnlyDatabase
+  ? new CartridgeDatabase(dbPath, { readonly: true, fileMustExist: true })
+  : new CartridgeDatabase(brotherDryRun ? ':memory:' : dbPath);
 
 try {
-  database.initialize();
+  if (!useReadOnlyDatabase) database.initialize();
   switch (command) {
     case 'init':
       console.log(`Initialized ${dbPath}`);
@@ -25,6 +31,13 @@ try {
     case 'export': {
       const path = required(argv.shift(), 'export file');
       console.log(`Exported ${await exportFile(database, path)} record(s) to ${path}`);
+      break;
+    }
+    case 'import:brother-sitemap': {
+      const path = required(argv.shift(), 'Brother sitemap XML file');
+      const result = await importBrotherSitemap(database, path, brotherDryRun);
+      console.log(JSON.stringify(result, null, 2));
+      if (result.errors.length) process.exitCode = 1;
       break;
     }
     case 'list':
@@ -48,7 +61,7 @@ try {
       break;
     }
     default:
-      console.log('Usage: pnpm db [--db file] <init|import|export|list|create|update|delete> ...');
+      console.log('Usage: pnpm db [--db file] <init|import|import:brother-sitemap|export|list|create|update|delete> ...');
       process.exitCode = command ? 1 : 0;
   }
 } finally {
