@@ -4,6 +4,15 @@ A small, manufacturer-independent SQLite database and CLI for printer-to-cartrid
 
 The repository ships with no production compatibility data. Files under `tests/fixtures/` are synthetic, non-production test data and must not be imported into a production database.
 
+## Project documentation
+
+- [Project specification](PROJECT.md)
+- [Development roadmap](ROADMAP.md)
+- [Data quality policy](DATA_POLICY.md)
+- [Instructions for future Codex sessions](AGENTS.md)
+- [Official data-source assessment](docs/data-sources.md)
+- [Collector integration guide](docs/collectors.md)
+
 ## Setup
 
 ```bash
