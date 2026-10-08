@@ -3,7 +3,7 @@ import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrint
 import { SCHEMA_SQL } from './schema.js';
 import type { ImportRecord } from './types.js';
 
-export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sources' | 'compatibility';
+export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sources' | 'compatibility' | 'printer_sources';
 
 const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   manufacturers: ['name'],
@@ -11,13 +11,14 @@ const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   cartridges: ['manufacturer_id', 'part_number', 'kind', 'color'],
   data_sources: ['name', 'url'],
   compatibility: ['printer_id', 'cartridge_id', 'source_id', 'source_url', 'verification_status', 'region', 'is_genuine_oem', 'verified_at'],
+  printer_sources: ['printer_id', 'source_id', 'source_url', 'verification_status', 'region'],
 };
 
 export class CartridgeDatabase {
   readonly db: Database.Database;
 
-  constructor(path = 'printcartridge.sqlite') {
-    this.db = new Database(path);
+  constructor(path = 'printcartridge.sqlite', options: { readonly?: boolean; fileMustExist?: boolean } = {}) {
+    this.db = new Database(path, options);
     this.db.pragma('foreign_keys = ON');
   }
 
@@ -78,6 +79,48 @@ export class CartridgeDatabase {
         is_genuine_oem = excluded.is_genuine_oem,
         updated_at = CURRENT_TIMESTAMP
     `).run(printerId, cartridgeId, sourceId, record.sourceUrl, record.verificationStatus, record.region, record.isGenuineOem ? 1 : 0);
+  }
+
+  findPrinter(manufacturerName: string, modelName: string): { id: number; model_name: string } | undefined {
+    return this.db.prepare(`
+      SELECT p.id, p.model_name FROM printers p
+      JOIN manufacturers m ON m.id = p.manufacturer_id
+      WHERE m.normalized_name = ? AND p.normalized_model_name = ?
+    `).get(normalizeManufacturerName(manufacturerName), normalizePrinterModel(modelName)) as { id: number; model_name: string } | undefined;
+  }
+
+  countPrintersByManufacturer(manufacturerName: string): number {
+    return (this.db.prepare(`
+      SELECT COUNT(*) AS count FROM printers p
+      JOIN manufacturers m ON m.id = p.manufacturer_id
+      WHERE m.normalized_name = ?
+    `).get(normalizeManufacturerName(manufacturerName)) as { count: number }).count;
+  }
+
+  upsertPrinterSource(input: {
+    manufacturerName: string;
+    modelName: string;
+    sourceName: string;
+    sourceUrl: string;
+    verificationStatus: 'unverified' | 'verified' | 'rejected';
+    region: string;
+  }): { printerId: number; inserted: boolean } {
+    const manufacturerId = this.upsertManufacturer(input.manufacturerName);
+    const existing = this.findPrinter(input.manufacturerName, input.modelName);
+    const printerId = existing?.id ?? this.upsertPrinter(manufacturerId, input.modelName, true);
+    const sourceId = this.upsertSource(input.sourceName, input.sourceUrl);
+    this.db.prepare(`
+      INSERT INTO printer_sources (printer_id, source_id, source_url, verification_status, region)
+      VALUES (?, ?, ?, ?, ?)
+      ON CONFLICT(printer_id, source_url, region) DO UPDATE SET
+        source_id = excluded.source_id,
+        verification_status = CASE
+          WHEN printer_sources.verification_status = 'verified' THEN 'verified'
+          ELSE excluded.verification_status
+        END,
+        updated_at = CURRENT_TIMESTAMP
+    `).run(printerId, sourceId, input.sourceUrl, input.verificationStatus, input.region);
+    return { printerId, inserted: !existing };
   }
 
   transaction<T>(fn: () => T): T { return this.db.transaction(fn)(); }

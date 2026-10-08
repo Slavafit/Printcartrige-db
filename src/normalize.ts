@@ -3,7 +3,7 @@ export function normalizeManufacturerName(value: string): string {
 }
 
 export function normalizePrinterModel(value: string): string {
-  return normalizeText(value).replace(/[^A-Z0-9]+/g, '');
+  return normalizeText(value).replace(/^BROTHER\s+/, '').replace(/[^A-Z0-9]+/g, '');
 }
 
 export function normalizeCartridgePartNumber(value: string): string {
