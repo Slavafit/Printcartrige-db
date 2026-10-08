@@ -1,0 +1,32 @@
+printerManufacturer,printerModel,hasReplaceableCartridges,cartridgeManufacturer,cartridgePartNumber,cartridgeKind,cartridgeColor,sourceName,sourceUrl,verificationStatus,region,isGenuineOem
+Kyocera,FS-1041,1,Kyocera,TK-1115,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1115.html,verified,EU,1
+Kyocera,FS-1220MFP,1,Kyocera,TK-1115,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1115.html,verified,EU,1
+Kyocera,FS-1320MFP,1,Kyocera,TK-1115,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1115.html,verified,EU,1
+Kyocera,FS-1061dn,1,Kyocera,TK-1125,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1125.html,verified,EU,1
+Kyocera,FS-1325MFP,1,Kyocera,TK-1125,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1125.html,verified,EU,1
+Kyocera,ECOSYS P2235dn,1,Kyocera,TK-1150,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1150.html,verified,EU,1
+Kyocera,ECOSYS P2235dw,1,Kyocera,TK-1150,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1150.html,verified,EU,1
+Kyocera,ECOSYS M2135dn,1,Kyocera,TK-1150,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1150.html,verified,EU,1
+Kyocera,ECOSYS P2040dn,1,Kyocera,TK-1160,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1160.html,verified,EU,1
+Kyocera,ECOSYS P2040dw,1,Kyocera,TK-1160,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1160.html,verified,EU,1
+Kyocera,ECOSYS M2040dn,1,Kyocera,TK-1170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1170.html,verified,EU,1
+Kyocera,ECOSYS M2540dn,1,Kyocera,TK-1170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1170.html,verified,EU,1
+Kyocera,ECOSYS M2640idw,1,Kyocera,TK-1170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK1170.html,verified,EU,1
+Kyocera,ECOSYS M3645idn,1,Kyocera,TK-3060,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3060.html,verified,EU,1
+Kyocera,ECOSYS M3145idn,1,Kyocera,TK-3060,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3060.html,verified,EU,1
+Kyocera,ECOSYS M3645dn,1,Kyocera,TK-3160,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3160.html,verified,EU,1
+Kyocera,ECOSYS P3045dn,1,Kyocera,TK-3160,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3160.html,verified,EU,1
+Kyocera,ECOSYS P3050dn,1,Kyocera,TK-3160,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3160.html,verified,EU,1
+Kyocera,ECOSYS P3050dn,1,Kyocera,TK-3170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3170.html,verified,EU,1
+Kyocera,ECOSYS P3055dn,1,Kyocera,TK-3170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3170.html,verified,EU,1
+Kyocera,ECOSYS P3060dn,1,Kyocera,TK-3170,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3170.html,verified,EU,1
+Kyocera,ECOSYS P3055dn,1,Kyocera,TK-3190,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3190.html,verified,EU,1
+Kyocera,ECOSYS P3060dn,1,Kyocera,TK-3190,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3190.html,verified,EU,1
+Kyocera,ECOSYS M3655idn,1,Kyocera,TK-3190,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK3190.html,verified,EU,1
+Kyocera,TASKalfa 1800,1,Kyocera,TK-4105,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK4105.html,verified,EU,1
+Kyocera,TASKalfa 1801,1,Kyocera,TK-4105,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK4105.html,verified,EU,1
+Kyocera,TASKalfa 2200,1,Kyocera,TK-4105,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK4105.html,verified,EU,1
+Kyocera,ECOSYS M4132idn,1,Kyocera,TK-6115,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK6115.html,verified,EU,1
+Kyocera,ECOSYS M4125idn,1,Kyocera,TK-6115,toner,black,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK6115.html,verified,EU,1
+Kyocera,TASKalfa 4002i,1,Kyocera,TK-6325,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK6325.html,verified,EU,1
+Kyocera,TASKalfa 5002i,1,Kyocera,TK-6325,toner,,Kyocera Document Solutions Europe,https://www.kyoceradocumentsolutions.eu/en/products/consumables/TK6325.html,verified,EU,1

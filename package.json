@@ -8,10 +8,12 @@
     "build": "tsc -p tsconfig.json",
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "db": "tsx src/cli.ts"
+    "db": "tsx src/cli.ts",
+    "collect:kyocera": "tsx src/collectors/kyocera.ts"
   },
   "dependencies": {
     "better-sqlite3": "^12.4.1",
+    "cheerio": "^1.1.2",
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0"
   },
