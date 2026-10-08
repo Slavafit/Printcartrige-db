@@ -64,4 +64,14 @@ describe('database pipeline (synthetic non-production data)', () => {
     expect(database.list('manufacturers')).toMatchObject([{ name: 'Manual Example Company', normalized_name: 'MANUAL EXAMPLE COMPANY' }]);
     expect(database.delete('manufacturers', id)).toBe(true);
   });
+
+  it('applies compatibility evidence migrations idempotently', () => {
+    database.initialize();
+    const cartridgeColumns = database.db.prepare('PRAGMA table_info(cartridges)').all() as Array<{ name: string }>;
+    const compatibilityColumns = database.db.prepare('PRAGMA table_info(compatibility)').all() as Array<{ name: string }>;
+    expect(cartridgeColumns.map((column) => column.name)).toContain('yield_pages');
+    expect(compatibilityColumns.map((column) => column.name)).toEqual(expect.arrayContaining([
+      'source_type', 'evidence_type', 'evidence', 'verified_at',
+    ]));
+  });
 });

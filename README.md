@@ -98,6 +98,55 @@ Model names come only from URL slugs—for example, `hl2070n` becomes `Brother H
 
 The additive `printer_sources` schema migration associates a printer with an exact source URL, region, and verification status without fabricating a cartridge relationship. Run `pnpm.cmd db init` on an existing database to apply this idempotent migration independently.
 
+## Verified OEM compatibility import
+
+The compatibility importer accepts a JSON array and writes only genuine OEM ink or toner relationships. Verified records require an official manufacturer source, explicit compatibility evidence, and a verification date. Drums, waste containers, maintenance kits, fusers, transfer belts, ink bottles/refills, third-party products, and unknown product types are rejected before any printer, cartridge, or relationship is written.
+
+Example record:
+
+```json
+[
+  {
+    "printerManufacturer": "Brother",
+    "printerModel": "Brother HL-2070N",
+    "cartridgeManufacturer": "Brother",
+    "cartridgePartNumber": "TN-2000",
+    "productType": "toner",
+    "isGenuineOem": true,
+    "sourceName": "Brother España official printer page",
+    "sourceUrl": "https://store.brother.es/devices/laser/hl/hl2070n",
+    "sourceType": "official-manufacturer",
+    "evidenceType": "explicit-compatibility",
+    "evidence": "Official manufacturer page explicitly identifies this genuine toner for this printer.",
+    "verificationStatus": "verified",
+    "region": "ES",
+    "verifiedAt": "2026-10-08T00:00:00.000Z"
+  }
+]
+```
+
+Optional fields are `cartridgeColor` and positive integer `yieldPages`. Use `verificationStatus: "unverified"` for otherwise valid OEM candidates that are not yet explicitly confirmed. Claims requesting `verified` without sufficient official evidence are quarantined in the command report and are not written.
+
+Windows PowerShell commands:
+
+```powershell
+# Validate without changing or creating the default database
+pnpm.cmd db import:compatibility .\compatibility.json --dry-run
+
+# Import into an explicit database
+pnpm.cmd db --db .\printcartridge.sqlite import:compatibility .\compatibility.json
+
+# Query one printer and display database-wide quality statistics
+pnpm.cmd db --db .\printcartridge.sqlite compatibility --printer "Brother HL-2070N"
+pnpm.cmd db --db .\printcartridge.sqlite compatibility:stats
+```
+
+Import output reports accepted and inserted relationships, input duplicates, rejections grouped by reason, and manual-review records. Statistics include total printers, printers with/without verified compatibility, unique verified OEM cartridges, verified relationships, and stored unverified relationships requiring review.
+
+The Task 003 sitemap alone is not compatibility evidence. The small `tests/fixtures/brother-hl2070n-compatibility.json` example records the manually verified relationship supplied for this task: Brother HL-2070N with genuine TN-2000 toner. DR-2000 is a drum and is deliberately absent. Brother's protected website is not requested by the importer or tests.
+
+The importer trusts structured declarations such as `sourceType` only after applying the strict field rules; it cannot cryptographically prove that arbitrary offline JSON was authored by a manufacturer. Keep evidence text precise and preserve downloaded/licensed source artifacts where permitted. Existing Task 002 Kyocera output is supported through a narrowly scoped legacy profile for its exact official source name and domain.
+
 ## Current limitations
 
 - No frontend, HTTP API, authentication, or authorization.

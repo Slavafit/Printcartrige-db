@@ -27,6 +27,7 @@ CREATE TABLE IF NOT EXISTS cartridges (
   normalized_part_number TEXT NOT NULL,
   kind TEXT NOT NULL CHECK (kind IN ('ink', 'toner')),
   color TEXT,
+  yield_pages INTEGER CHECK (yield_pages IS NULL OR yield_pages > 0),
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (manufacturer_id, normalized_part_number)
@@ -49,6 +50,9 @@ CREATE TABLE IF NOT EXISTS compatibility (
   verification_status TEXT NOT NULL CHECK (verification_status IN ('unverified', 'verified', 'rejected')),
   region TEXT NOT NULL,
   is_genuine_oem INTEGER NOT NULL DEFAULT 1 CHECK (is_genuine_oem IN (0, 1)),
+  source_type TEXT CHECK (source_type IS NULL OR source_type IN ('official-manufacturer', 'other')),
+  evidence_type TEXT CHECK (evidence_type IS NULL OR evidence_type IN ('explicit-compatibility', 'product-page-only', 'other')),
+  evidence TEXT,
   verified_at TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,

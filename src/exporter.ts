@@ -9,9 +9,11 @@ export function exportRecords(database: CartridgeDatabase): ExportRecord[] {
       p.has_replaceable_cartridges AS hasReplaceableCartridges,
       cm.name AS cartridgeManufacturer, c.part_number AS cartridgePartNumber,
       c.kind AS cartridgeKind, c.color AS cartridgeColor,
+      c.yield_pages AS yieldPages,
       ds.name AS sourceName, cp.source_url AS sourceUrl,
       cp.verification_status AS verificationStatus, cp.region AS region,
-      cp.is_genuine_oem AS isGenuineOem
+      cp.is_genuine_oem AS isGenuineOem, cp.source_type AS sourceType,
+      cp.evidence_type AS evidenceType, cp.evidence AS evidence, cp.verified_at AS verifiedAt
     FROM printers p
     JOIN manufacturers pm ON pm.id = p.manufacturer_id
     LEFT JOIN compatibility cp ON cp.printer_id = p.id
@@ -24,6 +26,7 @@ export function exportRecords(database: CartridgeDatabase): ExportRecord[] {
     ...row,
     hasReplaceableCartridges: Boolean(row.hasReplaceableCartridges),
     isGenuineOem: row.isGenuineOem == null ? undefined : Boolean(row.isGenuineOem),
+    yieldPages: row.yieldPages == null ? undefined : Number(row.yieldPages),
   } as unknown as ExportRecord));
 }
 

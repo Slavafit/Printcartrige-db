@@ -53,6 +53,10 @@ export function parseKyoceraConsumablePage(html: string, sourceUrl: string): Imp
       verificationStatus: 'verified',
       region: 'EU',
       isGenuineOem: true,
+      sourceType: 'official-manufacturer',
+      evidenceType: 'explicit-compatibility',
+      evidence: 'Official Kyocera Europe toner page explicitly lists this printer under Related products.',
+      verifiedAt: new Date().toISOString(),
     });
   });
   return deduplicate(records);

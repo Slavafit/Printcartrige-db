@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 import { existsSync } from 'node:fs';
 import { importBrotherSitemap } from './brother-sitemap.js';
+import { importCompatibilityFile } from './compatibility-importer.js';
 import { CartridgeDatabase, type EntityName } from './database.js';
 import { exportFile } from './exporter.js';
 import { importFile } from './importer.js';
@@ -9,11 +10,11 @@ const argv = process.argv.slice(2);
 const dbFlag = argv.indexOf('--db');
 const dbPath = dbFlag >= 0 ? argv.splice(dbFlag, 2)[1] : 'printcartridge.sqlite';
 const command = argv.shift();
-const brotherDryRun = command === 'import:brother-sitemap' && argv.includes('--dry-run');
-const useReadOnlyDatabase = brotherDryRun && dbPath !== ':memory:' && existsSync(dbPath);
+const dryRunCommand = (command === 'import:brother-sitemap' || command === 'import:compatibility') && argv.includes('--dry-run');
+const useReadOnlyDatabase = dryRunCommand && dbPath !== ':memory:' && existsSync(dbPath);
 const database = useReadOnlyDatabase
   ? new CartridgeDatabase(dbPath, { readonly: true, fileMustExist: true })
-  : new CartridgeDatabase(brotherDryRun ? ':memory:' : dbPath);
+  : new CartridgeDatabase(dryRunCommand ? ':memory:' : dbPath);
 
 try {
   if (!useReadOnlyDatabase) database.initialize();
@@ -35,11 +36,27 @@ try {
     }
     case 'import:brother-sitemap': {
       const path = required(argv.shift(), 'Brother sitemap XML file');
-      const result = await importBrotherSitemap(database, path, brotherDryRun);
+      const result = await importBrotherSitemap(database, path, dryRunCommand);
       console.log(JSON.stringify(result, null, 2));
       if (result.errors.length) process.exitCode = 1;
       break;
     }
+    case 'import:compatibility': {
+      const path = required(argv.shift(), 'compatibility JSON file');
+      const result = await importCompatibilityFile(database, path, dryRunCommand);
+      console.log(JSON.stringify(result, null, 2));
+      if (result.errors.length) process.exitCode = 1;
+      break;
+    }
+    case 'compatibility': {
+      const printerFlag = argv.indexOf('--printer');
+      const printer = printerFlag >= 0 ? required(argv[printerFlag + 1], 'printer model') : undefined;
+      console.log(JSON.stringify(database.queryCompatibility(printer), null, 2));
+      break;
+    }
+    case 'compatibility:stats':
+      console.log(JSON.stringify(database.compatibilityStats(), null, 2));
+      break;
     case 'list':
       console.log(JSON.stringify(database.list(required(argv.shift(), 'entity') as EntityName), null, 2));
       break;
@@ -61,7 +78,7 @@ try {
       break;
     }
     default:
-      console.log('Usage: pnpm db [--db file] <init|import|import:brother-sitemap|export|list|create|update|delete> ...');
+      console.log('Usage: pnpm db [--db file] <init|import|import:brother-sitemap|import:compatibility|compatibility|compatibility:stats|export|list|create|update|delete> ...');
       process.exitCode = command ? 1 : 0;
   }
 } finally {
