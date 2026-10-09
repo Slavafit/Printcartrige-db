@@ -5,9 +5,16 @@
   "type": "module",
   "description": "Manufacturer-independent printer and ink/toner cartridge database",
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "tsc -p tsconfig.json && vite build",
     "test": "vitest run",
-    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "typecheck": "tsc -p tsconfig.json --noEmit && tsc -p web/tsconfig.json --noEmit",
+    "dev": "pnpm build:server && concurrently -k -n types,api,web -c yellow,blue,green \"pnpm web:types\" \"pnpm web:api\" \"pnpm web:client\"",
+    "build:server": "tsc -p tsconfig.json",
+    "web:types": "tsc -p tsconfig.json --watch --preserveWatchOutput",
+    "web:api": "node --watch dist/src/web-server.js",
+    "web:client": "vite",
+    "web:start": "node dist/src/web-server.js",
+    "mvp:seed": "pnpm build:server && node dist/src/mvp-seed.js",
     "db": "tsx src/cli.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
@@ -19,15 +26,24 @@
     "cheerio": "^1.1.2",
     "csv-parse": "^6.1.0",
     "csv-stringify": "^6.6.0",
-    "fast-xml-parser": "^5.3.1"
+    "fast-xml-parser": "^5.3.1",
+    "react": "^19.3.0",
+    "react-dom": "^19.3.0"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
     "@types/node": "^22.18.10",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.3.0",
+    "@vitejs/plugin-react": "^6.1.2",
+    "concurrently": "^10.0.5",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
+    "vite": "^8.3.4",
     "vitest": "^3.2.4"
   },
   "packageManager": "pnpm@11.3.0",
-  "engines": { "node": ">=22" }
+  "engines": {
+    "node": ">=22"
+  }
 }

@@ -23,6 +23,31 @@ pnpm test
 
 Node.js 22 or newer is required.
 
+## Browser MVP
+
+The read-only browser interface searches the existing SQLite catalog and shows OEM cartridge details, verification status, region, and official evidence links. Prepare a separate local MVP database from the committed Brother, Kyocera, and Xerox sources, then start the API and Vite client:
+
+```powershell
+pnpm.cmd mvp:seed
+pnpm.cmd dev
+```
+
+Open `http://127.0.0.1:5173`. The seed command writes `mvp.sqlite` and is idempotent; it does not modify another database. To use an existing database in development:
+
+```powershell
+$env:WEB_DB_PATH = ".\printcartridge.sqlite"
+pnpm.cmd dev
+```
+
+For a production-style local run, build and serve the static client from the Node server:
+
+```powershell
+pnpm.cmd build
+pnpm.cmd web:start
+```
+
+Then open `http://127.0.0.1:4173`. This MVP has no write API, authentication, hosting, or remote database.
+
 ## Commands
 
 The default database is `printcartridge.sqlite`; override it with `--db path/to/file.sqlite`.
