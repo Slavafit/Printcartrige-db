@@ -1,6 +1,7 @@
 import type { CartridgeDatabase } from './database.js';
 
-export interface PrinterSearchOptions { query?: string; manufacturer?: string; limit?: number }
+export interface PrinterSearchOptions { query?: string; manufacturer?: string; limit?: number; offset?: number }
+export interface PrinterSearchPage { items: unknown[]; total: number; page: number; pageSize: number; totalPages: number }
 
 export function webStats(database: CartridgeDatabase): Record<string, number> {
   const value = (sql: string): number => (database.db.prepare(sql).get() as { count: number }).count;
@@ -13,6 +14,7 @@ export function webManufacturers(database: CartridgeDatabase): unknown[] {
 
 export function searchPrinters(database: CartridgeDatabase, options: PrinterSearchOptions = {}): unknown[] {
   const limit = Math.min(Math.max(options.limit ?? 50, 1), 100);
+  const offset = Math.max(options.offset ?? 0, 0);
   const query = options.query?.trim().toLowerCase() ?? '';
   const manufacturer = options.manufacturer?.trim().toLowerCase() ?? '';
   return database.db.prepare(`
@@ -24,8 +26,24 @@ export function searchPrinters(database: CartridgeDatabase, options: PrinterSear
     WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%')
       AND (@manufacturer = '' OR lower(m.name) = @manufacturer)
     GROUP BY p.id, m.name, p.model_name, p.has_replaceable_cartridges
-    ORDER BY m.normalized_name, p.normalized_model_name LIMIT @limit
-  `).all({ query, manufacturer, limit });
+    ORDER BY m.normalized_name, p.normalized_model_name LIMIT @limit OFFSET @offset
+  `).all({ query, manufacturer, limit, offset });
+}
+
+export function searchPrinterPage(database: CartridgeDatabase, options: PrinterSearchOptions = {}): PrinterSearchPage {
+  const pageSize = Math.min(Math.max(options.limit ?? 10, 1), 100);
+  const requestedOffset = Math.max(options.offset ?? 0, 0);
+  const query = options.query?.trim().toLowerCase() ?? '';
+  const manufacturer = options.manufacturer?.trim().toLowerCase() ?? '';
+  const total = (database.db.prepare(`
+    SELECT COUNT(*) AS count FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
+    WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%')
+      AND (@manufacturer = '' OR lower(m.name) = @manufacturer)
+  `).get({ query, manufacturer }) as { count: number }).count;
+  const totalPages = Math.max(Math.ceil(total / pageSize), 1);
+  const page = Math.min(Math.floor(requestedOffset / pageSize) + 1, totalPages);
+  const offset = (page - 1) * pageSize;
+  return { items: searchPrinters(database, { ...options, limit: pageSize, offset }), total, page, pageSize, totalPages };
 }
 
 export function printerDetails(database: CartridgeDatabase, id: number): unknown | undefined {

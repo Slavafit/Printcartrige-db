@@ -3,7 +3,7 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer, type ServerResponse } from 'node:http';
 import { extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
-import { printerDetails, searchPrinters, webManufacturers, webStats } from './web-data.js';
+import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
@@ -17,7 +17,11 @@ const server = createServer((request, response) => {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
     if (url.pathname === '/api/stats') return json(response, 200, webStats(database));
     if (url.pathname === '/api/manufacturers') return json(response, 200, webManufacturers(database));
-    if (url.pathname === '/api/printers') return json(response, 200, searchPrinters(database, { query: url.searchParams.get('q') ?? undefined, manufacturer: url.searchParams.get('manufacturer') ?? undefined, limit: Number(url.searchParams.get('limit') || 50) }));
+    if (url.pathname === '/api/printers') {
+      const page = Math.max(Number(url.searchParams.get('page') || 1), 1);
+      const pageSize = Math.min(Math.max(Number(url.searchParams.get('pageSize') || 10), 1), 100);
+      return json(response, 200, searchPrinterPage(database, { query: url.searchParams.get('q') ?? undefined, manufacturer: url.searchParams.get('manufacturer') ?? undefined, limit: pageSize, offset: (page - 1) * pageSize }));
+    }
     const detail = url.pathname.match(/^\/api\/printers\/(\d+)$/);
     if (detail) { const result = printerDetails(database, Number(detail[1])); return json(response, result ? 200 : 404, result ?? { error: 'Printer not found' }); }
     if (url.pathname.startsWith('/api/')) return json(response, 404, { error: 'Not found' });

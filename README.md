@@ -25,7 +25,7 @@ Node.js 22 or newer is required.
 
 ## Browser MVP
 
-The read-only browser interface searches the existing SQLite catalog and shows OEM cartridge details, verification status, region, and official evidence links. Prepare a separate local MVP database from the committed Brother, Kyocera, and Xerox sources, then start the API and Vite client:
+The read-only browser interface searches the existing SQLite catalog and shows OEM cartridge details, verification status, region, and official evidence links. Search runs automatically while typing; results are shown 10 models per page with numbered navigation. Prepare a separate local MVP database from the committed Brother, Kyocera, and Xerox sources, then start the API and Vite client:
 
 ```powershell
 pnpm.cmd mvp:seed
