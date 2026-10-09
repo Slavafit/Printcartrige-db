@@ -40,6 +40,10 @@ Outputs are `data/official/kyocera-eu.json` and `.csv`. Progress is checkpointed
 
 ## Practical acquisition alternatives
 
+### Xerox follow-up, 2026-10-09
+
+Public Xerox Spain supply pages were retrieved under the published robots policy. The observed HTML has exact SKU headings, genuine-product descriptions, visible compatible-printer lists and matching JSON-LD `isConsumableFor` arrays. The seed-derived C400/C405 snapshot contains 12 cartridges and 24 explicit relationships for 2 models, tagged `ES`, with zero failed requests. Source HTML, retrieval times and hashes are retained. Ireland's matching format is supported separately as `IE`. See [Xerox reproduction and coverage limits](xerox.md).
+
 ### Epson follow-up, 2026-10-09
 
 EU and ES robots policies specify a ten-second crawl delay and a 04:00–08:45 visit window, conservatively enforced as UTC. The live Task 005 run outside that window fetched no products. The rendered example's compatibility section is qualified at range level, so the earlier “High” feasibility estimate does not establish exact-SKU compatibility. The new acquisition adapter quarantines such claims; no verified Epson dataset exists yet. See [the acquisition report and remaining work](epson.md).

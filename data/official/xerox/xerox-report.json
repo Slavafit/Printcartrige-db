@@ -1,0 +1,88 @@
+{
+  "collectedAt": "2026-10-09T10:04:56.573Z",
+  "resumed": false,
+  "pagesVisited": 12,
+  "requestAttempts": 13,
+  "completedPages": 12,
+  "pendingPages": 0,
+  "printers": 2,
+  "cartridges": 12,
+  "relationships": 24,
+  "review": [],
+  "excluded": [],
+  "failures": [],
+  "pages": [
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03530/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:06.126Z",
+      "sha256": "9556f4a0f1e91e018c65cab943ae2bd159eab2d252fa7343994d4eada8e3d678",
+      "file": "raw/9556f4a0f1e91e018c65cab943ae2bd159eab2d252fa7343994d4eada8e3d678.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03500/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:16.939Z",
+      "sha256": "1b4933e83f2075855a58ad58da91f4cb79d5834e980faad9c6bcc3a402cc3d26",
+      "file": "raw/1b4933e83f2075855a58ad58da91f4cb79d5834e980faad9c6bcc3a402cc3d26.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03501/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:26.619Z",
+      "sha256": "70fc6b26d2de56ddfae0f6b925b57ffe40144ab9a70d9ad739f18213604ab0c7",
+      "file": "raw/70fc6b26d2de56ddfae0f6b925b57ffe40144ab9a70d9ad739f18213604ab0c7.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03502/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:36.396Z",
+      "sha256": "60074f45e42bc7870fe41c50afcf35bac4c1c7637a11c73bfed2aed04d63babb",
+      "file": "raw/60074f45e42bc7870fe41c50afcf35bac4c1c7637a11c73bfed2aed04d63babb.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03503/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:48.687Z",
+      "sha256": "afdc1e5082ded29b6b530e4782a809233f6fdb368928003a4104db0f756b30ce",
+      "file": "raw/afdc1e5082ded29b6b530e4782a809233f6fdb368928003a4104db0f756b30ce.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03516/versalink-c400",
+      "retrievedAt": "2026-10-09T10:03:56.708Z",
+      "sha256": "a522fa229b39daf9224bf5a542c398f7bc05f252390db7b1c27f3339b8bb22e0",
+      "file": "raw/a522fa229b39daf9224bf5a542c398f7bc05f252390db7b1c27f3339b8bb22e0.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03517/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:06.199Z",
+      "sha256": "fd175ca2cc659f2e550538ab18db4c7715a27f3b08e33bf883325264573cb955",
+      "file": "raw/fd175ca2cc659f2e550538ab18db4c7715a27f3b08e33bf883325264573cb955.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03518/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:16.899Z",
+      "sha256": "87c3712fcf223cd59b8250de94342d839f131c5bf199d27944d4560516fae043",
+      "file": "raw/87c3712fcf223cd59b8250de94342d839f131c5bf199d27944d4560516fae043.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03519/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:26.347Z",
+      "sha256": "8d81384145f5344c39854300aa31907823f57e9d14283d09fcdfd3b979b39a8a",
+      "file": "raw/8d81384145f5344c39854300aa31907823f57e9d14283d09fcdfd3b979b39a8a.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03528/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:36.877Z",
+      "sha256": "4fe91c6e63776690afc673050eba43bfe5ddb939191e165de89fe2726f8fb471",
+      "file": "raw/4fe91c6e63776690afc673050eba43bfe5ddb939191e165de89fe2726f8fb471.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03529/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:47.464Z",
+      "sha256": "35eafb3970d432d146aa092768f3154fc67871c260aecb6e3a5e2a26e2e03c1c",
+      "file": "raw/35eafb3970d432d146aa092768f3154fc67871c260aecb6e3a5e2a26e2e03c1c.html"
+    },
+    {
+      "url": "https://www.xerox.es/es-es/supplies-and-accessories/106R03531/versalink-c400",
+      "retrievedAt": "2026-10-09T10:04:56.498Z",
+      "sha256": "57b1d1dd72b988c75f91b0d5e2a85d246d033e0cfef43014878c85ce187f35e8",
+      "file": "raw/57b1d1dd72b988c75f91b0d5e2a85d246d033e0cfef43014878c85ce187f35e8.html"
+    }
+  ]
+}

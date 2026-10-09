@@ -42,7 +42,7 @@ try {
       break;
     }
     case 'import:compatibility': {
-      const path = required(argv.shift(), 'compatibility JSON file');
+      const path = required(argv.shift(), 'compatibility JSON/CSV file');
       const result = await importCompatibilityFile(database, path, dryRunCommand);
       console.log(JSON.stringify(result, null, 2));
       if (result.errors.length) process.exitCode = 1;
