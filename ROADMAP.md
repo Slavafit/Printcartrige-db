@@ -9,7 +9,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 003 | Brother España sitemap importer | Completed | 001 |
 | 004 | OEM compatibility verification | Completed | 001–003 |
 | 005 | Epson Europe collector | In progress — access/evidence limited | 004 |
-| 006 | Xerox printer and OEM cartridge collection | Planned | 004 |
+| 006 | Xerox printer and OEM cartridge collection | Implemented on feature branch — awaiting merge | 004 |
 | 007 | HP printer and OEM cartridge collection | Planned | 004 |
 | 008 | Canon printer and OEM cartridge collection | Planned | 004 |
 | 009 | Expand Brother compatibility coverage | Planned | 003–004 |
@@ -53,6 +53,10 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 **Acceptance:** every verified edge is explicit in an official source, blocked or ambiguous items are reported, EcoTank printers can exist without cartridge relationships, dry import succeeds, repeat runs are idempotent, and typecheck/build/tests pass.
 
 ## Task 006 — Xerox printer and OEM cartridge collection
+
+**Delivered on `codex/xerox-europe-collector` (2026-10-09):** rate-limited, resumable ES/IE official-page adapter; strict genuine Xerox-for-Xerox filtering; visible/JSON-LD compatibility cross-checks; exact SKU, color, yield, region and evidence; JSON/CSV export; source HTML and SHA-256 manifest; synthetic and real-snapshot tests. Shared strict compatibility import now accepts CSV without dropping evidence. Existing robots enforcement is shared with Epson without changing Epson behavior.
+
+**Verified snapshot:** 12 Spanish cartridge pages, 2 printer models (VersaLink C400/C405), 12 OEM cartridges, 24 verified relationships; zero request failures, exclusions, manual-review cases or pending discovered pages. Both output formats pass strict dry import; repeated imports are idempotent and preserve existing Kyocera evidence. This is a bounded seed-derived sample, not an exhaustive Xerox catalog. No production database changes or migrations. See [Xerox collection notes](docs/xerox.md). Implementation is ready for user review; `Completed` remains reserved for merged work.
 
 **Deliverables:** official European source integration, genuine Xerox-for-Xerox filtering, exact models/SKUs/colors/yields where available, evidence-preserving JSON/CSV output, retry/resume controls, and fixture tests.
 

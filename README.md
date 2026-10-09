@@ -2,7 +2,7 @@
 
 A small, manufacturer-independent SQLite database and CLI for printer-to-cartridge compatibility. Only ink and toner cartridges are accepted. Drums, waste containers, maintenance kits, and other consumables are intentionally outside the data model.
 
-The repository ships with no production compatibility data. Files under `tests/fixtures/` are synthetic, non-production test data and must not be imported into a production database.
+Official-source snapshots are stored under `data/official/`. Synthetic files under `tests/fixtures/` are non-production test data and must not be imported into a production database.
 
 ## Project documentation
 
@@ -109,7 +109,7 @@ The additive `printer_sources` schema migration associates a printer with an exa
 
 ## Verified OEM compatibility import
 
-The compatibility importer accepts a JSON array and writes only genuine OEM ink or toner relationships. Verified records require an official manufacturer source, explicit compatibility evidence, and a verification date. Drums, waste containers, maintenance kits, fusers, transfer belts, ink bottles/refills, third-party products, and unknown product types are rejected before any printer, cartridge, or relationship is written.
+The compatibility importer accepts a JSON array or CSV and writes only genuine OEM ink or toner relationships. Verified records require an official manufacturer source, explicit compatibility evidence, and a verification date. Drums, waste containers, maintenance kits, fusers, transfer belts, ink bottles/refills, third-party products, and unknown product types are rejected before any printer, cartridge, or relationship is written. CSV uses the same fields with `true`/`false` OEM flags and integer yields; evidence and verification metadata are preserved.
 
 Example record:
 
@@ -164,10 +164,16 @@ The initial live run was deferred by the visit window (zero collected products).
 
 Printer-only imports may optionally provide all four of `sourceName`, `sourceUrl`, `region`, and `verificationStatus`; these are preserved in `printer_sources` without creating cartridges.
 
+## Xerox European collector (Task 006)
+
+`pnpm.cmd collect:xerox -- --max-pages 50` collects official Spanish Xerox supply pages with rate limiting, robots checks, retries, resume and strict product/compatibility filtering. [Collection details and commands](docs/xerox.md).
+
+The committed ES snapshot contains **2 printer models, 12 genuine toner cartridges and 24 verified relationships**, with no request failures. Both JSON and CSV pass `pnpm.cmd db --db :memory: import:compatibility <file> --dry-run`. Use the strict `import:compatibility` command to preserve evidence. Coverage is a seed-derived VersaLink C400/C405 sample, not an exhaustive catalog. Existing databases are not modified automatically.
+
 ## Current limitations
 
 - No frontend, HTTP API, authentication, or authorization.
-- Kyocera collection is implemented; Epson acquisition is in progress with documented access/evidence limitations.
+- Kyocera and Xerox collection are implemented; Epson acquisition is in progress with documented access/evidence limitations.
 - Normalization intentionally removes punctuation; exceptional aliases may need a future alias table.
 - Verification is recorded but not performed automatically.
 - Import upserts existing normalized entities; it does not delete data missing from an import.

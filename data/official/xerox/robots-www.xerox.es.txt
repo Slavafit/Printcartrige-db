@@ -1,0 +1,16 @@
+# robots.txt for www.xerox.es
+#     
+
+User-agent: *
+Disallow: /PSG/
+Disallow: /psg/
+Disallow: /XGS/
+Disallow: /xgs/
+Disallow: /corp/
+Disallow: /CORP/
+Disallow: /XOG/
+Disallow: /xog/
+Disallow: /supl/
+Disallow: /SUPL/
+Disallow: /es-es/search
+

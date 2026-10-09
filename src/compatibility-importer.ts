@@ -1,4 +1,5 @@
 import { readFile } from 'node:fs/promises';
+import { parse } from 'csv-parse/sync';
 import { CartridgeDatabase } from './database.js';
 import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrinterModel } from './normalize.js';
 import type { ImportRecord, VerificationStatus } from './types.js';
@@ -30,8 +31,21 @@ export async function importCompatibilityFile(
   dryRun: boolean,
 ): Promise<CompatibilityImportResult> {
   let raw: unknown;
-  try { raw = JSON.parse(await readFile(path, 'utf8')) as unknown; }
-  catch (error) { throw new Error(`Invalid compatibility JSON: ${error instanceof Error ? error.message : String(error)}`); }
+  try {
+    const input = await readFile(path, 'utf8');
+    if (path.toLowerCase().endsWith('.csv')) {
+      const rows = parse(input, { columns: true, skip_empty_lines: true }) as Array<Record<string, unknown>>;
+      raw = rows.map(row => {
+        const record = { ...row };
+        if (record.isGenuineOem === 'true') record.isGenuineOem = true;
+        else if (record.isGenuineOem === 'false') record.isGenuineOem = false;
+        if (record.yieldPages === '') delete record.yieldPages;
+        else if (typeof record.yieldPages === 'string' && /^\d+$/.test(record.yieldPages)) record.yieldPages = Number(record.yieldPages);
+        return record;
+      });
+    } else raw = JSON.parse(input) as unknown;
+  }
+  catch (error) { throw new Error(`Invalid compatibility file: ${error instanceof Error ? error.message : String(error)}`); }
   if (!Array.isArray(raw)) throw new Error('Compatibility import root must be a JSON array');
   return importCompatibilityRecords(database, raw, dryRun);
 }
