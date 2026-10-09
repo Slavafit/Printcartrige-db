@@ -5,7 +5,7 @@ export interface PrinterSearchPage { items: unknown[]; total: number; page: numb
 
 export function webStats(database: CartridgeDatabase): Record<string, number> {
   const value = (sql: string): number => (database.db.prepare(sql).get() as { count: number }).count;
-  return { ...database.compatibilityStats(), totalManufacturers: value('SELECT COUNT(*) AS count FROM manufacturers'), totalCartridges: value('SELECT COUNT(*) AS count FROM cartridges') };
+  return { apiVersion: 2, ...database.compatibilityStats(), totalManufacturers: value('SELECT COUNT(*) AS count FROM manufacturers'), totalCartridges: value('SELECT COUNT(*) AS count FROM cartridges') };
 }
 
 export function webManufacturers(database: CartridgeDatabase): unknown[] {

@@ -3,20 +3,28 @@ import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer, type ServerResponse } from 'node:http';
 import { extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
+import { CollectorJobs } from './collector-jobs.js';
 import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
 const database = new CartridgeDatabase(databasePath);
 database.initialize();
+const collectorJobs = new CollectorJobs(database);
 const staticRoot = resolve('web-dist');
 let reusedExistingServer = false;
 let reuseHeartbeat: NodeJS.Timeout | undefined;
-const server = createServer((request, response) => {
+const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
     if (url.pathname === '/api/stats') return json(response, 200, webStats(database));
     if (url.pathname === '/api/manufacturers') return json(response, 200, webManufacturers(database));
+    if (url.pathname === '/api/collectors' && request.method === 'GET') return json(response, 200, collectorJobs.list());
+    const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import)$/);
+    if (collectorAction && request.method === 'POST') {
+      const result = collectorAction[2] === 'run' ? collectorJobs.start(collectorAction[1]) : await collectorJobs.import(collectorAction[1]);
+      return json(response, 200, result);
+    }
     if (url.pathname === '/api/printers') {
       const page = Math.max(Number(url.searchParams.get('page') || 1), 1);
       const pageSize = Math.min(Math.max(Number(url.searchParams.get('pageSize') || 10), 1), 100);
@@ -34,7 +42,7 @@ server.on('error', async (error: NodeJS.ErrnoException) => {
     const response = await fetch(`http://127.0.0.1:${port}/api/stats`, { signal: AbortSignal.timeout(1500) });
     if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) throw new Error('not our API');
     const stats = await response.json() as Record<string, unknown>;
-    if (typeof stats.totalPrinters !== 'number') throw new Error('not our API');
+    if (stats.apiVersion !== 2 || typeof stats.totalPrinters !== 'number') throw new Error('incompatible API');
     reusedExistingServer = true;
     reuseHeartbeat = setInterval(() => undefined, 60_000);
     console.log(`Printcartridge API already running at http://127.0.0.1:${port}; reusing it.`);

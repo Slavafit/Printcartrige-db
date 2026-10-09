@@ -48,6 +48,17 @@ pnpm.cmd web:start
 
 Then open `http://127.0.0.1:4173`. This MVP has no write API, authentication, hosting, or remote database. Set the `PORT` environment variable before starting if that port is already occupied.
 
+### Running collectors from the browser
+
+The **Collectors & imports** section is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, and HP workflows; it cannot execute arbitrary commands.
+
+1. Select **Collect** to start an online manufacturer adapter. Brother is offline-only and uses the committed sitemap.
+2. Keep the local server running and inspect the displayed status and collector log. Only one collector runs at a time.
+3. After a successful run and review, select **Import to MVP** to validate and import that collector's saved JSON into `mvp.sqlite`.
+4. Search and statistics update from the imported database. Repeated imports remain idempotent.
+
+Collectors retain their existing rate limits, retries, resumable state, robots/access rules, exclusions, and manual-review behavior. A successful process does not imply complete manufacturer coverage. Epson may defer work outside its permitted access window, and inaccessible or ambiguous evidence is never promoted to verified compatibility.
+
 ## Commands
 
 The default database is `printcartridge.sqlite`; override it with `--db path/to/file.sqlite`.
