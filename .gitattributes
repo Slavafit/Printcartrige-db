@@ -1,3 +1,5 @@
 # Preserve exact source bytes so snapshot SHA-256 checks survive any checkout platform.
 data/official/xerox/raw/*.html -text -whitespace
 data/official/xerox/robots-*.txt -text -whitespace
+data/official/hp/raw/*.html -text -whitespace
+data/official/hp/robots-*.txt -text -whitespace
