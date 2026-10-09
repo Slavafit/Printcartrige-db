@@ -11,7 +11,7 @@
     "dev": "pnpm build:server && concurrently -k -n types,api,web -c yellow,blue,green \"pnpm web:types\" \"pnpm web:api\" \"pnpm web:client\"",
     "build:server": "tsc -p tsconfig.json",
     "web:types": "tsc -p tsconfig.json --watch --preserveWatchOutput",
-    "web:api": "node --watch dist/src/web-server.js",
+    "web:api": "node dist/src/web-server.js",
     "web:client": "vite",
     "web:start": "node dist/src/web-server.js",
     "mvp:seed": "pnpm build:server && node dist/src/mvp-seed.js",

@@ -46,7 +46,7 @@ pnpm.cmd build
 pnpm.cmd web:start
 ```
 
-Then open `http://127.0.0.1:4173`. This MVP has no write API, authentication, hosting, or remote database.
+Then open `http://127.0.0.1:4173`. This MVP has no write API, authentication, hosting, or remote database. Set the `PORT` environment variable before starting if that port is already occupied.
 
 ## Commands
 
