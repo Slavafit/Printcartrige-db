@@ -11,7 +11,8 @@
     "db": "tsx src/cli.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
-    "collect:xerox": "tsx src/collectors/xerox.ts"
+    "collect:xerox": "tsx src/collectors/xerox.ts",
+    "collect:hp": "tsx src/collectors/hp.ts"
   },
   "dependencies": {
     "better-sqlite3": "^12.4.1",
