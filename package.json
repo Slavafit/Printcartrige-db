@@ -9,7 +9,8 @@
     "test": "vitest run",
     "typecheck": "tsc -p tsconfig.json --noEmit",
     "db": "tsx src/cli.ts",
-    "collect:kyocera": "tsx src/collectors/kyocera.ts"
+    "collect:kyocera": "tsx src/collectors/kyocera.ts",
+    "collect:epson": "tsx src/collectors/epson.ts"
   },
   "dependencies": {
     "better-sqlite3": "^12.4.1",

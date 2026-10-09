@@ -8,7 +8,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 002 | Official source research and Kyocera collector | Completed | 001 |
 | 003 | Brother España sitemap importer | Completed | 001 |
 | 004 | OEM compatibility verification | Completed | 001–003 |
-| 005 | Epson Europe collector | Not started | 004 |
+| 005 | Epson Europe collector | In progress — access/evidence limited | 004 |
 | 006 | Xerox printer and OEM cartridge collection | Planned | 004 |
 | 007 | HP printer and OEM cartridge collection | Planned | 004 |
 | 008 | Canon printer and OEM cartridge collection | Planned | 004 |
@@ -44,7 +44,9 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 
 ## Task 005 — Epson Europe collector
 
-**Status:** Not started. Epson appears only in source research; no Epson collector, fixture, command, or collected dataset exists in the repository.
+**Status:** In progress on `codex/epson-europe-collector`, not completed or merged. A conservative acquisition adapter, JSON/CSV export, resumable queue, robots enforcement, exclusion/manual-review reports and synthetic tests are implemented. The 2026-10-09 live attempt produced zero printer/cartridge records: Epson's declared 04:00–08:45 UTC visit window was closed. The accessible rendered example also qualifies compatibility as applying to one or more items in a range; no exact-SKU relationships are promoted automatically. See [Epson acquisition notes](docs/epson.md).
+
+**Remaining:** retrieve and validate raw product HTML during permitted hours (or from a permitted supplied artifact), establish exact-SKU evidence from an official source, implement its verified-edge mapping with representative fixtures, then collect and dry-import a real dataset. Current semantic parser tests are synthetic reconstructions, not proof of production HTML coverage. No completed coverage claim is made.
 
 **Deliverables:** identify an accessible official Epson Europe source; implement a rate-limited, resumable adapter using the common import shape; collect exact printer, OEM cartridge, region, and evidence data; strictly exclude EcoTank ink bottles and maintenance products; export JSON/CSV; add offline fixtures and tests.
 

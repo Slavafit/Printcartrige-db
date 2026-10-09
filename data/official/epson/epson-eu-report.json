@@ -1,0 +1,17 @@
+{
+  "collectedAt": "2026-10-09T09:50:33.106Z",
+  "resumed": false,
+  "pagesVisited": 0,
+  "completedPages": 0,
+  "pendingPages": 1,
+  "printers": 0,
+  "relationships": 0,
+  "review": [],
+  "excluded": [],
+  "failures": [
+    {
+      "url": "https://www.epson.eu/en_EU/products/ink-and-paper/ink-consumables/604xl-pineapple-single-black-ink/p/35499",
+      "reason": "outside-robots-visit-window"
+    }
+  ]
+}

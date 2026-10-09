@@ -1,0 +1,10 @@
+# Synthetic policy matching the publicly observed directive structure.
+User-agent: *
+Disallow: /cart
+Disallow: /search
+Request-rate: 1/10
+Crawl-delay: 10
+Visit-time: 0400-0845
+User-agent: Googlebot
+Allow: /
+Sitemap: https://www.epson.eu/sitemap.xml
