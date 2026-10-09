@@ -10,6 +10,8 @@ const port = Number(process.env.PORT || 4173);
 const database = new CartridgeDatabase(databasePath);
 database.initialize();
 const staticRoot = resolve('web-dist');
+let reusedExistingServer = false;
+let reuseHeartbeat: NodeJS.Timeout | undefined;
 const server = createServer((request, response) => {
   try {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
@@ -22,6 +24,22 @@ const server = createServer((request, response) => {
     return serveStatic(response, staticRoot, url.pathname);
   } catch (error) { return json(response, 500, { error: error instanceof Error ? error.message : 'Unexpected error' }); }
 });
+server.on('error', async (error: NodeJS.ErrnoException) => {
+  if (error.code !== 'EADDRINUSE') throw error;
+  try {
+    const response = await fetch(`http://127.0.0.1:${port}/api/stats`, { signal: AbortSignal.timeout(1500) });
+    if (!response.ok || !response.headers.get('content-type')?.includes('application/json')) throw new Error('not our API');
+    const stats = await response.json() as Record<string, unknown>;
+    if (typeof stats.totalPrinters !== 'number') throw new Error('not our API');
+    reusedExistingServer = true;
+    reuseHeartbeat = setInterval(() => undefined, 60_000);
+    console.log(`Printcartridge API already running at http://127.0.0.1:${port}; reusing it.`);
+  } catch {
+    console.error(`Port ${port} is occupied by another application. Stop it or set $env:PORT before pnpm.cmd dev.`);
+    database.close();
+    process.exit(1);
+  }
+});
 server.listen(port, '127.0.0.1', () => { console.log(`Printcartridge web MVP: http://127.0.0.1:${port}`); console.log(`Database: ${resolve(databasePath)}`); });
 
 function json(response: ServerResponse, status: number, body: unknown): void { response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); response.end(JSON.stringify(body)); }
@@ -32,4 +50,7 @@ function serveStatic(response: ServerResponse, directory: string, pathname: stri
   const types: Record<string, string> = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
   response.writeHead(200, { 'content-type': `${types[extname(safePath)] ?? 'application/octet-stream'}; charset=utf-8` }); createReadStream(safePath).pipe(response);
 }
-for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => server.close(() => { database.close(); process.exit(0); }));
+for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => {
+  if (reusedExistingServer) { if (reuseHeartbeat) clearInterval(reuseHeartbeat); database.close(); process.exit(0); }
+  server.close(() => { database.close(); process.exit(0); });
+});
