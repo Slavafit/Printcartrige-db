@@ -1,0 +1,18 @@
+User-agent: *
+
+Disallow: /cart
+Disallow: /checkout
+Disallow: /search
+Disallow: /login
+Disallow: /my-account
+
+Request-rate: 1/10    
+Crawl-delay: 10       
+Visit-time: 0400-0845 
+
+User-agent: Googlebot
+User-agent: AdsBot-Google
+User-agent: Googlebot-Image
+Allow: /
+
+Sitemap: https://www.epson.eu/sitemap.xml

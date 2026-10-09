@@ -40,6 +40,10 @@ Outputs are `data/official/kyocera-eu.json` and `.csv`. Progress is checkpointed
 
 ## Practical acquisition alternatives
 
+### Epson follow-up, 2026-10-09
+
+EU and ES robots policies specify a ten-second crawl delay and a 04:00–08:45 visit window, conservatively enforced as UTC. The live Task 005 run outside that window fetched no products. The rendered example's compatibility section is qualified at range level, so the earlier “High” feasibility estimate does not establish exact-SKU compatibility. The new acquisition adapter quarantines such claims; no verified Epson dataset exists yet. See [the acquisition report and remaining work](epson.md).
+
 For broader and more stable coverage, contact each manufacturer's channel/partner data team and request an authorized EU product-information feed containing canonical printer SKU, supply SKU, consumable type, color, market, validity dates, and compatibility edges. Other practical sources are official downloadable price books, product-catalog CSV/XML exports, GS1/GDSN feeds supplied by the manufacturer, and licensed manufacturer PDF catalogs. These are preferable to storefront parsing because they expose identifiers, lifecycle status, and regional validity explicitly.
 
 Before adding another collector, confirm permission, discovery mechanism, update cadence, and schema ownership. Store raw source URLs and never promote inferred or retailer-supplied compatibility to `verified` OEM data.

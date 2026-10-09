@@ -39,7 +39,20 @@ function coerceAndValidate(raw: unknown, row: number, issues: ValidationIssue[])
   const printerModel = requiredText('printerModel');
   const hasReplaceableCartridges = toBoolean(value.hasReplaceableCartridges, true, row, 'hasReplaceableCartridges', issues);
   const record: ImportRecord = { printerManufacturer, printerModel, hasReplaceableCartridges };
-  if (!hasReplaceableCartridges) return record;
+  if (!hasReplaceableCartridges) {
+    // Preserve independent printer provenance without inventing a cartridge edge.
+    if (['sourceName', 'sourceUrl', 'region', 'verificationStatus'].some(field => value[field] != null && value[field] !== '')) {
+      record.sourceName = requiredText('sourceName');
+      record.sourceUrl = requiredText('sourceUrl');
+      record.region = requiredText('region');
+      record.verificationStatus = requiredText('verificationStatus') as ImportRecord['verificationStatus'];
+      if (!statuses.has(record.verificationStatus!)) issues.push({ row, field: 'verificationStatus', message: 'Invalid printer verification status' });
+      try {
+        if (!['https:', 'http:'].includes(new URL(record.sourceUrl).protocol)) throw new Error();
+      } catch { issues.push({ row, field: 'sourceUrl', message: 'Must be an HTTP(S) URL' }); }
+    }
+    return record;
+  }
 
   record.cartridgeManufacturer = requiredText('cartridgeManufacturer');
   record.cartridgePartNumber = requiredText('cartridgePartNumber');

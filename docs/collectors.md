@@ -24,3 +24,5 @@ export async function collectAuthorizedCatalog(): Promise<ImportRecord[]> {
 ```
 
 Keep retries, rate limits, cache policy, robots/access rules, and provenance handling inside the collector. The shared importer remains the only write path, so every collector receives the same validation, normalization, deduplication, dry-run, and transaction behavior.
+
+The [Epson adapter](epson.md) implements acquisition and conservative quarantine. It has no automatic exact-SKU compatibility mapping yet. Its fixture tests are synthetic semantic reconstructions; a live raw-HTML verification and official exact-SKU evidence are required before claiming production coverage.

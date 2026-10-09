@@ -156,10 +156,18 @@ The Task 003 sitemap alone is not compatibility evidence. The small `tests/fixtu
 
 The importer trusts structured declarations such as `sourceType` only after applying the strict field rules; it cannot cryptographically prove that arbitrary offline JSON was authored by a manufacturer. Keep evidence text precise and preserve downloaded/licensed source artifacts where permitted. Existing Task 002 Kyocera output is supported through a narrowly scoped legacy profile for its exact official source name and domain.
 
+## Epson Europe acquisition (Task 005, in progress)
+
+`pnpm.cmd collect:epson -- --max-pages 20` starts the conservative Epson adapter. It checks robots rules, respects the declared 04:00–08:45 UTC window and at least ten seconds between attempts, and saves a resumable queue plus JSON/CSV and a failure/manual-review report. See [Epson notes](docs/epson.md) for reproduction and evidence limitations.
+
+The initial live run was deferred by the visit window (zero collected products). Range-level compatibility is quarantined; automatic exact-SKU relationship mapping is not yet implemented. Synthetic tests do not establish real catalog coverage. Task 005 is not marked complete.
+
+Printer-only imports may optionally provide all four of `sourceName`, `sourceUrl`, `region`, and `verificationStatus`; these are preserved in `printer_sources` without creating cartridges.
+
 ## Current limitations
 
 - No frontend, HTTP API, authentication, or authorization.
-- No manufacturer-specific collectors are included.
+- Kyocera collection is implemented; Epson acquisition is in progress with documented access/evidence limitations.
 - Normalization intentionally removes punctuation; exceptional aliases may need a future alias table.
 - Verification is recorded but not performed automatically.
 - Import upserts existing normalized entities; it does not delete data missing from an import.

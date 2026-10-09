@@ -1,0 +1,238 @@
+import { mkdir, readFile, rename, writeFile } from 'node:fs/promises';
+import { dirname, resolve } from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { load } from 'cheerio';
+import { stringify } from 'csv-stringify/sync';
+import type { ImportRecord } from '../types.js';
+import { COLLECTOR_USER_AGENT } from './kyocera.js';
+
+export const EPSON_ORIGIN = 'https://www.epson.eu';
+export const EPSON_SEEDS = [
+  `${EPSON_ORIGIN}/en_EU/products/ink-and-paper/ink-consumables/604xl-pineapple-single-black-ink/p/35499`,
+];
+export interface EpsonIssue { url: string; reason: string; evidence?: string }
+export interface EpsonPage { records: ImportRecord[]; review: EpsonIssue[]; excluded: EpsonIssue[]; links: string[] }
+const clean = (text: string): string => text.replace(/\s+/g, ' ').trim();
+
+export function isEpsonProductUrl(value: string): boolean {
+  try {
+    const url = new URL(value);
+    return url.origin === EPSON_ORIGIN && !url.username && !url.password && !url.search && !url.hash
+      && /^\/en_EU\/products\/.+\/p\/\d+$/.test(url.pathname);
+  } catch { return false; }
+}
+
+/** Semantic headings/links only; missing or range-level evidence is quarantined. */
+export function parseEpsonPage(html: string, url: string): EpsonPage {
+  const result: EpsonPage = { records: [], review: [], excluded: [], links: [] };
+  if (!isEpsonProductUrl(url)) {
+    result.review.push({ url, reason: 'unsupported-source' });
+    return result;
+  }
+  const $ = load(html);
+  $('script, style, nav, footer, header').remove();
+  $('h1,h2,h3,h4,p,div,li,br').append(' ');
+  const title = clean($('h1').first().text());
+  const body = clean($('body').text());
+  $('a[href]').each((_i, element) => {
+    try {
+      const target = new URL($(element).attr('href')!, url).href;
+      if (isEpsonProductUrl(target)) result.links.push(target);
+    } catch { /* Invalid links are never fetched. */ }
+  });
+  result.links = [...new Set(result.links)].sort();
+  const review = (reason: string, evidence = title): EpsonPage => {
+    result.review.push({ url, reason, evidence }); return result;
+  };
+  if (/access denied|verify you are human|captcha/i.test(title)) return review('access-challenge');
+  if (!title) return review('missing-product-heading');
+  if (/\bEcoTank\b/i.test(title) && /\b(?:cartridge-free|cartridge free)\b/i.test(body)
+      && !url.includes('/ink-and-paper/')) {
+    result.records.push({ printerManufacturer: 'Epson', printerModel: title,
+      hasReplaceableCartridges: false, sourceName: 'Epson Europe', sourceUrl: url,
+      sourceType: 'official-manufacturer', evidenceType: 'product-page-only', evidence: title,
+      verificationStatus: 'verified', region: 'EU' });
+    return result;
+  }
+  if (/\b(?:bottles?|refills?|maintenance|cleaning|cleaner|waste|drums?|fuser|belt|printheads?|multipack)\b/i.test(title)) {
+    result.excluded.push({ url, reason: 'excluded-or-multipack-product', evidence: title }); return result;
+  }
+  if (!url.includes('/ink-consumables/') || !/\b(?:ink|toner)\b/i.test(title)
+      || !/\bcartridges?\b/i.test(body)) return review('uncertain-cartridge-type');
+  // SKU nearest the product heading: never pick a SKU from Other Products in the Series.
+  const prefix = body.split(/Other Products in the Series|Compatible Main Units/i)[0];
+  const skus = [...new Set([...prefix.matchAll(/\bSKU:\s*(C13[A-Z0-9]+)\b/g)].map(match => match[1]))];
+  if (skus.length !== 1) return review('missing-or-ambiguous-sku');
+  const heading = $('h2,h3').filter((_i, element) => clean($(element).text()) === 'Compatible Main Units');
+  if (heading.length !== 1) return review('missing-or-ambiguous-compatibility-section');
+  const section = heading.nextUntil('h1,h2,h3');
+  const sectionText = clean(section.text());
+  // The current Epson wording does not establish an exact SKU edge.
+  if (/one or more|in this range/i.test(sectionText)) return review('range-level-compatibility', sectionText);
+  return review('exact-sku-evidence-needs-review', sectionText || title);
+}
+
+export interface EpsonAccessPolicy { delayMs: number; startMinute?: number; endMinute?: number; disallow: string[] }
+export function parseEpsonRobots(text: string): EpsonAccessPolicy {
+  const groups: Array<{ agents: string[]; lines: Array<[string, string]> }> = [];
+  let group: typeof groups[number] | undefined;
+  for (const raw of text.split(/\r?\n/)) {
+    const line = raw.split('#')[0].trim();
+    if (!line) continue;
+    const match = /^([\w-]+):\s*(.*)$/.exec(line);
+    if (!match) throw new Error('Unrecognized robots policy');
+    const [, rawKey, value] = match;
+    const key = rawKey.toLowerCase();
+    if (key === 'sitemap') continue;
+    if (key === 'user-agent') {
+      if (!group || group.lines.length) { group = { agents: [], lines: [] }; groups.push(group); }
+      group.agents.push(value.toLowerCase());
+    } else {
+      if (!group) throw new Error('Robots directive without user agent');
+      group.lines.push([key, value]);
+    }
+  }
+  const applicable = groups.filter(item => item.agents.includes('*') || item.agents.some(agent => agent.includes('printcartridge')));
+  if (!applicable.length) throw new Error('No recognized robots policy');
+  const policy: EpsonAccessPolicy = { delayMs: 10_000, disallow: [] };
+  for (const [key, value] of applicable.flatMap(item => item.lines)) {
+    if (key === 'disallow' && value) policy.disallow.push(value);
+    else if (key === 'crawl-delay') {
+      if (!/^\d+(\.\d+)?$/.test(value)) throw new Error('Invalid crawl delay');
+      policy.delayMs = Math.max(policy.delayMs, Number(value) * 1000);
+    } else if (key === 'request-rate') {
+      const match = /^(\d+)\/(\d+)$/.exec(value);
+      if (!match || Number(match[1]) === 0) throw new Error('Unsupported request rate');
+      policy.delayMs = Math.max(policy.delayMs, Number(match[2]) * 1000 / Number(match[1]));
+    } else if (key === 'visit-time') {
+      const match = /^(\d{2})(\d{2})-(\d{2})(\d{2})$/.exec(value);
+      if (!match || Number(match[1]) > 23 || Number(match[3]) > 23 || Number(match[2]) > 59 || Number(match[4]) > 59) throw new Error('Invalid visit time');
+      if (policy.startMinute !== undefined) throw new Error('Multiple visit windows need review');
+      policy.startMinute = Number(match[1]) * 60 + Number(match[2]);
+      policy.endMinute = Number(match[3]) * 60 + Number(match[4]);
+    } else if (!['allow', 'disallow'].includes(key)) throw new Error(`Unsupported robots directive: ${key}`);
+  }
+  return policy;
+}
+
+export function epsonAccessReason(policy: EpsonAccessPolicy, url: string, now: Date): string | undefined {
+  const path = new URL(url).pathname;
+  if (policy.disallow.some(rule => {
+    const pattern = rule.split('*').map(part => part.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')).join('.*').replace(/\\\$$/, '$');
+    return new RegExp(`^${pattern}`).test(path);
+  })) return 'robots-disallow';
+  const minute = now.getUTCHours() * 60 + now.getUTCMinutes();
+  if (policy.startMinute !== undefined && policy.endMinute !== undefined) {
+    const allowed = policy.startMinute <= policy.endMinute
+      ? minute >= policy.startMinute && minute < policy.endMinute
+      : minute >= policy.startMinute || minute < policy.endMinute;
+    if (!allowed) return 'outside-robots-visit-window';
+  }
+  return undefined;
+}
+
+interface State { version: 1; pending: string[]; completed: string[]; records: ImportRecord[]; review: EpsonIssue[]; excluded: EpsonIssue[] }
+export interface EpsonOptions { outputDirectory: string; stateFile: string; seeds?: string[]; maxPages?: number; delayMs?: number; retries?: number }
+export interface EpsonRuntime { fetcher?: typeof fetch; now?: () => Date; sleep?: (ms: number) => Promise<void> }
+export async function collectEpson(options: EpsonOptions, runtime: EpsonRuntime = {}) {
+  const maxPages = options.maxPages ?? 20;
+  const retries = options.retries ?? 2;
+  if (!Number.isInteger(maxPages) || maxPages < 1 || !Number.isInteger(retries) || retries < 0 || retries > 5
+      || !Number.isFinite(options.delayMs ?? 10_000) || (options.delayMs ?? 10_000) < 0) throw new Error('Invalid collector limits');
+  const fetcher = runtime.fetcher ?? fetch;
+  const now = runtime.now ?? (() => new Date());
+  const sleep = runtime.sleep ?? (async ms => new Promise(resolvePromise => setTimeout(resolvePromise, ms)));
+  let state: State = { version: 1, pending: options.seeds ?? EPSON_SEEDS, completed: [], records: [], review: [], excluded: [] };
+  let resumed = false;
+  try {
+    state = JSON.parse(await readFile(options.stateFile, 'utf8')) as State;
+    if (state.version !== 1 || ![state.pending, state.completed, state.records, state.review, state.excluded].every(Array.isArray)) throw new Error('Invalid Epson checkpoint');
+    resumed = true;
+  } catch (error) { if ((error as NodeJS.ErrnoException).code !== 'ENOENT') throw error; }
+  state.pending = [...new Set([...state.pending, ...(options.seeds ?? [])])].filter(url => !state.completed.includes(url));
+  if (![...state.pending, ...state.completed].every(isEpsonProductUrl)) throw new Error('Checkpoint/seeds contain unsupported URLs');
+  const failures: EpsonIssue[] = [];
+  let policy: EpsonAccessPolicy;
+  let lastRequest = 0;
+  let pagesVisited = 0;
+  let activeUrl = `${EPSON_ORIGIN}/robots.txt`;
+  const fetchText = async (url: string) => {
+    const response = await fetcher(url, { redirect: 'manual', signal: AbortSignal.timeout(30_000), headers: { 'user-agent': COLLECTOR_USER_AGENT } });
+    if (!response.ok) throw new Error(`HTTP ${response.status}; redirects/access restrictions are not followed`);
+    return response.text();
+  };
+  await mkdir(options.outputDirectory, { recursive: true });
+  try {
+    const robots = await fetchText(`${EPSON_ORIGIN}/robots.txt`);
+    lastRequest = now().getTime();
+    await writeFile(resolve(options.outputDirectory, 'epson-eu-robots.txt'), robots);
+    policy = parseEpsonRobots(robots);
+    const queue = [...state.pending];
+    for (const url of queue) {
+      activeUrl = url;
+      if (pagesVisited >= maxPages) break;
+      const restriction = epsonAccessReason(policy, url, now());
+      if (restriction) { failures.push({ url, reason: restriction }); if (restriction.includes('window')) break; else continue; }
+      let html: string | undefined;
+      for (let attempt = 0; attempt <= retries; attempt++) {
+        await sleep(Math.max(0, Math.max(policy.delayMs, options.delayMs ?? 0) - (now().getTime() - lastRequest)));
+        const restrictionAfterWait = epsonAccessReason(policy, url, now());
+        if (restrictionAfterWait) { failures.push({ url, reason: restrictionAfterWait }); break; }
+        try { lastRequest = now().getTime(); html = await fetchText(url); break; }
+        catch (error) {
+          const reason = error instanceof Error ? error.message : String(error);
+          // Never retry authentication, bot protection, rate limiting or redirects in this run.
+          if (/HTTP (?:[234]\d\d)/.test(reason) || attempt === retries) { failures.push({ url, reason }); break; }
+        }
+      }
+      pagesVisited++;
+      if (html === undefined) continue; // Remains pending for a subsequent permitted run.
+      const parsed = parseEpsonPage(html, url);
+      const snapshot = resolve(options.outputDirectory, 'raw', `${new URL(url).pathname.split('/').at(-1)}.html`);
+      await mkdir(dirname(snapshot), { recursive: true });
+      await writeFile(snapshot, html);
+      if (parsed.review.some(issue => issue.reason === 'access-challenge')) {
+        failures.push({ url, reason: 'access-challenge' });
+        break;
+      }
+      state.records.push(...parsed.records);
+      state.review.push(...parsed.review);
+      state.excluded.push(...parsed.excluded);
+      state.completed.push(url);
+      state.pending = [...new Set([...state.pending.filter(item => item !== url), ...parsed.links])].filter(item => !state.completed.includes(item));
+      await save(options.stateFile, state);
+    }
+  } catch (error) { failures.push({ url: activeUrl, reason: error instanceof Error ? error.message : String(error) }); }
+  await save(options.stateFile, state);
+  await save(resolve(options.outputDirectory, 'epson-eu.json'), state.records);
+  const columns = ['printerManufacturer', 'printerModel', 'hasReplaceableCartridges', 'cartridgeManufacturer', 'cartridgePartNumber', 'cartridgeKind', 'sourceName', 'sourceUrl', 'verificationStatus', 'region', 'isGenuineOem', 'sourceType', 'evidenceType', 'evidence', 'verifiedAt'];
+  await writeFile(resolve(options.outputDirectory, 'epson-eu.csv'), stringify(state.records, { header: true, columns, cast: { boolean: value => String(value) } }));
+  const report = { collectedAt: now().toISOString(), resumed, pagesVisited, completedPages: state.completed.length,
+    pendingPages: state.pending.length, printers: new Set(state.records.map(record => record.printerModel)).size,
+    relationships: state.records.filter(record => record.cartridgePartNumber).length,
+    review: state.review, excluded: state.excluded, failures };
+  await save(resolve(options.outputDirectory, 'epson-eu-report.json'), report);
+  return report;
+}
+
+async function save(path: string, value: unknown): Promise<void> {
+  await mkdir(dirname(path), { recursive: true });
+  await writeFile(`${path}.tmp`, `${JSON.stringify(value, null, 2)}\n`);
+  await rename(`${path}.tmp`, path);
+}
+
+if (process.argv[1] && resolve(process.argv[1]) === resolve(fileURLToPath(import.meta.url))) {
+  const args = process.argv.slice(2).filter(arg => arg !== '--');
+  const allowed = new Set(['--output-dir', '--state', '--max-pages', '--delay-ms', '--retries', '--seed']);
+  const values = new Map<string, string>();
+  for (let i = 0; i < args.length; i += 2) {
+    if (!allowed.has(args[i]) || !args[i + 1] || args[i + 1].startsWith('--')) throw new Error(`Invalid option: ${args[i]}`);
+    values.set(args[i], args[i + 1]);
+  }
+  const report = await collectEpson({ outputDirectory: values.get('--output-dir') ?? 'data/official/epson',
+    stateFile: values.get('--state') ?? '.collector-state/epson-eu.json',
+    maxPages: Number(values.get('--max-pages') ?? 20), delayMs: Number(values.get('--delay-ms') ?? 10_000),
+    retries: Number(values.get('--retries') ?? 2), ...(values.has('--seed') ? { seeds: [values.get('--seed')!] } : {}) });
+  console.log(JSON.stringify(report, null, 2));
+  if (report.failures.length) process.exitCode = 1;
+}

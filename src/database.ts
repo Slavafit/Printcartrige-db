@@ -65,7 +65,14 @@ export class CartridgeDatabase {
   writeImportRecord(record: ImportRecord): boolean {
     const printerManufacturerId = this.upsertManufacturer(record.printerManufacturer);
     const printerId = this.upsertPrinter(printerManufacturerId, record.printerModel, record.hasReplaceableCartridges);
-    if (!record.hasReplaceableCartridges) return false;
+    if (!record.hasReplaceableCartridges) {
+      if (record.sourceName && record.sourceUrl && record.region && record.verificationStatus) {
+        this.upsertPrinterSource({ manufacturerName: record.printerManufacturer, modelName: record.printerModel,
+          sourceName: record.sourceName, sourceUrl: record.sourceUrl, region: record.region,
+          verificationStatus: record.verificationStatus });
+      }
+      return false;
+    }
 
     const cartridgeManufacturerId = this.upsertManufacturer(record.cartridgeManufacturer!);
     const cartridgeId = this.upsertCartridge(
