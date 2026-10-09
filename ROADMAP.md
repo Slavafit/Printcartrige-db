@@ -9,13 +9,14 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 003 | Brother España sitemap importer | Completed | 001 |
 | 004 | OEM compatibility verification | Completed | 001–003 |
 | 005 | Epson Europe collector | In progress — access/evidence limited | 004 |
-| 006 | Xerox printer and OEM cartridge collection | Implemented on feature branch — awaiting merge | 004 |
-| 007 | HP printer and OEM cartridge collection | Planned | 004 |
+| 006 | Xerox printer and OEM cartridge collection | Completed | 004 |
+| 007 | HP printer and OEM cartridge collection | In progress — collector merged, dataset empty | 004 |
 | 008 | Canon printer and OEM cartridge collection | Planned | 004 |
 | 009 | Expand Brother compatibility coverage | Planned | 003–004 |
 | 010 | Expand Kyocera model and compatibility coverage | Planned | 002–004 |
 | 011 | Cross-manufacturer audit, deduplication, and coverage analysis | Planned | 005–010 |
 | 012 | Incremental updates and collection history | Planned | 011 |
+| 013 | Read-only browser MVP | Completed on feature branch | 001–007 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
@@ -54,15 +55,17 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 
 ## Task 006 — Xerox printer and OEM cartridge collection
 
-**Delivered on `codex/xerox-europe-collector` (2026-10-09):** rate-limited, resumable ES/IE official-page adapter; strict genuine Xerox-for-Xerox filtering; visible/JSON-LD compatibility cross-checks; exact SKU, color, yield, region and evidence; JSON/CSV export; source HTML and SHA-256 manifest; synthetic and real-snapshot tests. Shared strict compatibility import now accepts CSV without dropping evidence. Existing robots enforcement is shared with Epson without changing Epson behavior.
+**Delivered and merged from `codex/xerox-europe-collector` (2026-10-09):** rate-limited, resumable ES/IE official-page adapter; strict genuine Xerox-for-Xerox filtering; visible/JSON-LD compatibility cross-checks; exact SKU, color, yield, region and evidence; JSON/CSV export; source HTML and SHA-256 manifest; synthetic and real-snapshot tests. Shared strict compatibility import now accepts CSV without dropping evidence. Existing robots enforcement is shared with Epson without changing Epson behavior.
 
-**Verified snapshot:** 12 Spanish cartridge pages, 2 printer models (VersaLink C400/C405), 12 OEM cartridges, 24 verified relationships; zero request failures, exclusions, manual-review cases or pending discovered pages. Both output formats pass strict dry import; repeated imports are idempotent and preserve existing Kyocera evidence. This is a bounded seed-derived sample, not an exhaustive Xerox catalog. No production database changes or migrations. See [Xerox collection notes](docs/xerox.md). Implementation is ready for user review; `Completed` remains reserved for merged work.
+**Verified snapshot:** 12 Spanish cartridge pages, 2 printer models (VersaLink C400/C405), 12 OEM cartridges, 24 verified relationships; zero request failures, exclusions, manual-review cases or pending discovered pages. Both output formats pass strict dry import; repeated imports are idempotent and preserve existing Kyocera evidence. This is a bounded seed-derived sample, not an exhaustive Xerox catalog. No production database changes or migrations. See [Xerox collection notes](docs/xerox.md).
 
 **Deliverables:** official European source integration, genuine Xerox-for-Xerox filtering, exact models/SKUs/colors/yields where available, evidence-preserving JSON/CSV output, retry/resume controls, and fixture tests.
 
 **Acceptance:** “Everyday” third-party-compatible and non-cartridge products are excluded; verified edges have explicit official evidence and region; imports are valid and idempotent; failures and coverage are reported.
 
 ## Task 007 — HP printer and OEM cartridge collection
+
+**Status:** In progress. The HP collector and synthetic parser tests are merged in `main`, but the committed official output contains zero records, so collection coverage is not complete.
 
 **Deliverables:** evaluate and implement the best official European HP source path; distinguish cartridge families from exact orderable part numbers; emit printer-level evidence and regional metadata; add fixtures and collection reports.
 
@@ -103,3 +106,9 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 Consider a React/Vite and Tauri application only after manufacturer coverage, evidence quality, audit tooling, and incremental updates are sufficiently mature. UI work must consume the existing data model rather than replace the collection and verification foundation.
 
 **Acceptance:** a separately approved task defines user workflows, the application reads the established schema through a stable boundary, collection and verification remain independently testable, and no data-quality rule is weakened for presentation convenience.
+
+## Task 013 — Read-only browser MVP
+
+**Delivered on `feature/web-mvp`:** responsive React/Vite catalog interface; printer/model search with numbered 10-item pagination; manufacturer filtering; database statistics; printer details with genuine cartridge type, color, yield, region, verification state, date, and official evidence link; explicit catalog-only state for printers without compatibility; idempotent seed command for a separate local database; production static serving; local collector control panel with a fixed command whitelist, live status/logs, and explicit validated import; read-model and command-whitelist tests.
+
+**Acceptance:** the MVP reads the existing SQLite schema without a parallel data model, never infers missing compatibility, distinguishes verified and catalog-only results, works on desktop and mobile browsers, restricts collection/import mutations to localhost and the existing named adapters, preserves all source access and validation policies, builds successfully, and passes all automated tests.
