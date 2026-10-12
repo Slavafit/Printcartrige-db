@@ -19,6 +19,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 013 | Read-only browser MVP | Completed on feature branch | 001–007 |
 | 014 | PrinterDB Desktop MVP | Completed on `feature/desktop-mvp` | 013 |
 | 015 | Lightweight Windows launcher experiment | Completed on `experiment/lightweight-launcher` | 014 |
+| 016 | Multi-source import and PrinterTonerDB integration | Completed on `feature/multi-source-import` | 001, 004, 014 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
@@ -126,3 +127,9 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Delivered on `experiment/lightweight-launcher`:** self-contained .NET 8 WinForms tray launcher; embedded Node 22 runtime; bundled existing backend/frontend; Node-compatible native SQLite module; single-instance enforcement; browser opening; graceful authenticated local shutdown; repeatable PowerShell packaging; measured Electron comparison.
 
 **Acceptance:** Electron remains available, the alternative requires neither installed Node.js nor .NET, binds only to localhost, preserves the per-user database, supports existing catalog workflows, and has a measured size. See [experiment details](docs/lightweight-launcher.md).
+
+## Task 016 — Multi-source import and PrinterTonerDB integration
+
+**Delivered on `feature/multi-source-import`:** additive multi-source schema; independent source category, reliability and supply-origin fields; CSV/TSV/XLS/XLSX/JSON parser; preview/dry-run and 500-row transactional imports; per-relationship source history; conservative PrinterTonerDB adapter; one-time pre-migration backup; browser import preview; tests and attribution.
+
+**Acceptance:** third-party claims are never promoted to official verification, uncertain types/origins remain unknown, one relationship retains multiple sources, blank-supply rows preserve printers, repeated imports are idempotent, existing official evidence is preserved, and no third-party dataset enters the production database automatically.

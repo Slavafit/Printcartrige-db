@@ -31,8 +31,9 @@ Geographic scope is Europe, with Spain prioritized. Historical and discontinued 
 
 ## Cartridge catalog
 
-- Store only genuine manufacturer-branded ink and toner cartridges.
-- Exclude drums, waste containers, maintenance kits, fusers, transfer belts, ink bottles, refill kits, third-party products, and unrelated consumables.
+- The verified OEM cartridge view contains only genuine manufacturer-branded ink and toner cartridges.
+- The broader supply catalog may retain explicitly typed drums, waste containers, belts, compatible/remanufactured products, other products, and unknown candidates from identified sources, but never present them as verified OEM cartridges.
+- Exclude unrelated products from cartridge results and retain uncertain classification as `unknown` for review.
 - Preserve original OEM part number, normalized identity, kind, color, yield, and official source when available.
 - If product type or OEM status cannot be established reliably, reject or hold the candidate for manual review.
 
