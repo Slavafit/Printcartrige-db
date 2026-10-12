@@ -17,6 +17,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 011 | Cross-manufacturer audit, deduplication, and coverage analysis | Planned | 005–010 |
 | 012 | Incremental updates and collection history | Planned | 011 |
 | 013 | Read-only browser MVP | Completed on feature branch | 001–007 |
+| 014 | PrinterDB Desktop MVP | Completed on `feature/desktop-mvp` | 013 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
@@ -112,3 +113,9 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Delivered on `feature/web-mvp`:** responsive React/Vite catalog interface; printer/model search with numbered 10-item pagination; manufacturer filtering; database statistics; printer details with genuine cartridge type, color, yield, region, verification state, date, and official evidence link; explicit catalog-only state for printers without compatibility; idempotent seed command for a separate local database; production static serving; local collector control panel with a fixed command whitelist, live status/logs, and explicit validated import; read-model and command-whitelist tests.
 
 **Acceptance:** the MVP reads the existing SQLite schema without a parallel data model, never infers missing compatibility, distinguishes verified and catalog-only results, works on desktop and mobile browsers, restricts collection/import mutations to localhost and the existing named adapters, preserves all source access and validation policies, builds successfully, and passes all automated tests.
+
+## Task 014 — PrinterDB Desktop MVP
+
+**Delivered on `feature/desktop-mvp`:** Windows portable EXE; tray open/exit commands; browser interface backed by a `127.0.0.1` server; search by printer, manufacturer and cartridge part number; ten-query local history; manual printer/cartridge/compatibility CRUD with notes and duplicate guards; CSV/XLSX preview and import; XLSX export; SQLite backup; persistent per-user database copied from the existing 469-printer seed on first launch.
+
+**Acceptance:** the packaged application requires no installed Node.js, does not start collectors, never promotes manual or third-party records to verified, keeps its database outside the EXE, preserves data across restarts, and passes typecheck, build and automated tests. The user request called this “Task 006”, but ID 006 was already assigned to the completed Xerox collector, so this roadmap records it as 014 without rewriting history.

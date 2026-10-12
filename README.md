@@ -25,7 +25,7 @@ Node.js 22 or newer is required.
 
 ## Browser MVP
 
-The read-only browser interface searches the existing SQLite catalog and shows OEM cartridge details, verification status, region, and official evidence links. Search runs automatically while typing; results are shown 10 models per page with numbered navigation. Prepare a separate local MVP database from the committed Brother, Kyocera, and Xerox sources, then start the API and Vite client:
+The browser interface searches and edits the existing SQLite catalog. Search runs automatically after text is entered and results are shown 10 models per page. Prepare a separate local MVP database from the committed Brother, Kyocera, and Xerox sources, then start the API and Vite client:
 
 ```powershell
 pnpm.cmd mvp:seed
@@ -46,7 +46,22 @@ pnpm.cmd build
 pnpm.cmd web:start
 ```
 
-Then open `http://127.0.0.1:4173`. This MVP has no write API, authentication, hosting, or remote database. Set the `PORT` environment variable before starting if that port is already occupied.
+Then open `http://127.0.0.1:4173`. There is no authentication, hosting, or remote database; the API binds only to localhost. Set the `PORT` environment variable before starting if that port is already occupied.
+
+## Windows Desktop MVP
+
+Build the portable application from PowerShell:
+
+```powershell
+pnpm.cmd install
+pnpm.cmd desktop:package
+```
+
+Start `release\PrinterDB-0.1.0.exe` by double-clicking it. The application opens the default browser and remains active in the Windows system tray after the browser tab is closed. Use **Открыть справочник** to reopen it and **Выход** to stop the local server. If port 4173 is occupied, the launcher automatically selects the next available port. Collectors are never run automatically.
+
+The first launch copies the committed 469-printer seed into `%APPDATA%\PrinterDB\printcartridge.sqlite`. Later launches retain and migrate that user copy; rebuilding or replacing the EXE does not overwrite it. Backups created in the interface are stored in `%APPDATA%\PrinterDB\backups`. The portable EXE includes its own Node runtime, so the target Windows 11 computer does not need Node.js or pnpm.
+
+The interface matches printer models, manufacturers, and cartridge part numbers. It supports printer/cartridge/relationship CRUD, notes, deletion confirmation, the latest ten searches, CSV/XLSX preview/import, XLSX export, and SQLite backup. Manual and third-party records are always stored as `unverified`. The accepted flat spreadsheet columns are shown in the import dialog.
 
 ### Running collectors from the browser
 
@@ -208,7 +223,9 @@ The committed ES snapshot contains **2 printer models, 12 genuine toner cartridg
 
 ## Current limitations
 
-- No frontend, HTTP API, authentication, or authorization.
+- The local write API has no authentication and therefore binds only to `127.0.0.1`; the desktop MVP is single-user.
+- The portable EXE is not code-signed and can trigger a Windows reputation warning. Bundling Electron and Node makes the artifact comparatively large.
+- Spreadsheet preview accepts one worksheet and the documented flat columns; arbitrary vendor-specific layouts need a future mapping step.
 - Kyocera and Xerox collection are implemented; Epson acquisition is in progress with documented access/evidence limitations.
 - Normalization intentionally removes punctuation; exceptional aliases may need a future alias table.
 - Verification is recorded but not performed automatically.

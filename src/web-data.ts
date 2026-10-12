@@ -23,7 +23,10 @@ export function searchPrinters(database: CartridgeDatabase, options: PrinterSear
       COUNT(DISTINCT cp.cartridge_id) AS cartridge_count
     FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
     LEFT JOIN compatibility cp ON cp.printer_id = p.id
-    WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%')
+    LEFT JOIN cartridges c ON c.id = cp.cartridge_id
+    LEFT JOIN manufacturers cm ON cm.id = c.manufacturer_id
+    WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%'
+      OR lower(COALESCE(cm.name,'') || ' ' || COALESCE(c.part_number,'')) LIKE '%' || @query || '%')
       AND (@manufacturer = '' OR lower(m.name) = @manufacturer)
     GROUP BY p.id, m.name, p.model_name, p.has_replaceable_cartridges
     ORDER BY m.normalized_name, p.normalized_model_name LIMIT @limit OFFSET @offset
@@ -36,8 +39,10 @@ export function searchPrinterPage(database: CartridgeDatabase, options: PrinterS
   const query = options.query?.trim().toLowerCase() ?? '';
   const manufacturer = options.manufacturer?.trim().toLowerCase() ?? '';
   const total = (database.db.prepare(`
-    SELECT COUNT(*) AS count FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
-    WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%')
+    SELECT COUNT(DISTINCT p.id) AS count FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
+    LEFT JOIN compatibility cp ON cp.printer_id=p.id LEFT JOIN cartridges c ON c.id=cp.cartridge_id LEFT JOIN manufacturers cm ON cm.id=c.manufacturer_id
+    WHERE (@query = '' OR lower(m.name || ' ' || p.model_name) LIKE '%' || @query || '%'
+      OR lower(COALESCE(cm.name,'') || ' ' || COALESCE(c.part_number,'')) LIKE '%' || @query || '%')
       AND (@manufacturer = '' OR lower(m.name) = @manufacturer)
   `).get({ query, manufacturer }) as { count: number }).count;
   const totalPages = Math.max(Math.ceil(total / pageSize), 1);
@@ -47,13 +52,15 @@ export function searchPrinterPage(database: CartridgeDatabase, options: PrinterS
 }
 
 export function printerDetails(database: CartridgeDatabase, id: number): unknown | undefined {
-  const printer = database.db.prepare(`SELECT p.id, m.name AS manufacturer, p.model_name, p.has_replaceable_cartridges FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id WHERE p.id = ?`).get(id) as Record<string, unknown> | undefined;
+  const printer = database.db.prepare(`SELECT p.id, m.name AS manufacturer, p.model_name, p.has_replaceable_cartridges, p.notes FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id WHERE p.id = ?`).get(id) as Record<string, unknown> | undefined;
   if (!printer) return undefined;
   const sources = database.db.prepare(`SELECT ds.name, ps.source_url, ps.verification_status, ps.region FROM printer_sources ps JOIN data_sources ds ON ds.id = ps.source_id WHERE ps.printer_id = ? ORDER BY ps.verification_status = 'verified' DESC, ps.region, ps.source_url`).all(id);
   const cartridges = database.db.prepare(`
-    SELECT c.id, cm.name AS manufacturer, c.part_number, c.kind, c.color, c.yield_pages,
-      cp.verification_status, cp.region, cp.source_url, cp.evidence, cp.verified_at
+    SELECT c.id, cp.id compatibility_id, cm.name AS manufacturer, c.part_number, c.kind, c.color, c.yield_pages, c.notes,
+      cp.verification_status, cp.region, cp.source_url, cp.evidence, cp.verified_at,
+      ds.name source_name, ds.source_category
     FROM compatibility cp JOIN cartridges c ON c.id = cp.cartridge_id JOIN manufacturers cm ON cm.id = c.manufacturer_id
+    JOIN data_sources ds ON ds.id=cp.source_id
     WHERE cp.printer_id = ? AND cp.is_genuine_oem = 1
     ORDER BY cp.verification_status = 'verified' DESC, c.normalized_part_number, cp.region
   `).all(id);

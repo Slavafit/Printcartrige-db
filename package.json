@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "main": "dist/src/desktop-main.js",
   "description": "Manufacturer-independent printer and ink/toner cartridge database",
   "scripts": {
     "build": "tsc -p tsconfig.json && vite build",
@@ -15,6 +16,8 @@
     "web:client": "vite",
     "web:start": "node dist/src/web-server.js",
     "mvp:seed": "pnpm build:server && node dist/src/mvp-seed.js",
+    "desktop:start": "pnpm build && electron .",
+    "desktop:package": "pnpm mvp:seed && pnpm build && node dist/src/prepare-desktop-runtime.js && electron-builder --win portable",
     "db": "tsx src/cli.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
@@ -28,7 +31,8 @@
     "csv-stringify": "^6.6.0",
     "fast-xml-parser": "^5.3.1",
     "react": "^19.3.0",
-    "react-dom": "^19.3.0"
+    "react-dom": "^19.3.0",
+    "xlsx": "^0.18.5"
   },
   "devDependencies": {
     "@types/better-sqlite3": "^7.6.13",
@@ -37,6 +41,8 @@
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "concurrently": "^10.0.5",
+    "electron": "^44.7.0",
+    "electron-builder": "^26.15.3",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "vite": "^8.3.4",
@@ -45,5 +51,17 @@
   "packageManager": "pnpm@11.3.0",
   "engines": {
     "node": ">=22"
+  },
+  "build": {
+    "appId": "com.printerdb.desktop",
+    "productName": "PrinterDB",
+    "artifactName": "PrinterDB-${version}.exe",
+    "directories": { "output": "release" },
+    "compression": "store",
+    "files": ["dist/src/**/*", "web-dist/**/*", "package.json"],
+    "extraResources": [{ "from": "mvp.sqlite", "to": "seed.sqlite" }, { "from": "desktop-runtime/node.exe", "to": "node.exe" }],
+    "asar": false,
+    "win": { "target": "portable" },
+    "npmRebuild": false
   }
 }

@@ -6,5 +6,7 @@ web-dist/
 *.sqlite-shm
 *.sqlite-wal
 coverage/
+release/
+desktop-runtime/
 .env
 .collector-state/
