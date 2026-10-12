@@ -20,6 +20,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 014 | PrinterDB Desktop MVP | Completed on `feature/desktop-mvp` | 013 |
 | 015 | Lightweight Windows launcher experiment | Completed on `experiment/lightweight-launcher` | 014 |
 | 016 | Multi-source import and PrinterTonerDB integration | Completed on `feature/multi-source-import` | 001, 004, 014 |
+| 017 | Mass printer database expansion with OpenPrinting | Completed on `feature/openprinting-import` | 001, 016 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
@@ -133,3 +134,11 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Delivered on `feature/multi-source-import`:** additive multi-source schema; independent source category, reliability and supply-origin fields; CSV/TSV/XLS/XLSX/JSON parser; preview/dry-run and 500-row transactional imports; per-relationship source history; conservative PrinterTonerDB adapter; one-time pre-migration backup; browser import preview; tests and attribution.
 
 **Acceptance:** third-party claims are never promoted to official verification, uncertain types/origins remain unknown, one relationship retains multiple sources, blank-supply rows preserve printers, repeated imports are idempotent, existing official evidence is preserved, and no third-party dataset enters the production database automatically.
+
+## Task 017 — Mass printer database expansion
+
+**Delivered on `feature/openprinting-import`:** offline OpenPrinting Foomatic XML adapter; HP/Epson/Canon priority selection and all-manufacturer option; make/model alias matching; dry-run statistics; idempotent printer, provenance, and characteristic imports; additive `printer_characteristics` storage; fixture tests; full-catalog verification; and documented research into openly licensed consumable datasets.
+
+**Verified snapshot:** OpenPrinting commit `76dd1e31354c189b2edd9ae8201285d622c89395` contains 6,023 printer XML files. The priority import yields 1,668 unique models (HP 569, Epson 896, Canon 203) from 1,673 valid records and consolidates five input duplicates. A repeat import creates no records. The importer creates no cartridges or compatibility edges and preserves official OEM evidence.
+
+**Acceptance:** malformed records are reported, source URLs/import time/origin and available characteristics are retained, spelling variants do not create duplicate models, dry-run is read-only, repeated import is idempotent, and driver metadata is never treated as consumable evidence. See [OpenPrinting import](docs/openprinting.md) and [consumable research](docs/consumable-data-research.md).

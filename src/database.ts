@@ -4,7 +4,7 @@ import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrint
 import { SCHEMA_SQL } from './schema.js';
 import type { ImportRecord } from './types.js';
 
-export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sources' | 'compatibility' | 'compatibility_sources' | 'printer_sources';
+export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sources' | 'compatibility' | 'compatibility_sources' | 'printer_sources' | 'printer_characteristics';
 
 const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   manufacturers: ['name'],
@@ -14,6 +14,7 @@ const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   compatibility: ['printer_id', 'cartridge_id', 'source_id', 'source_url', 'verification_status', 'region', 'is_genuine_oem', 'source_type', 'evidence_type', 'evidence', 'verified_at', 'reliability_status'],
   compatibility_sources: ['compatibility_id', 'source_id', 'source_reference', 'raw_printer_model', 'raw_supply_part_number', 'raw_description', 'verification_status', 'region', 'note', 'evidence_type', 'evidence', 'verified_at'],
   printer_sources: ['printer_id', 'source_id', 'source_url', 'verification_status', 'region'],
+  printer_characteristics: ['printer_id', 'source_id', 'source_reference', 'origin_type', 'raw_make', 'raw_model', 'source_record_id', 'mechanism', 'color_supported', 'max_resolution_x', 'max_resolution_y', 'languages_json', 'characteristics_json'],
 };
 
 export class CartridgeDatabase {

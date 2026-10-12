@@ -1,0 +1,6 @@
+<printer id="printer/Epson-Synthetic_Ink_200">
+  <make>Seiko Epson Corporation</make>
+  <model>Epson Synthetic Ink 200</model>
+  <mechanism><inkjet /><color /><resolution><dpi><x>5760</x><y>1440</y></dpi></resolution></mechanism>
+  <lang><escp /></lang>
+</printer>

@@ -6,12 +6,13 @@ import { CartridgeDatabase, type EntityName } from './database.js';
 import { exportFile } from './exporter.js';
 import { importFile } from './importer.js';
 import { importMultiSource, parseMultiSourceFile, parsePrinterTonerDbPair, type MultiSourceOptions, type ReliabilityStatus, type SourceCategory } from './multi-source-import.js';
+import { importOpenPrinting } from './openprinting-import.js';
 
 const argv = process.argv.slice(2);
 const dbFlag = argv.indexOf('--db');
 const dbPath = dbFlag >= 0 ? argv.splice(dbFlag, 2)[1] : 'printcartridge.sqlite';
 const command = argv.shift();
-const dryRunCommand = ['import:brother-sitemap', 'import:compatibility', 'import:multi-source', 'import:printertonerdb'].includes(command ?? '') && argv.includes('--dry-run');
+const dryRunCommand = ['import:brother-sitemap', 'import:compatibility', 'import:multi-source', 'import:printertonerdb', 'import:openprinting'].includes(command ?? '') && argv.includes('--dry-run');
 const useReadOnlyDatabase = dryRunCommand && dbPath !== ':memory:' && existsSync(dbPath);
 const database = useReadOnlyDatabase
   ? new CartridgeDatabase(dbPath, { readonly: true, fileMustExist: true })
@@ -70,6 +71,19 @@ try {
       if (result.errors.length) process.exitCode = 1;
       break;
     }
+    case 'import:openprinting': {
+      const path = required(argv.shift(), 'OpenPrinting repository or printer XML directory');
+      const manufacturers = flag(argv, '--manufacturers')?.split(',').map(value => value.trim()).filter(Boolean);
+      const result = importOpenPrinting(database, path, {
+        manufacturers,
+        allManufacturers: argv.includes('--all-manufacturers'),
+        sourceRevision: flag(argv, '--source-revision'),
+        region: flag(argv, '--region') ?? 'global',
+      }, dryRunCommand);
+      console.log(JSON.stringify(result, null, 2));
+      if (result.rejected.length) process.exitCode = 1;
+      break;
+    }
     case 'compatibility': {
       const printerFlag = argv.indexOf('--printer');
       const printer = printerFlag >= 0 ? required(argv[printerFlag + 1], 'printer model') : undefined;
@@ -100,7 +114,7 @@ try {
       break;
     }
     default:
-      console.log('Usage: pnpm db [--db file] <init|import|import:multi-source|import:printertonerdb|import:brother-sitemap|import:compatibility|compatibility|compatibility:stats|export|list|create|update|delete> ...');
+      console.log('Usage: pnpm db [--db file] <init|import|import:multi-source|import:printertonerdb|import:openprinting|import:brother-sitemap|import:compatibility|compatibility|compatibility:stats|export|list|create|update|delete> ...');
       process.exitCode = command ? 1 : 0;
   }
 } finally {

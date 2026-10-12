@@ -58,6 +58,7 @@ The repository currently uses:
 - an offline Brother España sitemap importer using the committed `data/sitemap.xml`;
 - a resumable, rate-limited Kyocera Europe collector that emits neutral JSON and CSV records;
 - a shared strict JSON compatibility importer for official OEM evidence.
+- an offline OpenPrinting Foomatic XML adapter for broad printer-model and capability coverage;
 - a local editable browser/desktop MVP using React/Vite and a Node HTTP API bound to `127.0.0.1`;
 - a portable Windows launcher with an embedded Node runtime and system tray controls.
 - an experimental self-contained .NET tray launcher that uses the system browser and preserves the Electron option.

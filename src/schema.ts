@@ -95,10 +95,32 @@ CREATE TABLE IF NOT EXISTS printer_sources (
   UNIQUE (printer_id, source_url, region)
 );
 
+-- Source-specific printer facts. They are deliberately separate from cartridge
+-- compatibility: driver support and printer capabilities never prove a supply edge.
+CREATE TABLE IF NOT EXISTS printer_characteristics (
+  id INTEGER PRIMARY KEY,
+  printer_id INTEGER NOT NULL REFERENCES printers(id) ON DELETE CASCADE,
+  source_id INTEGER NOT NULL REFERENCES data_sources(id) ON DELETE RESTRICT,
+  source_reference TEXT NOT NULL,
+  imported_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  origin_type TEXT NOT NULL CHECK (origin_type IN ('official', 'third_party', 'open_dataset', 'manual', 'unknown')),
+  raw_make TEXT NOT NULL,
+  raw_model TEXT NOT NULL,
+  source_record_id TEXT,
+  mechanism TEXT,
+  color_supported INTEGER CHECK (color_supported IS NULL OR color_supported IN (0, 1)),
+  max_resolution_x INTEGER,
+  max_resolution_y INTEGER,
+  languages_json TEXT NOT NULL DEFAULT '[]',
+  characteristics_json TEXT NOT NULL DEFAULT '{}',
+  UNIQUE (printer_id, source_id, source_reference)
+);
+
 CREATE INDEX IF NOT EXISTS idx_printers_manufacturer ON printers(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_cartridges_manufacturer ON cartridges(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_printer ON compatibility(printer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_cartridge ON compatibility(cartridge_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_sources_compatibility ON compatibility_sources(compatibility_id);
 CREATE INDEX IF NOT EXISTS idx_printer_sources_printer ON printer_sources(printer_id);
+CREATE INDEX IF NOT EXISTS idx_printer_characteristics_printer ON printer_characteristics(printer_id);
 `;

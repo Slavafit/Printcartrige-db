@@ -13,6 +13,8 @@ Official-source snapshots are stored under `data/official/`. Synthetic files und
 - [Official data-source assessment](docs/data-sources.md)
 - [Collector integration guide](docs/collectors.md)
 - [Multi-source import and PrinterTonerDB adapter](docs/multi-source-import.md)
+- [OpenPrinting Foomatic DB importer](docs/openprinting.md)
+- [Open consumable data research](docs/consumable-data-research.md)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 ## Setup
@@ -101,6 +103,17 @@ pnpm db list printers
 ```
 
 Universal multi-source import accepts CSV, TSV, XLS/XLSX and JSON and always supports a dry run. See [the complete format and PrinterTonerDB commands](docs/multi-source-import.md).
+
+## OpenPrinting printer catalog
+
+The offline OpenPrinting adapter expands the printer catalog without creating cartridge claims. It prioritizes HP, Epson, and Canon, retains source-specific characteristics and provenance, and is safe to repeat:
+
+```powershell
+pnpm.cmd db --db .\printerdb.sqlite import:openprinting C:\data\foomatic-db --dry-run --source-revision <commit-sha>
+pnpm.cmd db --db .\printerdb.sqlite import:openprinting C:\data\foomatic-db --source-revision <commit-sha>
+```
+
+See [the OpenPrinting guide](docs/openprinting.md) for source checkout, options, verified counts, trust limitations, and the explicit separation between driver metadata and cartridge compatibility.
 
 Imports are fully validated before a transaction starts. A failing row prevents all rows in that file from being written. JSON imports contain an array of objects. CSV headers use the same names as the JSON fields; see `tests/fixtures/` for the format.
 

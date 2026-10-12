@@ -1,0 +1,5 @@
+<printer id="printer/HP-Synthetic_Laser_100_duplicate">
+  <make>HP</make>
+  <model>Synthetic Laser 100</model>
+  <mechanism><laser /><resolution><dpi><x>600</x><y>600</y></dpi></resolution></mechanism>
+</printer>

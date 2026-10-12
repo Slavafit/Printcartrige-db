@@ -1,0 +1,5 @@
+<printer id="printer/Brother-Not_Prioritized">
+  <make>Brother</make>
+  <model>Not Prioritized</model>
+  <mechanism><laser /></mechanism>
+</printer>
