@@ -14,7 +14,7 @@ pnpm.cmd lightweight:package
 
 The result is `release-lightweight\PrinterDB\`. Copy the complete folder; `PrinterDB.exe` is not a standalone distribution by itself. The folder contains the self-contained .NET launcher, a Node 22 runtime, the bundled backend, the built web client, the native Node 22 `better-sqlite3` binary, and the seed database.
 
-Double-click `PrinterDB.exe`. Closing the browser does not stop PrinterDB. The tray menu provides **Abrir catalogo** and **Salir**. A second launch reopens the existing address instead of starting another server. The database and backups use the same `%APPDATA%\PrinterDB` directory as the Electron build.
+Double-click `PrinterDB.exe`. Closing the browser does not stop PrinterDB. The tray menu provides **Abrir catálogo** and **Salir**. A second launch reopens the existing address instead of starting another server. The database and backups use the same `%APPDATA%\PrinterDB` directory as the Electron build.
 
 ## Measured comparison
 
@@ -35,6 +35,6 @@ The lightweight folder is 250.8 MiB (50.8%) smaller than the measured Electron p
 
 ## Verification and limitations
 
-Verified on the build host: seed database creation; search API; manual create and edit; persistence across restart; automatic browser launch; no console window; second-instance rejection; operation with global Node.js and `dotnet` excluded from `PATH`; and graceful launcher/server shutdown. The diagnostic `--shutdown` path signals the same `ExitAsync` handler used by the tray **Выход** command.
+Verified on the build host: seed database creation; search API; manual create and edit; persistence across restart; automatic browser launch; no console window; second-instance rejection; operation with global Node.js and `dotnet` excluded from `PATH`; and graceful launcher/server shutdown. The diagnostic `--shutdown` path signals the same `ExitAsync` handler used by the tray **Salir** command.
 
 The package is unsigned and Windows can show a reputation warning. It is a folder distribution rather than one EXE. The tray uses the generic Windows application icon. Online collectors are not included as separately runnable scripts in the minimal folder; normal catalog search, editing, import/export, and backup are present. The Electron build remains the primary option until this experiment receives routine Windows 11 user testing.

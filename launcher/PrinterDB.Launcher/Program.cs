@@ -71,8 +71,8 @@ internal sealed class TrayApplicationContext : ApplicationContext
         shutdownEvent = new EventWaitHandle(false, EventResetMode.AutoReset, Program.ShutdownEventName);
         tray = new NotifyIcon
         {
-            Icon = SystemIcons.Application,
-            Text = "PrinterDB — запуск…",
+            Icon = Icon.ExtractAssociatedIcon(Environment.ProcessPath!) ?? SystemIcons.Application,
+            Text = "PrinterDB — iniciando…",
             Visible = true,
             ContextMenuStrip = BuildMenu()
         };
@@ -84,9 +84,9 @@ internal sealed class TrayApplicationContext : ApplicationContext
     private ContextMenuStrip BuildMenu()
     {
         var menu = new ContextMenuStrip();
-        menu.Items.Add("Открыть справочник", null, (_, _) => OpenCatalog());
+        menu.Items.Add("Abrir catálogo", null, (_, _) => OpenCatalog());
         menu.Items.Add(new ToolStripSeparator());
-        menu.Items.Add("Выход", null, async (_, _) => await ExitAsync());
+        menu.Items.Add("Salir", null, async (_, _) => await ExitAsync());
         return menu;
     }
 
@@ -114,15 +114,15 @@ internal sealed class TrayApplicationContext : ApplicationContext
             start.Environment["WEB_STATIC_ROOT"] = Path.Combine(appRoot, "web-dist");
             start.Environment["WEB_BACKUP_ROOT"] = Path.Combine(dataRoot, "backups");
             start.Environment["LAUNCHER_SHUTDOWN_TOKEN"] = token;
-            server = Process.Start(start) ?? throw new InvalidOperationException("Не удалось запустить встроенный Node.js");
+            server = Process.Start(start) ?? throw new InvalidOperationException("No se pudo iniciar el Node.js integrado");
             server.EnableRaisingEvents = true;
-            server.Exited += (_, _) => { if (!exiting) BeginInvokeExit("Локальный сервер неожиданно завершился."); };
+            server.Exited += (_, _) => { if (!exiting) BeginInvokeExit("El servidor local se cerró inesperadamente."); };
 
             for (var attempt = 0; attempt < 60; attempt++)
             {
                 try { if ((await http.GetAsync($"{url}/api/stats")).IsSuccessStatusCode) break; }
                 catch when (attempt < 59) { }
-                if (attempt == 59) throw new TimeoutException("Локальный сервер не ответил вовремя");
+                if (attempt == 59) throw new TimeoutException("El servidor local no respondió a tiempo");
                 await Task.Delay(100);
             }
             File.WriteAllText(statePath, JsonSerializer.Serialize(new Program.LauncherState(url, Environment.ProcessId)));
@@ -179,6 +179,6 @@ internal sealed class TrayApplicationContext : ApplicationContext
             try { var listener = new TcpListener(IPAddress.Loopback, port); listener.Start(); listener.Stop(); return port; }
             catch (SocketException) { }
         }
-        throw new InvalidOperationException("Нет свободного локального порта");
+        throw new InvalidOperationException("No hay ningún puerto local disponible");
     }
 }

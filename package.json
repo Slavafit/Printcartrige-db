@@ -63,7 +63,7 @@
     "files": ["dist/src/**/*", "web-dist/**/*", "package.json"],
     "extraResources": [{ "from": "mvp.sqlite", "to": "seed.sqlite" }, { "from": "desktop-runtime/node.exe", "to": "node.exe" }],
     "asar": false,
-    "win": { "target": "portable" },
+    "win": { "target": "portable", "icon": "launcher/PrinterDB.Launcher/printerdb.ico" },
     "npmRebuild": false
   }
 }

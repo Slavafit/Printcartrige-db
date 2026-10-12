@@ -32,4 +32,12 @@ pnpm.cmd db --db .\catalog.sqlite import:printertonerdb C:\data\PrinterTonerDB\P
 
 `Printers2Toners.csv` is primary. Rows with a blank toner model create only a printer. `Toner2Printers.csv` supplements relationships only when its identifiers match an exact, unambiguous normalized printer already known from the primary file or database. Ambiguous and unmatched identifiers are reported for review. All resulting claims are `third_party_reported`; descriptions are classified conservatively and unknown types/origins remain unknown.
 
+The repository currently includes manually supplied snapshots as `data/Printers2Toners.txt` and `data/Toner2Printers.txt`. They are never imported automatically. Validate the pair without writing a database:
+
+```powershell
+pnpm.cmd db --db :memory: import:printertonerdb .\data\Printers2Toners.txt .\data\Toner2Printers.txt --dry-run --region EU
+```
+
+After reviewing the report, import the same files into an explicit database by removing `--dry-run` and replacing `:memory:` with its path.
+
 Before the first multi-source schema migration, a one-time SQLite backup is created beside the database as `<database>.pre-multisource.sqlite`. Existing official verification is never downgraded.
