@@ -18,6 +18,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 012 | Incremental updates and collection history | Planned | 011 |
 | 013 | Read-only browser MVP | Completed on feature branch | 001–007 |
 | 014 | PrinterDB Desktop MVP | Completed on `feature/desktop-mvp` | 013 |
+| 015 | Lightweight Windows launcher experiment | Completed on `experiment/lightweight-launcher` | 014 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
@@ -119,3 +120,9 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Delivered on `feature/desktop-mvp`:** Windows portable EXE; tray open/exit commands; browser interface backed by a `127.0.0.1` server; search by printer, manufacturer and cartridge part number; ten-query local history; manual printer/cartridge/compatibility CRUD with notes and duplicate guards; CSV/XLSX preview and import; XLSX export; SQLite backup; persistent per-user database copied from the existing 469-printer seed on first launch.
 
 **Acceptance:** the packaged application requires no installed Node.js, does not start collectors, never promotes manual or third-party records to verified, keeps its database outside the EXE, preserves data across restarts, and passes typecheck, build and automated tests. The user request called this “Task 006”, but ID 006 was already assigned to the completed Xerox collector, so this roadmap records it as 014 without rewriting history.
+
+## Task 015 — Lightweight Windows launcher experiment
+
+**Delivered on `experiment/lightweight-launcher`:** self-contained .NET 8 WinForms tray launcher; embedded Node 22 runtime; bundled existing backend/frontend; Node-compatible native SQLite module; single-instance enforcement; browser opening; graceful authenticated local shutdown; repeatable PowerShell packaging; measured Electron comparison.
+
+**Acceptance:** Electron remains available, the alternative requires neither installed Node.js nor .NET, binds only to localhost, preserves the per-user database, supports existing catalog workflows, and has a measured size. See [experiment details](docs/lightweight-launcher.md).

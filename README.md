@@ -63,6 +63,17 @@ The first launch copies the committed 469-printer seed into `%APPDATA%\PrinterDB
 
 The interface matches printer models, manufacturers, and cartridge part numbers. It supports printer/cartridge/relationship CRUD, notes, deletion confirmation, the latest ten searches, CSV/XLSX preview/import, XLSX export, and SQLite backup. Manual and third-party records are always stored as `unverified`. The accepted flat spreadsheet columns are shown in the import dialog.
 
+### Lightweight launcher experiment
+
+Task 015 adds a non-Electron, self-contained .NET tray launcher while preserving the Electron build. It is distributed as a folder and opens the same interface in the system browser:
+
+```powershell
+pnpm.cmd lightweight:package
+.\release-lightweight\PrinterDB\PrinterDB.exe
+```
+
+The measured folder is 242.5 MiB versus 493.3 MiB for the Electron portable EXE. A .NET 8 SDK is needed only to build it; the published application includes its runtime. See [build instructions, measurements, and limitations](docs/lightweight-launcher.md).
+
 ### Running collectors from the browser
 
 The **Collectors & imports** section is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, and HP workflows; it cannot execute arbitrary commands.
