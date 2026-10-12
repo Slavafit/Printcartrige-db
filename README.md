@@ -12,6 +12,8 @@ Official-source snapshots are stored under `data/official/`. Synthetic files und
 - [Instructions for future Codex sessions](AGENTS.md)
 - [Official data-source assessment](docs/data-sources.md)
 - [Collector integration guide](docs/collectors.md)
+- [Multi-source import and PrinterTonerDB adapter](docs/multi-source-import.md)
+- [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 ## Setup
 
@@ -97,6 +99,8 @@ pnpm db export backup.json
 pnpm db export backup.csv
 pnpm db list printers
 ```
+
+Universal multi-source import accepts CSV, TSV, XLS/XLSX and JSON and always supports a dry run. See [the complete format and PrinterTonerDB commands](docs/multi-source-import.md).
 
 Imports are fully validated before a transaction starts. A failing row prevents all rows in that file from being written. JSON imports contain an array of objects. CSV headers use the same names as the JSON fields; see `tests/fixtures/` for the format.
 

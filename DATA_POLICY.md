@@ -4,9 +4,9 @@ This policy governs all manual records, imports, and manufacturer collectors.
 
 ## Allowed product types
 
-Only genuine OEM `ink` and `toner` cartridges are allowed in the cartridge and compatibility catalogs. The manufacturer-branded cartridge must be intended for the referenced printer and supported by retained evidence.
+The verified OEM cartridge view contains only genuine OEM `ink` and `toner`. The broader supply catalog may retain `drum`, `waste_toner`, `belt`, `other`, and `unknown` records from identified third-party or open datasets so they can be reviewed and explicitly distinguished rather than misclassified. Supply origin is always stored as `oem`, `compatible`, `remanufactured`, or `unknown`.
 
-Exclude drums, imaging units, waste toner containers, maintenance kits, fusers, transfer belts, ink bottles, refill kits, cleaners, printheads sold as service parts, paper, staples, accessories, compatible/remanufactured products, and other consumables. If type or OEM ownership is uncertain, do not classify the item as a cartridge.
+Exclude drums, imaging units, waste toner containers, maintenance kits, fusers, transfer belts, ink bottles, refill kits, cleaners, printheads sold as service parts, paper, staples, accessories, compatible/remanufactured products, and other consumables from the **verified OEM cartridge view**. If type or OEM ownership is uncertain, store `unknown`; never classify it as an OEM cartridge or present it as verified.
 
 ## Evidence and verification
 
