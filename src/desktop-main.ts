@@ -29,7 +29,7 @@ app.whenReady().then(async () => {
   tray = new Tray(trayIcon());
   tray.setToolTip('PrinterDB');
   tray.setContextMenu(Menu.buildFromTemplate([
-    { label: 'Abrir catalogo', click: () => void shell.openExternal(address) },
+    { label: 'Abrir catálogo', click: () => void shell.openExternal(address) },
     { type: 'separator' },
     { label: 'Salir', click: () => { quitting = true; app.quit(); } },
   ]));
@@ -46,7 +46,7 @@ app.on('before-quit', event => {
 });
 app.on('window-all-closed', () => undefined);
 
-async function freePort(start: number): Promise<number> { for (let port=start;port<start+20;port+=1) if(await available(port)) return port; throw new Error('Нет свободного локального порта'); }
+async function freePort(start: number): Promise<number> { for (let port=start;port<start+20;port+=1) if(await available(port)) return port; throw new Error('No hay ningún puerto local disponible'); }
 function available(port:number):Promise<boolean>{return new Promise(resolve=>{const probe=createServer();probe.once('error',()=>resolve(false));probe.listen(port,'127.0.0.1',()=>probe.close(()=>resolve(true)));});}
-async function waitForServer(url:string):Promise<void>{for(let attempt=0;attempt<50;attempt+=1){try{const response=await fetch(`${url}/api/stats`);if(response.ok)return;}catch{} await new Promise(resolve=>setTimeout(resolve,100));}throw new Error('Локальный сервер не запустился');}
-function trayIcon(){const svg='<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32"><rect width="32" height="32" rx="7" fill="#111827"/><path d="M8 9h16v8H8zm3 9h10v6H11z" fill="#fff"/><circle cx="22" cy="13" r="1.5" fill="#34d399"/></svg>';return nativeImage.createFromDataURL(`data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`).resize({width:16,height:16});}
+async function waitForServer(url:string):Promise<void>{for(let attempt=0;attempt<50;attempt+=1){try{const response=await fetch(`${url}/api/stats`);if(response.ok)return;}catch{} await new Promise(resolve=>setTimeout(resolve,100));}throw new Error('El servidor local no pudo iniciarse');}
+function trayIcon(){const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#173f2e"/><path d="M19 8h26v15H19z" fill="#fbfcf7"/><path d="M15 21h34a7 7 0 0 1 7 7v17H45v11H19V45H8V28a7 7 0 0 1 7-7Z" fill="#dff065"/><path d="M16 28h32v17h-3v-7H19v7h-3z" fill="#fbfcf7"/><path d="M23 42h18v10H23z" fill="#173f2e"/><circle cx="47" cy="30" r="3" fill="#173f2e"/></svg>';return nativeImage.createFromDataURL(`data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`).resize({width:16,height:16});}

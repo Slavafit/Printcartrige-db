@@ -59,7 +59,7 @@ pnpm.cmd install
 pnpm.cmd desktop:package
 ```
 
-Start `release\PrinterDB-0.1.0.exe` by double-clicking it. The application opens the default browser and remains active in the Windows system tray after the browser tab is closed. Use **Открыть справочник** to reopen it and **Выход** to stop the local server. If port 4173 is occupied, the launcher automatically selects the next available port. Collectors are never run automatically.
+Start `release\PrinterDB-0.1.0.exe` by double-clicking it. The application opens the default browser and remains active in the Windows system tray after the browser tab is closed. Use **Abrir catálogo** to reopen it and **Salir** to stop the local server. If port 4173 is occupied, the launcher automatically selects the next available port. Collectors are never run automatically.
 
 The first launch copies the committed 469-printer seed into `%APPDATA%\PrinterDB\printcartridge.sqlite`. Later launches retain and migrate that user copy; rebuilding or replacing the EXE does not overwrite it. Backups created in the interface are stored in `%APPDATA%\PrinterDB\backups`. The portable EXE includes its own Node runtime, so the target Windows 11 computer does not need Node.js or pnpm.
 
