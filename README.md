@@ -61,7 +61,7 @@ Start `release\PrinterDB-0.1.0.exe` by double-clicking it. The application opens
 
 The first launch copies the committed 469-printer seed into `%APPDATA%\PrinterDB\printcartridge.sqlite`. Later launches retain and migrate that user copy; rebuilding or replacing the EXE does not overwrite it. Backups created in the interface are stored in `%APPDATA%\PrinterDB\backups`. The portable EXE includes its own Node runtime, so the target Windows 11 computer does not need Node.js or pnpm.
 
-The interface matches printer models, manufacturers, and cartridge part numbers. It supports printer/cartridge/relationship CRUD, notes, deletion confirmation, the latest ten searches, CSV/XLSX preview/import, XLSX export, and SQLite backup. Manual and third-party records are always stored as `unverified`. The accepted flat spreadsheet columns are shown in the import dialog.
+The compact Spanish-language interface matches printer models, manufacturers, and cartridge part numbers. It supports printer/cartridge/relationship CRUD, notes, deletion confirmation, the latest ten searches, CSV/XLSX preview/import, XLSX export, and SQLite backup. Manual and third-party records are always stored as `unverified`. The import dialog includes a clearly marked synthetic CSV example with both cartridge and cartridge-free printer rows.
 
 ### Lightweight launcher experiment
 

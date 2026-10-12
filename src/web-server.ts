@@ -32,14 +32,14 @@ const server = createServer(async (request, response) => {
     if (url.pathname === '/api/compatibility' && request.method === 'POST') return json(response, 201, { id: createCompatibility(database, await body(request)) });
     if (url.pathname === '/api/import/preview' && request.method === 'POST') {
       const input = await body(request) as { fileName?: string; data?: string };
-      if (!input.data) return json(response, 400, { error: 'Файл не передан' });
+      if (!input.data) return json(response, 400, { error: 'No se ha proporcionado ningún archivo' });
       const preview = previewImport(database, parseImportFile(input.fileName || 'import.xlsx', Buffer.from(input.data, 'base64')));
       const id = crypto.randomUUID(); previews.set(id, preview); return json(response, 200, { id, ...preview, rows: preview.rows.slice(0, 50) });
     }
     if (url.pathname === '/api/import/commit' && request.method === 'POST') {
       const input = await body(request) as { id?: string; sourceName?: string; sourceCategory?: SourceCategory }; const preview = input.id ? previews.get(input.id) : undefined;
-      if (!preview) return json(response, 404, { error: 'Предварительный просмотр устарел' });
-      const result = commitImport(database, preview, { name: input.sourceName || 'Локальный импорт', category: input.sourceCategory || 'manual' }); previews.delete(input.id!); return json(response, 200, result);
+      if (!preview) return json(response, 404, { error: 'La vista previa ha caducado' });
+      const result = commitImport(database, preview, { name: input.sourceName || 'Importación local', category: input.sourceCategory || 'manual' }); previews.delete(input.id!); return json(response, 200, result);
     }
     if (url.pathname === '/api/export.xlsx' && request.method === 'GET') { const bytes=exportWorkbook(database); response.writeHead(200, {'content-type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','content-disposition':'attachment; filename="printerdb-export.xlsx"'}); return response.end(bytes); }
     if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target); return json(response,200,{file:name,path:target}); }
@@ -86,7 +86,7 @@ server.on('error', async (error: NodeJS.ErrnoException) => {
 server.listen(port, '127.0.0.1', () => { console.log(`Printcartridge web MVP: http://127.0.0.1:${port}`); console.log(`Database: ${resolve(databasePath)}`); });
 
 function json(response: ServerResponse, status: number, body: unknown): void { response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); response.end(JSON.stringify(body)); }
-async function body(request: import('node:http').IncomingMessage): Promise<Record<string, unknown>> { const chunks:Buffer[]=[]; let size=0; for await(const chunk of request){const value=Buffer.from(chunk);size+=value.length;if(size>25_000_000)throw new Error('Запрос слишком большой');chunks.push(value);} return JSON.parse(Buffer.concat(chunks).toString('utf8')||'{}') as Record<string,unknown>; }
+async function body(request: import('node:http').IncomingMessage): Promise<Record<string, unknown>> { const chunks:Buffer[]=[]; let size=0; for await(const chunk of request){const value=Buffer.from(chunk);size+=value.length;if(size>25_000_000)throw new Error('La solicitud es demasiado grande');chunks.push(value);} return JSON.parse(Buffer.concat(chunks).toString('utf8')||'{}') as Record<string,unknown>; }
 function serveStatic(response: ServerResponse, directory: string, pathname: string): void {
   const candidate = normalize(join(directory, pathname === '/' ? 'index.html' : pathname));
   const safePath = candidate.startsWith(directory) && existsSync(candidate) && statSync(candidate).isFile() ? candidate : join(directory, 'index.html');
