@@ -5,7 +5,8 @@ import { extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
 import { CollectorJobs } from './collector-jobs.js';
 import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
-import { backupDatabase, commitImport, createCartridge, createCompatibility, createPrinter, exportWorkbook, parseImportFile, previewImport, updateCartridge, updatePrinter, type ImportPreview, type SourceCategory } from './desktop-data.js';
+import { backupDatabase, createCartridge, createCompatibility, createPrinter, exportWorkbook, updateCartridge, updatePrinter } from './desktop-data.js';
+import { importMultiSource, parseMultiSourceBytes, type MultiSourceOptions, type ParsedMultiSource } from './multi-source-import.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
@@ -14,7 +15,7 @@ database.initialize();
 const collectorJobs = new CollectorJobs(database);
 const staticRoot = process.env.WEB_STATIC_ROOT || resolve('web-dist');
 const backupRoot = process.env.WEB_BACKUP_ROOT || resolve('backups');
-const previews = new Map<string, ImportPreview>();
+const previews = new Map<string, { parsed: ParsedMultiSource; options: MultiSourceOptions }>();
 let reusedExistingServer = false;
 let reuseHeartbeat: NodeJS.Timeout | undefined;
 const server = createServer(async (request, response) => {
@@ -31,15 +32,17 @@ const server = createServer(async (request, response) => {
     if (url.pathname === '/api/cartridges' && request.method === 'GET') return json(response, 200, database.db.prepare(`SELECT c.id,m.name manufacturer,c.part_number,c.kind FROM cartridges c JOIN manufacturers m ON m.id=c.manufacturer_id WHERE lower(m.name||' '||c.part_number) LIKE '%'||lower(?)||'%' ORDER BY c.normalized_part_number LIMIT 50`).all(url.searchParams.get('q') || ''));
     if (url.pathname === '/api/compatibility' && request.method === 'POST') return json(response, 201, { id: createCompatibility(database, await body(request)) });
     if (url.pathname === '/api/import/preview' && request.method === 'POST') {
-      const input = await body(request) as { fileName?: string; data?: string };
+      const input = await body(request) as { fileName?: string; data?: string; sourceName?: string; sourceCategory?: MultiSourceOptions['sourceCategory']; sourceReference?: string; region?: string };
       if (!input.data) return json(response, 400, { error: 'No se ha proporcionado ningún archivo' });
-      const preview = previewImport(database, parseImportFile(input.fileName || 'import.xlsx', Buffer.from(input.data, 'base64')));
-      const id = crypto.randomUUID(); previews.set(id, preview); return json(response, 200, { id, ...preview, rows: preview.rows.slice(0, 50) });
+      const parsed = parseMultiSourceBytes(input.fileName || 'import.xlsx', Buffer.from(input.data, 'base64'), database);
+      const options: MultiSourceOptions = { sourceName: input.sourceName || 'Importación local', sourceCategory: input.sourceCategory || 'unknown', sourceReference: input.sourceReference || `unknown://import/${input.fileName || 'file'}`, region: input.region || 'unknown' };
+      const report = importMultiSource(database, parsed, options, true);
+      const id = crypto.randomUUID(); previews.set(id, { parsed, options }); return json(response, 200, { id, ...report, rows: parsed.rows.slice(0, 50), mapping: parsed.mapping });
     }
     if (url.pathname === '/api/import/commit' && request.method === 'POST') {
-      const input = await body(request) as { id?: string; sourceName?: string; sourceCategory?: SourceCategory }; const preview = input.id ? previews.get(input.id) : undefined;
+      const input = await body(request) as { id?: string }; const preview = input.id ? previews.get(input.id) : undefined;
       if (!preview) return json(response, 404, { error: 'La vista previa ha caducado' });
-      const result = commitImport(database, preview, { name: input.sourceName || 'Importación local', category: input.sourceCategory || 'manual' }); previews.delete(input.id!); return json(response, 200, result);
+      const result = importMultiSource(database, preview.parsed, preview.options, false); previews.delete(input.id!); return json(response, 200, result);
     }
     if (url.pathname === '/api/export.xlsx' && request.method === 'GET') { const bytes=exportWorkbook(database); response.writeHead(200, {'content-type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','content-disposition':'attachment; filename="printerdb-export.xlsx"'}); return response.end(bytes); }
     if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target); return json(response,200,{file:name,path:target}); }

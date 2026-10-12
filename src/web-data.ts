@@ -19,7 +19,7 @@ export function searchPrinters(database: CartridgeDatabase, options: PrinterSear
   const manufacturer = options.manufacturer?.trim().toLowerCase() ?? '';
   return database.db.prepare(`
     SELECT p.id, m.name AS manufacturer, p.model_name, p.has_replaceable_cartridges,
-      COUNT(DISTINCT CASE WHEN cp.verification_status = 'verified' AND cp.is_genuine_oem = 1 THEN cp.cartridge_id END) AS verified_cartridge_count,
+      COUNT(DISTINCT CASE WHEN cp.reliability_status = 'official_verified' THEN cp.cartridge_id END) AS verified_cartridge_count,
       COUNT(DISTINCT cp.cartridge_id) AS cartridge_count
     FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
     LEFT JOIN compatibility cp ON cp.printer_id = p.id
@@ -56,13 +56,15 @@ export function printerDetails(database: CartridgeDatabase, id: number): unknown
   if (!printer) return undefined;
   const sources = database.db.prepare(`SELECT ds.name, ps.source_url, ps.verification_status, ps.region FROM printer_sources ps JOIN data_sources ds ON ds.id = ps.source_id WHERE ps.printer_id = ? ORDER BY ps.verification_status = 'verified' DESC, ps.region, ps.source_url`).all(id);
   const cartridges = database.db.prepare(`
-    SELECT c.id, cp.id compatibility_id, cm.name AS manufacturer, c.part_number, c.kind, c.color, c.yield_pages, c.notes,
-      cp.verification_status, cp.region, cp.source_url, cp.evidence, cp.verified_at,
+    SELECT c.id, cp.id compatibility_id, cm.name AS manufacturer, c.part_number, c.kind, c.origin_type, c.color, c.yield_pages, c.notes,
+      cp.verification_status, cp.reliability_status, cp.region, cp.source_url, cp.evidence, cp.verified_at,
       ds.name source_name, ds.source_category
     FROM compatibility cp JOIN cartridges c ON c.id = cp.cartridge_id JOIN manufacturers cm ON cm.id = c.manufacturer_id
     JOIN data_sources ds ON ds.id=cp.source_id
-    WHERE cp.printer_id = ? AND cp.is_genuine_oem = 1
-    ORDER BY cp.verification_status = 'verified' DESC, c.normalized_part_number, cp.region
-  `).all(id);
+    WHERE cp.printer_id = ?
+    ORDER BY cp.reliability_status = 'official_verified' DESC, c.normalized_part_number, cp.region
+  `).all(id) as Array<Record<string, unknown>>;
+  const sourceStatement = database.db.prepare(`SELECT ds.name,ds.source_category,cs.source_reference,cs.verification_status,cs.region,cs.raw_description,cs.note,cs.imported_at FROM compatibility_sources cs JOIN data_sources ds ON ds.id=cs.source_id WHERE cs.compatibility_id=? ORDER BY cs.verification_status='official_verified' DESC,cs.imported_at DESC`);
+  for (const cartridge of cartridges) cartridge.sources = sourceStatement.all(cartridge.compatibility_id);
   return { ...printer, sources, cartridges };
 }
