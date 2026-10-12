@@ -24,7 +24,7 @@ try {
   if ($LASTEXITCODE -ne 0) { throw 'dotnet publish failed' }
   Copy-Item (Join-Path $output 'launcher\PrinterDB.exe') (Join-Path $package 'PrinterDB.exe')
 
-  pnpm.cmd exec esbuild src\web-server.ts --bundle --platform=node --target=node22 --format=cjs --external:better-sqlite3 --outfile="$app\server.cjs"
+  pnpm.cmd dlx esbuild@0.28.2 src\web-server.ts --bundle --platform=node --target=node22 --format=cjs --external:better-sqlite3 --outfile="$app\server.cjs"
   if ($LASTEXITCODE -ne 0) { throw 'server bundle failed' }
   Copy-Item (Get-Command node.exe).Source (Join-Path $app 'node.exe')
   Copy-Item mvp.sqlite (Join-Path $app 'seed.sqlite')

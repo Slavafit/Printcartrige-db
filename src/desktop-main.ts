@@ -29,9 +29,9 @@ app.whenReady().then(async () => {
   tray = new Tray(trayIcon());
   tray.setToolTip('PrinterDB');
   tray.setContextMenu(Menu.buildFromTemplate([
-    { label: 'Открыть справочник', click: () => void shell.openExternal(address) },
+    { label: 'Abrir catalogo', click: () => void shell.openExternal(address) },
     { type: 'separator' },
-    { label: 'Выход', click: () => { quitting = true; app.quit(); } },
+    { label: 'Salir', click: () => { quitting = true; app.quit(); } },
   ]));
   tray.on('double-click', () => void shell.openExternal(address));
   void shell.openExternal(address);

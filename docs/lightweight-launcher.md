@@ -14,7 +14,7 @@ pnpm.cmd lightweight:package
 
 The result is `release-lightweight\PrinterDB\`. Copy the complete folder; `PrinterDB.exe` is not a standalone distribution by itself. The folder contains the self-contained .NET launcher, a Node 22 runtime, the bundled backend, the built web client, the native Node 22 `better-sqlite3` binary, and the seed database.
 
-Double-click `PrinterDB.exe`. Closing the browser does not stop PrinterDB. The tray menu provides **Открыть справочник** and **Выход**. A second launch reopens the existing address instead of starting another server. The database and backups use the same `%APPDATA%\PrinterDB` directory as the Electron build.
+Double-click `PrinterDB.exe`. Closing the browser does not stop PrinterDB. The tray menu provides **Abrir catalogo** and **Salir**. A second launch reopens the existing address instead of starting another server. The database and backups use the same `%APPDATA%\PrinterDB` directory as the Electron build.
 
 ## Measured comparison
 
