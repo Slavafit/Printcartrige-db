@@ -17,7 +17,7 @@
     "web:start": "node dist/src/web-server.js",
     "mvp:seed": "pnpm build:server && node dist/src/mvp-seed.js",
     "desktop:start": "pnpm build && electron .",
-    "desktop:package": "pnpm mvp:seed && pnpm build && electron-builder install-app-deps && electron-builder --win portable",
+    "desktop:package": "pnpm mvp:seed && pnpm build && node dist/src/prepare-desktop-runtime.js && electron-builder --win portable",
     "db": "tsx src/cli.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
@@ -57,10 +57,11 @@
     "productName": "PrinterDB",
     "artifactName": "PrinterDB-${version}.exe",
     "directories": { "output": "release" },
+    "compression": "store",
     "files": ["dist/src/**/*", "web-dist/**/*", "package.json"],
-    "extraResources": [{ "from": "mvp.sqlite", "to": "seed.sqlite" }],
-    "asarUnpack": ["**/*.node"],
+    "extraResources": [{ "from": "mvp.sqlite", "to": "seed.sqlite" }, { "from": "desktop-runtime/node.exe", "to": "node.exe" }],
+    "asar": false,
     "win": { "target": "portable" },
-    "npmRebuild": true
+    "npmRebuild": false
   }
 }

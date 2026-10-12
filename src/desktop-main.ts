@@ -1,5 +1,5 @@
 import { app, Menu, nativeImage, shell, Tray } from 'electron';
-import { fork, type ChildProcess } from 'node:child_process';
+import { spawn, type ChildProcess } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createServer } from 'node:net';
 import { join } from 'node:path';
@@ -22,7 +22,8 @@ app.whenReady().then(async () => {
   const port = await freePort(4173);
   address = `http://127.0.0.1:${port}`;
   const script = join(app.getAppPath(), 'dist', 'src', 'web-server.js');
-  server = fork(script, [], { execPath: process.execPath, env: { ...process.env, ELECTRON_RUN_AS_NODE: '1', PORT: String(port), WEB_DB_PATH: databasePath, WEB_STATIC_ROOT: join(app.getAppPath(), 'web-dist'), WEB_BACKUP_ROOT: join(dataDir, 'backups') }, stdio: 'ignore' });
+  const nodeExecutable = app.isPackaged ? join(process.resourcesPath, 'node.exe') : 'node';
+  server = spawn(nodeExecutable, [script], { env: { ...process.env, PORT: String(port), WEB_DB_PATH: databasePath, WEB_STATIC_ROOT: join(app.getAppPath(), 'web-dist'), WEB_BACKUP_ROOT: join(dataDir, 'backups') }, stdio: 'ignore', windowsHide: true });
   server.once('exit', () => { if (!quitting) app.quit(); });
   await waitForServer(address);
   tray = new Tray(trayIcon());

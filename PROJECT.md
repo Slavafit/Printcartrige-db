@@ -57,8 +57,9 @@ The repository currently uses:
 - an offline Brother España sitemap importer using the committed `data/sitemap.xml`;
 - a resumable, rate-limited Kyocera Europe collector that emits neutral JSON and CSV records;
 - a shared strict JSON compatibility importer for official OEM evidence.
-- a local read-only browser MVP using React/Vite and a small Node HTTP API over the same SQLite database.
+- a local editable browser/desktop MVP using React/Vite and a Node HTTP API bound to `127.0.0.1`;
+- a portable Windows launcher with an embedded Node runtime and system tray controls.
 
 Collectors are adapters and must emit the shared import representation rather than write directly to SQLite. See [docs/collectors.md](docs/collectors.md) and [docs/data-sources.md](docs/data-sources.md).
 
-There is currently no write API, authentication layer, hosted service, Docker setup, or PostgreSQL deployment. The browser MVP is intended for local catalog exploration only.
+There is no authentication layer, hosted service, Docker setup, or PostgreSQL deployment. The write API is local-only and intended for one Windows user.
