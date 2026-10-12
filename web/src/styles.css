@@ -6,7 +6,17 @@ button,.button{border:0;border-radius:10px;background:#172033;color:#fff;padding
 
 button,.button{--glow-x:50%;--glow-y:50%;position:relative;isolation:isolate;transition:transform .18s ease,box-shadow .18s ease}button::before,.button::before{content:'';position:absolute;z-index:-1;inset:-2px;border-radius:inherit;background:radial-gradient(46px circle at var(--glow-x) var(--glow-y),rgba(223,240,101,.95),rgba(91,203,145,.45) 42%,transparent 75%);opacity:0;transition:opacity .18s ease;pointer-events:none}button:hover:not(:disabled),.button:hover{transform:translateY(-1px);box-shadow:0 6px 18px rgba(23,63,46,.16)}button:hover:not(:disabled)::before,.button:hover::before{opacity:1}button:focus-visible,.button:focus-visible{outline:3px solid rgba(223,240,101,.85);outline-offset:3px}.import-example{margin:14px 0 18px;border:1px solid var(--line);border-radius:12px;background:#f5f7f2;padding:11px 13px}.import-example summary{cursor:pointer;font-weight:700;color:var(--green)}.import-example p{font-size:13px;line-height:1.45}.import-example pre{overflow:auto;padding:12px;border-radius:8px;background:#17211b;color:#e8f1eb;font:11px/1.55 Consolas,monospace;white-space:pre}@media(prefers-reduced-motion:reduce){button,.button,button::before,.button::before{transition:none}}
 
-/* The pointer halo belongs to the hovered button only and stays behind it. */
+/* External pointer halo: the masked centre never paints over the button. */
 button,.button{transition:transform .18s ease}
-button::before,.button::before{inset:-7px;filter:blur(4px)}
+button::before,.button::before{
+  inset:-6px;
+  padding:3px;
+  border-radius:calc(10px + 6px);
+  background:radial-gradient(60px circle at calc(var(--glow-x) + 6px) calc(var(--glow-y) + 6px),rgba(223,240,101,.98),rgba(91,203,145,.7) 48%,transparent 78%);
+  filter:none;
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  mask-composite:exclude;
+}
 button:hover:not(:disabled),.button:hover{box-shadow:none}
