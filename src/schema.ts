@@ -15,6 +15,7 @@ CREATE TABLE IF NOT EXISTS printers (
   model_name TEXT NOT NULL,
   normalized_model_name TEXT NOT NULL,
   has_replaceable_cartridges INTEGER NOT NULL DEFAULT 1 CHECK (has_replaceable_cartridges IN (0, 1)),
+  notes TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (manufacturer_id, normalized_model_name)
@@ -28,6 +29,7 @@ CREATE TABLE IF NOT EXISTS cartridges (
   kind TEXT NOT NULL CHECK (kind IN ('ink', 'toner')),
   color TEXT,
   yield_pages INTEGER CHECK (yield_pages IS NULL OR yield_pages > 0),
+  notes TEXT,
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   UNIQUE (manufacturer_id, normalized_part_number)
@@ -37,6 +39,7 @@ CREATE TABLE IF NOT EXISTS data_sources (
   id INTEGER PRIMARY KEY,
   name TEXT NOT NULL,
   url TEXT NOT NULL UNIQUE,
+  source_category TEXT NOT NULL DEFAULT 'official' CHECK (source_category IN ('official', 'third-party', 'manual')),
   created_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP,
   updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
 );

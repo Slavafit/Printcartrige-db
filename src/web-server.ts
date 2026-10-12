@@ -5,13 +5,16 @@ import { extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
 import { CollectorJobs } from './collector-jobs.js';
 import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
+import { backupDatabase, commitImport, createCartridge, createCompatibility, createPrinter, exportWorkbook, parseImportFile, previewImport, updateCartridge, updatePrinter, type ImportPreview, type SourceCategory } from './desktop-data.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
 const database = new CartridgeDatabase(databasePath);
 database.initialize();
 const collectorJobs = new CollectorJobs(database);
-const staticRoot = resolve('web-dist');
+const staticRoot = process.env.WEB_STATIC_ROOT || resolve('web-dist');
+const backupRoot = process.env.WEB_BACKUP_ROOT || resolve('backups');
+const previews = new Map<string, ImportPreview>();
 let reusedExistingServer = false;
 let reuseHeartbeat: NodeJS.Timeout | undefined;
 const server = createServer(async (request, response) => {
@@ -19,19 +22,43 @@ const server = createServer(async (request, response) => {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
     if (url.pathname === '/api/stats') return json(response, 200, webStats(database));
     if (url.pathname === '/api/manufacturers') return json(response, 200, webManufacturers(database));
+    if (url.pathname === '/api/printers' && request.method === 'POST') return json(response, 201, { id: createPrinter(database, await body(request)) });
+    if (url.pathname === '/api/cartridges' && request.method === 'POST') return json(response, 201, { id: createCartridge(database, await body(request)) });
+    if (url.pathname === '/api/cartridges' && request.method === 'GET') return json(response, 200, database.db.prepare(`SELECT c.id,m.name manufacturer,c.part_number,c.kind FROM cartridges c JOIN manufacturers m ON m.id=c.manufacturer_id WHERE lower(m.name||' '||c.part_number) LIKE '%'||lower(?)||'%' ORDER BY c.normalized_part_number LIMIT 50`).all(url.searchParams.get('q') || ''));
+    if (url.pathname === '/api/compatibility' && request.method === 'POST') return json(response, 201, { id: createCompatibility(database, await body(request)) });
+    if (url.pathname === '/api/import/preview' && request.method === 'POST') {
+      const input = await body(request) as { fileName?: string; data?: string };
+      if (!input.data) return json(response, 400, { error: 'Файл не передан' });
+      const preview = previewImport(database, parseImportFile(input.fileName || 'import.xlsx', Buffer.from(input.data, 'base64')));
+      const id = crypto.randomUUID(); previews.set(id, preview); return json(response, 200, { id, ...preview, rows: preview.rows.slice(0, 50) });
+    }
+    if (url.pathname === '/api/import/commit' && request.method === 'POST') {
+      const input = await body(request) as { id?: string; sourceName?: string; sourceCategory?: SourceCategory }; const preview = input.id ? previews.get(input.id) : undefined;
+      if (!preview) return json(response, 404, { error: 'Предварительный просмотр устарел' });
+      const result = commitImport(database, preview, { name: input.sourceName || 'Локальный импорт', category: input.sourceCategory || 'manual' }); previews.delete(input.id!); return json(response, 200, result);
+    }
+    if (url.pathname === '/api/export.xlsx' && request.method === 'GET') { const bytes=exportWorkbook(database); response.writeHead(200, {'content-type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','content-disposition':'attachment; filename="printerdb-export.xlsx"'}); return response.end(bytes); }
+    if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target); return json(response,200,{file:name,path:target}); }
     if (url.pathname === '/api/collectors' && request.method === 'GET') return json(response, 200, collectorJobs.list());
     const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import)$/);
     if (collectorAction && request.method === 'POST') {
       const result = collectorAction[2] === 'run' ? collectorJobs.start(collectorAction[1]) : await collectorJobs.import(collectorAction[1]);
       return json(response, 200, result);
     }
-    if (url.pathname === '/api/printers') {
+    if (url.pathname === '/api/printers' && request.method === 'GET') {
       const page = Math.max(Number(url.searchParams.get('page') || 1), 1);
       const pageSize = Math.min(Math.max(Number(url.searchParams.get('pageSize') || 10), 1), 100);
       return json(response, 200, searchPrinterPage(database, { query: url.searchParams.get('q') ?? undefined, manufacturer: url.searchParams.get('manufacturer') ?? undefined, limit: pageSize, offset: (page - 1) * pageSize }));
     }
     const detail = url.pathname.match(/^\/api\/printers\/(\d+)$/);
-    if (detail) { const result = printerDetails(database, Number(detail[1])); return json(response, result ? 200 : 404, result ?? { error: 'Printer not found' }); }
+    if (detail && request.method === 'GET') { const result = printerDetails(database, Number(detail[1])); return json(response, result ? 200 : 404, result ?? { error: 'Printer not found' }); }
+    if (detail && request.method === 'PUT') return json(response, updatePrinter(database, Number(detail[1]), await body(request)) ? 200 : 404, { ok: true });
+    if (detail && request.method === 'DELETE') return json(response, database.delete('printers', Number(detail[1])) ? 200 : 404, { ok: true });
+    const cartridge = url.pathname.match(/^\/api\/cartridges\/(\d+)$/);
+    if (cartridge && request.method === 'PUT') return json(response, updateCartridge(database, Number(cartridge[1]), await body(request)) ? 200 : 404, { ok: true });
+    if (cartridge && request.method === 'DELETE') return json(response, database.delete('cartridges', Number(cartridge[1])) ? 200 : 404, { ok: true });
+    const compatibility = url.pathname.match(/^\/api\/compatibility\/(\d+)$/);
+    if (compatibility && request.method === 'DELETE') return json(response, database.delete('compatibility', Number(compatibility[1])) ? 200 : 404, { ok: true });
     if (url.pathname.startsWith('/api/')) return json(response, 404, { error: 'Not found' });
     return serveStatic(response, staticRoot, url.pathname);
   } catch (error) { return json(response, 500, { error: error instanceof Error ? error.message : 'Unexpected error' }); }
@@ -55,6 +82,7 @@ server.on('error', async (error: NodeJS.ErrnoException) => {
 server.listen(port, '127.0.0.1', () => { console.log(`Printcartridge web MVP: http://127.0.0.1:${port}`); console.log(`Database: ${resolve(databasePath)}`); });
 
 function json(response: ServerResponse, status: number, body: unknown): void { response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); response.end(JSON.stringify(body)); }
+async function body(request: import('node:http').IncomingMessage): Promise<Record<string, unknown>> { const chunks:Buffer[]=[]; let size=0; for await(const chunk of request){const value=Buffer.from(chunk);size+=value.length;if(size>25_000_000)throw new Error('Запрос слишком большой');chunks.push(value);} return JSON.parse(Buffer.concat(chunks).toString('utf8')||'{}') as Record<string,unknown>; }
 function serveStatic(response: ServerResponse, directory: string, pathname: string): void {
   const candidate = normalize(join(directory, pathname === '/' ? 'index.html' : pathname));
   const safePath = candidate.startsWith(directory) && existsSync(candidate) && statSync(candidate).isFile() ? candidate : join(directory, 'index.html');

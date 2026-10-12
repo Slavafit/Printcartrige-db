@@ -7,9 +7,9 @@ export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sou
 
 const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   manufacturers: ['name'],
-  printers: ['manufacturer_id', 'model_name', 'has_replaceable_cartridges'],
-  cartridges: ['manufacturer_id', 'part_number', 'kind', 'color', 'yield_pages'],
-  data_sources: ['name', 'url'],
+  printers: ['manufacturer_id', 'model_name', 'has_replaceable_cartridges', 'notes'],
+  cartridges: ['manufacturer_id', 'part_number', 'kind', 'color', 'yield_pages', 'notes'],
+  data_sources: ['name', 'url', 'source_category'],
   compatibility: ['printer_id', 'cartridge_id', 'source_id', 'source_url', 'verification_status', 'region', 'is_genuine_oem', 'source_type', 'evidence_type', 'evidence', 'verified_at'],
   printer_sources: ['printer_id', 'source_id', 'source_url', 'verification_status', 'region'],
 };
@@ -28,6 +28,9 @@ export class CartridgeDatabase {
     this.addColumnIfMissing('compatibility', 'source_type', "TEXT CHECK (source_type IS NULL OR source_type IN ('official-manufacturer', 'other'))");
     this.addColumnIfMissing('compatibility', 'evidence_type', "TEXT CHECK (evidence_type IS NULL OR evidence_type IN ('explicit-compatibility', 'product-page-only', 'other'))");
     this.addColumnIfMissing('compatibility', 'evidence', 'TEXT');
+    this.addColumnIfMissing('printers', 'notes', 'TEXT');
+    this.addColumnIfMissing('cartridges', 'notes', 'TEXT');
+    this.addColumnIfMissing('data_sources', 'source_category', "TEXT NOT NULL DEFAULT 'official' CHECK (source_category IN ('official', 'third-party', 'manual'))");
   }
   close(): void { this.db.close(); }
 
