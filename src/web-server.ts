@@ -21,6 +21,10 @@ const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
     if (url.pathname === '/api/stats') return json(response, 200, webStats(database));
+    if (url.pathname === '/api/launcher/shutdown' && request.method === 'POST' && process.env.LAUNCHER_SHUTDOWN_TOKEN) {
+      if (request.headers['x-printerdb-token'] !== process.env.LAUNCHER_SHUTDOWN_TOKEN) return json(response, 403, { error: 'Forbidden' });
+      json(response, 200, { ok: true }); setImmediate(shutdown); return;
+    }
     if (url.pathname === '/api/manufacturers') return json(response, 200, webManufacturers(database));
     if (url.pathname === '/api/printers' && request.method === 'POST') return json(response, 201, { id: createPrinter(database, await body(request)) });
     if (url.pathname === '/api/cartridges' && request.method === 'POST') return json(response, 201, { id: createCartridge(database, await body(request)) });
@@ -90,7 +94,8 @@ function serveStatic(response: ServerResponse, directory: string, pathname: stri
   const types: Record<string, string> = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
   response.writeHead(200, { 'content-type': `${types[extname(safePath)] ?? 'application/octet-stream'}; charset=utf-8` }); createReadStream(safePath).pipe(response);
 }
-for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, () => {
+function shutdown(): void {
   if (reusedExistingServer) { if (reuseHeartbeat) clearInterval(reuseHeartbeat); database.close(); process.exit(0); }
   server.close(() => { database.close(); process.exit(0); });
-});
+}
+for (const signal of ['SIGINT', 'SIGTERM'] as const) process.on(signal, shutdown);

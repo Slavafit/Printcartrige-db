@@ -8,5 +8,10 @@ web-dist/
 coverage/
 release/
 desktop-runtime/
+.dotnet-sdk/
+.dotnet-install.ps1
+release-lightweight/
+launcher/**/bin/
+launcher/**/obj/
 .env
 .collector-state/

@@ -18,6 +18,7 @@
     "mvp:seed": "pnpm build:server && node dist/src/mvp-seed.js",
     "desktop:start": "pnpm build && electron .",
     "desktop:package": "pnpm mvp:seed && pnpm build && node dist/src/prepare-desktop-runtime.js && electron-builder --win portable",
+    "lightweight:package": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-lightweight.ps1",
     "db": "tsx src/cli.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",

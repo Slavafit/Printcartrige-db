@@ -59,6 +59,7 @@ The repository currently uses:
 - a shared strict JSON compatibility importer for official OEM evidence.
 - a local editable browser/desktop MVP using React/Vite and a Node HTTP API bound to `127.0.0.1`;
 - a portable Windows launcher with an embedded Node runtime and system tray controls.
+- an experimental self-contained .NET tray launcher that uses the system browser and preserves the Electron option.
 
 Collectors are adapters and must emit the shared import representation rather than write directly to SQLite. See [docs/collectors.md](docs/collectors.md) and [docs/data-sources.md](docs/data-sources.md).
 
