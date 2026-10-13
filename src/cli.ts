@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-import { existsSync, readFileSync } from 'node:fs';
+import { existsSync, readFileSync, writeFileSync } from 'node:fs';
+import { coverageReport, coverageDelta, type CoverageReport } from './coverage.js';
 import { importBrotherSitemap } from './brother-sitemap.js';
 import { importCompatibilityFile } from './compatibility-importer.js';
 import { CartridgeDatabase, type EntityName } from './database.js';
@@ -12,7 +13,7 @@ const dbFlag = argv.indexOf('--db');
 const dbPath = dbFlag >= 0 ? argv.splice(dbFlag, 2)[1] : 'printcartridge.sqlite';
 const command = argv.shift();
 const dryRunCommand = ['import:brother-sitemap', 'import:compatibility', 'import:multi-source', 'import:printertonerdb'].includes(command ?? '') && argv.includes('--dry-run');
-const useReadOnlyDatabase = dryRunCommand && dbPath !== ':memory:' && existsSync(dbPath);
+const useReadOnlyDatabase = command === 'coverage' || (dryRunCommand && dbPath !== ':memory:' && existsSync(dbPath));
 const database = useReadOnlyDatabase
   ? new CartridgeDatabase(dbPath, { readonly: true, fileMustExist: true })
   : new CartridgeDatabase(dryRunCommand ? ':memory:' : dbPath);
@@ -20,6 +21,16 @@ const database = useReadOnlyDatabase
 try {
   if (!useReadOnlyDatabase) database.initialize();
   switch (command) {
+    case 'coverage': {
+      const report = coverageReport(database);
+      const baseline = flag(argv, '--baseline');
+      const result = baseline ? { ...report, delta: coverageDelta(JSON.parse(readFileSync(baseline,'utf8').replace(/^\uFEFF/,'')) as CoverageReport,report) } : report;
+      const json = JSON.stringify(result,null,2);
+      const output = flag(argv,'--output');
+      if (output) writeFileSync(output,json+'\n',{flag:'wx'});
+      console.log(json);
+      break;
+    }
     case 'init':
       console.log(`Initialized ${dbPath}`);
       break;
@@ -61,6 +72,8 @@ try {
       const primary = required(argv.shift(), 'Printers2Toners.csv file');
       const reverse = required(argv.shift(), 'Toner2Printers.csv file');
       const parsed = parsePrinterTonerDbPair(readFileSync(primary), readFileSync(reverse), database);
+      const manufacturers = flag(argv,'--manufacturers')?.split(',').map(value=>value.trim().toUpperCase());
+      if (manufacturers) parsed.rows=parsed.rows.filter(row=>manufacturers.includes(row.printerManufacturer.toUpperCase()));
       const result = importMultiSource(database, parsed, {
         sourceName: 'PrinterTonerDB', sourceCategory: 'open_dataset',
         sourceReference: 'https://github.com/kurcz/PrinterTonerDB',
@@ -100,7 +113,7 @@ try {
       break;
     }
     default:
-      console.log('Usage: pnpm db [--db file] <init|import|import:multi-source|import:printertonerdb|import:brother-sitemap|import:compatibility|compatibility|compatibility:stats|export|list|create|update|delete> ...');
+      console.log('Usage: pnpm.cmd db [--db file] <init|import|import:multi-source|import:printertonerdb|import:brother-sitemap|import:compatibility|compatibility|compatibility:stats|coverage|export|list|create|update|delete> ...');
       process.exitCode = command ? 1 : 0;
   }
 } finally {
@@ -128,7 +141,7 @@ function importOptions(values: string[]): MultiSourceOptions {
     sourceName: flag(values, '--source-name') ?? 'Importación local',
     sourceCategory: (flag(values, '--source-category') ?? 'unknown') as SourceCategory,
     sourceReference: flag(values, '--source-reference') ?? 'unknown://local-import',
-    region: flag(values, '--region') ?? 'unknown',
+    region: flag(values, '--region'),
     reliabilityStatus: flag(values, '--reliability') as ReliabilityStatus | undefined,
   };
 }

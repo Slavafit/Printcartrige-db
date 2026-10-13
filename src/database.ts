@@ -28,9 +28,11 @@ export class CartridgeDatabase {
   }
 
   initialize(): void {
+    this.backupBeforeSupplyFormMigration();
     this.backupBeforeMultiSourceMigration();
     this.db.exec(SCHEMA_SQL);
     this.migrateMultiSourceSchema();
+    this.addColumnIfMissing('cartridges', 'supply_form', "TEXT CHECK (supply_form IS NULL OR supply_form = 'ink_bottle')");
     this.addColumnIfMissing('cartridges', 'yield_pages', 'INTEGER CHECK (yield_pages IS NULL OR yield_pages > 0)');
     this.addColumnIfMissing('compatibility', 'source_type', "TEXT CHECK (source_type IS NULL OR source_type IN ('official-manufacturer', 'other'))");
     this.addColumnIfMissing('compatibility', 'evidence_type', "TEXT CHECK (evidence_type IS NULL OR evidence_type IN ('explicit-compatibility', 'product-page-only', 'other'))");
@@ -40,6 +42,16 @@ export class CartridgeDatabase {
     this.db.exec('CREATE UNIQUE INDEX IF NOT EXISTS idx_compatibility_pair ON compatibility(printer_id, cartridge_id)');
   }
   close(): void { this.db.close(); }
+
+  private backupBeforeSupplyFormMigration(): void {
+    if (this.path === ':memory:' || !existsSync(this.path)) return;
+    const columns = this.db.prepare('PRAGMA table_info(cartridges)').all() as Array<{ name: string }>;
+    if (!columns.some(column => column.name === 'origin_type') || columns.some(column => column.name === 'supply_form')) return;
+    const target = `${this.path}.pre-supply-form.sqlite`;
+    if (existsSync(target)) throw new Error(`Migration backup already exists: ${target}; archive it before retrying`);
+    this.db.exec(`VACUUM INTO '${target.replaceAll("'", "''")}'`);
+    this.migrationBackupPath = target;
+  }
 
   private backupBeforeMultiSourceMigration(): void {
     if (this.path === ':memory:' || !existsSync(this.path)) return;
@@ -145,7 +157,7 @@ export class CartridgeDatabase {
     const where = printer ? 'WHERE p.normalized_model_name = @normalizedModel' : '';
     return this.db.prepare(`
       SELECT pm.name AS printer_manufacturer, p.model_name,
-        cm.name AS cartridge_manufacturer, c.part_number, c.kind, c.color, c.yield_pages,
+        cm.name AS cartridge_manufacturer, c.part_number, c.kind, c.supply_form, COALESCE(c.supply_form,c.kind) AS supply_type, c.color, c.yield_pages,
         CASE cp.reliability_status WHEN 'official_verified' THEN 'verified' ELSE 'unverified' END AS verification_status,
         cp.reliability_status, cp.region, cp.source_url, cp.source_type, cp.evidence_type, cp.evidence, cp.verified_at
       FROM compatibility cp
@@ -332,6 +344,7 @@ export class CartridgeDatabase {
       }
     }
 
+    const needsCompatibilityMigration = !(this.db.prepare('PRAGMA table_info(compatibility)').all() as Array<{ name: string }>).some(column => column.name === 'reliability_status');
     this.addColumnIfMissing('compatibility', 'reliability_status', "TEXT NOT NULL DEFAULT 'unverified' CHECK (reliability_status IN ('official_verified', 'third_party_reported', 'unverified', 'conflicting'))");
     this.db.exec(`
       CREATE TABLE IF NOT EXISTS compatibility_sources (
@@ -352,7 +365,7 @@ export class CartridgeDatabase {
         UNIQUE (compatibility_id, source_id, source_reference, region, raw_printer_model, raw_supply_part_number)
       );
     `);
-    this.db.transaction(() => {
+    if (needsCompatibilityMigration) this.db.transaction(() => {
       this.db.exec(`
         INSERT OR IGNORE INTO compatibility_sources
           (compatibility_id,source_id,source_reference,raw_printer_model,raw_supply_part_number,raw_description,verification_status,region,note,evidence_type,evidence,verified_at,imported_at)

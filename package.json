@@ -20,6 +20,7 @@
     "desktop:package": "pnpm mvp:seed && pnpm build && node dist/src/prepare-desktop-runtime.js && electron-builder --win portable",
     "lightweight:package": "powershell.exe -NoProfile -ExecutionPolicy Bypass -File scripts/build-lightweight.ps1",
     "db": "tsx src/cli.ts",
+    "task:018": "tsx src/task018.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
     "collect:xerox": "tsx src/collectors/xerox.ts",

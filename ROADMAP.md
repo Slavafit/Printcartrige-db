@@ -21,8 +21,12 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 015 | Lightweight Windows launcher experiment | Completed on `experiment/lightweight-launcher` | 014 |
 | 016 | Multi-source import and PrinterTonerDB integration | Completed on `feature/multi-source-import` | 001, 004, 014 |
 | 017 | OpenPrinting research, завершено исследование; пригодных данных совместимости не найдено.
-| 018 | Mass Consumables Compatibility Expansion, Planned.
+| 018 | Mass Consumables Compatibility Expansion | Implemented and validated on `codex/task-018-mass-compatibility`; additional-source growth limited | 016; 017 research |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
+
+## Task 018 — Results on feature branch (2026-10-13)
+
+Reproducible HP/Canon/Epson import into a separate SQLite: 30 → 2,785 printers with supplies; +12,650 third-party relationships; all 55 official relationships preserved. Coverage is unchanged relative to Task 016 importing the same pinned dataset; no additional acceptable bulk source was established. Delivered read-only coverage/delta CLI, bottle/color metadata with additive backup migration, source review diagnostics, atomic imports, and fixture tests. Zero rejected input rows, 10,609 warnings across the complete source files, zero new entities/edges/assertions on repeat. Typecheck, build and 114 tests pass. [Report and limitations](docs/task018-compatibility.md). Awaiting user merge; Tasks 019/020 were not started.
 
 ## Task 001 — Database foundation
 

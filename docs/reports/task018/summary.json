@@ -1,0 +1,202 @@
+{
+  "generatedAt": "2026-10-13T11:37:51.753Z",
+  "base": "Repository MVP seed; not a measurement of the user production database",
+  "source": {
+    "owner": "kurcz",
+    "license": "Apache-2.0",
+    "commit": "ded2df49109534569dabe7b6a39df7713ac44bfc",
+    "files": {
+      "data/Printers2Toners.txt": "b354e02f6be3e5904a3d15497f8030b2143c74c45ed2527f8fca3168e63847b8",
+      "data/Toner2Printers.txt": "d5a1890fb3681b2f1a7eb30623adffcead9e1d8838ed65ff84bab4f1ff4cbb9e"
+    }
+  },
+  "sourceRows": 39493,
+  "selectedRows": 25650,
+  "diagnosticsScope": "Both complete source files (all manufacturers)",
+  "before": {
+    "totalPrinters": 469,
+    "printersWithSupplies": 30,
+    "printersWithoutSupplies": 439,
+    "coveragePercent": 6.4,
+    "totalSupplies": 24,
+    "totalRelationships": 55,
+    "verifiedRelationships": 55,
+    "thirdPartyRelationships": 0,
+    "unknownOriginSupplies": 0
+  },
+  "after": {
+    "totalPrinters": 3605,
+    "printersWithSupplies": 2785,
+    "printersWithoutSupplies": 820,
+    "coveragePercent": 77.25,
+    "totalSupplies": 1431,
+    "totalRelationships": 12705,
+    "verifiedRelationships": 55,
+    "thirdPartyRelationships": 12650,
+    "unknownOriginSupplies": 858
+  },
+  "delta": {
+    "total": {
+      "totalPrinters": 3136,
+      "printersWithSupplies": 2755,
+      "printersWithoutSupplies": 381,
+      "coveragePercent": 70.85,
+      "totalSupplies": 1407,
+      "totalRelationships": 12650,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 12650,
+      "unknownOriginSupplies": 858
+    },
+    "manufacturers": {
+      "BROTHER": {
+        "totalPrinters": 0,
+        "printersWithSupplies": 0,
+        "printersWithoutSupplies": 0,
+        "coveragePercent": 0,
+        "totalSupplies": 0,
+        "totalRelationships": 0,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 0,
+        "unknownOriginSupplies": 0
+      },
+      "CANON": {
+        "totalPrinters": 769,
+        "printersWithSupplies": 602,
+        "printersWithoutSupplies": 167,
+        "coveragePercent": 78.28,
+        "totalSupplies": 391,
+        "totalRelationships": 2416,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 2416,
+        "unknownOriginSupplies": 326
+      },
+      "EPSON": {
+        "totalPrinters": 303,
+        "printersWithSupplies": 209,
+        "printersWithoutSupplies": 94,
+        "coveragePercent": 68.98,
+        "totalSupplies": 303,
+        "totalRelationships": 1228,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 1228,
+        "unknownOriginSupplies": 303
+      },
+      "HP": {
+        "totalPrinters": 2064,
+        "printersWithSupplies": 1944,
+        "printersWithoutSupplies": 120,
+        "coveragePercent": 94.19,
+        "totalSupplies": 713,
+        "totalRelationships": 9006,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 9006,
+        "unknownOriginSupplies": 229
+      },
+      "KYOCERA": {
+        "totalPrinters": 0,
+        "printersWithSupplies": 0,
+        "printersWithoutSupplies": 0,
+        "coveragePercent": 0,
+        "totalSupplies": 0,
+        "totalRelationships": 0,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 0,
+        "unknownOriginSupplies": 0
+      },
+      "XEROX": {
+        "totalPrinters": 0,
+        "printersWithSupplies": 0,
+        "printersWithoutSupplies": 0,
+        "coveragePercent": 0,
+        "totalSupplies": 0,
+        "totalRelationships": 0,
+        "verifiedRelationships": 0,
+        "thirdPartyRelationships": 0,
+        "unknownOriginSupplies": 0
+      }
+    }
+  },
+  "forms": [
+    {
+      "kind": "drum",
+      "supply_form": null,
+      "count": 18
+    },
+    {
+      "kind": "ink",
+      "supply_form": null,
+      "count": 711
+    },
+    {
+      "kind": "other",
+      "supply_form": null,
+      "count": 25
+    },
+    {
+      "kind": "other",
+      "supply_form": "ink_bottle",
+      "count": 25
+    },
+    {
+      "kind": "toner",
+      "supply_form": null,
+      "count": 386
+    },
+    {
+      "kind": "unknown",
+      "supply_form": null,
+      "count": 266
+    }
+  ],
+  "familyCoverage": {
+    "HP LaserJet": {
+      "totalPrinters": 571,
+      "printersWithSupplies": 469
+    },
+    "HP Color LaserJet": {
+      "totalPrinters": 165,
+      "printersWithSupplies": 133
+    },
+    "HP DeskJet": {
+      "totalPrinters": 410,
+      "printersWithSupplies": 410
+    },
+    "HP OfficeJet": {
+      "totalPrinters": 302,
+      "printersWithSupplies": 298
+    },
+    "CANON PIXMA": {
+      "totalPrinters": 169,
+      "printersWithSupplies": 159
+    },
+    "CANON i-SENSYS": {
+      "totalPrinters": 3,
+      "printersWithSupplies": 3
+    },
+    "CANON MAXIFY": {
+      "totalPrinters": 0,
+      "printersWithSupplies": 0
+    },
+    "EPSON WorkForce": {
+      "totalPrinters": 88,
+      "printersWithSupplies": 84
+    },
+    "EPSON Expression": {
+      "totalPrinters": 38,
+      "printersWithSupplies": 32
+    },
+    "EPSON EcoTank": {
+      "totalPrinters": 6,
+      "printersWithSupplies": 6
+    }
+  },
+  "rejected": 0,
+  "review": 10609,
+  "officialPreserved": true,
+  "integrity": [
+    {
+      "integrity_check": "ok"
+    }
+  ],
+  "foreignKeys": []
+}

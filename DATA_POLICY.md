@@ -48,3 +48,7 @@ Respect authentication, robots policies, rate limits, bot protection, network re
 - Treat conflicting verified evidence as a review case; retain provenance instead of silently choosing one claim.
 - Keep synthetic fixtures under test paths and never import them into a production database.
 - Collection and verification history should be additive and auditable as the project gains dedicated history support.
+
+## Task 018 supply metadata clarification
+
+The broad third-party supply catalog may store ink bottles as `supply_form = ink_bottle` with legacy `kind = other`. Bottles are not cartridges. This additive metadata does not broaden the strict official ink/toner validator or change Task 005's verified OEM requirements. Catalog manufacturer labels alone do not establish OEM origin; unknown origin remains `unknown`. Third-party/open-dataset imports cannot request `official_verified`. Source retrieval/import dates, original model/part spelling, region and source references are retained independently from official verification.
