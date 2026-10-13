@@ -25,4 +25,15 @@ describe('desktop and browser branding', () => {
     expect(styles).toContain('.hero{min-height:76px');
     expect(styles).toContain('.printer-title strong{color:#0f1f35');
   });
+
+  it('uses catalog manufacturers in a passive footer marquee and limits gradient motion to the divider', () => {
+    const app = readFileSync('web/src/App.tsx', 'utf8');
+    const effects = readFileSync('web/src/effects.css', 'utf8');
+    expect(app).toContain("get<Manufacturer[]>('/api/manufacturers')");
+    expect(app).toContain('ManufacturerMarquee');
+    expect(effects).toContain('@keyframes header-divider-flow');
+    expect(effects).toContain('@keyframes manufacturer-scroll');
+    expect(effects).toContain('pointer-events: none');
+    expect(effects).toContain('prefers-reduced-motion');
+  });
 });

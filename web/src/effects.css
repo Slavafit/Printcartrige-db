@@ -1,0 +1,73 @@
+/* Motion is intentionally limited to the header divider and the passive manufacturer strip. */
+.hero {
+  border-bottom: 0;
+}
+
+.hero::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #39c6ef, #4a72f5, #a55eea, #39c6ef);
+  background-size: 300% 100%;
+  animation: header-divider-flow 8s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes header-divider-flow {
+  to { background-position: 300% 0; }
+}
+
+.manufacturer-marquee {
+  overflow: hidden;
+  padding: 10px 0;
+  border-top: 1px solid #ccd7e5;
+  border-bottom: 1px solid #c7d2e0;
+  background: #dfe7f1;
+  color: #344b68;
+  pointer-events: none;
+  user-select: none;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: manufacturer-scroll 85s linear infinite;
+  will-change: transform;
+}
+
+.marquee-track > div {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.marquee-track span {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  padding-left: 24px;
+  white-space: nowrap;
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.marquee-track span::after {
+  content: '•';
+  color: #6aaed1;
+}
+
+@keyframes manufacturer-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero::after,
+  .marquee-track { animation: none; }
+  .marquee-track > div[aria-hidden='true'] { display: none; }
+  .manufacturer-marquee { overflow: auto; }
+}

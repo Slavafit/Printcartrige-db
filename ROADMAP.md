@@ -122,6 +122,8 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 **Interface refinement on `feature/catalog-ui-optimization`:** replaced the oversized promotional hero with a compact catalog header, moved search and actions above the fold, strengthened model-name contrast, added a clearer blue information hierarchy, and added a Spanish `?` usage guide with responsive behavior.
 
+**Catalog motion refinement on `feature/catalog-motion-and-data`:** limited the animated gradient to the header divider and added a slow, non-interactive footer strip populated from the manufacturers currently present in the catalog.
+
 **Acceptance:** the packaged application requires no installed Node.js, does not start collectors, never promotes manual or third-party records to verified, keeps its database outside the EXE, preserves data across restarts, and passes typecheck, build and automated tests. The user request called this “Task 006”, but ID 006 was already assigned to the completed Xerox collector, so this roadmap records it as 014 without rewriting history.
 
 ## Task 015 — Lightweight Windows launcher experiment
