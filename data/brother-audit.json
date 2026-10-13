@@ -1,0 +1,3662 @@
+{
+  "manufacturer": "Brother",
+  "generatedAt": "2026-10-13T17:22:04.472Z",
+  "summary": {
+    "printersTotal": 82,
+    "printersChecked": 75,
+    "suppliesTotal": 81,
+    "linksTotal": 521,
+    "crossReferenced": 453,
+    "candidates": 67,
+    "notCheckable": 1
+  },
+  "compatibility": [
+    {
+      "printerModel": "DCP-T780DW",
+      "supplyPartNumber": "BTD180BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt780dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180bk"
+    },
+    {
+      "printerModel": "DCP-T580DW",
+      "supplyPartNumber": "BTD180BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt580dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180bk"
+    },
+    {
+      "printerModel": "DCP-T780DW",
+      "supplyPartNumber": "BTD180C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt780dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180c"
+    },
+    {
+      "printerModel": "DCP-T580DW",
+      "supplyPartNumber": "BTD180C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt580dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180c"
+    },
+    {
+      "printerModel": "DCP-T780DW",
+      "supplyPartNumber": "BTD180M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt780dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180m"
+    },
+    {
+      "printerModel": "DCP-T580DW",
+      "supplyPartNumber": "BTD180M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt580dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180m"
+    },
+    {
+      "printerModel": "DCP-T780DW",
+      "supplyPartNumber": "BTD180Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt780dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180y"
+    },
+    {
+      "printerModel": "DCP-T580DW",
+      "supplyPartNumber": "BTD180Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt580dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180y"
+    },
+    {
+      "printerModel": "HL-S7000DN",
+      "supplyPartNumber": "HC05BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hls7000dn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/hc/hc05bk"
+    },
+    {
+      "printerModel": "MFC-885CW",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc885cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-3360CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc3360c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-350C",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp350c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-130C",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp130c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-540CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp540cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-680CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc680cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-5860CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5860cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-330C",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp330c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-465CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc465cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-560CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp560cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-440CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc440cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-240C",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc240c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-660CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc660cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-5460CN",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5460cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-770CW",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp770cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "DCP-750CW",
+      "supplyPartNumber": "LC1000BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp750cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk"
+    },
+    {
+      "printerModel": "MFC-885CW",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc885cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-350C",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp350c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-130C",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp130c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-540CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp540cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-680CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc680cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-5860CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5860cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-330C",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp330c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-465CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc465cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-560CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp560cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-440CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc440cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-240C",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc240c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-660CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc660cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-5460CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5460cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-770CW",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp770cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-3360CN",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc3360c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "DCP-750CW",
+      "supplyPartNumber": "LC1000C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp750cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c"
+    },
+    {
+      "printerModel": "MFC-5460CN",
+      "supplyPartNumber": "LC1000HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5460cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000hybk"
+    },
+    {
+      "printerModel": "MFC-5860CN",
+      "supplyPartNumber": "LC1000HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5860cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000hybk"
+    },
+    {
+      "printerModel": "MFC-885CW",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc885cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-3360CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc3360c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-350C",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp350c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-130C",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp130c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-540CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp540cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-680CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc680cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-5860CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5860cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-330C",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp330c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-465CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc465cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-560CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp560cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-440CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc440cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-240C",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc240c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-660CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc660cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-5460CN",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5460cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-770CW",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp770cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "DCP-750CW",
+      "supplyPartNumber": "LC1000M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp750cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m"
+    },
+    {
+      "printerModel": "MFC-885CW",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc885cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-3360CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc3360c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-350C",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp350c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-130C",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp130c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-540CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp540cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-680CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc680cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-5860CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5860cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-330C",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp330c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-465CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc465cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-560CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp560cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-440CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc440cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-240C",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc240c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-660CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc660cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-5460CN",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5460cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-770CW",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp770cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "DCP-750CW",
+      "supplyPartNumber": "LC1000Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp750cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bk"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100bkbp"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100C",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100c"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100cbp"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hybk"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hybk"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hybk"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hybk"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100HYBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hybk"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100HYC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyc"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100HYC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyc"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100HYC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyc"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100HYC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyc"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100HYC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyc"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100HYM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hym"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100HYM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hym"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100HYM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hym"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100HYM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hym"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100HYM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hym"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100HYY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyy"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100HYY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyy"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100HYY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyy"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100HYY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyy"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100HYY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100hyy"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100M",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100m"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100mbp"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-5490CN",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5490cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-5890CN",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5890cn",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100y"
+    },
+    {
+      "printerModel": "MFC-5895CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc5895cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-J615W",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj615w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-6890CDW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6890cdw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "DCP-J715W",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj715w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-490CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-6490CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc6490cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "DCP-6690CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp6690cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "DCP-585CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp585cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "DCP-385C",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp385c",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-990CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc990cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-795CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc795cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "MFC-790CW",
+      "supplyPartNumber": "LC1100YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc790cw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1100ybp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC121BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121bkbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC121CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121cbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC121MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121mbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC121YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc121ybp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1220BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220bkbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1220BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220bkbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1220BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220bkbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1220BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220bkbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1220BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220bkbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1220CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220cbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1220MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220mbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1220YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220ybp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1220YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220ybp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1220YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220ybp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1220YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220ybp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1220YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1220ybp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "MFC-J870DW",
+      "supplyPartNumber": "LC123BK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj870dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bk"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J870DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj870dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "MFC-J470DW",
+      "supplyPartNumber": "LC123BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj470dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123bkbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC123CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123cbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC123MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123mbp"
+    },
+    {
+      "printerModel": "DCP-J552DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj552dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "DCP-J132W",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj132w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "DCP-J152W",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj152w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J650DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj650dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "DCP-J752DW",
+      "supplyPartNumber": "LC123YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj752dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc123ybp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1240BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240bkbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1240CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240cbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1240MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240mbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "DCP-J525W",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj525w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J625DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj625dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J825DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj825dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "DCP-J725DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj725dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J430W",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj430w",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "DCP-J925DW",
+      "supplyPartNumber": "LC1240YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1240ybp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC125XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlcbp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC125XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlmbp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC125XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc125xlybp"
+    },
+    {
+      "printerModel": "MFC-J4510DW",
+      "supplyPartNumber": "LC127XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc127xlbk"
+    },
+    {
+      "printerModel": "DCP-J4110DW",
+      "supplyPartNumber": "LC127XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4110dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc127xlbk"
+    },
+    {
+      "printerModel": "MFC-J4410DW",
+      "supplyPartNumber": "LC127XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4410dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc127xlbk"
+    },
+    {
+      "printerModel": "MFC-J4710DW",
+      "supplyPartNumber": "LC127XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc127xlbk"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1280XLBKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1280XLBKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1280XLBKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1280XLBKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1280XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1280XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1280XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlcbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1280XLCBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlcbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1280XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1280XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1280XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlmbp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1280XLMBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlmbp"
+    },
+    {
+      "printerModel": "MFC-J5910DW",
+      "supplyPartNumber": "LC1280XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlybp"
+    },
+    {
+      "printerModel": "MFC-J6510DW",
+      "supplyPartNumber": "LC1280XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6510dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlybp"
+    },
+    {
+      "printerModel": "MFC-J6710DW",
+      "supplyPartNumber": "LC1280XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6710dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlybp"
+    },
+    {
+      "printerModel": "MFC-J6910DW",
+      "supplyPartNumber": "LC1280XLYBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6910dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1280xlybp"
+    },
+    {
+      "printerModel": "MFC-J6720DW",
+      "supplyPartNumber": "LC129XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc129xlbk"
+    },
+    {
+      "printerModel": "MFC-J6920DW",
+      "supplyPartNumber": "LC129XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6920dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc129xlbk"
+    },
+    {
+      "printerModel": "MFC-J6520DW",
+      "supplyPartNumber": "LC129XLBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6520dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc129xlbk"
+    },
+    {
+      "printerModel": "MFC-J6925DW",
+      "supplyPartNumber": "LC12EBK",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc12ebk"
+    },
+    {
+      "printerModel": "MFC-J6925DW",
+      "supplyPartNumber": "LC12EC",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc12ec"
+    },
+    {
+      "printerModel": "MFC-J6925DW",
+      "supplyPartNumber": "LC12EM",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc12em"
+    },
+    {
+      "printerModel": "MFC-J6925DW",
+      "supplyPartNumber": "LC12EY",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj6925dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc12ey"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC221BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221bkbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC221BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221bkbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC221BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221bkbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC221CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221cbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC221CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221cbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC221CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221cbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC221MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221mbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC221MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221mbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC221MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221mbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC221Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221y"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC221Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221y"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC221Y",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc221y"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC223BKBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223bkbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC223CBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223cbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC223MBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223mbp"
+    },
+    {
+      "printerModel": "MFC-J880DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj880dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J480DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj480dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "DCP-J562DW",
+      "supplyPartNumber": "LC223YBP",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj562dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc223ybp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC225XLCBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlcbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC225XLMBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlmbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC225XLYBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc225xlybp"
+    },
+    {
+      "printerModel": "MFC-J4620DW",
+      "supplyPartNumber": "LC227XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc227xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J4420DW",
+      "supplyPartNumber": "LC227XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj4420dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc227xlbkbp"
+    },
+    {
+      "printerModel": "DCP-J4120DW",
+      "supplyPartNumber": "LC227XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpj4120dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc227xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J5720DW",
+      "supplyPartNumber": "LC229XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5720dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc229xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J5620DW",
+      "supplyPartNumber": "LC229XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5620dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc229xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J5320DW",
+      "supplyPartNumber": "LC229XLBKBP",
+      "status": "candidate",
+      "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfcj5320dw",
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc229xlbkbp"
+    },
+    {
+      "printerModel": "MFC-J5920DW",
+      "supplyPartNumber": "LC22EBK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22ebk"
+    },
+    {
+      "printerModel": "MFC-J5920DW",
+      "supplyPartNumber": "LC22EC",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22ec"
+    },
+    {
+      "printerModel": "MFC-J5920DW",
+      "supplyPartNumber": "LC22EM",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22em"
+    },
+    {
+      "printerModel": "MFC-J5920DW",
+      "supplyPartNumber": "LC22EY",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22ey"
+    },
+    {
+      "printerModel": "DCP-J785DW",
+      "supplyPartNumber": "LC22UBKBP",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22ubkbp"
+    },
+    {
+      "printerModel": "DCP-J785DW",
+      "supplyPartNumber": "LC22UCBP",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22ucbp"
+    },
+    {
+      "printerModel": "DCP-J785DW",
+      "supplyPartNumber": "LC22UMBP",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22umbp"
+    },
+    {
+      "printerModel": "DCP-J785DW",
+      "supplyPartNumber": "LC22UYBP",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc22uybp"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3211BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211bk"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3211BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211bk"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3211BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211bk"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3211BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211bk"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3211BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211bk"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3211C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211c"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3211C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211c"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3211C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211c"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3211C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211c"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3211C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211c"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3211M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211m"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3211M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211m"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3211M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211m"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3211M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211m"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3211M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211m"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3211Y",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211y"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3211Y",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211y"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3211Y",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211y"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3211Y",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211y"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3211Y",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3211y"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3213BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213bk"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3213BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213bk"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3213BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213bk"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3213BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213bk"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3213BK",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213bk"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3213C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213c"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3213C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213c"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3213C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213c"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3213C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213c"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3213C",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213c"
+    },
+    {
+      "printerModel": "MFC-J895DW",
+      "supplyPartNumber": "LC3213M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213m"
+    },
+    {
+      "printerModel": "MFC-J497DW",
+      "supplyPartNumber": "LC3213M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213m"
+    },
+    {
+      "printerModel": "MFC-J890DW",
+      "supplyPartNumber": "LC3213M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213m"
+    },
+    {
+      "printerModel": "DCP-J572DW",
+      "supplyPartNumber": "LC3213M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213m"
+    },
+    {
+      "printerModel": "MFC-J491DW",
+      "supplyPartNumber": "LC3213M",
+      "status": "candidate",
+      "printerSourceUrl": null,
+      "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc3213m"
+    },
+    {
+      "printerModel": "HL-1210W",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hl1210w-bundle",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "HL-1212W",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hl1212w",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "DCP-1510",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp1510",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "MFC-1810",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc1810",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "HL-1110",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hl1110",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "MFC-1910W",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/mfc/mfc1910w",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "DCP-1612W",
+      "supplyPartNumber": "TN1050",
+      "status": "not-checkable",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp1612w-bundle",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    },
+    {
+      "printerModel": "DCP-1610W",
+      "supplyPartNumber": "TN1050",
+      "status": "cross-referenced",
+      "printerSourceUrl": "https://store.brother.es/devices/laser/dcp/dcp1610w",
+      "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn1050"
+    }
+  ]
+}

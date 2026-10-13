@@ -47,6 +47,7 @@
     "electron": "^44.7.0",
     "electron-builder": "^26.15.3",
     "esbuild": "^0.28.2",
+    "playwright": "^1.64.0",
     "tsx": "^4.20.6",
     "typescript": "^5.9.3",
     "vite": "^8.3.4",
@@ -60,12 +61,30 @@
     "appId": "com.printerdb.desktop",
     "productName": "PrinterDB",
     "artifactName": "PrinterDB-${version}.exe",
-    "directories": { "output": "release" },
+    "directories": {
+      "output": "release"
+    },
     "compression": "store",
-    "files": ["dist/src/**/*", "web-dist/**/*", "package.json"],
-    "extraResources": [{ "from": "mvp.sqlite", "to": "seed.sqlite" }, { "from": "desktop-runtime/node.exe", "to": "node.exe" }],
+    "files": [
+      "dist/src/**/*",
+      "web-dist/**/*",
+      "package.json"
+    ],
+    "extraResources": [
+      {
+        "from": "mvp.sqlite",
+        "to": "seed.sqlite"
+      },
+      {
+        "from": "desktop-runtime/node.exe",
+        "to": "node.exe"
+      }
+    ],
     "asar": false,
-    "win": { "target": "portable", "icon": "launcher/PrinterDB.Launcher/printerdb.ico" },
+    "win": {
+      "target": "portable",
+      "icon": "launcher/PrinterDB.Launcher/printerdb.ico"
+    },
     "npmRebuild": false
   }
 }

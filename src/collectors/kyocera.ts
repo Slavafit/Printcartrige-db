@@ -66,7 +66,7 @@ export async function collectKyocera(
   options: KyoceraCollectorOptions,
   fetcher: typeof fetch = fetch,
 ): Promise<CollectionSummary> {
-  const maxModels = Math.min(Math.max(options.maxModels ?? 200, 1), 200);
+  const maxModels = Math.min(Math.max(options.maxModels ?? 400, 1), 400);
   const delayMs = Math.max(options.delayMs ?? 500, 0);
   const retries = Math.max(options.retries ?? 3, 0);
   const previous = await readState(options.stateFile);
@@ -216,7 +216,7 @@ if (isMain) {
     jsonOutput: resolve(outputDirectory, 'kyocera-eu.json'),
     csvOutput: resolve(outputDirectory, 'kyocera-eu.csv'),
     stateFile: resolve(argument('--state', '.collector-state/kyocera-eu.json')),
-    maxModels: Number(argument('--max-models', '200')),
+    maxModels: Number(argument('--max-models', '400')),
     delayMs: Number(argument('--delay-ms', '500')),
     retries: Number(argument('--retries', '3')),
   });

@@ -15,3 +15,17 @@ launcher/**/bin/
 launcher/**/obj/
 .env
 .collector-state/
+# Brother HTML cache
+/data/brother-html/
+/data/brother-printer-html/
+/data/brother-review/
+/data/brother-parsed/
+/data/brother-collection-report.json
+
+# Temporary HTML
+/brother-test.html
+/data/official/xerox/raw/
+
+# Temporary Brother diagnostics
+/data/brother-verification-dcp-t780dw.json
+/data/brother-tn1050-compatibility.json
