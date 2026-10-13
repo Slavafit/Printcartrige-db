@@ -16,3 +16,18 @@
 14. Use Windows PowerShell-compatible commands with `pnpm.cmd` when documenting local execution.
 
 Data collection is the current priority. Do not add UI, authentication, hosting, or deployment work unless explicitly requested.
+
+## Task execution workflow
+
+1. Read `AGENTS.md` and the current task specification in `TASKS/` before starting implementation.
+2. Use `ROADMAP.md` to determine task dependencies and current status.
+3. Do not begin another task unless explicitly requested.
+4. For data collection tasks, validate that the source contains actual printer-to-consumable compatibility information before developing an importer.
+5. Reject driver-only catalogs and printer-only catalogs when the task requires consumable compatibility.
+6. Prioritize measurable growth in printers with linked consumables over raw printer counts.
+7. Keep third-party compatibility separate from officially verified OEM compatibility.
+8. Never infer compatibility solely from cartridge families, similar model names, or generated assumptions.
+9. Before importing, measure existing coverage; after importing, report the change.
+10. Document source URLs, usage restrictions, rejected records, and limitations.
+11. Never import data into the user's production SQLite automatically.
+12. At completion, update the relevant task specification and `ROADMAP.md`, then report results and wait for approval before merging.
