@@ -1,0 +1,20 @@
+import { readFileSync } from 'node:fs';
+import { expect, it } from 'vitest';
+import { readRecentSearches } from '../web/src/ui-state.js';
+
+const fixtures=JSON.parse(readFileSync('tests/fixtures/recent-searches-synthetic.json','utf8')) as Array<{name:string;value:string|null;expected:string[]}>;
+for(const fixture of fixtures) it(`recovers recent searches: ${fixture.name}`,()=>{
+  expect(readRecentSearches(fixture.value)).toEqual(fixture.expected);
+});
+it('keeps at most ten distinct recent searches',()=>{
+  expect(readRecentSearches(JSON.stringify(Array.from({length:15},(_,i)=>`Synthetic ${i}`)))).toHaveLength(10);
+});
+it('gives pagination explicit contrast and accessible previous/next controls',()=>{
+  const css=readFileSync('web/src/pagination.css','utf8');
+  const app=readFileSync('web/src/App.tsx','utf8');
+  expect(css).toContain('color: #18365f');
+  expect(css).not.toContain('var(--green)');
+  expect(css).toContain('.pagination .page-arrow { color: inherit;');
+  expect(app).toContain('aria-label="Página anterior"');
+  expect(app).toContain('aria-label="Página siguiente"');
+});

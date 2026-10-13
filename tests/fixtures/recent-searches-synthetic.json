@@ -1,0 +1,6 @@
+[
+  {"name":"missing storage","value":null,"expected":[]},
+  {"name":"corrupt storage","value":"{broken","expected":[]},
+  {"name":"wrong shape","value":"{\"query\":\"Synthetic\"}","expected":[]},
+  {"name":"mixed entries","value":"[null,42,\" Synthetic X \u0022,\"\",\"Synthetic X\",\"Synthetic Y\"]","expected":["Synthetic X","Synthetic Y"]}
+]
