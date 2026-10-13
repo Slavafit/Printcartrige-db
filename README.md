@@ -82,6 +82,8 @@ The measured folder is 242.5 MiB versus 493.3 MiB for the Electron portable EXE.
 
 The **Fuentes oficiales** section inside **Importar** is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, HP, and Lexmark workflows; it cannot execute arbitrary commands. Manual file import remains in a separate section of the same dialog.
 
+While an online collector is running, its card refreshes every two seconds and shows completed pages for the current batch, accumulated printer/cartridge/relationship counts, checkpoint errors, pending pages, and an estimated time remaining. The live log opens automatically. **Detener** terminates only the active whitelisted child process and preserves its resumable checkpoint; it never imports partial output automatically.
+
 1. Select **Collect** to start an online manufacturer adapter. Brother is offline-only and uses the committed sitemap.
 2. Keep the local server running and inspect the displayed status and collector log. Only one collector runs at a time.
 3. After a successful run and review, select **Import to MVP** to validate and import that collector's saved JSON into `mvp.sqlite`.

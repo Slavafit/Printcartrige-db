@@ -32,4 +32,7 @@ it('shows official collectors separately from manual file import',()=>{
   expect(app).toContain('Recopilar lote');
   expect(app).toContain('Importar resultado');
   expect(app).toContain('Importar un archivo');
+  expect(app).toContain('/stop`');
+  expect(app).toContain('collector-progress');
+  expect(app).toContain('Esperando el primer punto de control');
 });

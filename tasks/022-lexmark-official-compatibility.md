@@ -31,3 +31,5 @@ The current `robots.txt` advertises the Spanish sitemap and does not disallow pu
 ## Result
 
 Implemented on `feature/lexmark-official-compatibility`. The bounded live pilot discovered 631 printer pages and processed two of them, producing 2 printers, 40 OEM cartridges, and 56 explicit verified relationships. It reported zero request failures and zero manual-review items, and its JSON output passed strict dry import without changing the active database. Full-catalog collection remains intentionally pending and must be run in conservative resumable batches.
+
+The collector UI also reports live checkpoint progress, accumulated record counts, errors and estimated time remaining, opens the process log while running, and provides an explicit stop action that preserves the checkpoint for a later resume.
