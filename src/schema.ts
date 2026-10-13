@@ -28,6 +28,7 @@ CREATE TABLE IF NOT EXISTS cartridges (
   normalized_part_number TEXT NOT NULL,
   kind TEXT NOT NULL CHECK (kind IN ('ink', 'toner', 'drum', 'waste_toner', 'belt', 'other', 'unknown')),
   origin_type TEXT NOT NULL DEFAULT 'unknown' CHECK (origin_type IN ('oem', 'compatible', 'remanufactured', 'unknown')),
+  supply_form TEXT CHECK (supply_form IS NULL OR supply_form = 'ink_bottle'),
   color TEXT,
   yield_pages INTEGER CHECK (yield_pages IS NULL OR yield_pages > 0),
   notes TEXT,

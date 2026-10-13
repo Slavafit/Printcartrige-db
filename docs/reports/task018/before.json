@@ -1,0 +1,1840 @@
+{
+  "total": {
+    "totalPrinters": 469,
+    "printersWithSupplies": 30,
+    "printersWithoutSupplies": 439,
+    "coveragePercent": 6.4,
+    "totalSupplies": 24,
+    "totalRelationships": 55,
+    "verifiedRelationships": 55,
+    "thirdPartyRelationships": 0,
+    "unknownOriginSupplies": 0
+  },
+  "manufacturers": {
+    "BROTHER": {
+      "totalPrinters": 439,
+      "printersWithSupplies": 0,
+      "printersWithoutSupplies": 439,
+      "coveragePercent": 0,
+      "totalSupplies": 0,
+      "totalRelationships": 0,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "CANON": {
+      "totalPrinters": 0,
+      "printersWithSupplies": 0,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 0,
+      "totalSupplies": 0,
+      "totalRelationships": 0,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "EPSON": {
+      "totalPrinters": 0,
+      "printersWithSupplies": 0,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 0,
+      "totalSupplies": 0,
+      "totalRelationships": 0,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "HP": {
+      "totalPrinters": 0,
+      "printersWithSupplies": 0,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 0,
+      "totalSupplies": 0,
+      "totalRelationships": 0,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "KYOCERA": {
+      "totalPrinters": 28,
+      "printersWithSupplies": 28,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 100,
+      "totalSupplies": 12,
+      "totalRelationships": 31,
+      "verifiedRelationships": 31,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "XEROX": {
+      "totalPrinters": 2,
+      "printersWithSupplies": 2,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 100,
+      "totalSupplies": 12,
+      "totalRelationships": 24,
+      "verifiedRelationships": 24,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    }
+  },
+  "withoutSupplies": [
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-110C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-115C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-117C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-120C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-130C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-135C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-145C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-150C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-1510"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-1610W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-165C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-195C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-197C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-310CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-315CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-330C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-340CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-350C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-375CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-385C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-4020C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-540CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-560CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-585CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-6690CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7010"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7025"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7030"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7040"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7045N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7055"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7055W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7060D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-7065DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-750CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-770CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8020"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8025D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8040"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8045D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8060"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8065DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8070D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8085DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8110DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-8250DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9010CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9015CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9020CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9040CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9042CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9045CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9055CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-9270CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1050DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1100DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1200W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1200WE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J125"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1260W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1310DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J132W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1360DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J140W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J1460DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J152W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J315W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J4110DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J4120DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J515W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J525W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J552DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J562DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J572DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J715W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J725DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J752DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J785DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-J925DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L1640W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L1660W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2500D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2510D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2520DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2530DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2540DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2550DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2620DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2627DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2627DWXL"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L2660DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L3510CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L3520CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L3520CDWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L3550CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L3560CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L5500DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L5500DNLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L5510DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L6600DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L6600DWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L6600DWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L8400CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L8410CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-L8410CDWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-T580DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother DCP-T780DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1020E"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1360"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1560"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1820C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1840C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-1940CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-2440C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-2840"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-2845"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-2920"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-2940"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-8070P"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-8360P"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-T104"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother FAX-T106"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1110"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1210W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1212W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1240"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1250"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1270N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1430"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1440"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1450"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-1470N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2030"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2035"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2040"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2070N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2130"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2135W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2140"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2150N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2170W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2240"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2240D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2250DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2270DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2600CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-2700CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3040CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3070CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3140CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3150CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3170CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3260N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-3450CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4000CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4040CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4050CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4070CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4140CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4150CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4200CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-4570CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5030"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5040"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5050"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5140"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5150D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5170DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5240"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5250DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5270DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5280DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5340DL"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5350DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5370DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5440D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5450DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-5470DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-6050"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-6050D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-6050DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-6180DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-7050"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-7050N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-8050N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-J5113DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-J6000DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L1240W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2300D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2310D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2340DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2350DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2360DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2365DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2370DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2375DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2400DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2400DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2445DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L2865DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3210CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3220CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3220CWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3230CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3240CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L3270CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5000D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5100DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5100DNLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5200DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5200DWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5210DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L5210DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6210DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6300DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6300DWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6300DWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6400DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6400DWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6400DWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6410DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L6410DNT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8230CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8240CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8250CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8260CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8260CDWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8350CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8360CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8360CDWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8430CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L8570CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9200CDWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9300CDWTT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9310CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9310CDWMT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9310CDWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9310CDWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9430CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-L9470CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother HL-S7000DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-1810"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-1910W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-210C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-215C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-235C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-240C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-250C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-255CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-260C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-290C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-295CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3220C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3240C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3320CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3340CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3360C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3420C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-3820CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-410CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-425CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-440CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-465CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-4820C"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-490CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5440CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5460CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5490CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-580"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5840CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5860CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5890CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-5895CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-590"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-620CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-640CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-6490CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-660CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-680CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-6890CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7225N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7320"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7360N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7420"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7440N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7460DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7820N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7840W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-7860DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-790CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-795CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-820CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8220"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8370DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8420"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8460N"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8510DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8520DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8820D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8840D"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8840DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-885CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8860DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8870DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8880DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8890DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-890"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-8950DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9070"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9120CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9140CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9180"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9320CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9330CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9340CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9420CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9440CN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9450CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9460CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9660"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9760"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9840CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9880"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-990CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-9970CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J1010DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J1300DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J265W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J410"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J415W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J430W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4340DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4340DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4350DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4410DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4420DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4510DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4540DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4540DWXL"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4550DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4620DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J470DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J4710DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J480DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J491DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J497DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5010DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5110DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5115DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5320DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5330DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5340DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5340DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5620DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5720DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5730DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5740DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5910DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5920DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5930DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5945DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J5955DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J615W"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J625DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J650DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6510DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6520DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6530DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6540DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6540DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6710DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6720DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6760DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6910DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6920DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6925DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6930DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6935DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6940DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6945DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6955DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6959DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6960DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J6975DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J825DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J870DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J880DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J890DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-J895DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2700DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2710DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2720DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2730DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2740DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2750DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2800DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2827DWXL"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2860DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2860DWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2960DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L2980DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3710CW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3740CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3740CDWE"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3750CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3760CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L3770CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5700DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5700DNLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5710DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5710DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5750DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L5750DWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6710DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6800DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6800DWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6800DWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6900DW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6900DWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6900DWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6910DN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L6910DNT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8340CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8390CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8650CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8690CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8690CDWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8730CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8850CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8900CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8900CDWLT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L8970CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9550CDWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9570CDW"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9570CDWMT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9570CDWT"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9570CDWTZ"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9630CDN"
+    },
+    {
+      "manufacturer": "Brother",
+      "model": "Brother MFC-L9670CDN"
+    }
+  ],
+  "modelVariants": []
+}

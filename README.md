@@ -236,6 +236,14 @@ Printer-only imports may optionally provide all four of `sourceName`, `sourceUrl
 
 The committed ES snapshot contains **2 printer models, 12 genuine toner cartridges and 24 verified relationships**, with no request failures. Both JSON and CSV pass `pnpm.cmd db --db :memory: import:compatibility <file> --dry-run`. Use the strict `import:compatibility` command to preserve evidence. Coverage is a seed-derived VersaLink C400/C405 sample, not an exhaustive catalog. Existing databases are not modified automatically.
 
+## Task 018: reproducible compatibility expansion
+
+Run `pnpm.cmd task:018 --output-dir .collector-state/task018-reproduction` to build a **new test SQLite**, measure the repository seed, dry-run/import HP/Canon/Epson from the pinned PrinterTonerDB files, check reimport and save JSON reports. The directory must not exist. No production database is imported automatically.
+
+`pnpm.cmd db --db <existing.sqlite> coverage --output before.json` writes a read-only coverage report. Add `--baseline before.json --output after.json` after an explicitly requested import to measure deltas. Output files must be new. The existing `import:printertonerdb` command supports `--manufacturers HP,Canon,Epson` and `--dry-run`; omitting the manufacturer filter retains the all-manufacturer behavior.
+
+Measured seed coverage rises from 30 to 2,785 printers with supplies (+12,650 third-party relationships); 55 official edges stay unchanged. **Coverage is identical to Task 016 with the same files**, not a newly discovered dataset. Bottle metadata, source diagnostics and coverage tooling are new. See [full results, source restrictions, backups and manual import commands](docs/task018-compatibility.md).
+
 ## Current limitations
 
 - The local write API has no authentication and therefore binds only to `127.0.0.1`; the desktop MVP is single-user.

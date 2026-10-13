@@ -1,0 +1,44 @@
+{
+  "dry-run": {
+    "dryRun": true,
+    "processed": 25650,
+    "valid": 25650,
+    "rejected": 0,
+    "warnings": 10609,
+    "createdPrinters": 3136,
+    "createdSupplies": 1407,
+    "createdRelationships": 12650,
+    "addedSources": 25107,
+    "duplicatePrinters": 22514,
+    "duplicateSupplies": 23700,
+    "duplicateRelationships": 12457
+  },
+  "import": {
+    "dryRun": false,
+    "processed": 25650,
+    "valid": 25650,
+    "rejected": 0,
+    "warnings": 10609,
+    "createdPrinters": 3136,
+    "createdSupplies": 1407,
+    "createdRelationships": 12650,
+    "addedSources": 25107,
+    "duplicatePrinters": 22514,
+    "duplicateSupplies": 23700,
+    "duplicateRelationships": 12457
+  },
+  "repeat": {
+    "dryRun": false,
+    "processed": 25650,
+    "valid": 25650,
+    "rejected": 0,
+    "warnings": 10609,
+    "createdPrinters": 0,
+    "createdSupplies": 0,
+    "createdRelationships": 0,
+    "addedSources": 0,
+    "duplicatePrinters": 25650,
+    "duplicateSupplies": 25107,
+    "duplicateRelationships": 25107
+  }
+}

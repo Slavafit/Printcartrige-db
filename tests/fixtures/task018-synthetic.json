@@ -1,0 +1,11 @@
+[
+  {"printerManufacturer":"HP","printerModel":"Synthetic LaserJet X-18","supplyManufacturer":"HP","supplyPartNumber":"SYN-18#EU","supplyType":"toner","supplyOrigin":"unknown","region":"EU","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"hp","printerModel":" synthetic laserjet x 18 ","supplyManufacturer":"hp","supplyPartNumber":"syn18#eu","supplyType":"toner","region":"EU","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"HP","printerModel":"Synthetic LaserJet X-18","supplyManufacturer":"HP","supplyPartNumber":"SYN-18#US","supplyType":"toner","region":"US","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"Canon","printerModel":"Synthetic PIXMA X-18EU","supplyManufacturer":"Canon","supplyPartNumber":"SYN-C18","description":"Canon Black Ink Cartridge","region":"EU","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"CANON","printerModel":"synthetic pixma x18eu","supplyManufacturer":"Canon","supplyPartNumber":"SYN C18","supplyType":"ink","region":"US","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"Canon","printerModel":"Synthetic PIXMA X-18US","supplyManufacturer":"Canon","supplyPartNumber":"SYN-C18","supplyType":"ink","region":"US","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"Epson","printerModel":"Synthetic EcoTank X-18","supplyManufacturer":"Epson","supplyPartNumber":"SYN-E18","description":"Epson Cyan Ink Bottle","region":"unknown","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"EPSON","printerModel":" synthetic ecotank x 18 ","supplyManufacturer":"Epson","supplyPartNumber":"SYNE18","supplyType":"ink_bottle","reliabilityStatus":"third_party_reported"},
+  {"printerManufacturer":"Epson","printerModel":"Synthetic Unknown X-19","supplyPartNumber":"SYN-A / SYN-B","description":"Ambiguous alternatives"}
+]

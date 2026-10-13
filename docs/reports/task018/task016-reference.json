@@ -1,0 +1,97 @@
+{
+  "implementationCommit": "e8f1be5",
+  "scope": "Same seed, same pinned files, HP/Canon/Epson only; original Task 016 importer extracted with git show",
+  "total": {
+    "totalPrinters": 3605,
+    "printersWithSupplies": 2785,
+    "printersWithoutSupplies": 820,
+    "coveragePercent": 77.25,
+    "totalSupplies": 1431,
+    "totalRelationships": 12705,
+    "verifiedRelationships": 55,
+    "thirdPartyRelationships": 12650,
+    "unknownOriginSupplies": 858
+  },
+  "manufacturers": {
+    "BROTHER": {
+      "totalPrinters": 439,
+      "printersWithSupplies": 0,
+      "printersWithoutSupplies": 439,
+      "coveragePercent": 0,
+      "totalSupplies": 0,
+      "totalRelationships": 0,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "CANON": {
+      "totalPrinters": 769,
+      "printersWithSupplies": 602,
+      "printersWithoutSupplies": 167,
+      "coveragePercent": 78.28,
+      "totalSupplies": 391,
+      "totalRelationships": 2416,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 2416,
+      "unknownOriginSupplies": 326
+    },
+    "EPSON": {
+      "totalPrinters": 303,
+      "printersWithSupplies": 209,
+      "printersWithoutSupplies": 94,
+      "coveragePercent": 68.98,
+      "totalSupplies": 303,
+      "totalRelationships": 1228,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 1228,
+      "unknownOriginSupplies": 303
+    },
+    "HP": {
+      "totalPrinters": 2064,
+      "printersWithSupplies": 1944,
+      "printersWithoutSupplies": 120,
+      "coveragePercent": 94.19,
+      "totalSupplies": 713,
+      "totalRelationships": 9006,
+      "verifiedRelationships": 0,
+      "thirdPartyRelationships": 9006,
+      "unknownOriginSupplies": 229
+    },
+    "KYOCERA": {
+      "totalPrinters": 28,
+      "printersWithSupplies": 28,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 100,
+      "totalSupplies": 12,
+      "totalRelationships": 31,
+      "verifiedRelationships": 31,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    },
+    "XEROX": {
+      "totalPrinters": 2,
+      "printersWithSupplies": 2,
+      "printersWithoutSupplies": 0,
+      "coveragePercent": 100,
+      "totalSupplies": 12,
+      "totalRelationships": 24,
+      "verifiedRelationships": 24,
+      "thirdPartyRelationships": 0,
+      "unknownOriginSupplies": 0
+    }
+  },
+  "imported": {
+    "dryRun": false,
+    "processed": 13192,
+    "valid": 13192,
+    "rejected": 0,
+    "warnings": 10685,
+    "createdPrinters": 3136,
+    "createdSupplies": 1407,
+    "createdRelationships": 12650,
+    "addedSources": 12650,
+    "duplicatePrinters": 10056,
+    "duplicateSupplies": 11243,
+    "duplicateRelationships": 0
+  }
+}
