@@ -80,7 +80,7 @@ The measured folder is 242.5 MiB versus 493.3 MiB for the Electron portable EXE.
 
 ### Running collectors from the browser
 
-The **Collectors & imports** section is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, and HP workflows; it cannot execute arbitrary commands.
+The **Fuentes oficiales** section inside **Importar** is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, HP, and Lexmark workflows; it cannot execute arbitrary commands. Manual file import remains in a separate section of the same dialog.
 
 1. Select **Collect** to start an online manufacturer adapter. Brother is offline-only and uses the committed sitemap.
 2. Keep the local server running and inspect the displayed status and collector log. Only one collector runs at a time.
@@ -88,6 +88,8 @@ The **Collectors & imports** section is available only through the locally bound
 4. Search and statistics update from the imported database. Repeated imports remain idempotent.
 
 Collectors retain their existing rate limits, retries, resumable state, robots/access rules, exclusions, and manual-review behavior. A successful process does not imply complete manufacturer coverage. Epson may defer work outside its permitted access window, and inaccessible or ambiguous evidence is never promoted to verified compatibility.
+
+Lexmark España runs in resumable 50-page batches from the official sitemap. Build the server before a CLI run, then use `node dist/src/collectors/lexmark.js --output-dir data/official/lexmark --state .collector-state/lexmark.json --max-pages 50 --delay-ms 10000 --retries 2`. Review and dry-run `data/official/lexmark/lexmark.json` before choosing **Importar resultado**. See [the Lexmark source report](docs/lexmark.md).
 
 ## Commands
 

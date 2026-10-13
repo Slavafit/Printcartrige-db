@@ -28,3 +28,5 @@ Keep retries, rate limits, cache policy, robots/access rules, and provenance han
 The [Epson adapter](epson.md) implements acquisition and conservative quarantine. It has no automatic exact-SKU compatibility mapping yet. Its fixture tests are synthetic semantic reconstructions; a live raw-HTML verification and official exact-SKU evidence are required before claiming production coverage.
 
 The [Xerox adapter](xerox.md) cross-checks explicit visible compatibility against JSON-LD, filters Xerox-for-Xerox cartridges, retains source snapshots and emits JSON/CSV for the strict `import:compatibility` pipeline. Shared robots-policy parsing lives in `src/collectors/access-policy.ts`; Epson's existing public helper exports remain compatible.
+
+The [Lexmark España adapter](lexmark.md) discovers official printer pages from the advertised sitemap and reads only their Return Program and standard cartridge tables. It retains exact per-printer evidence, reports the separate other-supplies category as excluded, and runs in resumable UI batches without importing automatically.

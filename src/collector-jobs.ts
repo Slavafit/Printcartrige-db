@@ -5,7 +5,7 @@ import { importBrotherSitemap } from './brother-sitemap.js';
 import { importCompatibilityFile } from './compatibility-importer.js';
 import type { CartridgeDatabase } from './database.js';
 
-export type CollectorId = 'brother' | 'kyocera' | 'epson' | 'xerox' | 'hp';
+export type CollectorId = 'brother' | 'kyocera' | 'epson' | 'xerox' | 'hp' | 'lexmark';
 type JobStatus = 'idle' | 'running' | 'succeeded' | 'failed' | 'stopped';
 interface Definition { id: CollectorId; name: string; description: string; script?: string; args?: string[]; output: string; importType: 'sitemap' | 'compatibility' }
 export interface CollectorState extends Definition { status: JobStatus; startedAt?: string; finishedAt?: string; exitCode?: number; log: string; outputExists: boolean }
@@ -16,6 +16,7 @@ export const COLLECTOR_DEFINITIONS: readonly Definition[] = [
   { id: 'epson', name: 'Epson Europe', description: 'Respects robots rules and the official access window; uncertain ranges stay in review.', script: 'dist/src/collectors/epson.js', args: ['--max-pages', '20', '--delay-ms', '10000', '--retries', '2'], output: 'data/official/epson/epson-eu.json', importType: 'compatibility' },
   { id: 'xerox', name: 'Xerox España', description: 'Official genuine-supplies pages with exact visible and structured compatibility.', script: 'dist/src/collectors/xerox.js', args: ['--max-pages', '50', '--delay-ms', '10000', '--retries', '2'], output: 'data/official/xerox/xerox.json', importType: 'compatibility' },
   { id: 'hp', name: 'HP España', description: 'Official supply pages; family-level or ambiguous printer matches remain unverified.', script: 'dist/src/collectors/hp.js', args: ['--max-pages', '25', '--delay-ms', '10000', '--retries', '2'], output: 'data/official/hp/hp.json', importType: 'compatibility' },
+  { id: 'lexmark', name: 'Lexmark España', description: 'Official printer pages with explicit cartridge part numbers, colour and yield; resumable batches.', script: 'dist/src/collectors/lexmark.js', args: ['--max-pages', '50', '--delay-ms', '10000', '--retries', '2'], output: 'data/official/lexmark/lexmark.json', importType: 'compatibility' },
 ] as const;
 
 export class CollectorJobs {

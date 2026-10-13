@@ -25,3 +25,11 @@ it('offers validated database restore and closes the add dialog with Escape',()=
   expect(app).toContain("if(event.key==='Escape')close()");
   expect(app).toContain('useCloseOnEscape(close)');
 });
+it('shows official collectors separately from manual file import',()=>{
+  const app=readFileSync('web/src/App.tsx','utf8');
+  expect(app).toContain('Fuentes oficiales');
+  expect(app).toContain("get<CollectorState[]>('/api/collectors')");
+  expect(app).toContain('Recopilar lote');
+  expect(app).toContain('Importar resultado');
+  expect(app).toContain('Importar un archivo');
+});

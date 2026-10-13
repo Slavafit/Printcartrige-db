@@ -23,6 +23,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 017 | OpenPrinting research, завершено исследование; пригодных данных совместимости не найдено.
 | 018 | Mass Consumables Compatibility Expansion | Implemented and validated on `codex/task-018-mass-compatibility`; additional-source growth limited | 016; 017 research |
 | 021 | Database restore UI and modal keyboard handling | Implemented and validated on `codex/database-restore-ui` | 014, 016 |
+| 022 | Lexmark España official compatibility collector and data UI | Implemented and validated on `feature/lexmark-official-compatibility` | 004, 012, 013 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 018 — Results on feature branch (2026-10-13)
@@ -150,3 +151,11 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Implemented and validated on `codex/database-restore-ui`:** local UI for selecting and restoring a PrinterDB SQLite backup; SQLite header, integrity, foreign-key and required-table validation before replacement; automatic pre-restore safety backup; live API/database reconnection; restore rejection while a collector is running; 256 MB upload limit; accessible add-record dialog that closes without saving on `Escape`; synthetic fixture and automated failure/success coverage.
 
 **Acceptance:** invalid or unrelated files leave the active database unchanged, a successful restore reloads the catalog without restarting the desktop application, the replaced database remains recoverable from the reported safety path, add-printer/add-cartridge forms close on `Escape`, and typecheck, build and all tests pass. Tasks 019 and 020 remain reserved for the official-verification and coverage-audit work defined by Task 018.
+
+## Task 022 — Lexmark España official compatibility collector and data UI
+
+**Implemented and validated on `feature/lexmark-official-compatibility`:** conservative, resumable collection from the public Lexmark España sitemap and printer pages; exact Return Program and standard-cartridge table parsing; official evidence, raw snapshots, hashes, exclusions, and review reporting; strict shared import output; fixture-based parser, boundary, import, and resume tests; and a dedicated official-source section inside the existing data/import dialog.
+
+**Verified pilot:** the sitemap exposed 631 printer product pages. A deliberately bounded live run visited the sitemap and two printer pages, producing 2 printers, 40 OEM cartridges, and 56 explicit verified relationships with zero failures or review items; the generated JSON passed strict dry import. No records were written to the active SQLite database.
+
+**Acceptance:** only explicit official printer-page cartridge rows become verified edges; non-cartridge supplies and ambiguous rows remain excluded or reviewable; access challenges fail closed; collection and import are separate user actions; the UI never imports automatically; repeat collection/import is safe; and typecheck, build, and all tests pass. See [Lexmark collection notes](docs/lexmark.md) and [Task 022](tasks/022-lexmark-official-compatibility.md).
