@@ -20,6 +20,8 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 014 | PrinterDB Desktop MVP | Completed on `feature/desktop-mvp` | 013 |
 | 015 | Lightweight Windows launcher experiment | Completed on `experiment/lightweight-launcher` | 014 |
 | 016 | Multi-source import and PrinterTonerDB integration | Completed on `feature/multi-source-import` | 001, 004, 014 |
+| 017 | OpenPrinting research, завершено исследование; пригодных данных совместимости не найдено.
+| 018 | Mass Consumables Compatibility Expansion, Planned.
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 001 — Database foundation
