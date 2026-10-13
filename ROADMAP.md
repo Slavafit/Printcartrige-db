@@ -22,6 +22,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 016 | Multi-source import and PrinterTonerDB integration | Completed on `feature/multi-source-import` | 001, 004, 014 |
 | 017 | OpenPrinting research, завершено исследование; пригодных данных совместимости не найдено.
 | 018 | Mass Consumables Compatibility Expansion | Implemented and validated on `codex/task-018-mass-compatibility`; additional-source growth limited | 016; 017 research |
+| 021 | Database restore UI and modal keyboard handling | Implemented and validated on `codex/database-restore-ui` | 014, 016 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 018 — Results on feature branch (2026-10-13)
@@ -143,3 +144,9 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Delivered on `feature/multi-source-import`:** additive multi-source schema; independent source category, reliability and supply-origin fields; CSV/TSV/XLS/XLSX/JSON parser; preview/dry-run and 500-row transactional imports; per-relationship source history; conservative PrinterTonerDB adapter; one-time pre-migration backup; browser import preview; tests and attribution.
 
 **Acceptance:** third-party claims are never promoted to official verification, uncertain types/origins remain unknown, one relationship retains multiple sources, blank-supply rows preserve printers, repeated imports are idempotent, existing official evidence is preserved, and no third-party dataset enters the production database automatically.
+
+## Task 021 — Database restore UI and modal keyboard handling
+
+**Implemented and validated on `codex/database-restore-ui`:** local UI for selecting and restoring a PrinterDB SQLite backup; SQLite header, integrity, foreign-key and required-table validation before replacement; automatic pre-restore safety backup; live API/database reconnection; restore rejection while a collector is running; 256 MB upload limit; accessible add-record dialog that closes without saving on `Escape`; synthetic fixture and automated failure/success coverage.
+
+**Acceptance:** invalid or unrelated files leave the active database unchanged, a successful restore reloads the catalog without restarting the desktop application, the replaced database remains recoverable from the reported safety path, add-printer/add-cartridge forms close on `Escape`, and typecheck, build and all tests pass. Tasks 019 and 020 remain reserved for the official-verification and coverage-audit work defined by Task 018.
