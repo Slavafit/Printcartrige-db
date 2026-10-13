@@ -5,14 +5,14 @@ import { extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
 import { CollectorJobs } from './collector-jobs.js';
 import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
-import { backupDatabase, createCartridge, createCompatibility, createPrinter, exportWorkbook, updateCartridge, updatePrinter } from './desktop-data.js';
+import { backupDatabase, createCartridge, createCompatibility, createPrinter, exportWorkbook, restoreDatabase, updateCartridge, updatePrinter } from './desktop-data.js';
 import { importMultiSource, parseMultiSourceBytes, type MultiSourceOptions, type ParsedMultiSource } from './multi-source-import.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
-const database = new CartridgeDatabase(databasePath);
+let database = new CartridgeDatabase(databasePath);
 database.initialize();
-const collectorJobs = new CollectorJobs(database);
+let collectorJobs = new CollectorJobs(database);
 const staticRoot = process.env.WEB_STATIC_ROOT || resolve('web-dist');
 const backupRoot = process.env.WEB_BACKUP_ROOT || resolve('backups');
 const previews = new Map<string, { parsed: ParsedMultiSource; options: MultiSourceOptions }>();
@@ -46,6 +46,15 @@ const server = createServer(async (request, response) => {
     }
     if (url.pathname === '/api/export.xlsx' && request.method === 'GET') { const bytes=exportWorkbook(database); response.writeHead(200, {'content-type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','content-disposition':'attachment; filename="printerdb-export.xlsx"'}); return response.end(bytes); }
     if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target); return json(response,200,{file:name,path:target}); }
+    if (url.pathname === '/api/restore' && request.method === 'POST') {
+      if (collectorJobs.list().some(job => job.status === 'running')) return json(response, 409, { error: 'Espera a que termine el colector antes de restaurar una copia' });
+      try {
+        const result = await restoreDatabase(database, await binaryBody(request), backupRoot);
+        database = result.database; collectorJobs = new CollectorJobs(database); previews.clear();
+        if (!result.restored) return json(response, 500, { error: `No se pudo restaurar la copia. Se recuperó la base anterior: ${result.error}`, safetyBackupPath: result.safetyBackupPath });
+        return json(response, 200, { ok: true, safetyBackupPath: result.safetyBackupPath });
+      } catch (error) { return json(response, 400, { error: error instanceof Error ? error.message : 'No se pudo validar la copia' }); }
+    }
     if (url.pathname === '/api/collectors' && request.method === 'GET') return json(response, 200, collectorJobs.list());
     const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import)$/);
     if (collectorAction && request.method === 'POST') {
@@ -90,6 +99,7 @@ server.listen(port, '127.0.0.1', () => { console.log(`Printcartridge web MVP: ht
 
 function json(response: ServerResponse, status: number, body: unknown): void { response.writeHead(status, { 'content-type': 'application/json; charset=utf-8', 'cache-control': 'no-store' }); response.end(JSON.stringify(body)); }
 async function body(request: import('node:http').IncomingMessage): Promise<Record<string, unknown>> { const chunks:Buffer[]=[]; let size=0; for await(const chunk of request){const value=Buffer.from(chunk);size+=value.length;if(size>25_000_000)throw new Error('La solicitud es demasiado grande');chunks.push(value);} return JSON.parse(Buffer.concat(chunks).toString('utf8')||'{}') as Record<string,unknown>; }
+async function binaryBody(request: import('node:http').IncomingMessage): Promise<Buffer> { const chunks:Buffer[]=[]; let size=0; for await(const chunk of request){const value=Buffer.from(chunk);size+=value.length;if(size>256*1024*1024)throw new Error('La copia supera el límite de 256 MB');chunks.push(value);} if(!size)throw new Error('No se ha proporcionado ninguna copia');return Buffer.concat(chunks); }
 function serveStatic(response: ServerResponse, directory: string, pathname: string): void {
   const candidate = normalize(join(directory, pathname === '/' ? 'index.html' : pathname));
   const safePath = candidate.startsWith(directory) && existsSync(candidate) && statSync(candidate).isFile() ? candidate : join(directory, 'index.html');

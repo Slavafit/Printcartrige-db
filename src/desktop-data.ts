@@ -1,7 +1,7 @@
-import { mkdirSync } from 'node:fs';
-import { dirname } from 'node:path';
+import { closeSync, copyFileSync, mkdirSync, openSync, readSync, rmSync, writeFileSync } from 'node:fs';
+import { basename, dirname, join, resolve } from 'node:path';
 import * as XLSX from 'xlsx';
-import type { CartridgeDatabase } from './database.js';
+import { CartridgeDatabase } from './database.js';
 import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrinterModel } from './normalize.js';
 
 export type SourceCategory = 'official' | 'third_party' | 'third-party' | 'open_dataset' | 'manual' | 'unknown';
@@ -123,6 +123,66 @@ export function exportWorkbook(database: CartridgeDatabase): Buffer {
 }
 
 export async function backupDatabase(database: CartridgeDatabase, target: string): Promise<void> { mkdirSync(dirname(target), { recursive: true }); await database.db.backup(target); }
+
+export interface RestoreDatabaseResult {
+  database: CartridgeDatabase;
+  restored: boolean;
+  safetyBackupPath: string;
+  error?: string;
+}
+
+const REQUIRED_BACKUP_TABLES = ['manufacturers', 'printers', 'cartridges', 'data_sources', 'compatibility'] as const;
+
+export function validateDatabaseBackup(path: string): void {
+  const bytes = Buffer.alloc(16); const descriptor = openSync(path, 'r');
+  try { readSync(descriptor, bytes, 0, bytes.length, 0); } finally { closeSync(descriptor); }
+  const header = bytes.toString('binary');
+  if (header !== 'SQLite format 3\0') throw new Error('El archivo seleccionado no es una base SQLite válida');
+  const candidate = new CartridgeDatabase(path, { readonly: true, fileMustExist: true });
+  try {
+    const integrity = candidate.db.pragma('integrity_check') as Array<{ integrity_check: string }>;
+    if (integrity.length !== 1 || integrity[0].integrity_check !== 'ok') throw new Error('La copia SQLite está dañada');
+    const tables = new Set((candidate.db.prepare("SELECT name FROM sqlite_master WHERE type='table'").all() as Array<{ name: string }>).map(row => row.name));
+    const missing = REQUIRED_BACKUP_TABLES.filter(table => !tables.has(table));
+    if (missing.length) throw new Error(`La copia no contiene las tablas de PrinterDB: ${missing.join(', ')}`);
+    const foreignKeyErrors = candidate.db.pragma('foreign_key_check') as unknown[];
+    if (foreignKeyErrors.length) throw new Error('La copia contiene relaciones inválidas');
+  } finally { candidate.close(); }
+}
+
+export async function restoreDatabase(database: CartridgeDatabase, bytes: Buffer, backupDirectory: string): Promise<RestoreDatabaseResult> {
+  if (database.path === ':memory:') throw new Error('No se puede restaurar una base en memoria');
+  const databasePath = resolve(database.path);
+  const timestamp = new Date().toISOString().replace(/[:.]/g, '-');
+  const temporaryPath = join(dirname(databasePath), `.${basename(databasePath)}.restore-${timestamp}.sqlite`);
+  const safetyBackupPath = join(resolve(backupDirectory), `pre-restore-${timestamp}.sqlite`);
+  const cleanup = () => {
+    for (const path of [temporaryPath, `${temporaryPath}-wal`, `${temporaryPath}-shm`, `${temporaryPath}.pre-supply-form.sqlite`, `${temporaryPath}.pre-multisource.sqlite`]) rmSync(path, { force: true });
+  };
+  writeFileSync(temporaryPath, bytes, { flag: 'wx' });
+  try {
+    validateDatabaseBackup(temporaryPath);
+    const migrated = new CartridgeDatabase(temporaryPath);
+    try { migrated.initialize(); } finally { migrated.close(); }
+    validateDatabaseBackup(temporaryPath);
+    await backupDatabase(database, safetyBackupPath);
+    validateDatabaseBackup(safetyBackupPath);
+    database.close();
+    try {
+      for (const suffix of ['-wal', '-shm']) rmSync(`${databasePath}${suffix}`, { force: true });
+      copyFileSync(temporaryPath, databasePath);
+      const restored = new CartridgeDatabase(databasePath);
+      restored.initialize();
+      return { database: restored, restored: true, safetyBackupPath };
+    } catch (error) {
+      for (const suffix of ['-wal', '-shm']) rmSync(`${databasePath}${suffix}`, { force: true });
+      copyFileSync(safetyBackupPath, databasePath);
+      const recovered = new CartridgeDatabase(databasePath);
+      recovered.initialize();
+      return { database: recovered, restored: false, safetyBackupPath, error: error instanceof Error ? error.message : 'No se pudo restaurar la copia' };
+    }
+  } finally { cleanup(); }
+}
 
 function category(value: unknown): SourceCategory { const normalized=text(value).replace('third-party','third_party'); return ['official','third_party','open_dataset','manual','unknown'].includes(normalized) ? normalized as SourceCategory : 'manual'; }
 function upsertManufacturer(database: CartridgeDatabase, name: string): number { const normalized = normalizeManufacturerName(name); database.db.prepare('INSERT INTO manufacturers(name,normalized_name) VALUES(?,?) ON CONFLICT(normalized_name) DO NOTHING').run(name, normalized); return (database.db.prepare('SELECT id FROM manufacturers WHERE normalized_name=?').get(normalized) as {id:number}).id; }

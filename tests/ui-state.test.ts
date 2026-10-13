@@ -18,3 +18,10 @@ it('gives pagination explicit contrast and accessible previous/next controls',()
   expect(app).toContain('aria-label="Página anterior"');
   expect(app).toContain('aria-label="Página siguiente"');
 });
+it('offers validated database restore and closes the add dialog with Escape',()=>{
+  const app=readFileSync('web/src/App.tsx','utf8');
+  expect(app).toContain('Restaurar copia');
+  expect(app).toContain("fetch('/api/restore'");
+  expect(app).toContain("if(event.key==='Escape')close()");
+  expect(app).toContain('useCloseOnEscape(close)');
+});
