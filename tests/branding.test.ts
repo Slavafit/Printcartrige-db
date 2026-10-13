@@ -15,4 +15,25 @@ describe('desktop and browser branding', () => {
     expect(launcher).toContain('Salir');
     expect(launcher).not.toMatch(/[А-Яа-яЁё]/);
   });
+
+  it('keeps the catalog header compact and provides Spanish in-app help', () => {
+    const app = readFileSync('web/src/App.tsx', 'utf8');
+    const styles = readFileSync('web/src/styles.css', 'utf8');
+    expect(app).toContain('Cómo utilizar PrinterDB');
+    expect(app).toContain('aria-label="Abrir ayuda"');
+    expect(app).toContain('Buscar por modelo, fabricante o referencia de cartucho');
+    expect(styles).toContain('.hero{min-height:76px');
+    expect(styles).toContain('.printer-title strong{color:#0f1f35');
+  });
+
+  it('uses catalog manufacturers in a passive footer marquee and limits gradient motion to the divider', () => {
+    const app = readFileSync('web/src/App.tsx', 'utf8');
+    const effects = readFileSync('web/src/effects.css', 'utf8');
+    expect(app).toContain("get<Manufacturer[]>('/api/manufacturers')");
+    expect(app).toContain('ManufacturerMarquee');
+    expect(effects).toContain('@keyframes header-divider-flow');
+    expect(effects).toContain('@keyframes manufacturer-scroll');
+    expect(effects).toContain('pointer-events: none');
+    expect(effects).toContain('prefers-reduced-motion');
+  });
 });
