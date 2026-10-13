@@ -56,9 +56,9 @@ const server = createServer(async (request, response) => {
       } catch (error) { return json(response, 400, { error: error instanceof Error ? error.message : 'No se pudo validar la copia' }); }
     }
     if (url.pathname === '/api/collectors' && request.method === 'GET') return json(response, 200, collectorJobs.list());
-    const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import)$/);
+    const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import|stop)$/);
     if (collectorAction && request.method === 'POST') {
-      const result = collectorAction[2] === 'run' ? collectorJobs.start(collectorAction[1]) : await collectorJobs.import(collectorAction[1]);
+      const result = collectorAction[2] === 'run' ? collectorJobs.start(collectorAction[1]) : collectorAction[2] === 'stop' ? { stopped: collectorJobs.stop(collectorAction[1]) } : await collectorJobs.import(collectorAction[1]);
       return json(response, 200, result);
     }
     if (url.pathname === '/api/printers' && request.method === 'GET') {
