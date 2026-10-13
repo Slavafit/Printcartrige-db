@@ -23,6 +23,8 @@ describe('desktop and browser branding', () => {
     expect(app).toContain('aria-label="Abrir ayuda"');
     expect(app).toContain('Buscar por modelo, fabricante o referencia de cartucho');
     expect(styles).toContain('.hero{min-height:76px');
+    expect(styles).toContain('#root>main{display:flex;min-height:100vh;min-height:100dvh;flex-direction:column}');
+    expect(styles).toContain('.workspace{width:100%;margin:0 auto;min-height:0;flex:1 0 auto}');
     expect(styles).toContain('.printer-title strong{color:#0f1f35');
   });
 
