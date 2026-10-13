@@ -24,6 +24,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 018 | Mass Consumables Compatibility Expansion | Implemented and validated on `codex/task-018-mass-compatibility`; additional-source growth limited | 016; 017 research |
 | 021 | Database restore UI and modal keyboard handling | Implemented and validated on `codex/database-restore-ui` | 014, 016 |
 | 022 | Lexmark España official compatibility collector and data UI | Implemented and validated on `feature/lexmark-official-compatibility` | 004, 012, 013 |
+| 023 | Russian project component guide | Implemented on `feature/project-guide` | — |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 018 — Results on feature branch (2026-10-13)
@@ -161,3 +162,7 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 **Acceptance:** only explicit official printer-page cartridge rows become verified edges; non-cartridge supplies and ambiguous rows remain excluded or reviewable; access challenges fail closed; collection and import are separate user actions; the UI never imports automatically; repeat collection/import is safe; and typecheck, build, and all tests pass. See [Lexmark collection notes](docs/lexmark.md) and [Task 022](tasks/022-lexmark-official-compatibility.md).
 
 **Progress UI refinement:** online collector cards now expose checkpoint-based batch progress, accumulated entity counts, failures, pending work and estimated remaining time. The live log opens automatically, and the user can stop the one active whitelisted process without deleting its resumable checkpoint.
+
+## Task 023 — Russian project component guide
+
+**Implemented on `feature/project-guide`:** a Russian-language architectural guide covering the database, import layers, official collectors, local API, React UI, Windows launchers, data directories, tests, common commands, change locations, and the project invariants that protect evidence quality. The guide is linked from the README and intentionally does not add generated Lexmark collection output to Git.
