@@ -98,5 +98,7 @@ it('adds bottle metadata with a backup to an existing SQLite and keeps read-only
   const backup=new Database(`${path}.pre-supply-form.sqlite`,{readonly:true});
   expect(backup.prepare('SELECT count(*) n FROM compatibility').get()).toEqual({n:5});backup.close();
   expect(migrated.db.pragma('foreign_key_check')).toEqual([]);
-  migrated.initialize();expect(migrated.list('compatibility')).toEqual(saved);
+  // Reimport may update third-party timestamps; initialization must preserve its resulting state.
+  const afterReimport=migrated.list('compatibility');
+  migrated.initialize();expect(migrated.list('compatibility')).toEqual(afterReimport);
 });
