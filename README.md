@@ -12,6 +12,7 @@ Official-source snapshots are stored under `data/official/`. Synthetic files und
 - [Instructions for future Codex sessions](AGENTS.md)
 - [Official data-source assessment](docs/data-sources.md)
 - [Collector integration guide](docs/collectors.md)
+- [Путеводитель по компонентам проекта](docs/project-guide-ru.md)
 - [Multi-source import and PrinterTonerDB adapter](docs/multi-source-import.md)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)
 
