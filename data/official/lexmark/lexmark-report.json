@@ -1,0 +1,2090 @@
+{
+  "collectedAt": "2026-10-13T13:33:23.614Z",
+  "resumed": false,
+  "pagesVisited": 50,
+  "requestAttempts": 51,
+  "completedPages": 50,
+  "pendingPages": 582,
+  "printers": 46,
+  "cartridges": 150,
+  "relationships": 575,
+  "review": [
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "no-supported-cartridges"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "no-supported-cartridges"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "no-supported-cartridges"
+    }
+  ],
+  "excluded": [
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11104/Lexmark-MS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11104/Lexmark-MS317dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11105/Lexmark-MS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11105/Lexmark-MS417dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11106/Lexmark-MX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11106/Lexmark-MX317dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11107/Lexmark-MX417de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11107/Lexmark-MX417de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11131/Lexmark-MS517dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11131/Lexmark-MS517dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11132/Lexmark-MX517de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11132/Lexmark-MX517de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "C540X75G: Contenedor de residuos para Lexmark C54x, X54x 18K"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D30: Revelador magenta de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z50: Unidad de imágenes de 40 000 páginas, 4 colores para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0Z10: Unidad de Imágenes negra de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D10: Revelador negro de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D40: Revelador amarillo de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0D20: Revelador cian de 40 000 páginas para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "reason": "non-cartridge-category",
+      "detail": "70C0P00: Kit del fotoconductor de 40 000 páginas, paquete de 4 para Lexmark CS/CX31x, 41x, 51x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11135/Lexmark-MS617dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11135/Lexmark-MS617dn",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11136/Lexmark-MX617de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0Z00: Unidad de imágenes retornable de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11136/Lexmark-MX617de",
+      "reason": "non-cartridge-category",
+      "detail": "50F0ZA0: Unidad de imágenes de 60 000 páginas para Lexmark MS/MX31x, 41x, 51x, 61x"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11136/Lexmark-MX617de",
+      "reason": "non-cartridge-category",
+      "detail": "35S8500: Cartuchos de grapas"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11151/Lexmark-MX717de",
+      "reason": "non-cartridge-category",
+      "detail": "52D0Z00: Unidad de imágenes retornable de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11151/Lexmark-MX717de",
+      "reason": "non-cartridge-category",
+      "detail": "52D0ZA0: Unidad de imágenes de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11152/Lexmark-MX718de",
+      "reason": "non-cartridge-category",
+      "detail": "52D0Z00: Unidad de imágenes retornable de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11152/Lexmark-MX718de",
+      "reason": "non-cartridge-category",
+      "detail": "52D0ZA0: Unidad de imágenes de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11153/Lexmark-MS817dn",
+      "reason": "non-cartridge-category",
+      "detail": "52D0Z00: Unidad de imágenes retornable de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11153/Lexmark-MS817dn",
+      "reason": "non-cartridge-category",
+      "detail": "52D0ZA0: Unidad de imágenes de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11153/Lexmark-MS817dn",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11154/Lexmark-MS818dn",
+      "reason": "non-cartridge-category",
+      "detail": "52D0Z00: Unidad de imágenes retornable de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11154/Lexmark-MS818dn",
+      "reason": "non-cartridge-category",
+      "detail": "52D0ZA0: Unidad de imágenes de 100 000 páginas para Lexmark MS/MX710, 711, 810, 812; MS811, 817, 818; MX717, 718"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11154/Lexmark-MS818dn",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "71C0Z10: Unidad de imagen negro de 150 000 páginas CS/CX730, 735, C/XC4342, C4352 de Lexmark"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z50: Kit de imágenes de 3 colores de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0W00: Contenedor de residuos de 90 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140; 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0Z10: Unidad de imágenes negra de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZV0: Kit de imagen de 3 colores retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "reason": "non-cartridge-category",
+      "detail": "74C0ZK0: Unidad de imágenes negra retornable de 150 000 páginas para Lexmark CS720, 728; CS/CX725, 727; C4150; XC4140, 4150"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DC0: Desarrollador cian retornable de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FK0: Revelador negro retornable de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D30: Revelador magenta de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0FV0: Paquete fotoconductores y kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D20: Revelador cian de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F10: Revelador negro de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DM0: Unidad revelador magenta Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D10: Revelador negro de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DY0: Unidad revelador amarillo Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D40: Revelador amarillo de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0W00: Contenedor de residuos de 115 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DV0: Kit revelador color (CMY) Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0D50: Kit de revelador en 3 colores de 300 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0P00: Kit del fotoconductor de 175 000 páginas, paquete de 1 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0F50: Kit de revelador en 3 colores de 175 000 páginas para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0Q00: Kit del fotoconductor de 175 000 páginas, paquete de 3 para Lexmark CS/CX820, 827; CX825, 860; C6160; XC6152, 6153, 8155, 8160, 8163"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "reason": "non-cartridge-category",
+      "detail": "72K0DK0: Unidad revelador negro Retornable"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11396/Lexmark-CS921de",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11396/Lexmark-CS921de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11396/Lexmark-CS921de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11396/Lexmark-CS921de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11401/Lexmark-CS923de",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11401/Lexmark-CS923de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11401/Lexmark-CS923de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11401/Lexmark-CS923de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11403/Lexmark-CX920de",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11403/Lexmark-CX920de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11403/Lexmark-CX920de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11403/Lexmark-CX920de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11404/Lexmark-CX921de",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11404/Lexmark-CX921de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11404/Lexmark-CX921de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11404/Lexmark-CX921de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11405/Lexmark-CX922de",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11405/Lexmark-CX922de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11405/Lexmark-CX922de",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11405/Lexmark-CX922de",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11406/Lexmark-CX923dte",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11406/Lexmark-CX923dte",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11406/Lexmark-CX923dte",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11406/Lexmark-CX923dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11407/Lexmark-CX923dxe",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11407/Lexmark-CX923dxe",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11407/Lexmark-CX923dxe",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11407/Lexmark-CX923dxe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11408/Lexmark-CX924dte",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11408/Lexmark-CX924dte",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11408/Lexmark-CX924dte",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11408/Lexmark-CX924dte",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11409/Lexmark-CX924dxe",
+      "reason": "non-cartridge-category",
+      "detail": "54G0W00: Contenedor de residuos de 90 000 páginas para Lexmark MS/MX911; MX910, 912"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11409/Lexmark-CX924dxe",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PV0: Fotoconductor de 90 000 páginas, CMY, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11409/Lexmark-CX924dxe",
+      "reason": "non-cartridge-category",
+      "detail": "76C0PK0: Fotoconductor de 100 000 páginas, paquete de 1 para Lexmark CS/CX921, 923; CX922, 924; C9235; XC9235, 9245, 9255, 9265"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11409/Lexmark-CX924dxe",
+      "reason": "non-cartridge-category",
+      "detail": "25A0013: Grapas (3 cajas)"
+    }
+  ],
+  "failures": [],
+  "pages": [
+    {
+      "url": "https://www.lexmark.com/es_es/sitemap.xml",
+      "retrievedAt": "2026-10-13T13:25:12.841Z",
+      "sha256": "edb684d8fdd8e243cc84601372998135a694dc5795d8eecde35ee5c0db8f9c91",
+      "file": "raw/edb684d8fdd8e243cc84601372998135a694dc5795d8eecde35ee5c0db8f9c91.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10164/Lexmark-CX725de",
+      "retrievedAt": "2026-10-13T13:25:22.266Z",
+      "sha256": "8b37bcdb016349cbd8c6fb86b6db7385c7bd68a3ffc61d02a923f8dc2c6b93ad",
+      "file": "raw/8b37bcdb016349cbd8c6fb86b6db7385c7bd68a3ffc61d02a923f8dc2c6b93ad.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10169/Lexmark-CS725de",
+      "retrievedAt": "2026-10-13T13:25:32.289Z",
+      "sha256": "de3cc45d81621005ede62be80ef7341dc1d480990748100b70624174c3bcfa8a",
+      "file": "raw/de3cc45d81621005ede62be80ef7341dc1d480990748100b70624174c3bcfa8a.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10170/Lexmark-CS720de",
+      "retrievedAt": "2026-10-13T13:25:42.273Z",
+      "sha256": "1ee7dacb759f4cf3761766682e638641bf4a77dbed0b339eb125ae952377bd07",
+      "file": "raw/1ee7dacb759f4cf3761766682e638641bf4a77dbed0b339eb125ae952377bd07.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10263/Lexmark-CX725dhe",
+      "retrievedAt": "2026-10-13T13:25:52.941Z",
+      "sha256": "c00cbe223ce51de44ff1cc318571efeb047acfeaa4700599e29b3d34f42d55c3",
+      "file": "raw/c00cbe223ce51de44ff1cc318571efeb047acfeaa4700599e29b3d34f42d55c3.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10265/Lexmark-CX725dthe",
+      "retrievedAt": "2026-10-13T13:26:02.292Z",
+      "sha256": "5b5ba0e649e8ffb9ad35517cd1d3816ee217adce6afc3cc6e11bbe9d920990ca",
+      "file": "raw/5b5ba0e649e8ffb9ad35517cd1d3816ee217adce6afc3cc6e11bbe9d920990ca.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10266/Lexmark-CS720dte",
+      "retrievedAt": "2026-10-13T13:26:12.826Z",
+      "sha256": "ecfeb0ea3948d00d7fc230237cb7cbb19a4830bf46df4e0dc04eb312285bf061",
+      "file": "raw/ecfeb0ea3948d00d7fc230237cb7cbb19a4830bf46df4e0dc04eb312285bf061.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10267/Lexmark-CS725dte",
+      "retrievedAt": "2026-10-13T13:26:23.270Z",
+      "sha256": "59ee8ba74dccbb1d9b376215f1381f3156913c46abe342108c5809bc8ce9c091",
+      "file": "raw/59ee8ba74dccbb1d9b376215f1381f3156913c46abe342108c5809bc8ce9c091.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10269/Lexmark-CX820dtfe",
+      "retrievedAt": "2026-10-13T13:26:33.427Z",
+      "sha256": "b31d6664d1a19ce907579debb7c9b28cf948ca190025b390447e0d2202bb29eb",
+      "file": "raw/b31d6664d1a19ce907579debb7c9b28cf948ca190025b390447e0d2202bb29eb.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10282/Lexmark-CS820dte",
+      "retrievedAt": "2026-10-13T13:26:43.292Z",
+      "sha256": "816235ff615da3e0913bc164308d5060bb3ed394e2037467d7844ac3c765fb2f",
+      "file": "raw/816235ff615da3e0913bc164308d5060bb3ed394e2037467d7844ac3c765fb2f.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10283/Lexmark-CS820dtfe",
+      "retrievedAt": "2026-10-13T13:26:53.401Z",
+      "sha256": "2e155fd7a1c6eecde6e5951aa49bd236c27d9a4618f686be085bde378130f82d",
+      "file": "raw/2e155fd7a1c6eecde6e5951aa49bd236c27d9a4618f686be085bde378130f82d.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10285/Lexmark-CX825dte",
+      "retrievedAt": "2026-10-13T13:27:02.904Z",
+      "sha256": "423b00ab17886ed0ede950e54d10be34cf59db54efb44bb5d5a00cd8f49dacd1",
+      "file": "raw/423b00ab17886ed0ede950e54d10be34cf59db54efb44bb5d5a00cd8f49dacd1.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10286/Lexmark-CX825dtfe",
+      "retrievedAt": "2026-10-13T13:27:13.316Z",
+      "sha256": "87cca1ce0f06e7440806e0ae949db2238a5317d09502aeaa3f02431fe3151916",
+      "file": "raw/87cca1ce0f06e7440806e0ae949db2238a5317d09502aeaa3f02431fe3151916.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10287/Lexmark-CX860dte",
+      "retrievedAt": "2026-10-13T13:27:23.136Z",
+      "sha256": "2695122eb9245c048a134eaf24bf7b9a00134ae801fed57cf86e771db427d173",
+      "file": "raw/2695122eb9245c048a134eaf24bf7b9a00134ae801fed57cf86e771db427d173.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10288/Lexmark-CX860dtfe",
+      "retrievedAt": "2026-10-13T13:27:32.437Z",
+      "sha256": "94d7a96464a08c9c3e542dbaf50a0566d2a386359e06d10f3f9ba4343344852f",
+      "file": "raw/94d7a96464a08c9c3e542dbaf50a0566d2a386359e06d10f3f9ba4343344852f.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10313/Lexmark-XC8155de",
+      "retrievedAt": "2026-10-13T13:27:42.560Z",
+      "sha256": "31ff116c34bfdbe3a93560857b72ac6a450deec165b48c70b860efb1aba34f1c",
+      "file": "raw/31ff116c34bfdbe3a93560857b72ac6a450deec165b48c70b860efb1aba34f1c.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10314/Lexmark-XC8155dte",
+      "retrievedAt": "2026-10-13T13:27:53.381Z",
+      "sha256": "ae2745d7c45cb7310b41f7345e2eb00f00264365f45294e1f226ac7f3fa9e947",
+      "file": "raw/ae2745d7c45cb7310b41f7345e2eb00f00264365f45294e1f226ac7f3fa9e947.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/10315/Lexmark-XC8160de",
+      "retrievedAt": "2026-10-13T13:28:03.483Z",
+      "sha256": "37bece7e9ec909b63fc12395e78feb22f78dab1dd01b3c31a39794495cece31b",
+      "file": "raw/37bece7e9ec909b63fc12395e78feb22f78dab1dd01b3c31a39794495cece31b.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11100/Lexmark-CS317dn",
+      "retrievedAt": "2026-10-13T13:28:13.101Z",
+      "sha256": "26756a655f094aee8380591041b9d1b7d085bd5bcd5da9ba9e2fda768392b185",
+      "file": "raw/26756a655f094aee8380591041b9d1b7d085bd5bcd5da9ba9e2fda768392b185.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11101/Lexmark-CS417dn",
+      "retrievedAt": "2026-10-13T13:28:22.473Z",
+      "sha256": "445c76d134395e0c97ffb1aa6439995deb88eb95f6c4e363c31f68ee65cbeaae",
+      "file": "raw/445c76d134395e0c97ffb1aa6439995deb88eb95f6c4e363c31f68ee65cbeaae.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11102/Lexmark-CX317dn",
+      "retrievedAt": "2026-10-13T13:28:32.990Z",
+      "sha256": "26d99790b2103ce872193c748a65bd6846ac1f4308fef5e630ed2b4db1ba0f62",
+      "file": "raw/26d99790b2103ce872193c748a65bd6846ac1f4308fef5e630ed2b4db1ba0f62.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11103/Lexmark-CX417de",
+      "retrievedAt": "2026-10-13T13:28:43.146Z",
+      "sha256": "b2af7a53c4b080e4bc2b65c70249675b7803e3f2fb312a08dffbf0445de1494b",
+      "file": "raw/b2af7a53c4b080e4bc2b65c70249675b7803e3f2fb312a08dffbf0445de1494b.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11104/Lexmark-MS317dn",
+      "retrievedAt": "2026-10-13T13:28:53.452Z",
+      "sha256": "0d62cdb344cd29122b71bcdfcbbfb4be8466877b5101e3ad11fa04033dc79ec8",
+      "file": "raw/0d62cdb344cd29122b71bcdfcbbfb4be8466877b5101e3ad11fa04033dc79ec8.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11105/Lexmark-MS417dn",
+      "retrievedAt": "2026-10-13T13:29:03.171Z",
+      "sha256": "d94e9ed59e8ddc03dd19884d289e73d616b5143eedfa4a662e58fdf667bfd80c",
+      "file": "raw/d94e9ed59e8ddc03dd19884d289e73d616b5143eedfa4a662e58fdf667bfd80c.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11106/Lexmark-MX317dn",
+      "retrievedAt": "2026-10-13T13:29:13.469Z",
+      "sha256": "5705486a6651ed939ee79fcfbcb0b6d9997073ba216486e8358b5be5369adafa",
+      "file": "raw/5705486a6651ed939ee79fcfbcb0b6d9997073ba216486e8358b5be5369adafa.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11107/Lexmark-MX417de",
+      "retrievedAt": "2026-10-13T13:29:23.199Z",
+      "sha256": "0ff39192179e2d3817278b197617fdf5ced7f62e361e5faf6a2128c9efb90b5e",
+      "file": "raw/0ff39192179e2d3817278b197617fdf5ced7f62e361e5faf6a2128c9efb90b5e.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11131/Lexmark-MS517dn",
+      "retrievedAt": "2026-10-13T13:29:33.306Z",
+      "sha256": "9685c413e9f7dda5e38aac6ff140791a8085785276a9977a5b5147d47c1180f7",
+      "file": "raw/9685c413e9f7dda5e38aac6ff140791a8085785276a9977a5b5147d47c1180f7.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11132/Lexmark-MX517de",
+      "retrievedAt": "2026-10-13T13:29:43.219Z",
+      "sha256": "798602e81f684985d91fd55471af5b400efe0c30bfbb130e2a6587cb91a7a145",
+      "file": "raw/798602e81f684985d91fd55471af5b400efe0c30bfbb130e2a6587cb91a7a145.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11133/Lexmark-CS517de",
+      "retrievedAt": "2026-10-13T13:29:53.205Z",
+      "sha256": "897c9ffe33bd1c87ba12451e8d4087e80d8bf09f2f8616f4b49601045f919c54",
+      "file": "raw/897c9ffe33bd1c87ba12451e8d4087e80d8bf09f2f8616f4b49601045f919c54.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11134/Lexmark-CX517de",
+      "retrievedAt": "2026-10-13T13:30:03.608Z",
+      "sha256": "d783afc2873ebddcf9b9e6b4d795537b5357bd7a58a1e6800a554a10835f73d9",
+      "file": "raw/d783afc2873ebddcf9b9e6b4d795537b5357bd7a58a1e6800a554a10835f73d9.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11135/Lexmark-MS617dn",
+      "retrievedAt": "2026-10-13T13:30:13.303Z",
+      "sha256": "f83dcf7e763bf337e712ed61d5eb0f2eafa25f7b3202ce55dbb87e4ac02ce787",
+      "file": "raw/f83dcf7e763bf337e712ed61d5eb0f2eafa25f7b3202ce55dbb87e4ac02ce787.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11136/Lexmark-MX617de",
+      "retrievedAt": "2026-10-13T13:30:23.282Z",
+      "sha256": "8f177bc2ade0506c5de205f139b9a062bb3ce7da3d46f4b63a7851758c08b139",
+      "file": "raw/8f177bc2ade0506c5de205f139b9a062bb3ce7da3d46f4b63a7851758c08b139.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11151/Lexmark-MX717de",
+      "retrievedAt": "2026-10-13T13:30:33.620Z",
+      "sha256": "92a94c36cc07c84ad675e12f378cc4aa854c8873d127761fae44ea8384b8b704",
+      "file": "raw/92a94c36cc07c84ad675e12f378cc4aa854c8873d127761fae44ea8384b8b704.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11152/Lexmark-MX718de",
+      "retrievedAt": "2026-10-13T13:30:43.364Z",
+      "sha256": "aed149b1a1823e0dc433cbfaa6ffb63074e9ca2c3b9050133810d8a9048c5ad6",
+      "file": "raw/aed149b1a1823e0dc433cbfaa6ffb63074e9ca2c3b9050133810d8a9048c5ad6.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11153/Lexmark-MS817dn",
+      "retrievedAt": "2026-10-13T13:30:52.764Z",
+      "sha256": "84c133311b40622ee147253c8f39475b03dd20f94594cd6076d15265b6802db6",
+      "file": "raw/84c133311b40622ee147253c8f39475b03dd20f94594cd6076d15265b6802db6.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11154/Lexmark-MS818dn",
+      "retrievedAt": "2026-10-13T13:31:03.273Z",
+      "sha256": "aa815cd07f8afbd0467d5294dc82630721c677be295fb66143ec085aa1d00a97",
+      "file": "raw/aa815cd07f8afbd0467d5294dc82630721c677be295fb66143ec085aa1d00a97.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11155/Lexmark-CS727de",
+      "retrievedAt": "2026-10-13T13:31:13.663Z",
+      "sha256": "d6af1628009a66e6f1f1fb567c6e6838b93f876624f5c132536c6a1c4a1f728e",
+      "file": "raw/d6af1628009a66e6f1f1fb567c6e6838b93f876624f5c132536c6a1c4a1f728e.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11156/Lexmark-CS728de",
+      "retrievedAt": "2026-10-13T13:31:22.787Z",
+      "sha256": "f09aa9d10692664f4f1e7b5857d4c39880fff01c18b02403231ef5236e6e68db",
+      "file": "raw/f09aa9d10692664f4f1e7b5857d4c39880fff01c18b02403231ef5236e6e68db.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11157/Lexmark-CX727de",
+      "retrievedAt": "2026-10-13T13:31:32.871Z",
+      "sha256": "8bc07e2d6098f0a0dd23eaa72c31545025ea325203c10bb8020e9d8c921b264d",
+      "file": "raw/8bc07e2d6098f0a0dd23eaa72c31545025ea325203c10bb8020e9d8c921b264d.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11158/Lexmark-CS827de",
+      "retrievedAt": "2026-10-13T13:31:43.431Z",
+      "sha256": "6a7f0227a158c8705c8aec473540b625c017cca6be52adf697cf61bf0fdccee0",
+      "file": "raw/6a7f0227a158c8705c8aec473540b625c017cca6be52adf697cf61bf0fdccee0.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11159/Lexmark-CX827de",
+      "retrievedAt": "2026-10-13T13:31:53.428Z",
+      "sha256": "16f9e643747600f4a9f1cb9b66334ea8a66d55eacb7c4aaf2b0a2310710512f4",
+      "file": "raw/16f9e643747600f4a9f1cb9b66334ea8a66d55eacb7c4aaf2b0a2310710512f4.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11396/Lexmark-CS921de",
+      "retrievedAt": "2026-10-13T13:32:03.777Z",
+      "sha256": "f8ea853e808e5b09a1cbca177541bcee49db3603298c8922de19a537b268128a",
+      "file": "raw/f8ea853e808e5b09a1cbca177541bcee49db3603298c8922de19a537b268128a.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11401/Lexmark-CS923de",
+      "retrievedAt": "2026-10-13T13:32:12.715Z",
+      "sha256": "d2ea6c89ef59a6c93c84f93a16a879ae23d8cc67d3bd5436a7bbcb42b5f2f615",
+      "file": "raw/d2ea6c89ef59a6c93c84f93a16a879ae23d8cc67d3bd5436a7bbcb42b5f2f615.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11403/Lexmark-CX920de",
+      "retrievedAt": "2026-10-13T13:32:23.443Z",
+      "sha256": "f14d951fd6908c7de5c40708edff38f27d53d31e1fcc43d60cf63357b44b12cf",
+      "file": "raw/f14d951fd6908c7de5c40708edff38f27d53d31e1fcc43d60cf63357b44b12cf.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11404/Lexmark-CX921de",
+      "retrievedAt": "2026-10-13T13:32:33.783Z",
+      "sha256": "259b930fefff9edb24b2238f8314ff1dbca42a5d72cd6a40847cbfc23be0e379",
+      "file": "raw/259b930fefff9edb24b2238f8314ff1dbca42a5d72cd6a40847cbfc23be0e379.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11405/Lexmark-CX922de",
+      "retrievedAt": "2026-10-13T13:32:43.473Z",
+      "sha256": "9987a78043020ee24d3438fbe14f8557b709762c4aab166b5092a5cc9c2afbf8",
+      "file": "raw/9987a78043020ee24d3438fbe14f8557b709762c4aab166b5092a5cc9c2afbf8.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11406/Lexmark-CX923dte",
+      "retrievedAt": "2026-10-13T13:32:52.765Z",
+      "sha256": "2bbdc5ccfc9fc57cdd367f7fa6816bc26b5409f6e02b71d99213e13f1cd3d249",
+      "file": "raw/2bbdc5ccfc9fc57cdd367f7fa6816bc26b5409f6e02b71d99213e13f1cd3d249.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11407/Lexmark-CX923dxe",
+      "retrievedAt": "2026-10-13T13:33:02.779Z",
+      "sha256": "8bc21a4adbb1b4cfeb3a9e6950a81bad42703fdd6c794bc4592d9beb978adfe8",
+      "file": "raw/8bc21a4adbb1b4cfeb3a9e6950a81bad42703fdd6c794bc4592d9beb978adfe8.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11408/Lexmark-CX924dte",
+      "retrievedAt": "2026-10-13T13:33:13.441Z",
+      "sha256": "344cda57ea2de937ba9084c15d979e260e7a0d2a0c67f3e37bcfecdffabd20be",
+      "file": "raw/344cda57ea2de937ba9084c15d979e260e7a0d2a0c67f3e37bcfecdffabd20be.html"
+    },
+    {
+      "url": "https://www.lexmark.com/es_es/printers/printer/11409/Lexmark-CX924dxe",
+      "retrievedAt": "2026-10-13T13:33:23.428Z",
+      "sha256": "e7ce51b9fc1dce72e978fdb2d91d6a1dde12ab844c27222456a326b85b896d00",
+      "file": "raw/e7ce51b9fc1dce72e978fdb2d91d6a1dde12ab844c27222456a326b85b896d00.html"
+    }
+  ]
+}

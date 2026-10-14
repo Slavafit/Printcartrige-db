@@ -163,6 +163,8 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 **Progress UI refinement:** online collector cards now expose checkpoint-based batch progress, accumulated entity counts, failures, pending work and estimated remaining time. The live log opens automatically, and the user can stop the one active whitelisted process without deleting its resumable checkpoint.
 
+**First verified Lexmark data batch:** `feature/lexmark-official-batch-01` retains 50 hash-verified official pages, 46 printer models, 150 OEM SKUs, and 575 explicit relationships. The strict dry run accepted every relationship; 3 pages remain in review, 352 non-cartridge supply rows are explicitly excluded, request failures are zero, and 582 discovered pages remain pending. The batch is not imported automatically.
+
 ## Task 023 — Russian project component guide
 
 **Implemented on `feature/project-guide`:** a Russian-language architectural guide covering the database, import layers, official collectors, local API, React UI, Windows launchers, data directories, tests, common commands, change locations, and the project invariants that protect evidence quality. The guide is linked from the README and intentionally does not add generated Lexmark collection output to Git.

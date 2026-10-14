@@ -10,7 +10,7 @@ The collector creates relationships only from the printer page currently being p
 
 The public `robots.txt` advertises the Spanish sitemap and, at the assessment date, does not disallow `/es_es/printers/printer/`. The collector retrieves `robots.txt` first on every run, applies the shared conservative ten-second minimum delay, follows no redirects, stops on access challenges, and uses no authenticated or undocumented endpoint. Terms and access policy must be reviewed again if the site changes.
 
-## Baseline and live pilot
+## Baseline, live pilot, and first verified batch
 
 Before this task, the local catalog contained 903 Lexmark printers: 496 with any third-party supply relationship, 407 without one, and zero officially verified Lexmark relationships.
 
@@ -26,6 +26,19 @@ A separate, non-production pilot visited the sitemap and two printer pages:
 
 The strict shared importer accepted all 56 records in dry-run and wrote zero rows. The pilot did not modify `mvp.sqlite`; its raw pages and output remain under ignored `.collector-state` paths and are not redistributed by the repository.
 
+The first repository batch was collected on 2026-10-13 with the same conservative settings:
+
+- pages completed: 50;
+- pending discovered printer pages: 582;
+- exact printer models with accepted cartridge rows: 46;
+- unique OEM cartridge SKUs: 150;
+- explicit verified relationships: 575;
+- pages requiring review because they exposed no supported cartridge rows: 3;
+- explicitly excluded non-cartridge supply rows: 352;
+- request failures: 0.
+
+The strict importer accepted all 575 records with zero rejected or manual-review records. Every one of the 50 retained raw HTML snapshots matches the SHA-256 stored in `lexmark-report.json`. The committed batch is reproducible evidence, not a claim of complete Lexmark coverage, and it is not imported into a user database automatically.
+
 ## Commands
 
 ```powershell
@@ -38,8 +51,8 @@ The UI runs the same compiled collector in resumable 50-page batches. Completing
 
 ## Limitations
 
-- The sitemap currently exposes 631 printer pages, so complete collection requires multiple batches and substantial time at the conservative request rate.
+- The sitemap currently exposes 631 printer pages. After the first committed batch, 582 discovered pages remain, so complete collection still requires multiple batches and substantial time at the conservative request rate.
 - Regional cartridge SKUs are stored as Spanish-market evidence and are not generalized to other countries.
 - Product pages may change or disappear; raw local snapshots, URL, retrieval time, and SHA-256 are retained for reproducibility.
 - Rows with uncertain type, conflicting part numbers, unsupported links, or missing cartridge tables are quarantined instead of promoted.
-- Factual pilot output is not automatically imported into the user's active database.
+- Committed batch output is not automatically imported into the user's active database.
