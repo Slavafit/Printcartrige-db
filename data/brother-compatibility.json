@@ -1290,7 +1290,7 @@
       "url": "https://store.brother.es/devices/laser/mfc/mfc885cw"
     },
     {
-      "model": "MFC-3360CN",
+      "model": "MFC-3360C",
       "url": "https://store.brother.es/devices/laser/mfc/mfc3360c"
     },
     {
@@ -1826,7 +1826,7 @@
       "url": "https://store.brother.es/devices/laser/dcp/dcp375cw"
     },
     {
-      "model": "MFC-295C",
+      "model": "MFC-295CN",
       "url": "https://store.brother.es/devices/laser/mfc/mfc295cn"
     },
     {
@@ -2062,7 +2062,7 @@
       "url": "https://store.brother.es/devices/laser/dcp/dcp7040"
     },
     {
-      "model": "MFC-7",
+      "model": "MFC-7440N",
       "url": "https://store.brother.es/devices/laser/mfc/mfc7440n"
     },
     {
@@ -2508,7 +2508,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-3360CN",
+      "printerModel": "MFC-3360C",
       "supplyPartNumber": "LC1000BK",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000bk",
       "status": "candidate"
@@ -2682,7 +2682,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-3360CN",
+      "printerModel": "MFC-3360C",
       "supplyPartNumber": "LC1000C",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000c",
       "status": "candidate"
@@ -2712,7 +2712,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-3360CN",
+      "printerModel": "MFC-3360C",
       "supplyPartNumber": "LC1000M",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000m",
       "status": "candidate"
@@ -2808,7 +2808,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-3360CN",
+      "printerModel": "MFC-3360C",
       "supplyPartNumber": "LC1000Y",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc1000y",
       "status": "candidate"
@@ -8154,7 +8154,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980BK",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980bk",
       "status": "candidate"
@@ -8208,7 +8208,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980BKBP",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980bkbp",
       "status": "candidate"
@@ -8262,7 +8262,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980C",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980c",
       "status": "candidate"
@@ -8316,7 +8316,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980CBP",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980cbp",
       "status": "candidate"
@@ -8370,7 +8370,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980M",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980m",
       "status": "candidate"
@@ -8424,7 +8424,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980MBP",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980mbp",
       "status": "candidate"
@@ -8472,7 +8472,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980Y",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980y",
       "status": "candidate"
@@ -8532,7 +8532,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-295C",
+      "printerModel": "MFC-295CN",
       "supplyPartNumber": "LC980YBP",
       "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lc980ybp",
       "status": "candidate"
@@ -9462,7 +9462,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-7",
+      "printerModel": "MFC-7440N",
       "supplyPartNumber": "TN2110",
       "sourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn2110",
       "status": "candidate"
@@ -9498,7 +9498,7 @@
       "status": "candidate"
     },
     {
-      "printerModel": "MFC-7",
+      "printerModel": "MFC-7440N",
       "supplyPartNumber": "TN2120",
       "sourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn2120",
       "status": "candidate"
