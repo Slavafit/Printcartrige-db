@@ -80,6 +80,10 @@
       {
         "from": "desktop-runtime/node.exe",
         "to": "node.exe"
+      },
+      {
+        "from": "launcher/PrinterDB.Launcher/printerdb.ico",
+        "to": "printerdb.ico"
       }
     ],
     "asar": false,
