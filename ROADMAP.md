@@ -71,6 +71,8 @@ Reproducible HP/Canon/Epson import into a separate SQLite: 30 → 2,785 printers
 
 **Verified snapshot:** 12 Spanish cartridge pages, 2 printer models (VersaLink C400/C405), 12 OEM cartridges, 24 verified relationships; zero request failures, exclusions, manual-review cases or pending discovered pages. Both output formats pass strict dry import; repeated imports are idempotent and preserve existing Kyocera evidence. This is a bounded seed-derived sample, not an exhaustive Xerox catalog. No production database changes or migrations. See [Xerox collection notes](docs/xerox.md).
 
+**Evidence snapshot repair (2026-10-14):** restored the Xerox report and structured outputs to the original hash-verifiable 2026-10-09 snapshot after a later unrelated commit referenced two raw HTML hashes whose files were not committed. The 12 cartridges and 24 verified relationships are unchanged, every manifest page again has its retained source artifact, and no SQLite database is modified.
+
 **Deliverables:** official European source integration, genuine Xerox-for-Xerox filtering, exact models/SKUs/colors/yields where available, evidence-preserving JSON/CSV output, retry/resume controls, and fixture tests.
 
 **Acceptance:** “Everyday” third-party-compatible and non-cartridge products are excluded; verified edges have explicit official evidence and region; imports are valid and idempotent; failures and coverage are reported.
