@@ -53,3 +53,7 @@ Use **`import:compatibility` for both formats** to preserve evidence, dates, sou
 Offline tests cover filtering, HTML/JSON-LD agreement, ES/IE provenance, unknown attributes, robots denials, redirects/access restrictions, transient retries, failure resumption, JSON/CSV and idempotency. A real-file test verifies every saved HTML hash, reproduces all 24 records, dry-imports them, imports twice in memory and confirms that existing Kyocera evidence is unchanged. Synthetic products remain under tests and temporary test directories only.
 
 The live sample passes strict JSON and CSV dry imports with all 24 records accepted. Actual in-memory imports create 24 relationships once and zero on repetition. No migration or production database writes are required. Parsing fails closed when the observed format changes. Only ES has a committed live snapshot; IE is fixture-tested against the independently inspected Ireland structure. Full manufacturer coverage is not claimed.
+
+### Snapshot integrity repair (2026-10-14)
+
+The committed report, JSON, and CSV were restored to the original 2026-10-09 verified snapshot after an unrelated later commit refreshed collection timestamps and referenced two replacement raw HTML hashes without committing those source files. The repair preserves the same 12 cartridges and 24 compatibility relationships, changes no SQLite database, and restores a complete hash-verifiable evidence chain for every report page.
