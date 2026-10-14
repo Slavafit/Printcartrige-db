@@ -22,6 +22,7 @@
     "db": "tsx src/cli.ts",
     "task:018": "tsx src/task018.ts",
     "prepare:brother-supplies": "tsx src/prepare-brother-supplies.ts",
+    "repair:brother-models": "node scripts/rebuild-brother-data.cjs && node scripts/validate-brother.cjs && node scripts/audit-brother.cjs && tsx src/prepare-brother-supplies.ts",
     "collect:kyocera": "tsx src/collectors/kyocera.ts",
     "collect:epson": "tsx src/collectors/epson.ts",
     "collect:xerox": "tsx src/collectors/xerox.ts",

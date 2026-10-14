@@ -1,0 +1,27 @@
+{
+  "correctedModels": [
+    {
+      "from": "MFC-3360CN",
+      "to": "MFC-3360C",
+      "url": "https://store.brother.es/devices/laser/mfc/mfc3360c",
+      "relationships": 4
+    },
+    {
+      "from": "MFC-295C",
+      "to": "MFC-295CN",
+      "url": "https://store.brother.es/devices/laser/mfc/mfc295cn",
+      "relationships": 8
+    },
+    {
+      "from": "MFC-7",
+      "to": "MFC-7440N",
+      "url": "https://store.brother.es/devices/laser/mfc/mfc7440n",
+      "relationships": 2
+    }
+  ],
+  "printers": 293,
+  "supplies": 254,
+  "relationships": 1611,
+  "normalizedDuplicates": 0,
+  "unconfirmedMismatches": 0
+}

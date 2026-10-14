@@ -26,7 +26,14 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 022 | Lexmark España official compatibility collector and data UI | Implemented and validated on `feature/lexmark-official-compatibility` | 004, 012, 013 |
 | 023 | Russian project component guide | Implemented on `feature/project-guide` | — |
 | 024 | Unified supply catalog and Brother import preparation | Implemented and validated on `feature/unified-supply-catalog` | 018, 022; completed Brother collection |
+| 025 | Brother model parsing repair | Implemented and validated on `feature/fix-brother-model-parsing` | 024 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
+
+## Task 025 — Brother model parsing repair
+
+**Implemented on `feature/fix-brother-model-parsing`:** the saved Brother model labels are now checked against their exact official device URLs. Three explicitly confirmed corrections repair 14 relationships: MFC-3360CN → MFC-3360C (4), MFC-295C → MFC-295CN (8), and MFC-7 → MFC-7440N (2). Any future unconfirmed mismatch fails closed; the two saved `-bundle` URLs are accepted only after removing that known storefront suffix for identity comparison.
+
+The rebuilt set retains 293 printers, 254 supplies and 1,611 relationships. Revalidation reports zero errors/warnings and no normalized duplicates. Re-audit preserves 1,606 `cross-referenced`, 4 `candidate`, and 1 `not-checkable` relationships. A read-only dry run against the transfer candidate creates zero printers, 253 supplies, and 1,606 relationships; no SQLite was changed. See [Brother supply and repair notes](docs/brother-supplies.md).
 
 ## Task 024 — Unified supply catalog and Brother import preparation
 
