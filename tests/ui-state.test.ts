@@ -30,6 +30,8 @@ it('shows official collectors separately from manual file import',()=>{
   expect(app).toContain('Fuentes oficiales');
   expect(app).toContain("get<CollectorState[]>('/api/collectors')");
   expect(app).toContain('Recopilar lote');
+  expect(app).toContain("item.actionLabel??'Recopilar lote'");
+  expect(app).toContain('Carpeta de entrada no encontrada');
   expect(app).toContain('Importar resultado');
   expect(app).toContain('Importar un archivo');
   expect(app).toContain('/stop`');

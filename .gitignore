@@ -15,6 +15,7 @@ launcher/**/bin/
 launcher/**/obj/
 .env
 .collector-state/
+.tmp-brother-ui-*/
 # Brother HTML cache
 /data/brother-html/
 /data/brother-printer-html/

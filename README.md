@@ -86,9 +86,11 @@ The **Fuentes oficiales** section inside **Importar** is available only through 
 
 While an online collector is running, its card refreshes every two seconds and shows completed pages for the current batch, accumulated printer/cartridge/relationship counts, checkpoint errors, pending pages, and an estimated time remaining. The live log opens automatically. **Detener** terminates only the active whitelisted child process and preserves its resumable checkpoint; it never imports partial output automatically.
 
-1. Select **Collect** to start an online manufacturer adapter. Brother is offline-only and uses the committed sitemap.
+1. Select **Collect** to start an online manufacturer adapter. Brother is offline-only: **Procesar HTML** reads previously saved official supply pages from `data/brother-html` and never opens the website.
 2. Keep the local server running and inspect the displayed status and collector log. Only one collector runs at a time.
 3. After a successful run and review, select **Import to MVP** to validate and import that collector's saved JSON into `mvp.sqlite`.
+
+Brother processing reuses the parsers in `scripts/`, preserves the saved verification states, validates the rebuilt audit, and publishes `data/official/brother/brother-supplies.json` only after the full offline run succeeds. If the ignored `data/brother-html` cache is absent, the UI reports the missing folder while the already validated committed Brother package remains available for an explicit import.
 4. Search and statistics update from the imported database. Repeated imports remain idempotent.
 
 Collectors retain their existing rate limits, retries, resumable state, robots/access rules, exclusions, and manual-review behavior. A successful process does not imply complete manufacturer coverage. Epson may defer work outside its permitted access window, and inaccessible or ambiguous evidence is never promoted to verified compatibility.

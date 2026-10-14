@@ -52,6 +52,19 @@ pnpm.cmd prepare:brother-supplies
 
 Результаты находятся в `data/official/brother/brother-supplies.json` и `data/official/brother/brother-supplies-report.json`.
 
+## Запуск из интерфейса
+
+В разделе **Importar → Fuentes oficiales → Brother España** кнопка **Procesar HTML** запускает только офлайн-обработчик. Он читает ранее сохранённые страницы из игнорируемой Git папки `data/brother-html`, вызывает существующие модули `scripts/parse-brother.cjs` и `scripts/rebuild-brother-data.cjs`, повторно строит коллекцию, аудит и единый импортный пакет. Сетевые запросы и браузерный сбор этой кнопкой не выполняются.
+
+UI показывает отсутствие входной папки и не позволяет начать обработку без HTML. Уже проверенный `brother-supplies.json` можно импортировать отдельно кнопкой **Importar resultado**. Перед записью сервер выполняет dry-run общего multi-source importer; запись проходит одной транзакцией и включает только связи `cross-referenced`. Статусы `candidate` и `not-checkable` сохраняются в аудите, но в SQLite не повышаются до официально подтверждённых.
+
+Для ручного запуска используется тот же worker:
+
+```powershell
+pnpm.cmd build:server
+node .\dist\src\collectors\brother.js
+```
+
 Безопасная проверка в памяти:
 
 ```powershell
