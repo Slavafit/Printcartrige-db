@@ -3,3 +3,9 @@ data/official/xerox/raw/*.html -text -whitespace
 data/official/xerox/robots-*.txt -text -whitespace
 data/official/hp/raw/*.html -text -whitespace
 data/official/hp/robots-*.txt -text -whitespace
+data/official/lexmark/raw/*.html -text -whitespace
+data/official/lexmark/robots-*.txt -text -whitespace
+
+# Keep generated structured outputs stable across platforms.
+data/official/lexmark/*.json text eol=lf
+data/official/lexmark/*.csv text eol=lf
