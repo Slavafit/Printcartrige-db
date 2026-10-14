@@ -4,11 +4,12 @@ import { parse } from 'csv-parse/sync';
 import * as XLSX from 'xlsx';
 import type { CartridgeDatabase } from './database.js';
 import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrinterModel } from './normalize.js';
+import { isSupplyType, supplyStorage, type SupplyType } from './supply-types.js';
 
 export type SourceCategory = 'official' | 'third_party' | 'open_dataset' | 'manual' | 'unknown';
 export type ReliabilityStatus = 'official_verified' | 'third_party_reported' | 'unverified' | 'conflicting';
 export type SupplyOrigin = 'oem' | 'compatible' | 'remanufactured' | 'unknown';
-export type SupplyType = 'ink' | 'ink_bottle' | 'toner' | 'drum' | 'waste_toner' | 'belt' | 'other' | 'unknown';
+export type { SupplyType } from './supply-types.js';
 
 export interface MultiSourceRow {
   printerManufacturer: string;
@@ -19,9 +20,14 @@ export interface MultiSourceRow {
   supplyOrigin?: SupplyOrigin;
   description?: string;
   color?: string;
+  yieldPages?: number;
   reliabilityStatus: ReliabilityStatus;
   region: string;
   note?: string;
+  sourceReference?: string;
+  evidenceType?: 'explicit-compatibility' | 'product-page-only' | 'other';
+  evidence?: string;
+  verifiedAt?: string;
   rawPrinterModel: string;
   rawSupplyPartNumber: string;
 }
@@ -98,12 +104,22 @@ export function importMultiSource(database: CartridgeDatabase, parsed: ParsedMul
     duplicateSupplies: 0, duplicateRelationships: 0, errors: parsed.errors, review: parsed.warnings,
   };
   const sourceReference = options.sourceReference.trim() || 'unknown://import';
-  const existingSource = database.db.prepare('SELECT id FROM data_sources WHERE url=?').get(sourceReference) as {id:number}|undefined;
-  let sourceId = existingSource?.id;
+  const sourceIds = new Map<string, number | undefined>();
+  sourceIds.set(sourceReference, (database.db.prepare('SELECT id FROM data_sources WHERE url=?').get(sourceReference) as {id:number}|undefined)?.id);
   const seenPrinters=new Set<string>(); const seenSupplies=new Set<string>(); const seenRelationships=new Set<string>();
   const seenEvidence=new Set<string>();
 
   const apply = (row: MultiSourceRow): void => {
+    const rowReference = row.sourceReference?.trim() || sourceReference;
+    let sourceId = sourceIds.get(rowReference);
+    if (!sourceIds.has(rowReference)) {
+      sourceId = (database.db.prepare('SELECT id FROM data_sources WHERE url=?').get(rowReference) as {id:number}|undefined)?.id;
+      sourceIds.set(rowReference, sourceId);
+    }
+    if (!dryRun && !sourceId) {
+      sourceId = upsertSource(database, options.sourceName, rowReference, options.sourceCategory);
+      sourceIds.set(rowReference, sourceId);
+    }
     const printerKey=`${normalizeManufacturerName(row.printerManufacturer)}|${normalizePrinterModel(row.printerModel)}`;
     const manufacturerId = findManufacturer(database, row.printerManufacturer);
     const printer = findPrinter(database, row.printerManufacturer, row.printerModel);
@@ -111,7 +127,7 @@ export function importMultiSource(database: CartridgeDatabase, parsed: ParsedMul
     seenPrinters.add(printerKey);
     const printerId = printer?.id ?? (dryRun ? -1 : upsertPrinter(database, manufacturerId ?? upsertManufacturer(database,row.printerManufacturer), row.printerModel));
     if (!row.supplyPartNumber) {
-      if (!dryRun) addPrinterSource(database, printerId, sourceId!, sourceReference, options.region ?? row.region);
+      if (!dryRun) addPrinterSource(database, printerId, sourceId!, rowReference, options.region ?? row.region);
       return;
     }
 
@@ -128,23 +144,23 @@ export function importMultiSource(database: CartridgeDatabase, parsed: ParsedMul
     seenRelationships.add(relationshipKey);
     if (dryRun) {
       const region=options.region??row.region;
-      const key=JSON.stringify([relationshipKey,sourceReference,region,row.rawPrinterModel,row.rawSupplyPartNumber]);
+      const key=JSON.stringify([relationshipKey,rowReference,region,row.rawPrinterModel,row.rawSupplyPartNumber]);
       const exists=relationship && sourceId && database.db.prepare(`SELECT id FROM compatibility_sources
         WHERE compatibility_id=? AND source_id=? AND source_reference=? AND region=? AND raw_printer_model=? AND raw_supply_part_number=?`)
-        .get(relationship.id,sourceId,sourceReference,region,row.rawPrinterModel,row.rawSupplyPartNumber);
+        .get(relationship.id,sourceId,rowReference,region,row.rawPrinterModel,row.rawSupplyPartNumber);
       if (!exists && !seenEvidence.has(key)) report.addedSources+=1;
       seenEvidence.add(key);
       return;
     }
     const reliability = options.reliabilityStatus ?? row.reliabilityStatus;
-    const compatibilityId = upsertRelationship(database, printerId, supplyId, sourceId!, sourceReference, reliability, options.region ?? row.region, row.supplyOrigin ?? 'unknown', row.description);
-    const added = addCompatibilitySource(database, compatibilityId, sourceId!, sourceReference, row, reliability, options.region ?? row.region);
+    const compatibilityId = upsertRelationship(database, printerId, supplyId, sourceId!, rowReference, reliability, options.region ?? row.region, row.supplyOrigin ?? 'unknown', row);
+    const added = addCompatibilitySource(database, compatibilityId, sourceId!, rowReference, row, reliability, options.region ?? row.region);
     if (added) report.addedSources += 1;
   };
 
   if (dryRun) parsed.rows.forEach(apply);
   else database.transaction(() => {
-    sourceId = upsertSource(database, options.sourceName, sourceReference, options.sourceCategory);
+    sourceIds.set(sourceReference, upsertSource(database, options.sourceName, sourceReference, options.sourceCategory));
     for (let offset=0; offset<parsed.rows.length; offset+=batchSize) parsed.rows.slice(offset,offset+batchSize).forEach(apply);
   });
   return report;
@@ -192,9 +208,11 @@ function parseGenericRows(raw:Array<Record<string,unknown>>):ParsedMultiSource {
     const part=get('supplyPartNumber',['supplypartnumber','cartridgepartnumber','partnumber','toner','sku','referencia']);const description=get('description',['description','descripcion','notes','notas']);
     if (part && ambiguousPart(part)) { errors.push({row:index+2,message:`Ambiguous part number: ${part}`}); return; }
     const explicitType=get('supplyType',['supplytype','cartridgekind','kind','producttype','tipo']) as SupplyType;const explicitOrigin=get('supplyOrigin',['supplyorigin','origintype','origin','origen']) as SupplyOrigin;const classified=classifySupply(description,printerManufacturer);
-    const type=(['ink','ink_bottle','toner','drum','waste_toner','belt','other','unknown'].includes(explicitType)?explicitType:classified.type);const origin=(['oem','compatible','remanufactured','unknown'].includes(explicitOrigin)?explicitOrigin:classified.origin);
+    const type=(isSupplyType(explicitType)?explicitType:classified.type);const origin=(['oem','compatible','remanufactured','unknown'].includes(explicitOrigin)?explicitOrigin:classified.origin);
     if(part&&type==='unknown')warnings.push({row:index+2,message:`Tipo de consumible no determinado: ${part}`});
-    rows.push({printerManufacturer,printerModel,supplyManufacturer:get('supplyManufacturer',['supplymanufacturer','cartridgemanufacturer'])||classified.manufacturer,supplyPartNumber:part||undefined,supplyType:part?type:undefined,supplyOrigin:part?origin:undefined,description:description||undefined,color:get('color',['color','colour','supplycolor','cartridgecolor'])||classified.color,reliabilityStatus:(get('reliabilityStatus',['reliabilitystatus','verificationstatus']) as ReliabilityStatus)||'unverified',region:get('region',['region'])||'unknown',note:get('note',['note','notes','notas'])||undefined,rawPrinterModel:printerModel,rawSupplyPartNumber:part});
+    const yieldText=get('yieldPages',['yieldpages','yield','rendimiento']);const yieldPages=yieldText?Number(yieldText):undefined;
+    if(yieldText&&(!Number.isInteger(yieldPages)||yieldPages!<=0)){errors.push({row:index+2,message:`Invalid page yield: ${yieldText}`});return;}
+    rows.push({printerManufacturer,printerModel,supplyManufacturer:get('supplyManufacturer',['supplymanufacturer','cartridgemanufacturer'])||classified.manufacturer,supplyPartNumber:part||undefined,supplyType:part?type:undefined,supplyOrigin:part?origin:undefined,description:description||undefined,color:get('color',['color','colour','supplycolor','cartridgecolor'])||classified.color,yieldPages,reliabilityStatus:(get('reliabilityStatus',['reliabilitystatus','verificationstatus']) as ReliabilityStatus)||'unverified',region:get('region',['region'])||'unknown',note:get('note',['note','notes','notas'])||undefined,sourceReference:get('sourceReference',['sourcereference','sourceurl','url'])||undefined,evidenceType:(get('evidenceType',['evidencetype'])||undefined) as MultiSourceRow['evidenceType'],evidence:get('evidence',['evidence','proof'])||undefined,verifiedAt:get('verifiedAt',['verifiedat','verificationdate'])||undefined,rawPrinterModel:printerModel,rawSupplyPartNumber:part});
   });return{format:'generic',rows,errors,warnings,mapping};
 }
 
@@ -237,15 +255,16 @@ function upsertPrinter(db:CartridgeDatabase,manufacturerId:number,model:string):
 function findSupply(db:CartridgeDatabase,manufacturer:string,part:string):{id:number}|undefined{return db.db.prepare('SELECT c.id FROM cartridges c JOIN manufacturers m ON m.id=c.manufacturer_id WHERE m.normalized_name=? AND c.normalized_part_number=?').get(normalizeManufacturerName(manufacturer),normalizeCartridgePartNumber(part))as{id:number}|undefined;}
 function enrichSupply(db:CartridgeDatabase,id:number,row:MultiSourceRow):void {
   // Fill missing descriptive metadata only; never change official or user notes/origin.
-  const kind=row.supplyType==='ink_bottle'?'other':row.supplyType??'unknown';
+  const storage=supplyStorage(row.supplyType??'unknown');
+  const kind=storage.kind;
   db.db.prepare(`UPDATE cartridges SET kind=CASE WHEN kind='unknown' THEN ? ELSE kind END,
     supply_form=CASE WHEN kind IN ('unknown','other') THEN COALESCE(supply_form,?) ELSE supply_form END,
-    color=COALESCE(color,?) WHERE id=? AND NOT EXISTS (
+    color=COALESCE(color,?),yield_pages=COALESCE(yield_pages,?) WHERE id=? AND NOT EXISTS (
       SELECT 1 FROM compatibility WHERE cartridge_id=cartridges.id AND reliability_status='official_verified')`)
-    .run(kind,row.supplyType==='ink_bottle'?'ink_bottle':null,row.color??null,id);
+    .run(kind,storage.supplyForm,row.color??null,row.yieldPages??null,id);
 }
-function upsertSupply(db:CartridgeDatabase,manufacturerId:number,row:MultiSourceRow):number{db.db.prepare(`INSERT INTO cartridges(manufacturer_id,part_number,normalized_part_number,kind,origin_type,notes,supply_form,color) VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(manufacturer_id,normalized_part_number) DO UPDATE SET kind=CASE WHEN cartridges.kind='unknown' THEN excluded.kind ELSE cartridges.kind END,origin_type=CASE WHEN cartridges.origin_type='oem' THEN 'oem' WHEN cartridges.origin_type='unknown' THEN excluded.origin_type ELSE cartridges.origin_type END,notes=COALESCE(cartridges.notes,excluded.notes),updated_at=CURRENT_TIMESTAMP`).run(manufacturerId,row.supplyPartNumber,normalizeCartridgePartNumber(row.supplyPartNumber!),row.supplyType==='ink_bottle'?'other':row.supplyType??'unknown',row.supplyOrigin??'unknown',row.description??null,row.supplyType==='ink_bottle'?'ink_bottle':null,row.color??null);return(db.db.prepare('SELECT id FROM cartridges WHERE manufacturer_id=? AND normalized_part_number=?').get(manufacturerId,normalizeCartridgePartNumber(row.supplyPartNumber!))as{id:number}).id;}
+function upsertSupply(db:CartridgeDatabase,manufacturerId:number,row:MultiSourceRow):number{const storage=supplyStorage(row.supplyType??'unknown');db.db.prepare(`INSERT INTO cartridges(manufacturer_id,part_number,normalized_part_number,kind,origin_type,notes,supply_form,color,yield_pages) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(manufacturer_id,normalized_part_number) DO UPDATE SET kind=CASE WHEN cartridges.kind='unknown' THEN excluded.kind ELSE cartridges.kind END,origin_type=CASE WHEN cartridges.origin_type='oem' THEN 'oem' WHEN cartridges.origin_type='unknown' THEN excluded.origin_type ELSE cartridges.origin_type END,notes=COALESCE(cartridges.notes,excluded.notes),supply_form=COALESCE(cartridges.supply_form,excluded.supply_form),color=COALESCE(cartridges.color,excluded.color),yield_pages=COALESCE(cartridges.yield_pages,excluded.yield_pages),updated_at=CURRENT_TIMESTAMP`).run(manufacturerId,row.supplyPartNumber,normalizeCartridgePartNumber(row.supplyPartNumber!),storage.kind,row.supplyOrigin??'unknown',row.description??null,storage.supplyForm,row.color??null,row.yieldPages??null);return(db.db.prepare('SELECT id FROM cartridges WHERE manufacturer_id=? AND normalized_part_number=?').get(manufacturerId,normalizeCartridgePartNumber(row.supplyPartNumber!))as{id:number}).id;}
 function upsertSource(db:CartridgeDatabase,name:string,reference:string,category:SourceCategory):number{db.db.prepare(`INSERT INTO data_sources(name,url,source_category) VALUES(?,?,?) ON CONFLICT(url) DO UPDATE SET name=excluded.name,source_category=CASE WHEN data_sources.source_category='official' THEN 'official' ELSE excluded.source_category END,updated_at=CURRENT_TIMESTAMP`).run(name,reference,category);return(db.db.prepare('SELECT id FROM data_sources WHERE url=?').get(reference)as{id:number}).id;}
 function addPrinterSource(db:CartridgeDatabase,printerId:number,sourceId:number,reference:string,region:string):void{db.db.prepare(`INSERT INTO printer_sources(printer_id,source_id,source_url,verification_status,region) VALUES(?,?,?,'unverified',?) ON CONFLICT(printer_id,source_url,region) DO NOTHING`).run(printerId,sourceId,reference,region);}
-function upsertRelationship(db:CartridgeDatabase,printerId:number,supplyId:number,sourceId:number,reference:string,reliability:ReliabilityStatus,region:string,origin:SupplyOrigin,description?:string):number{const legacyStatus=reliability==='official_verified'?'verified':'unverified';db.db.prepare(`INSERT INTO compatibility(printer_id,cartridge_id,source_id,source_url,verification_status,region,is_genuine_oem,source_type,evidence_type,evidence,reliability_status) VALUES(?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(printer_id,cartridge_id) DO UPDATE SET reliability_status=CASE WHEN compatibility.reliability_status='official_verified' THEN 'official_verified' WHEN excluded.reliability_status='official_verified' THEN 'official_verified' WHEN compatibility.reliability_status='conflicting' OR excluded.reliability_status='conflicting' THEN 'conflicting' WHEN compatibility.reliability_status='third_party_reported' OR excluded.reliability_status='third_party_reported' THEN 'third_party_reported' ELSE 'unverified' END,verification_status=CASE WHEN compatibility.verification_status='verified' THEN 'verified' ELSE excluded.verification_status END,updated_at=CURRENT_TIMESTAMP WHERE compatibility.reliability_status <> 'official_verified' AND compatibility.verification_status <> 'rejected'`).run(printerId,supplyId,sourceId,reference,legacyStatus,region,origin==='oem'?1:0,reliability==='official_verified'?'official-manufacturer':'other','other',description??null,reliability);return(db.db.prepare('SELECT id FROM compatibility WHERE printer_id=? AND cartridge_id=?').get(printerId,supplyId)as{id:number}).id;}
-function addCompatibilitySource(db:CartridgeDatabase,compatibilityId:number,sourceId:number,reference:string,row:MultiSourceRow,reliability:ReliabilityStatus,region:string):boolean{const existed=Boolean(db.db.prepare(`SELECT id FROM compatibility_sources WHERE compatibility_id=? AND source_id=? AND source_reference=? AND region=? AND raw_printer_model=? AND raw_supply_part_number=?`).get(compatibilityId,sourceId,reference,region,row.rawPrinterModel,row.rawSupplyPartNumber));db.db.prepare(`INSERT INTO compatibility_sources(compatibility_id,source_id,source_reference,raw_printer_model,raw_supply_part_number,raw_description,verification_status,region,note) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(compatibility_id,source_id,source_reference,region,raw_printer_model,raw_supply_part_number) DO UPDATE SET raw_description=COALESCE(excluded.raw_description,compatibility_sources.raw_description),note=COALESCE(excluded.note,compatibility_sources.note),verification_status=CASE WHEN compatibility_sources.verification_status='official_verified' THEN 'official_verified' ELSE excluded.verification_status END`).run(compatibilityId,sourceId,reference,row.rawPrinterModel,row.rawSupplyPartNumber,row.description??'',reliability,region,row.note??null);return !existed;}
+function upsertRelationship(db:CartridgeDatabase,printerId:number,supplyId:number,sourceId:number,reference:string,reliability:ReliabilityStatus,region:string,origin:SupplyOrigin,row:MultiSourceRow):number{const legacyStatus=reliability==='official_verified'?'verified':'unverified';db.db.prepare(`INSERT INTO compatibility(printer_id,cartridge_id,source_id,source_url,verification_status,region,is_genuine_oem,source_type,evidence_type,evidence,verified_at,reliability_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(printer_id,cartridge_id) DO UPDATE SET reliability_status=CASE WHEN compatibility.reliability_status='official_verified' THEN 'official_verified' WHEN excluded.reliability_status='official_verified' THEN 'official_verified' WHEN compatibility.reliability_status='conflicting' OR excluded.reliability_status='conflicting' THEN 'conflicting' WHEN compatibility.reliability_status='third_party_reported' OR excluded.reliability_status='third_party_reported' THEN 'third_party_reported' ELSE 'unverified' END,verification_status=CASE WHEN compatibility.verification_status='verified' THEN 'verified' ELSE excluded.verification_status END,evidence=COALESCE(compatibility.evidence,excluded.evidence),verified_at=COALESCE(compatibility.verified_at,excluded.verified_at),updated_at=CURRENT_TIMESTAMP WHERE compatibility.reliability_status <> 'official_verified' AND compatibility.verification_status <> 'rejected'`).run(printerId,supplyId,sourceId,reference,legacyStatus,region,origin==='oem'?1:0,reliability==='official_verified'?'official-manufacturer':'other',row.evidenceType??'other',row.evidence??row.description??null,row.verifiedAt??null,reliability);return(db.db.prepare('SELECT id FROM compatibility WHERE printer_id=? AND cartridge_id=?').get(printerId,supplyId)as{id:number}).id;}
+function addCompatibilitySource(db:CartridgeDatabase,compatibilityId:number,sourceId:number,reference:string,row:MultiSourceRow,reliability:ReliabilityStatus,region:string):boolean{const existed=Boolean(db.db.prepare(`SELECT id FROM compatibility_sources WHERE compatibility_id=? AND source_id=? AND source_reference=? AND region=? AND raw_printer_model=? AND raw_supply_part_number=?`).get(compatibilityId,sourceId,reference,region,row.rawPrinterModel,row.rawSupplyPartNumber));db.db.prepare(`INSERT INTO compatibility_sources(compatibility_id,source_id,source_reference,raw_printer_model,raw_supply_part_number,raw_description,verification_status,region,note,evidence_type,evidence,verified_at) VALUES(?,?,?,?,?,?,?,?,?,?,?,?) ON CONFLICT(compatibility_id,source_id,source_reference,region,raw_printer_model,raw_supply_part_number) DO UPDATE SET raw_description=COALESCE(excluded.raw_description,compatibility_sources.raw_description),note=COALESCE(excluded.note,compatibility_sources.note),evidence_type=COALESCE(excluded.evidence_type,compatibility_sources.evidence_type),evidence=COALESCE(excluded.evidence,compatibility_sources.evidence),verified_at=COALESCE(excluded.verified_at,compatibility_sources.verified_at),verification_status=CASE WHEN compatibility_sources.verification_status='official_verified' THEN 'official_verified' ELSE excluded.verification_status END`).run(compatibilityId,sourceId,reference,row.rawPrinterModel,row.rawSupplyPartNumber,row.description??'',reliability,region,row.note??null,row.evidenceType??'other',row.evidence??null,row.verifiedAt??null);return !existed;}

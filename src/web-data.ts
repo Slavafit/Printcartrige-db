@@ -6,11 +6,15 @@ export interface PrinterSearchPage { items: unknown[]; total: number; page: numb
 export function webStats(database: CartridgeDatabase): Record<string, number> {
   const value = (sql: string): number => (database.db.prepare(sql).get() as { count: number }).count;
   return {
-    apiVersion: 2,
+    apiVersion: 3,
     ...database.compatibilityStats(),
     totalManufacturers: value('SELECT COUNT(*) AS count FROM manufacturers'),
-    totalCartridges: value('SELECT COUNT(*) AS count FROM cartridges'),
-    totalCompatibleCartridges: value("SELECT COUNT(*) AS count FROM cartridges WHERE origin_type = 'compatible'"),
+    totalSupplies: value('SELECT COUNT(*) AS count FROM cartridges'),
+    totalCartridges: value("SELECT COUNT(*) AS count FROM cartridges WHERE kind IN ('ink','toner') AND supply_form IS NULL"),
+    totalInkBottles: value("SELECT COUNT(*) AS count FROM cartridges WHERE supply_form = 'ink_bottle'"),
+    totalOtherSupplies: value("SELECT COUNT(*) AS count FROM cartridges WHERE supply_form IS NULL AND kind NOT IN ('ink','toner')"),
+    totalCompatibleCartridges: value("SELECT COUNT(*) AS count FROM cartridges WHERE origin_type = 'compatible' AND kind IN ('ink','toner') AND supply_form IS NULL"),
+    totalVerifiedSupplyRelationships: value("SELECT COUNT(*) AS count FROM compatibility WHERE reliability_status = 'official_verified' AND is_genuine_oem = 1"),
   };
 }
 
@@ -25,8 +29,11 @@ export function searchPrinters(database: CartridgeDatabase, options: PrinterSear
   const manufacturer = options.manufacturer?.trim().toLowerCase() ?? '';
   return database.db.prepare(`
     SELECT p.id, m.name AS manufacturer, p.model_name, p.has_replaceable_cartridges,
-      COUNT(DISTINCT CASE WHEN cp.reliability_status = 'official_verified' THEN cp.cartridge_id END) AS verified_cartridge_count,
-      COUNT(DISTINCT cp.cartridge_id) AS cartridge_count
+      COUNT(DISTINCT CASE WHEN cp.reliability_status = 'official_verified' THEN cp.cartridge_id END) AS verified_supply_count,
+      COUNT(DISTINCT CASE WHEN cp.reliability_status = 'official_verified' AND c.kind IN ('ink','toner') AND c.supply_form IS NULL THEN cp.cartridge_id END) AS verified_cartridge_count,
+      COUNT(DISTINCT cp.cartridge_id) AS supply_count,
+      COUNT(DISTINCT CASE WHEN c.kind IN ('ink','toner') AND c.supply_form IS NULL THEN cp.cartridge_id END) AS cartridge_count,
+      COUNT(DISTINCT CASE WHEN c.supply_form = 'ink_bottle' THEN cp.cartridge_id END) AS bottle_count
     FROM printers p JOIN manufacturers m ON m.id = p.manufacturer_id
     LEFT JOIN compatibility cp ON cp.printer_id = p.id
     LEFT JOIN cartridges c ON c.id = cp.cartridge_id
@@ -62,7 +69,8 @@ export function printerDetails(database: CartridgeDatabase, id: number): unknown
   if (!printer) return undefined;
   const sources = database.db.prepare(`SELECT ds.name, ps.source_url, ps.verification_status, ps.region FROM printer_sources ps JOIN data_sources ds ON ds.id = ps.source_id WHERE ps.printer_id = ? ORDER BY ps.verification_status = 'verified' DESC, ps.region, ps.source_url`).all(id);
   const cartridges = database.db.prepare(`
-    SELECT c.id, cp.id compatibility_id, cm.name AS manufacturer, c.part_number, c.kind, c.origin_type, c.color, c.yield_pages, c.notes,
+    SELECT c.id, cp.id compatibility_id, cm.name AS manufacturer, c.part_number, c.kind, c.supply_form,
+      COALESCE(c.supply_form,c.kind) AS supply_type, c.origin_type, c.color, c.yield_pages, c.notes,
       cp.verification_status, cp.reliability_status, cp.region, cp.source_url, cp.evidence, cp.verified_at,
       ds.name source_name, ds.source_category
     FROM compatibility cp JOIN cartridges c ON c.id = cp.cartridge_id JOIN manufacturers cm ON cm.id = c.manufacturer_id

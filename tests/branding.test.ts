@@ -21,7 +21,8 @@ describe('desktop and browser branding', () => {
     const styles = readFileSync('web/src/styles.css', 'utf8');
     expect(app).toContain('Cómo utilizar PrinterDB');
     expect(app).toContain('aria-label="Abrir ayuda"');
-    expect(app).toContain('Buscar por modelo, fabricante o referencia de cartucho');
+    expect(app).toContain('Buscar por modelo, fabricante o referencia de consumible');
+    expect(app).toContain('label="botellas de tinta"');
     expect(styles).toContain('.hero{min-height:76px');
     expect(styles).toContain('#root>main{display:flex;min-height:100vh;min-height:100dvh;flex-direction:column}');
     expect(styles).toContain('.workspace{width:100%;margin:0 auto;min-height:0;flex:1 0 auto}');

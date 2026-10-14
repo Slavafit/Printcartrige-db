@@ -1,0 +1,32 @@
+{
+  "inputRelationships": 1611,
+  "acceptedRelationships": 1606,
+  "excludedRelationships": 5,
+  "uniquePrinters": 292,
+  "uniqueSupplies": 253,
+  "cartridgeRelationships": 1598,
+  "bottleRelationships": 8,
+  "errors": [],
+  "review": [
+    {
+      "row": 735,
+      "message": "Excluded Brother relationship with status candidate: DCP-J1360DW / LC521BK"
+    },
+    {
+      "row": 736,
+      "message": "Excluded Brother relationship with status candidate: DCP-J1460DW / LC521BK"
+    },
+    {
+      "row": 737,
+      "message": "Excluded Brother relationship with status candidate: DCP-J1310DW / LC521BK"
+    },
+    {
+      "row": 738,
+      "message": "Excluded Brother relationship with status candidate: DCP-J1260W / LC521BK"
+    },
+    {
+      "row": 1065,
+      "message": "Excluded Brother relationship with status not-checkable: DCP-1612W / TN1050"
+    }
+  ]
+}

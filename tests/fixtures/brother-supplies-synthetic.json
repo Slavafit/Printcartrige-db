@@ -1,0 +1,8 @@
+{
+  "manufacturer": "Brother",
+  "supplies": [
+    { "partNumber": "BTD180BK", "type": "ink", "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180bk" },
+    { "partNumber": "LC-TEST", "type": "ink", "sourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lctest" },
+    { "partNumber": "TN-TEST", "type": "toner", "sourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn-test" }
+  ]
+}
