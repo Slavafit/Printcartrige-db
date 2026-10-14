@@ -1,10 +1,11 @@
 import { existsSync, readFileSync, rmSync } from 'node:fs';
-import { resolve } from 'node:path';
+import { delimiter, join, resolve } from 'node:path';
 import { spawn, type ChildProcessWithoutNullStreams } from 'node:child_process';
 import { importBrotherSitemap } from './brother-sitemap.js';
 import { importCompatibilityFile } from './compatibility-importer.js';
 import { importMultiSource, parseMultiSourceBytes, type MultiSourceOptions } from './multi-source-import.js';
 import type { CartridgeDatabase } from './database.js';
+import type { CollectorRuntime } from './collector-runtime.js';
 
 export type CollectorId = 'brother' | 'kyocera' | 'epson' | 'xerox' | 'hp' | 'lexmark';
 type JobStatus = 'idle' | 'running' | 'succeeded' | 'failed' | 'stopped';
@@ -27,23 +28,24 @@ export class CollectorJobs {
   private activeId?: CollectorId;
   private baselineCompleted = 0;
 
-  constructor(private database: CartridgeDatabase) {
+  constructor(private database: CartridgeDatabase, private runtime: CollectorRuntime = { appRoot: process.cwd(), workspaceRoot: process.cwd() }) {
     for (const definition of COLLECTOR_DEFINITIONS) this.states.set(definition.id, this.initial(definition));
   }
 
-  list(): CollectorState[] { if (this.activeId) this.refreshProgress(this.states.get(this.activeId)!); return COLLECTOR_DEFINITIONS.map(item => ({ ...this.states.get(item.id)!, inputExists: !item.input || existsSync(resolve(item.input)), outputExists: existsSync(resolve(item.output)) })); }
+  list(): CollectorState[] { if (this.activeId) this.refreshProgress(this.states.get(this.activeId)!); return COLLECTOR_DEFINITIONS.map(item => ({ ...this.states.get(item.id)!, input: item.input ? this.workspacePath(item.input) : undefined, output: this.workspacePath(item.output), inputExists: !item.input || existsSync(this.workspacePath(item.input)), outputExists: existsSync(this.workspacePath(item.output)) })); }
 
   start(id: string): CollectorState {
     const definition = this.definition(id);
     if (!definition.script) throw new Error('This source is offline-only; use Import');
-    if (definition.input && !existsSync(resolve(definition.input))) throw new Error(`Input directory not found: ${definition.input}`);
+    if (definition.input && !existsSync(this.workspacePath(definition.input))) throw new Error(`Input directory not found: ${this.workspacePath(definition.input)}`);
     if (this.child) throw new Error(`Collector ${this.activeId} is already running`);
-    if (definition.resetState && definition.stateFile) rmSync(resolve(definition.stateFile), { force: true });
-    const state: CollectorState = { ...definition, status: 'running', startedAt: new Date().toISOString(), log: '', inputExists: !definition.input || existsSync(resolve(definition.input)), outputExists: existsSync(resolve(definition.output)) };
+    if (definition.resetState && definition.stateFile) rmSync(this.workspacePath(definition.stateFile), { force: true });
+    const state: CollectorState = { ...definition, input: definition.input ? this.workspacePath(definition.input) : undefined, output: this.workspacePath(definition.output), status: 'running', startedAt: new Date().toISOString(), log: '', inputExists: !definition.input || existsSync(this.workspacePath(definition.input)), outputExists: existsSync(this.workspacePath(definition.output)) };
     this.baselineCompleted = checkpointCompleted(this.readCheckpoint(definition));
     this.refreshProgress(state);
     this.states.set(definition.id, state); this.activeId = definition.id;
-    const child = spawn(process.execPath, [resolve(definition.script), ...(definition.args ?? [])], { cwd: process.cwd(), env: process.env });
+    const nodePath = [join(this.runtime.appRoot, 'node_modules'), process.env.NODE_PATH].filter(Boolean).join(delimiter);
+    const child = spawn(process.execPath, [resolve(this.runtime.appRoot, definition.script), ...(definition.args ?? [])], { cwd: this.runtime.workspaceRoot, env: { ...process.env, NODE_PATH: nodePath, PRINTERDB_APP_ROOT: this.runtime.appRoot } });
     this.child = child;
     const append = (chunk: Buffer) => { state.log = `${state.log}${chunk.toString('utf8')}`.slice(-30_000); };
     child.stdout.on('data', append); child.stderr.on('data', append);
@@ -55,20 +57,21 @@ export class CollectorJobs {
   async import(id: string): Promise<unknown> {
     const definition = this.definition(id);
     if (this.child) throw new Error('Wait for the running collector to finish before importing');
-    if (!existsSync(resolve(definition.output))) throw new Error(`Output file not found: ${definition.output}`);
+    const output = this.workspacePath(definition.output);
+    if (!existsSync(output)) throw new Error(`Output file not found: ${output}`);
     if (definition.importType === 'sitemap') {
-      const result = await importBrotherSitemap(this.database, definition.output, false);
+      const result = await importBrotherSitemap(this.database, output, false);
       return { insertedModels: result.insertedModels, existingModels: result.existingModels, rejectedUrls: result.rejectedUrls.length, errors: result.errors, totalModels: result.totalBrotherModelsAfterImport };
     }
     if (definition.importType === 'multi-source') {
-      const parsed = parseMultiSourceBytes(definition.output, readFileSync(resolve(definition.output)), this.database);
+      const parsed = parseMultiSourceBytes(output, readFileSync(output), this.database);
       const options = definition.importOptions;
       if (!options) throw new Error(`Missing import options for ${definition.id}`);
       const preview = importMultiSource(this.database, parsed, options, true);
       if (preview.errors.length) throw new Error(`Import validation failed with ${preview.errors.length} errors`);
       return importMultiSource(this.database, parsed, options, false);
     }
-    const result = await importCompatibilityFile(this.database, definition.output, false);
+    const result = await importCompatibilityFile(this.database, output, false);
     return { acceptedRecords: result.acceptedRecords, insertedRelationships: result.insertedRelationships, existingRelationships: result.existingRelationships, rejectedRecords: result.rejectedRecords, manualReview: result.recordsRequiringManualReview, errors: result.errors };
   }
 
@@ -83,10 +86,10 @@ export class CollectorJobs {
     if (!result) throw new Error(`Unknown collector: ${id}`);
     return result;
   }
-  private initial(definition: Definition): CollectorState { return { ...definition, status: 'idle', log: '', inputExists: !definition.input || existsSync(resolve(definition.input)), outputExists: existsSync(resolve(definition.output)) }; }
+  private initial(definition: Definition): CollectorState { return { ...definition, input: definition.input ? this.workspacePath(definition.input) : undefined, output: this.workspacePath(definition.output), status: 'idle', log: '', inputExists: !definition.input || existsSync(this.workspacePath(definition.input)), outputExists: existsSync(this.workspacePath(definition.output)) }; }
   private readCheckpoint(definition: Definition): unknown {
-    if (!definition.stateFile || !existsSync(resolve(definition.stateFile))) return undefined;
-    try { return JSON.parse(readFileSync(resolve(definition.stateFile), 'utf8')); } catch { return undefined; }
+    if (!definition.stateFile || !existsSync(this.workspacePath(definition.stateFile))) return undefined;
+    try { return JSON.parse(readFileSync(this.workspacePath(definition.stateFile), 'utf8')); } catch { return undefined; }
   }
   private refreshProgress(state: CollectorState): void {
     if (!state.stateFile || !state.startedAt) return;
@@ -101,8 +104,10 @@ export class CollectorJobs {
     if (this.activeId !== state.id) return;
     this.refreshProgress(state); state.status = state.status === 'stopped' ? 'stopped' : code === 0 ? 'succeeded' : 'failed';
     if (state.progress && state.status === 'succeeded') state.progress = { ...state.progress, total: state.progress.processed, percent: 100, etaSeconds: 0 };
-    state.exitCode = code; state.finishedAt = new Date().toISOString(); state.outputExists = existsSync(resolve(state.output)); this.child = undefined; this.activeId = undefined;
+    state.exitCode = code; state.finishedAt = new Date().toISOString(); state.outputExists = existsSync(state.output); this.child = undefined; this.activeId = undefined;
   }
+
+  private workspacePath(path: string): string { return resolve(this.runtime.workspaceRoot, path); }
 }
 
 function checkpointCompleted(value: unknown): number {
