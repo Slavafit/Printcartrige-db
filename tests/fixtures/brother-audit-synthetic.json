@@ -1,0 +1,9 @@
+{
+  "generatedAt": "2026-10-14T00:00:00.000Z",
+  "compatibility": [
+    { "printerModel": "DCP-T580DW", "supplyPartNumber": "BTD180BK", "status": "cross-referenced", "printerSourceUrl": "https://store.brother.es/devices/inkjet/dcpj/dcpt580dw", "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/bt/btd180bk" },
+    { "printerModel": "MFC-TEST", "supplyPartNumber": "LC-TEST", "status": "cross-referenced", "printerSourceUrl": "https://store.brother.es/devices/inkjet/mfcj/mfctest", "supplySourceUrl": "https://store.brother.es/supplies/inkjet/inkcartridgessinglepack/lc/lctest" },
+    { "printerModel": "HL-TEST", "supplyPartNumber": "TN-TEST", "status": "cross-referenced", "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hltest", "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn-test" },
+    { "printerModel": "HL-REVIEW", "supplyPartNumber": "TN-TEST", "status": "candidate", "printerSourceUrl": "https://store.brother.es/devices/laser/hl/hlreview", "supplySourceUrl": "https://store.brother.es/supplies/laser/toner/tn/tn-test" }
+  ]
+}

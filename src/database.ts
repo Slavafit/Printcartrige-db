@@ -9,7 +9,7 @@ export type EntityName = 'manufacturers' | 'printers' | 'cartridges' | 'data_sou
 const TABLE_COLUMNS: Record<EntityName, readonly string[]> = {
   manufacturers: ['name'],
   printers: ['manufacturer_id', 'model_name', 'has_replaceable_cartridges', 'notes'],
-  cartridges: ['manufacturer_id', 'part_number', 'kind', 'origin_type', 'color', 'yield_pages', 'notes'],
+  cartridges: ['manufacturer_id', 'part_number', 'kind', 'origin_type', 'supply_form', 'color', 'yield_pages', 'notes'],
   data_sources: ['name', 'url', 'source_category'],
   compatibility: ['printer_id', 'cartridge_id', 'source_id', 'source_url', 'verification_status', 'region', 'is_genuine_oem', 'source_type', 'evidence_type', 'evidence', 'verified_at', 'reliability_status'],
   compatibility_sources: ['compatibility_id', 'source_id', 'source_reference', 'raw_printer_model', 'raw_supply_part_number', 'raw_description', 'verification_status', 'region', 'note', 'evidence_type', 'evidence', 'verified_at'],
@@ -180,21 +180,25 @@ export class CartridgeDatabase {
   } {
     const value = (sql: string): number => (this.db.prepare(sql).get() as { count: number }).count;
     const totalPrinters = value('SELECT COUNT(*) AS count FROM printers');
+    const cartridgeFilter = "c.kind IN ('ink','toner') AND c.supply_form IS NULL";
     const printersWithVerifiedCompatibility = value(`
-      SELECT COUNT(DISTINCT printer_id) AS count FROM compatibility
-      WHERE reliability_status = 'official_verified' AND is_genuine_oem = 1
+      SELECT COUNT(DISTINCT cp.printer_id) AS count FROM compatibility cp
+      JOIN cartridges c ON c.id = cp.cartridge_id
+      WHERE cp.reliability_status = 'official_verified' AND cp.is_genuine_oem = 1 AND ${cartridgeFilter}
     `);
     return {
       totalPrinters,
       printersWithVerifiedCompatibility,
       printersWithoutVerifiedCompatibility: totalPrinters - printersWithVerifiedCompatibility,
       totalUniqueOemCartridges: value(`
-        SELECT COUNT(DISTINCT cartridge_id) AS count FROM compatibility
-        WHERE reliability_status = 'official_verified' AND is_genuine_oem = 1
+        SELECT COUNT(DISTINCT cp.cartridge_id) AS count FROM compatibility cp
+        JOIN cartridges c ON c.id = cp.cartridge_id
+        WHERE cp.reliability_status = 'official_verified' AND cp.is_genuine_oem = 1 AND ${cartridgeFilter}
       `),
       totalVerifiedRelationships: value(`
-        SELECT COUNT(*) AS count FROM compatibility
-        WHERE reliability_status = 'official_verified' AND is_genuine_oem = 1
+        SELECT COUNT(*) AS count FROM compatibility cp
+        JOIN cartridges c ON c.id = cp.cartridge_id
+        WHERE cp.reliability_status = 'official_verified' AND cp.is_genuine_oem = 1 AND ${cartridgeFilter}
       `),
       recordsRequiringManualReview: value(`
         SELECT COUNT(*) AS count FROM compatibility WHERE reliability_status IN ('unverified','third_party_reported','conflicting')

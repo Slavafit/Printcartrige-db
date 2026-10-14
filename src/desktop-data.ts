@@ -3,6 +3,7 @@ import { basename, dirname, join, resolve } from 'node:path';
 import * as XLSX from 'xlsx';
 import { CartridgeDatabase } from './database.js';
 import { normalizeCartridgePartNumber, normalizeManufacturerName, normalizePrinterModel } from './normalize.js';
+import { isSupplyType, supplyStorage, supplyTypeFromStorage, type SupplyType } from './supply-types.js';
 
 export type SourceCategory = 'official' | 'third_party' | 'third-party' | 'open_dataset' | 'manual' | 'unknown';
 export interface ImportRow {
@@ -11,7 +12,7 @@ export interface ImportRow {
   hasReplaceableCartridges: boolean;
   cartridgeManufacturer?: string;
   cartridgePartNumber?: string;
-  cartridgeKind?: 'ink' | 'toner';
+  cartridgeKind?: SupplyType;
   cartridgeColor?: string;
   yieldPages?: number;
   notes?: string;
@@ -37,7 +38,7 @@ export function parseImportFile(fileName: string, bytes: Buffer): ImportRow[] {
     hasReplaceableCartridges: row.hasReplaceableCartridges === '' ? true : bool(row.hasReplaceableCartridges),
     cartridgeManufacturer: text(row.cartridgeManufacturer || row['Производитель картриджа']) || undefined,
     cartridgePartNumber: text(row.cartridgePartNumber || row.partNumber || row['Артикул картриджа']) || undefined,
-    cartridgeKind: (text(row.cartridgeKind || row.kind || row['Тип картриджа']).toLowerCase() || undefined) as 'ink' | 'toner' | undefined,
+    cartridgeKind: (text(row.supplyType || row.cartridgeKind || row.kind || row['Тип картриджа']).toLowerCase() || undefined) as SupplyType | undefined,
     cartridgeColor: text(row.cartridgeColor || row.color || row['Цвет']) || undefined,
     yieldPages: Number(row.yieldPages || row['Ресурс страниц']) || undefined,
     notes: text(row.notes || row['Примечания']) || undefined,
@@ -50,8 +51,8 @@ export function previewImport(database: CartridgeDatabase, rows: ImportRow[]): I
   const seen = new Set<string>();
   rows.forEach((row, index) => {
     if (!row.printerManufacturer || !row.printerModel) errors.push({ row: index + 2, message: 'Falta el fabricante o el modelo de la impresora' });
-    if (row.hasReplaceableCartridges && row.cartridgePartNumber && !['ink', 'toner'].includes(row.cartridgeKind ?? '')) errors.push({ row: index + 2, message: 'El tipo de cartucho debe ser ink o toner' });
-    if (row.hasReplaceableCartridges && !row.cartridgePartNumber && row.cartridgeKind) errors.push({ row: index + 2, message: 'Se indicó un tipo sin referencia de cartucho' });
+    if (row.hasReplaceableCartridges && row.cartridgePartNumber && !isSupplyType(row.cartridgeKind ?? '')) errors.push({ row: index + 2, message: 'El tipo de consumible no es válido' });
+    if (row.hasReplaceableCartridges && !row.cartridgePartNumber && row.cartridgeKind) errors.push({ row: index + 2, message: 'Se indicó un tipo sin referencia de consumible' });
     const key = `${normalizeManufacturerName(row.printerManufacturer)}|${normalizePrinterModel(row.printerModel)}|${normalizeCartridgePartNumber(row.cartridgePartNumber ?? '')}`;
     if (seen.has(key)) duplicates += 1;
     seen.add(key);
@@ -97,16 +98,18 @@ export function updatePrinter(database: CartridgeDatabase, id: number, input: Re
 }
 
 export function createCartridge(database: CartridgeDatabase, input: Record<string, unknown>): number {
-  const manufacturer = text(input.manufacturer); const partNumber = text(input.partNumber); const kind = text(input.kind);
-  if (!manufacturer || !partNumber || !['ink', 'toner'].includes(kind)) throw new Error('El fabricante, la referencia y el tipo ink/toner son obligatorios');
-  return upsertCartridge(database, upsertManufacturer(database, manufacturer), { printerManufacturer: '', printerModel: '', hasReplaceableCartridges: true, cartridgePartNumber: partNumber, cartridgeKind: kind as 'ink' | 'toner', cartridgeColor: text(input.color) || undefined, yieldPages: Number(input.yieldPages) || undefined, notes: text(input.notes) || undefined }, true);
+  const manufacturer = text(input.manufacturer); const partNumber = text(input.partNumber); const supplyType = text(input.supplyType || input.kind);
+  if (!manufacturer || !partNumber || !isSupplyType(supplyType)) throw new Error('El fabricante, la referencia y un tipo de consumible válido son obligatorios');
+  return upsertCartridge(database, upsertManufacturer(database, manufacturer), { printerManufacturer: '', printerModel: '', hasReplaceableCartridges: true, cartridgePartNumber: partNumber, cartridgeKind: supplyType, cartridgeColor: text(input.color) || undefined, yieldPages: Number(input.yieldPages) || undefined, notes: text(input.notes) || undefined }, true);
 }
 
 export function updateCartridge(database: CartridgeDatabase, id: number, input: Record<string, unknown>): boolean {
   const current = database.db.prepare('SELECT * FROM cartridges WHERE id = ?').get(id) as Record<string, unknown> | undefined;
   if (!current) return false;
-  const kind = text(input.kind || current.kind); if (!['ink', 'toner'].includes(kind)) throw new Error('El tipo debe ser ink o toner');
-  return database.update('cartridges', id, { manufacturer_id: input.manufacturer ? upsertManufacturer(database, text(input.manufacturer)) : current.manufacturer_id, part_number: text(input.partNumber || current.part_number), kind, color: text(input.color) || null, yield_pages: Number(input.yieldPages) || null, notes: text(input.notes) || null });
+  const existingType = supplyTypeFromStorage(String(current.kind), current.supply_form as string | null);
+  const supplyType = text(input.supplyType || input.kind || existingType); if (!isSupplyType(supplyType)) throw new Error('El tipo de consumible no es válido');
+  const storage = supplyStorage(supplyType);
+  return database.update('cartridges', id, { manufacturer_id: input.manufacturer ? upsertManufacturer(database, text(input.manufacturer)) : current.manufacturer_id, part_number: text(input.partNumber || current.part_number), kind: storage.kind, supply_form: storage.supplyForm, color: text(input.color) || null, yield_pages: Number(input.yieldPages) || null, notes: text(input.notes) || null });
 }
 
 export function createCompatibility(database: CartridgeDatabase, input: Record<string, unknown>): number {
@@ -117,7 +120,7 @@ export function createCompatibility(database: CartridgeDatabase, input: Record<s
 }
 
 export function exportWorkbook(database: CartridgeDatabase): Buffer {
-  const rows = database.db.prepare(`SELECT pm.name printerManufacturer,p.model_name printerModel,p.has_replaceable_cartridges hasReplaceableCartridges,cm.name supplyManufacturer,c.part_number supplyPartNumber,c.kind supplyType,c.origin_type supplyOrigin,c.color,c.yield_pages yieldPages,cp.reliability_status reliabilityStatus,cp.region,cp.source_url sourceReference,p.notes printerNotes,c.notes supplyNotes FROM printers p JOIN manufacturers pm ON pm.id=p.manufacturer_id LEFT JOIN compatibility cp ON cp.printer_id=p.id LEFT JOIN cartridges c ON c.id=cp.cartridge_id LEFT JOIN manufacturers cm ON cm.id=c.manufacturer_id ORDER BY pm.normalized_name,p.normalized_model_name,c.normalized_part_number`).all();
+  const rows = database.db.prepare(`SELECT pm.name printerManufacturer,p.model_name printerModel,p.has_replaceable_cartridges hasReplaceableCartridges,cm.name supplyManufacturer,c.part_number supplyPartNumber,COALESCE(c.supply_form,c.kind) supplyType,c.origin_type supplyOrigin,c.color,c.yield_pages yieldPages,cp.reliability_status reliabilityStatus,cp.region,cp.source_url sourceReference,p.notes printerNotes,c.notes supplyNotes FROM printers p JOIN manufacturers pm ON pm.id=p.manufacturer_id LEFT JOIN compatibility cp ON cp.printer_id=p.id LEFT JOIN cartridges c ON c.id=cp.cartridge_id LEFT JOIN manufacturers cm ON cm.id=c.manufacturer_id ORDER BY pm.normalized_name,p.normalized_model_name,c.normalized_part_number`).all();
   const book = XLSX.utils.book_new(); XLSX.utils.book_append_sheet(book, XLSX.utils.json_to_sheet(rows), 'Catalog');
   return XLSX.write(book, { type: 'buffer', bookType: 'xlsx' }) as Buffer;
 }
@@ -187,7 +190,7 @@ export async function restoreDatabase(database: CartridgeDatabase, bytes: Buffer
 function category(value: unknown): SourceCategory { const normalized=text(value).replace('third-party','third_party'); return ['official','third_party','open_dataset','manual','unknown'].includes(normalized) ? normalized as SourceCategory : 'manual'; }
 function upsertManufacturer(database: CartridgeDatabase, name: string): number { const normalized = normalizeManufacturerName(name); database.db.prepare('INSERT INTO manufacturers(name,normalized_name) VALUES(?,?) ON CONFLICT(normalized_name) DO NOTHING').run(name, normalized); return (database.db.prepare('SELECT id FROM manufacturers WHERE normalized_name=?').get(normalized) as {id:number}).id; }
 function upsertPrinter(database: CartridgeDatabase, manufacturerId: number, model: string, replaceable: boolean, notes?: string, rejectDuplicate = false): number { const normalized = normalizePrinterModel(model); const found = database.db.prepare('SELECT id FROM printers WHERE manufacturer_id=? AND normalized_model_name=?').get(manufacturerId, normalized) as {id:number}|undefined; if (found && rejectDuplicate) throw new Error('Esta impresora ya existe'); database.db.prepare('INSERT INTO printers(manufacturer_id,model_name,normalized_model_name,has_replaceable_cartridges,notes) VALUES(?,?,?,?,?) ON CONFLICT(manufacturer_id,normalized_model_name) DO UPDATE SET notes=COALESCE(excluded.notes,printers.notes),updated_at=CURRENT_TIMESTAMP').run(manufacturerId,model,normalized,replaceable?1:0,notes??null); return found?.id ?? (database.db.prepare('SELECT last_insert_rowid() id').get() as {id:number}).id; }
-function upsertCartridge(database: CartridgeDatabase, manufacturerId: number, row: ImportRow, rejectDuplicate = false): number { const normalized=normalizeCartridgePartNumber(row.cartridgePartNumber!); const found=database.db.prepare('SELECT id FROM cartridges WHERE manufacturer_id=? AND normalized_part_number=?').get(manufacturerId,normalized) as {id:number}|undefined; if(found&&rejectDuplicate) throw new Error('Este cartucho ya existe'); database.db.prepare('INSERT INTO cartridges(manufacturer_id,part_number,normalized_part_number,kind,origin_type,color,yield_pages,notes) VALUES(?,?,?,?,?,?,?,?) ON CONFLICT(manufacturer_id,normalized_part_number) DO UPDATE SET color=COALESCE(excluded.color,cartridges.color),yield_pages=COALESCE(excluded.yield_pages,cartridges.yield_pages),notes=COALESCE(excluded.notes,cartridges.notes),updated_at=CURRENT_TIMESTAMP').run(manufacturerId,row.cartridgePartNumber,normalized,row.cartridgeKind,'unknown',row.cartridgeColor??null,row.yieldPages??null,row.notes??null); return found?.id ?? Number((database.db.prepare('SELECT last_insert_rowid() id').get() as {id:number}).id); }
+function upsertCartridge(database: CartridgeDatabase, manufacturerId: number, row: ImportRow, rejectDuplicate = false): number { const normalized=normalizeCartridgePartNumber(row.cartridgePartNumber!); const found=database.db.prepare('SELECT id FROM cartridges WHERE manufacturer_id=? AND normalized_part_number=?').get(manufacturerId,normalized) as {id:number}|undefined; if(found&&rejectDuplicate) throw new Error('Este consumible ya existe'); const storage=supplyStorage(row.cartridgeKind!); database.db.prepare('INSERT INTO cartridges(manufacturer_id,part_number,normalized_part_number,kind,origin_type,supply_form,color,yield_pages,notes) VALUES(?,?,?,?,?,?,?,?,?) ON CONFLICT(manufacturer_id,normalized_part_number) DO UPDATE SET kind=excluded.kind,supply_form=excluded.supply_form,color=COALESCE(excluded.color,cartridges.color),yield_pages=COALESCE(excluded.yield_pages,cartridges.yield_pages),notes=COALESCE(excluded.notes,cartridges.notes),updated_at=CURRENT_TIMESTAMP').run(manufacturerId,row.cartridgePartNumber,normalized,storage.kind,'unknown',storage.supplyForm,row.cartridgeColor??null,row.yieldPages??null,row.notes??null); return found?.id ?? Number((database.db.prepare('SELECT last_insert_rowid() id').get() as {id:number}).id); }
 function source(database: CartridgeDatabase,name:string,url:string,sourceCategory:SourceCategory):number { const storedCategory=sourceCategory==='third-party'?'third_party':sourceCategory; database.db.prepare('INSERT INTO data_sources(name,url,source_category) VALUES(?,?,?) ON CONFLICT(url) DO UPDATE SET name=excluded.name,source_category=CASE WHEN data_sources.source_category=\'official\' THEN \'official\' ELSE excluded.source_category END').run(name,url,storedCategory); return (database.db.prepare('SELECT id FROM data_sources WHERE url=?').get(url) as {id:number}).id; }
 function addPrinterSource(database:CartridgeDatabase,printerId:number,name:string,url:string,sourceCategory:SourceCategory):void { const sourceId=source(database,name,url,sourceCategory); database.db.prepare("INSERT INTO printer_sources(printer_id,source_id,source_url,verification_status,region) VALUES(?,?,?,'unverified','local') ON CONFLICT(printer_id,source_url,region) DO NOTHING").run(printerId,sourceId,url); }
 function addCompatibility(database:CartridgeDatabase,printerId:number,cartridgeId:number,name:string,url:string,sourceCategory:SourceCategory):number { const sourceId=source(database,name,url,sourceCategory); database.db.prepare("INSERT INTO compatibility(printer_id,cartridge_id,source_id,source_url,verification_status,region,is_genuine_oem,source_type,evidence_type,evidence,reliability_status) VALUES(?,?,?,?,'unverified','local',0,'other','other','Added locally; not officially verified','unverified') ON CONFLICT(printer_id,cartridge_id) DO UPDATE SET updated_at=CURRENT_TIMESTAMP").run(printerId,cartridgeId,sourceId,url); const compatibilityId=(database.db.prepare('SELECT id FROM compatibility WHERE printer_id=? AND cartridge_id=?').get(printerId,cartridgeId) as {id:number}).id; database.db.prepare(`INSERT INTO compatibility_sources(compatibility_id,source_id,source_reference,raw_printer_model,raw_supply_part_number,raw_description,verification_status,region,note) VALUES(?,?,?,?,?,?,?,'local',?) ON CONFLICT(compatibility_id,source_id,source_reference,region,raw_printer_model,raw_supply_part_number) DO NOTHING`).run(compatibilityId,sourceId,url,'manual',String(cartridgeId),'Added locally','unverified','Manual relation'); return compatibilityId; }

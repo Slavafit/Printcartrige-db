@@ -25,7 +25,16 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 021 | Database restore UI and modal keyboard handling | Implemented and validated on `codex/database-restore-ui` | 014, 016 |
 | 022 | Lexmark España official compatibility collector and data UI | Implemented and validated on `feature/lexmark-official-compatibility` | 004, 012, 013 |
 | 023 | Russian project component guide | Implemented on `feature/project-guide` | — |
+| 024 | Unified supply catalog and Brother import preparation | Implemented and validated on `feature/unified-supply-catalog` | 018, 022; completed Brother collection |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
+
+## Task 024 — Unified supply catalog and Brother import preparation
+
+**Implemented on `feature/unified-supply-catalog`:** shared supply-type mapping across import, desktop editing, export, search details, UI labels, and statistics; separate counters for OEM cartridges, compatible cartridges, and ink bottles; and deterministic conversion of the completed Brother audit into the existing multi-source format without touching the active SQLite database.
+
+**Brother result:** 1,606 of 1,611 audited relationships were accepted from exact official cross-references, covering 292 printers and 253 supplies. The accepted set contains 1,598 cartridge relationships and 8 ink-bottle relationships. Four candidates and one uncheckable relationship remain outside the import; six supply-page acquisitions had previously failed. The generated file passes a strict in-memory dry run with zero rejected rows or warnings. See [the report and safe commands](docs/brother-supplies.md).
+
+**Acceptance:** non-cartridge supplies no longer inflate cartridge counters; manual editing preserves `supply_form`; per-edge evidence URLs and dates survive conversion/import; fixture tests prove exclusion, dry-run safety, and idempotency; no production database is modified.
 
 ## Task 018 — Results on feature branch (2026-10-13)
 

@@ -1,6 +1,6 @@
 # Printcartridge DB
 
-A small, manufacturer-independent SQLite database and CLI for printer-to-cartridge compatibility. Only ink and toner cartridges are accepted. Drums, waste containers, maintenance kits, and other consumables are intentionally outside the data model.
+A small, manufacturer-independent SQLite database and CLI for printer-to-consumable compatibility. The broad catalog can distinguish ink and toner cartridges, ink bottles, drums, waste containers, belts, other supplies, and unknown types. The strict verified-OEM cartridge view remains limited to genuine ink and toner cartridges.
 
 Official-source snapshots are stored under `data/official/`. Synthetic files under `tests/fixtures/` are non-production test data and must not be imported into a production database.
 
@@ -14,6 +14,7 @@ Official-source snapshots are stored under `data/official/`. Synthetic files und
 - [Collector integration guide](docs/collectors.md)
 - [Путеводитель по компонентам проекта](docs/project-guide-ru.md)
 - [Multi-source import and PrinterTonerDB adapter](docs/multi-source-import.md)
+- [Brother unified supply preparation](docs/brother-supplies.md)
 - [Third-party notices](THIRD_PARTY_NOTICES.md)
 
 ## Setup
