@@ -3,6 +3,7 @@ import { spawn, type ChildProcess } from 'node:child_process';
 import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createServer } from 'node:net';
 import { join } from 'node:path';
+import { trayIconPath } from './tray-icon.js';
 
 let tray: Tray | undefined;
 let server: ChildProcess | undefined;
@@ -49,4 +50,9 @@ app.on('window-all-closed', () => undefined);
 async function freePort(start: number): Promise<number> { for (let port=start;port<start+20;port+=1) if(await available(port)) return port; throw new Error('No hay ningún puerto local disponible'); }
 function available(port:number):Promise<boolean>{return new Promise(resolve=>{const probe=createServer();probe.once('error',()=>resolve(false));probe.listen(port,'127.0.0.1',()=>probe.close(()=>resolve(true)));});}
 async function waitForServer(url:string):Promise<void>{for(let attempt=0;attempt<50;attempt+=1){try{const response=await fetch(`${url}/api/stats`);if(response.ok)return;}catch{} await new Promise(resolve=>setTimeout(resolve,100));}throw new Error('El servidor local no pudo iniciarse');}
-function trayIcon(){const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#173f2e"/><path d="M19 8h26v15H19z" fill="#fbfcf7"/><path d="M15 21h34a7 7 0 0 1 7 7v17H45v11H19V45H8V28a7 7 0 0 1 7-7Z" fill="#dff065"/><path d="M16 28h32v17h-3v-7H19v7h-3z" fill="#fbfcf7"/><path d="M23 42h18v10H23z" fill="#173f2e"/><circle cx="47" cy="30" r="3" fill="#173f2e"/></svg>';return nativeImage.createFromDataURL(`data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`).resize({width:16,height:16});}
+function trayIcon(){
+  const icon = nativeImage.createFromPath(trayIconPath(app.isPackaged, process.resourcesPath));
+  if (!icon.isEmpty()) return icon.resize({ width: 16, height: 16 });
+  const svg='<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64"><rect width="64" height="64" rx="15" fill="#173f2e"/><path d="M19 8h26v15H19z" fill="#fbfcf7"/><path d="M15 21h34a7 7 0 0 1 7 7v17H45v11H19V45H8V28a7 7 0 0 1 7-7Z" fill="#dff065"/><path d="M16 28h32v17h-3v-7H19v7h-3z" fill="#fbfcf7"/><path d="M23 42h18v10H23z" fill="#173f2e"/><circle cx="47" cy="30" r="3" fill="#173f2e"/></svg>';
+  return nativeImage.createFromDataURL(`data:image/svg+xml;base64,${Buffer.from(svg).toString('base64')}`).resize({width:16,height:16});
+}

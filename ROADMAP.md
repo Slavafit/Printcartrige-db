@@ -189,6 +189,10 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 **Acceptance:** the UI never launches the Brother website or an arbitrary command, partial/invalid parsing never publishes an import package, candidates are not promoted, the database import is explicit and transactional, the source SQLite is not overwritten, integrity and foreign keys pass, and fixture tests cover the offline workflow. See [Task 026](tasks/026-brother-ui-and-unified-database.md) and [Brother supply workflow](docs/brother-supplies.md).
 
+## Task 027 — Reliable Electron tray icon on Windows
+
+**Implemented and validated on `feature/electron-tray-icon`:** the portable Electron package now includes the existing Windows ICO as a runtime resource and loads it directly for the system tray, with the inline SVG retained only as a fallback. Tests cover packaged and development paths plus the packaging manifest. See [Task 027](tasks/027-electron-tray-icon.md).
+
 ## Task 023 — Russian project component guide
 
 **Implemented on `feature/project-guide`:** a Russian-language architectural guide covering the database, import layers, official collectors, local API, React UI, Windows launchers, data directories, tests, common commands, change locations, and the project invariants that protect evidence quality. The guide is linked from the README and intentionally does not add generated Lexmark collection output to Git.
