@@ -11,6 +11,10 @@ export function prepareCollectorWorkspace(seedRoot: string, workspaceRoot: strin
   copyTree(join(seedRoot, 'data'), join(workspaceRoot, 'data'), false);
 }
 
+export function prepareWebClient(sourceRoot: string, targetRoot: string): void {
+  copyTree(sourceRoot, targetRoot, true);
+}
+
 function copyTree(source: string, target: string, overwrite: boolean): void {
   if (!existsSync(source)) return;
   mkdirSync(target, { recursive: true });

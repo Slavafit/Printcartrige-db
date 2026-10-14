@@ -4,7 +4,7 @@ import { copyFileSync, existsSync, mkdirSync } from 'node:fs';
 import { createServer } from 'node:net';
 import { join } from 'node:path';
 import { trayIconPath } from './tray-icon.js';
-import { prepareCollectorWorkspace } from './collector-runtime.js';
+import { prepareCollectorWorkspace, prepareWebClient } from './collector-runtime.js';
 
 let tray: Tray | undefined;
 let server: ChildProcess | undefined;
@@ -19,16 +19,20 @@ app.whenReady().then(async () => {
   const dataDir = app.getPath('userData');
   const appRoot = app.getAppPath();
   const collectorWorkspace = app.isPackaged ? join(dataDir, 'collector-workspace') : process.cwd();
+  const webRoot = app.isPackaged ? join(dataDir, 'runtime', 'web-dist') : join(appRoot, 'web-dist');
   const databasePath = join(dataDir, 'printcartridge.sqlite');
   const seedPath = app.isPackaged ? join(process.resourcesPath, 'seed.sqlite') : join(process.cwd(), 'mvp.sqlite');
   mkdirSync(dataDir, { recursive: true });
-  if (app.isPackaged) prepareCollectorWorkspace(join(process.resourcesPath, 'collector-runtime'), collectorWorkspace);
+  if (app.isPackaged) {
+    prepareCollectorWorkspace(join(process.resourcesPath, 'collector-runtime'), collectorWorkspace);
+    prepareWebClient(join(appRoot, 'web-dist'), webRoot);
+  }
   if (!existsSync(databasePath) && existsSync(seedPath)) copyFileSync(seedPath, databasePath);
   const port = await freePort(4173);
   address = `http://127.0.0.1:${port}`;
   const script = join(appRoot, 'dist', 'src', 'web-server.js');
   const nodeExecutable = app.isPackaged ? join(process.resourcesPath, 'node.exe') : 'node';
-  server = spawn(nodeExecutable, [script], { env: { ...process.env, PORT: String(port), WEB_DB_PATH: databasePath, WEB_STATIC_ROOT: join(appRoot, 'web-dist'), WEB_BACKUP_ROOT: join(dataDir, 'backups'), WEB_APP_ROOT: appRoot, WEB_COLLECTOR_WORKSPACE: collectorWorkspace }, stdio: 'ignore', windowsHide: true });
+  server = spawn(nodeExecutable, [script], { env: { ...process.env, PORT: String(port), WEB_DB_PATH: databasePath, WEB_STATIC_ROOT: webRoot, WEB_BACKUP_ROOT: join(dataDir, 'backups'), WEB_APP_ROOT: appRoot, WEB_COLLECTOR_WORKSPACE: collectorWorkspace }, stdio: 'ignore', windowsHide: true });
   server.once('exit', () => { if (!quitting) app.quit(); });
   await waitForServer(address);
   tray = new Tray(trayIcon());
