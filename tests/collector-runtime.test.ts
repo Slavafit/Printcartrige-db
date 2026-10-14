@@ -2,7 +2,7 @@ import { mkdtempSync, mkdirSync, readFileSync, rmSync, writeFileSync } from 'nod
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { afterEach, describe, expect, it } from 'vitest';
-import { prepareCollectorWorkspace } from '../src/collector-runtime.js';
+import { prepareCollectorWorkspace, prepareWebClient } from '../src/collector-runtime.js';
 import { CollectorJobs } from '../src/collector-jobs.js';
 import type { CartridgeDatabase } from '../src/database.js';
 
@@ -39,6 +39,20 @@ describe('packaged collector runtime', () => {
     const jobs = new CollectorJobs({} as CartridgeDatabase, { appRoot: 'C:\\packaged-app', workspaceRoot: workspace });
     const brother = jobs.list().find(job => job.id === 'brother');
     expect(brother?.input).toBe(join(workspace, 'data', 'brother-html'));
+  });
+
+  it('refreshes the web client in a persistent runtime directory', () => {
+    const source = temp('web-source');
+    const target = temp('web-target');
+    mkdirSync(join(source, 'assets'));
+    writeFileSync(join(source, 'index.html'), 'new index');
+    writeFileSync(join(source, 'assets', 'app.js'), 'new asset');
+    writeFileSync(join(target, 'index.html'), 'old index');
+
+    prepareWebClient(source, target);
+
+    expect(readFileSync(join(target, 'index.html'), 'utf8')).toBe('new index');
+    expect(readFileSync(join(target, 'assets', 'app.js'), 'utf8')).toBe('new asset');
   });
 
   it('packages the Brother parser runtime and verification seed', () => {

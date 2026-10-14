@@ -195,7 +195,7 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 ## Task 028 — Packaged Electron collector runtime
 
-**Implemented and validated on `feature/electron-collector-runtime`:** packaged collector commands now resolve from the immutable Electron application root and run inside `%APPDATA%\printcartridge-db\collector-workspace`, where checkpoints and outputs remain writable. The Brother parser helpers and verification seed are packaged and extracted at startup without overwriting user data. The UI reports the absolute offline HTML input path. No collector or database import starts automatically. See [Task 028](TASKS/028-electron-collector-runtime.md).
+**Implemented and validated on `feature/electron-collector-runtime`:** packaged collector commands now resolve from the immutable Electron application root and run inside `%APPDATA%\printcartridge-db\collector-workspace`, where checkpoints and outputs remain writable. The Brother parser helpers and verification seed are packaged and extracted at startup without overwriting user data. The built web client is also refreshed into a persistent runtime directory, so closing the browser and reopening the catalog from the tray remains reliable. The UI reports the absolute offline HTML input path. No collector or database import starts automatically. See [Task 028](TASKS/028-electron-collector-runtime.md).
 
 ## Task 023 — Russian project component guide
 
