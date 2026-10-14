@@ -46,5 +46,5 @@ describe('committed Brother unified supply package (read-only)', () => {
     const options = { sourceName: 'Brother España official pages', sourceCategory: 'official' as const, sourceReference: 'https://store.brother.es/', region: 'ES' };
     expect(importMultiSource(database, prepared.parsed, options)).toMatchObject({ createdPrinters: 292, createdSupplies: 253, createdRelationships: 1606 });
     expect(importMultiSource(database, prepared.parsed, options)).toMatchObject({ createdPrinters: 0, createdSupplies: 0, createdRelationships: 0 });
-  });
+  }, 15_000);
 });

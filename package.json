@@ -84,6 +84,22 @@
       {
         "from": "launcher/PrinterDB.Launcher/printerdb.ico",
         "to": "printerdb.ico"
+      },
+      {
+        "from": "scripts/parse-brother.cjs",
+        "to": "collector-runtime/scripts/parse-brother.cjs"
+      },
+      {
+        "from": "scripts/rebuild-brother-data.cjs",
+        "to": "collector-runtime/scripts/rebuild-brother-data.cjs"
+      },
+      {
+        "from": "scripts/brother-model.cjs",
+        "to": "collector-runtime/scripts/brother-model.cjs"
+      },
+      {
+        "from": "data/brother-verification.json",
+        "to": "collector-runtime/data/brother-verification.json"
       }
     ],
     "asar": false,

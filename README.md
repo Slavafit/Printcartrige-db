@@ -90,7 +90,7 @@ While an online collector is running, its card refreshes every two seconds and s
 2. Keep the local server running and inspect the displayed status and collector log. Only one collector runs at a time.
 3. After a successful run and review, select **Import to MVP** to validate and import that collector's saved JSON into `mvp.sqlite`.
 
-Brother processing reuses the parsers in `scripts/`, preserves the saved verification states, validates the rebuilt audit, and publishes `data/official/brother/brother-supplies.json` only after the full offline run succeeds. If the ignored `data/brother-html` cache is absent, the UI reports the missing folder while the already validated committed Brother package remains available for an explicit import.
+Brother processing reuses the parsers in `scripts/`, preserves the saved verification states, validates the rebuilt audit, and publishes `data/official/brother/brother-supplies.json` only after the full offline run succeeds. In the packaged Electron application, scripts are extracted into `%APPDATA%\printcartridge-db\collector-workspace`; copy saved Brother pages into its `data\brother-html` subfolder. The UI reports that absolute path when the input folder is absent. Existing workspace data is never replaced during extraction.
 4. Search and statistics update from the imported database. Repeated imports remain idempotent.
 
 Collectors retain their existing rate limits, retries, resumable state, robots/access rules, exclusions, and manual-review behavior. A successful process does not imply complete manufacturer coverage. Epson may defer work outside its permitted access window, and inaccessible or ambiguous evidence is never promoted to verified compatibility.

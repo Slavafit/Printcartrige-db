@@ -193,6 +193,10 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 **Implemented and validated on `feature/electron-tray-icon`:** the portable Electron package now includes the existing Windows ICO as a runtime resource and loads it directly for the system tray, with the inline SVG retained only as a fallback. Tests cover packaged and development paths plus the packaging manifest. See [Task 027](tasks/027-electron-tray-icon.md).
 
+## Task 028 — Packaged Electron collector runtime
+
+**Implemented and validated on `feature/electron-collector-runtime`:** packaged collector commands now resolve from the immutable Electron application root and run inside `%APPDATA%\printcartridge-db\collector-workspace`, where checkpoints and outputs remain writable. The Brother parser helpers and verification seed are packaged and extracted at startup without overwriting user data. The UI reports the absolute offline HTML input path. No collector or database import starts automatically. See [Task 028](TASKS/028-electron-collector-runtime.md).
+
 ## Task 023 — Russian project component guide
 
 **Implemented on `feature/project-guide`:** a Russian-language architectural guide covering the database, import layers, official collectors, local API, React UI, Windows launchers, data directories, tests, common commands, change locations, and the project invariants that protect evidence quality. The guide is linked from the README and intentionally does not add generated Lexmark collection output to Git.

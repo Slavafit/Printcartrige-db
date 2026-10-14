@@ -12,7 +12,8 @@ const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
 let database = new CartridgeDatabase(databasePath);
 database.initialize();
-let collectorJobs = new CollectorJobs(database);
+const collectorRuntime = { appRoot: process.env.WEB_APP_ROOT || process.cwd(), workspaceRoot: process.env.WEB_COLLECTOR_WORKSPACE || process.cwd() };
+let collectorJobs = new CollectorJobs(database, collectorRuntime);
 const staticRoot = process.env.WEB_STATIC_ROOT || resolve('web-dist');
 const backupRoot = process.env.WEB_BACKUP_ROOT || resolve('backups');
 const previews = new Map<string, { parsed: ParsedMultiSource; options: MultiSourceOptions }>();
@@ -50,7 +51,7 @@ const server = createServer(async (request, response) => {
       if (collectorJobs.list().some(job => job.status === 'running')) return json(response, 409, { error: 'Espera a que termine el colector antes de restaurar una copia' });
       try {
         const result = await restoreDatabase(database, await binaryBody(request), backupRoot);
-        database = result.database; collectorJobs = new CollectorJobs(database); previews.clear();
+        database = result.database; collectorJobs = new CollectorJobs(database, collectorRuntime); previews.clear();
         if (!result.restored) return json(response, 500, { error: `No se pudo restaurar la copia. Se recuperó la base anterior: ${result.error}`, safetyBackupPath: result.safetyBackupPath });
         return json(response, 200, { ok: true, safetyBackupPath: result.safetyBackupPath });
       } catch (error) { return json(response, 400, { error: error instanceof Error ? error.message : 'No se pudo validar la copia' }); }
