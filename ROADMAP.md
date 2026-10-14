@@ -183,6 +183,12 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 **First verified Lexmark data batch:** `feature/lexmark-official-batch-01` retains 50 hash-verified official pages, 46 printer models, 150 OEM SKUs, and 575 explicit relationships. The strict dry run accepted every relationship; 3 pages remain in review, 352 non-cartridge supply rows are explicitly excluded, request failures are zero, and 582 discovered pages remain pending. The batch is not imported automatically.
 
+## Task 026 — Brother offline processor UI and unified database
+
+**Implemented and validated on `feature/brother-ui-import`:** the official-source UI now invokes the existing Brother parsers in `scripts/` through a fixed offline worker, reports missing `data/brother-html` input, exposes checkpoint progress, preserves all audit states, validates the rebuilt package, and imports only cross-referenced rows through the shared transactional importer. A separate ignored SQLite copy was built from the user-selected transfer candidate and unified with the validated Brother, Lexmark, Kyocera and Xerox datasets; the original candidate remained byte-identical.
+
+**Acceptance:** the UI never launches the Brother website or an arbitrary command, partial/invalid parsing never publishes an import package, candidates are not promoted, the database import is explicit and transactional, the source SQLite is not overwritten, integrity and foreign keys pass, and fixture tests cover the offline workflow. See [Task 026](tasks/026-brother-ui-and-unified-database.md) and [Brother supply workflow](docs/brother-supplies.md).
+
 ## Task 023 — Russian project component guide
 
 **Implemented on `feature/project-guide`:** a Russian-language architectural guide covering the database, import layers, official collectors, local API, React UI, Windows launchers, data directories, tests, common commands, change locations, and the project invariants that protect evidence quality. The guide is linked from the README and intentionally does not add generated Lexmark collection output to Git.

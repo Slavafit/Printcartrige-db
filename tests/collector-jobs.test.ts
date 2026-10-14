@@ -7,9 +7,15 @@ describe('web collector command whitelist', () => {
     expect(COLLECTOR_DEFINITIONS.filter(item => item.script).every(item => item.script!.startsWith('dist/src/collectors/'))).toBe(true);
     expect(COLLECTOR_DEFINITIONS.every(item => item.output.startsWith('data/'))).toBe(true);
     const brother = COLLECTOR_DEFINITIONS.find(item => item.id === 'brother');
-    expect(brother).toMatchObject({ importType: 'sitemap' });
-    expect(brother).not.toHaveProperty('script');
+    expect(brother).toMatchObject({ importType: 'multi-source', actionLabel: 'Procesar HTML', input: 'data/brother-html', script: 'dist/src/collectors/brother.js' });
   });
+});
+
+it('uses a checkpoint-provided total for offline Brother processing', () => {
+  const progress = collectorProgressFromCheckpoint({ total: 4, pages: [{}, {}], pending: ['c', 'd'], records: [
+    { printerModel: 'Synthetic 1', supplyPartNumber: 'SYN-1' },
+  ], failures: [] }, 0, undefined, '2026-01-01T00:00:00.000Z', Date.parse('2026-01-01T00:00:10.000Z'));
+  expect(progress).toMatchObject({ processed: 2, total: 4, percent: 50, pending: 2, relationships: 1 });
 });
 
 it('derives live batch progress and ETA from a synthetic checkpoint', () => {
