@@ -1,6 +1,6 @@
 # Development roadmap
 
-Statuses reflect the implementation and Git history on 2026-10-08. `Completed` means the deliverables are present in `main`; planned tasks are not marked complete based only on research notes or intent.
+Statuses reflect the implementation and Git history on 2026-10-15. `Completed` means the deliverables are present in `main`; planned tasks are not marked complete based only on research notes or intent.
 
 | ID | Task | Status | Dependencies |
 |---|---|---|---|
@@ -29,7 +29,49 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 025 | Brother model parsing repair | Implemented and validated on `feature/fix-brother-model-parsing` | 024 |
 | 029 | Brother acquisition and processing from desktop UI | Implemented and validated on `feature/electron-collector-runtime` | 025, 028 |
 | 030 | Data freshness and application audit history | Implemented and validated on `feature/data-audit-history` | 013, 021 |
+| 031 | Evidence inspector and review workspace | Planned — next | 030 |
+| 032 | Import batches and automatic recovery points | Planned | 030, 031 |
+| 033 | Reproducible Windows release and CI | Planned | 031, 032 |
+| 034 | Portfolio case study and demo package | Planned | 033 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
+
+## Current direction — portfolio hardening
+
+The Windows application has been delivered. By explicit project-owner decision, the immediate phase improves the existing application as a portfolio project before returning to large collection runs. This does not relax the data-first policy: the work below makes evidence, uncertainty, imports and releases easier to inspect and reproduce. It does not add hosting, accounts, speculative compatibility, or a replacement technology stack.
+
+### Now — make data trust visible
+
+1. **Task 031 — Evidence inspector and review workspace.** Show every retained source, region, reliability state, evidence text and verification date in printer details. Add a read-only queue for `candidate`, `not-checkable`, `unverified`, `third_party_reported`, `conflicting`, and verified relationships without dates. Filters must explain why a record needs review; no button may promote a claim without valid official evidence.
+2. **Task 032 — Import batches and automatic recovery points.** Record each committed manual or official import as a batch with source, start/end time, accepted/rejected/review counts and before/after coverage. Create and validate a recovery backup before a batch writes the active SQLite. Recovery uses the existing restore workflow; missing rows in a later input never trigger destructive synchronization.
+
+### Next — make delivery reproducible
+
+3. **Task 033 — Reproducible Windows release and CI.** Add clean-checkout checks for typecheck, all tests, web build and the portable Windows package. Publish versioned checksums, build instructions, migration/restore smoke results and known limitations. Code signing is documented as unavailable until a real certificate exists; warnings must not be hidden.
+4. **Task 034 — Portfolio case study and demo package.** Prepare an architecture/data-flow diagram, representative screenshots, measurable coverage and test figures, key engineering decisions, limitations, and a reproducible demonstration using only permitted production evidence or clearly labelled synthetic fixtures. The case study must distinguish completed work from planned coverage.
+
+### Later — resume measurable catalog growth
+
+Collection resumes only after the portfolio-hardening milestone is stable. There will be no combined “mass collector” task or simultaneous multi-manufacturer run: every manufacturer is handled as a separate, explicitly approved task because its source structure, access policy, evidence quality, failure modes and validation work require independent investigation. Completing one collector does not authorize starting the next. Continue known, evidence-bearing sources before developing new speculative adapters:
+
+1. finish the remaining resumable Lexmark batches from Task 022 and report net verified coverage;
+2. expand Brother from Task 009 using the completed desktop acquisition cycle, without bypassing access blocks;
+3. expand Kyocera and the bounded Xerox sample under Tasks 010 and 006;
+4. continue HP, Canon and Epson research under Tasks 007, 008 and 005 only where exact printer-to-consumable evidence is accessible;
+5. run the cross-manufacturer audit from Task 011, then implement source-change and incremental collection history from Task 012.
+
+Each collector task must finish with its own source assessment, permitted-access record, fixture set, bounded live run, dry import, before/after verified-coverage counts, limitations and merge approval. A blocked or low-value source is paused without holding up the portfolio-hardening work or another manufacturer.
+
+### Portfolio-hardening milestone acceptance
+
+- A reviewer can answer “where did this relationship come from, when was it verified, and why is it trusted?” from the application.
+- Every committed import has a recorded result and a validated recovery point.
+- A clean Windows checkout can reproduce the tested release artifact and checksum.
+- The portfolio materials reproduce their stated counts and never treat synthetic, third-party or candidate data as official verification.
+- Existing production SQLite files are not imported, rewritten or published automatically.
+
+### Explicitly out of scope for this phase
+
+Hosted service, authentication, cloud synchronization, automatic background scraping, Tauri migration, mobile clients, AI-generated compatibility, and automatic promotion of candidates remain deferred.
 
 ## Task 030 — Data freshness and audit history
 
