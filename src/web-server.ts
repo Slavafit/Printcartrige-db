@@ -1,12 +1,13 @@
 #!/usr/bin/env node
 import { createReadStream, existsSync, statSync } from 'node:fs';
 import { createServer, type ServerResponse } from 'node:http';
-import { extname, join, normalize, resolve } from 'node:path';
+import { basename, extname, join, normalize, resolve } from 'node:path';
 import { CartridgeDatabase } from './database.js';
 import { CollectorJobs } from './collector-jobs.js';
 import { printerDetails, searchPrinterPage, webManufacturers, webStats } from './web-data.js';
 import { backupDatabase, createCartridge, createCompatibility, createPrinter, exportWorkbook, restoreDatabase, updateCartridge, updatePrinter } from './desktop-data.js';
 import { importMultiSource, parseMultiSourceBytes, type MultiSourceOptions, type ParsedMultiSource } from './multi-source-import.js';
+import { dataAuditReport, recordAuditEvent } from './data-audit.js';
 
 const databasePath = process.env.WEB_DB_PATH || 'mvp.sqlite';
 const port = Number(process.env.PORT || 4173);
@@ -23,15 +24,16 @@ const server = createServer(async (request, response) => {
   try {
     const url = new URL(request.url ?? '/', `http://${request.headers.host ?? 'localhost'}`);
     if (url.pathname === '/api/stats') return json(response, 200, webStats(database));
+    if (url.pathname === '/api/audit' && request.method === 'GET') return json(response, 200, dataAuditReport(database, Number(url.searchParams.get('limit') || 30)));
     if (url.pathname === '/api/launcher/shutdown' && request.method === 'POST' && process.env.LAUNCHER_SHUTDOWN_TOKEN) {
       if (request.headers['x-printerdb-token'] !== process.env.LAUNCHER_SHUTDOWN_TOKEN) return json(response, 403, { error: 'Forbidden' });
       json(response, 200, { ok: true }); setImmediate(shutdown); return;
     }
     if (url.pathname === '/api/manufacturers') return json(response, 200, webManufacturers(database));
-    if (url.pathname === '/api/printers' && request.method === 'POST') return json(response, 201, { id: createPrinter(database, await body(request)) });
-    if (url.pathname === '/api/cartridges' && request.method === 'POST') return json(response, 201, { id: createCartridge(database, await body(request)) });
+    if (url.pathname === '/api/printers' && request.method === 'POST') { const id=createPrinter(database,await body(request));recordAuditEvent(database,'manual_create','Impresora creada',{entity:'printer',id});return json(response,201,{id}); }
+    if (url.pathname === '/api/cartridges' && request.method === 'POST') { const id=createCartridge(database,await body(request));recordAuditEvent(database,'manual_create','Consumible creado',{entity:'supply',id});return json(response,201,{id}); }
     if (url.pathname === '/api/cartridges' && request.method === 'GET') return json(response, 200, database.db.prepare(`SELECT c.id,m.name manufacturer,c.part_number,c.kind FROM cartridges c JOIN manufacturers m ON m.id=c.manufacturer_id WHERE lower(m.name||' '||c.part_number) LIKE '%'||lower(?)||'%' ORDER BY c.normalized_part_number LIMIT 50`).all(url.searchParams.get('q') || ''));
-    if (url.pathname === '/api/compatibility' && request.method === 'POST') return json(response, 201, { id: createCompatibility(database, await body(request)) });
+    if (url.pathname === '/api/compatibility' && request.method === 'POST') { const id=createCompatibility(database,await body(request));recordAuditEvent(database,'manual_create','Relación de compatibilidad creada',{entity:'compatibility',id});return json(response,201,{id}); }
     if (url.pathname === '/api/import/preview' && request.method === 'POST') {
       const input = await body(request) as { fileName?: string; data?: string; sourceName?: string; sourceCategory?: MultiSourceOptions['sourceCategory']; sourceReference?: string; region?: string };
       if (!input.data) return json(response, 400, { error: 'No se ha proporcionado ningún archivo' });
@@ -43,16 +45,19 @@ const server = createServer(async (request, response) => {
     if (url.pathname === '/api/import/commit' && request.method === 'POST') {
       const input = await body(request) as { id?: string }; const preview = input.id ? previews.get(input.id) : undefined;
       if (!preview) return json(response, 404, { error: 'La vista previa ha caducado' });
-      const result = importMultiSource(database, preview.parsed, preview.options, false); previews.delete(input.id!); return json(response, 200, result);
+      const result = importMultiSource(database, preview.parsed, preview.options, false); previews.delete(input.id!);
+      recordAuditEvent(database,'manual_import',`Importación completada: ${preview.options.sourceName}`,{sourceCategory:preview.options.sourceCategory,sourceReference:preview.options.sourceReference,createdPrinters:result.createdPrinters,createdSupplies:result.createdSupplies,createdRelationships:result.createdRelationships});
+      return json(response, 200, result);
     }
     if (url.pathname === '/api/export.xlsx' && request.method === 'GET') { const bytes=exportWorkbook(database); response.writeHead(200, {'content-type':'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet','content-disposition':'attachment; filename="printerdb-export.xlsx"'}); return response.end(bytes); }
-    if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target); return json(response,200,{file:name,path:target}); }
+    if (url.pathname === '/api/backup' && request.method === 'POST') { const name=`printerdb-${new Date().toISOString().replace(/[:.]/g,'-')}.sqlite`; const target=join(backupRoot,name); await backupDatabase(database,target);recordAuditEvent(database,'backup','Copia de seguridad creada',{file:name});return json(response,200,{file:name,path:target}); }
     if (url.pathname === '/api/restore' && request.method === 'POST') {
       if (collectorJobs.list().some(job => job.status === 'running')) return json(response, 409, { error: 'Espera a que termine el colector antes de restaurar una copia' });
       try {
         const result = await restoreDatabase(database, await binaryBody(request), backupRoot);
         database = result.database; collectorJobs = new CollectorJobs(database, collectorRuntime); previews.clear();
         if (!result.restored) return json(response, 500, { error: `No se pudo restaurar la copia. Se recuperó la base anterior: ${result.error}`, safetyBackupPath: result.safetyBackupPath });
+        recordAuditEvent(database,'restore','Base restaurada desde una copia',{safetyBackupFile:basename(result.safetyBackupPath)});
         return json(response, 200, { ok: true, safetyBackupPath: result.safetyBackupPath });
       } catch (error) { return json(response, 400, { error: error instanceof Error ? error.message : 'No se pudo validar la copia' }); }
     }
@@ -60,6 +65,7 @@ const server = createServer(async (request, response) => {
     const collectorAction = url.pathname.match(/^\/api\/collectors\/([a-z]+)\/(run|import|stop)$/);
     if (collectorAction && request.method === 'POST') {
       const result = collectorAction[2] === 'run' ? collectorJobs.start(collectorAction[1]) : collectorAction[2] === 'stop' ? { stopped: collectorJobs.stop(collectorAction[1]) } : await collectorJobs.import(collectorAction[1]);
+      if (collectorAction[2] === 'import') recordAuditEvent(database,'official_import',`Resultado oficial importado: ${collectorAction[1]}`,{collector:collectorAction[1],...auditCounts(result)});
       return json(response, 200, result);
     }
     if (url.pathname === '/api/printers' && request.method === 'GET') {
@@ -69,13 +75,13 @@ const server = createServer(async (request, response) => {
     }
     const detail = url.pathname.match(/^\/api\/printers\/(\d+)$/);
     if (detail && request.method === 'GET') { const result = printerDetails(database, Number(detail[1])); return json(response, result ? 200 : 404, result ?? { error: 'Printer not found' }); }
-    if (detail && request.method === 'PUT') return json(response, updatePrinter(database, Number(detail[1]), await body(request)) ? 200 : 404, { ok: true });
-    if (detail && request.method === 'DELETE') return json(response, database.delete('printers', Number(detail[1])) ? 200 : 404, { ok: true });
+    if (detail && request.method === 'PUT') { const id=Number(detail[1]);const changed=updatePrinter(database,id,await body(request));if(changed)recordAuditEvent(database,'manual_update','Impresora actualizada',{entity:'printer',id});return json(response,changed?200:404,{ok:changed}); }
+    if (detail && request.method === 'DELETE') { const id=Number(detail[1]);const changed=database.delete('printers',id);if(changed)recordAuditEvent(database,'manual_delete','Impresora eliminada',{entity:'printer',id});return json(response,changed?200:404,{ok:changed}); }
     const cartridge = url.pathname.match(/^\/api\/cartridges\/(\d+)$/);
-    if (cartridge && request.method === 'PUT') return json(response, updateCartridge(database, Number(cartridge[1]), await body(request)) ? 200 : 404, { ok: true });
-    if (cartridge && request.method === 'DELETE') return json(response, database.delete('cartridges', Number(cartridge[1])) ? 200 : 404, { ok: true });
+    if (cartridge && request.method === 'PUT') { const id=Number(cartridge[1]);const changed=updateCartridge(database,id,await body(request));if(changed)recordAuditEvent(database,'manual_update','Consumible actualizado',{entity:'supply',id});return json(response,changed?200:404,{ok:changed}); }
+    if (cartridge && request.method === 'DELETE') { const id=Number(cartridge[1]);const changed=database.delete('cartridges',id);if(changed)recordAuditEvent(database,'manual_delete','Consumible eliminado',{entity:'supply',id});return json(response,changed?200:404,{ok:changed}); }
     const compatibility = url.pathname.match(/^\/api\/compatibility\/(\d+)$/);
-    if (compatibility && request.method === 'DELETE') return json(response, database.delete('compatibility', Number(compatibility[1])) ? 200 : 404, { ok: true });
+    if (compatibility && request.method === 'DELETE') { const id=Number(compatibility[1]);const changed=database.delete('compatibility',id);if(changed)recordAuditEvent(database,'manual_delete','Relación de compatibilidad eliminada',{entity:'compatibility',id});return json(response,changed?200:404,{ok:changed}); }
     if (url.pathname.startsWith('/api/')) return json(response, 404, { error: 'Not found' });
     return serveStatic(response, staticRoot, url.pathname);
   } catch (error) { return json(response, 500, { error: error instanceof Error ? error.message : 'Unexpected error' }); }
@@ -107,6 +113,12 @@ function serveStatic(response: ServerResponse, directory: string, pathname: stri
   if (!existsSync(safePath)) return json(response, 503, { error: 'Web client is not built. Run pnpm build or pnpm dev.' });
   const types: Record<string, string> = { '.html': 'text/html', '.js': 'text/javascript', '.css': 'text/css', '.svg': 'image/svg+xml' };
   response.writeHead(200, { 'content-type': `${types[extname(safePath)] ?? 'application/octet-stream'}; charset=utf-8` }); createReadStream(safePath).pipe(response);
+}
+function auditCounts(value: unknown): Record<string, number> {
+  if (!value || typeof value !== 'object') return {};
+  const source=value as Record<string,unknown>,result:Record<string,number>={};
+  for(const key of ['createdPrinters','createdSupplies','createdRelationships','insertedRelationships','acceptedRecords','rejectedRecords','recordsRequiringManualReview'])if(typeof source[key]==='number')result[key]=source[key];
+  return result;
 }
 function shutdown(): void {
   if (reusedExistingServer) { if (reuseHeartbeat) clearInterval(reuseHeartbeat); database.close(); process.exit(0); }

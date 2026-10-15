@@ -84,6 +84,8 @@ The measured folder is 242.5 MiB versus 493.3 MiB for the Electron portable EXE.
 
 The **Fuentes oficiales** section inside **Importar** is available only through the locally bound server. It exposes a fixed whitelist of the existing Brother, Kyocera, Epson, Xerox, HP, and Lexmark workflows; it cannot execute arbitrary commands. Manual file import remains in a separate section of the same dialog.
 
+The main screen displays two distinct freshness dates: **Base modificada** reflects catalog changes, while **Última verificación oficial** comes only from retained evidence dates. Open **Auditoría** to review per-manufacturer coverage, undated or older verification evidence, records requiring review, and recent successful database operations. The operation log starts with the version that introduced Task 030; older activity is not reconstructed.
+
 While an online collector is running, its card refreshes every two seconds and shows completed pages for the current batch, accumulated printer/cartridge/relationship counts, checkpoint errors, pending pages, and an estimated time remaining. The live log opens automatically. **Detener** terminates only the active whitelisted child process and preserves its resumable checkpoint; it never imports partial output automatically.
 
 1. Select **Collect** to start an online manufacturer adapter. For Brother, **Recopilar y procesar** opens installed Edge or Chrome with a temporary isolated profile, downloads at most 20 missing pages from the fixed official candidate list, and then processes the complete saved HTML cache.

@@ -1,10 +1,12 @@
 import type { CartridgeDatabase } from './database.js';
+import { dataAuditReport } from './data-audit.js';
 
 export interface PrinterSearchOptions { query?: string; manufacturer?: string; limit?: number; offset?: number }
 export interface PrinterSearchPage { items: unknown[]; total: number; page: number; pageSize: number; totalPages: number }
 
-export function webStats(database: CartridgeDatabase): Record<string, number> {
+export function webStats(database: CartridgeDatabase): Record<string, number | string | null> {
   const value = (sql: string): number => (database.db.prepare(sql).get() as { count: number }).count;
+  const freshness = dataAuditReport(database, 1);
   return {
     apiVersion: 3,
     ...database.compatibilityStats(),
@@ -15,6 +17,8 @@ export function webStats(database: CartridgeDatabase): Record<string, number> {
     totalOtherSupplies: value("SELECT COUNT(*) AS count FROM cartridges WHERE supply_form IS NULL AND kind NOT IN ('ink','toner')"),
     totalCompatibleCartridges: value("SELECT COUNT(*) AS count FROM cartridges WHERE origin_type = 'compatible' AND kind IN ('ink','toner') AND supply_form IS NULL"),
     totalVerifiedSupplyRelationships: value("SELECT COUNT(*) AS count FROM compatibility WHERE reliability_status = 'official_verified' AND is_genuine_oem = 1"),
+    lastDataChangeAt: freshness.lastDataChangeAt,
+    lastVerifiedAt: freshness.lastVerifiedAt,
   };
 }
 

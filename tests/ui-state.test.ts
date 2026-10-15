@@ -38,3 +38,11 @@ it('shows official collectors separately from manual file import',()=>{
   expect(app).toContain('collector-progress');
   expect(app).toContain('Esperando el primer punto de control');
 });
+it('shows database freshness and opens the audit history',()=>{
+  const app=readFileSync('web/src/App.tsx','utf8');
+  expect(app).toContain('Base modificada:');
+  expect(app).toContain('Última verificación oficial:');
+  expect(app).toContain("get<AuditReport>('/api/audit')");
+  expect(app).toContain('Auditoría de datos');
+  expect(app).toContain('Verificadas sin fecha');
+});
