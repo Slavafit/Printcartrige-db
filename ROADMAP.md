@@ -27,6 +27,7 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 023 | Russian project component guide | Implemented on `feature/project-guide` | — |
 | 024 | Unified supply catalog and Brother import preparation | Implemented and validated on `feature/unified-supply-catalog` | 018, 022; completed Brother collection |
 | 025 | Brother model parsing repair | Implemented and validated on `feature/fix-brother-model-parsing` | 024 |
+| 029 | Brother acquisition and processing from desktop UI | Implemented and validated on `feature/electron-collector-runtime` | 025, 028 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
 
 ## Task 025 — Brother model parsing repair
@@ -195,7 +196,11 @@ Consider a React/Vite and Tauri application only after manufacturer coverage, ev
 
 ## Task 028 — Packaged Electron collector runtime
 
-**Implemented and validated on `feature/electron-collector-runtime`:** packaged collector commands now resolve from the immutable Electron application root and run inside `%APPDATA%\printcartridge-db\collector-workspace`, where checkpoints and outputs remain writable. The Brother parser helpers and verification seed are packaged and extracted at startup without overwriting user data. The built web client is also refreshed into a persistent runtime directory, so closing the browser and reopening the catalog from the tray remains reliable. The UI reports the absolute offline HTML input path. No collector or database import starts automatically. See [Task 028](TASKS/028-electron-collector-runtime.md).
+**Implemented and validated on `feature/electron-collector-runtime`:** packaged collector commands now resolve from the immutable Electron application root and run inside `%APPDATA%\printcartridge-db\collector-workspace`, where checkpoints and outputs remain writable. The Brother parser helpers and verification seed are packaged and extracted at startup without overwriting user data. The built web client is also refreshed into a persistent runtime directory, so closing the browser and reopening the catalog from the tray remains reliable. No collector or database import starts automatically. See [Task 028](TASKS/028-electron-collector-runtime.md).
+
+## Task 029 — Brother acquisition and processing from desktop UI
+
+**Implemented and validated on `feature/electron-collector-runtime`:** the Brother card now launches an installed Edge or Chrome in an isolated temporary profile, collects a conservative batch of up to 20 missing official supply pages, retains HTML/history/review evidence, then runs the existing parser, repair, audit and import-package stages. Access blocks stop the run without bypass attempts, and importing into SQLite remains a separate explicit action. See [Task 029](TASKS/029-brother-full-cycle-ui.md).
 
 ## Task 023 — Russian project component guide
 

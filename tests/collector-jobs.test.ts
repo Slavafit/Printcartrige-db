@@ -7,7 +7,8 @@ describe('web collector command whitelist', () => {
     expect(COLLECTOR_DEFINITIONS.filter(item => item.script).every(item => item.script!.startsWith('dist/src/collectors/'))).toBe(true);
     expect(COLLECTOR_DEFINITIONS.every(item => item.output.startsWith('data/'))).toBe(true);
     const brother = COLLECTOR_DEFINITIONS.find(item => item.id === 'brother');
-    expect(brother).toMatchObject({ importType: 'multi-source', actionLabel: 'Procesar HTML', input: 'data/brother-html', script: 'dist/src/collectors/brother.js' });
+    expect(brother).toMatchObject({ importType: 'multi-source', actionLabel: 'Recopilar y procesar', args: ['--collect', '--max-pages', '20', '--delay-ms', '5000'], script: 'dist/src/collectors/brother.js' });
+    expect(brother?.input).toBeUndefined();
   });
 });
 
