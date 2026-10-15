@@ -28,7 +28,12 @@ Statuses reflect the implementation and Git history on 2026-10-08. `Completed` m
 | 024 | Unified supply catalog and Brother import preparation | Implemented and validated on `feature/unified-supply-catalog` | 018, 022; completed Brother collection |
 | 025 | Brother model parsing repair | Implemented and validated on `feature/fix-brother-model-parsing` | 024 |
 | 029 | Brother acquisition and processing from desktop UI | Implemented and validated on `feature/electron-collector-runtime` | 025, 028 |
+| 030 | Data freshness and application audit history | Implemented and validated on `feature/data-audit-history` | 013, 021 |
 | Future | React/Tauri interface | Deferred | Mature data collection foundation |
+
+## Task 030 — Data freshness and audit history
+
+**Implemented on `feature/data-audit-history`:** the desktop interface now distinguishes the latest database modification from the latest official evidence verification, shows per-manufacturer audit coverage, flags verified relationships without dates or older than one year, and keeps an append-only history of successful application imports, restores, backups and manual changes. The additive migration preserves all existing records and evidence dates; historical operations are not invented. See [Task 030](tasks/030-data-audit-history.md).
 
 ## Task 025 — Brother model parsing repair
 

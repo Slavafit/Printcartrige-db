@@ -1,0 +1,18 @@
+[
+  {
+    "eventType": "manual_import",
+    "summary": "Synthetic fixture import",
+    "details": {
+      "createdPrinters": 1,
+      "createdSupplies": 1,
+      "createdRelationships": 1
+    }
+  },
+  {
+    "eventType": "backup",
+    "summary": "Synthetic fixture backup",
+    "details": {
+      "file": "synthetic.sqlite"
+    }
+  }
+]

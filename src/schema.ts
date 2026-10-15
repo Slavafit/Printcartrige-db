@@ -96,10 +96,20 @@ CREATE TABLE IF NOT EXISTS printer_sources (
   UNIQUE (printer_id, source_url, region)
 );
 
+-- Append-only history for user-visible database operations performed by the app.
+CREATE TABLE IF NOT EXISTS audit_events (
+  id INTEGER PRIMARY KEY,
+  event_type TEXT NOT NULL CHECK (event_type IN ('manual_create', 'manual_update', 'manual_delete', 'manual_import', 'official_import', 'backup', 'restore')),
+  summary TEXT NOT NULL,
+  details_json TEXT,
+  occurred_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
+
 CREATE INDEX IF NOT EXISTS idx_printers_manufacturer ON printers(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_cartridges_manufacturer ON cartridges(manufacturer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_printer ON compatibility(printer_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_cartridge ON compatibility(cartridge_id);
 CREATE INDEX IF NOT EXISTS idx_compatibility_sources_compatibility ON compatibility_sources(compatibility_id);
 CREATE INDEX IF NOT EXISTS idx_printer_sources_printer ON printer_sources(printer_id);
+CREATE INDEX IF NOT EXISTS idx_audit_events_occurred_at ON audit_events(occurred_at DESC, id DESC);
 `;
