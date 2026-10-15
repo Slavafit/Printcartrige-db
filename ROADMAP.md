@@ -51,13 +51,15 @@ The Windows application has been delivered. By explicit project-owner decision, 
 
 ### Later — resume measurable catalog growth
 
-Collection resumes only after the portfolio-hardening milestone is stable. Continue known, evidence-bearing sources before developing new speculative adapters:
+Collection resumes only after the portfolio-hardening milestone is stable. There will be no combined “mass collector” task or simultaneous multi-manufacturer run: every manufacturer is handled as a separate, explicitly approved task because its source structure, access policy, evidence quality, failure modes and validation work require independent investigation. Completing one collector does not authorize starting the next. Continue known, evidence-bearing sources before developing new speculative adapters:
 
 1. finish the remaining resumable Lexmark batches from Task 022 and report net verified coverage;
 2. expand Brother from Task 009 using the completed desktop acquisition cycle, without bypassing access blocks;
 3. expand Kyocera and the bounded Xerox sample under Tasks 010 and 006;
 4. continue HP, Canon and Epson research under Tasks 007, 008 and 005 only where exact printer-to-consumable evidence is accessible;
 5. run the cross-manufacturer audit from Task 011, then implement source-change and incremental collection history from Task 012.
+
+Each collector task must finish with its own source assessment, permitted-access record, fixture set, bounded live run, dry import, before/after verified-coverage counts, limitations and merge approval. A blocked or low-value source is paused without holding up the portfolio-hardening work or another manufacturer.
 
 ### Portfolio-hardening milestone acceptance
 
