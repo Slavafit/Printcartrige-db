@@ -11,6 +11,9 @@ const { parseBrotherHtml } = require(resolve('scripts/parse-brother.cjs')) as {
 const { rebuildBrotherData } = require(resolve('scripts/rebuild-brother-data.cjs')) as {
   rebuildBrotherData(collection: BrotherCollection, verification: BrotherVerification): RebuiltBrotherData;
 };
+const { collectBrother } = require(resolve('scripts/collect-brother.cjs')) as {
+  collectBrother(options?: { limit?: number; delayMs?: number }): Promise<unknown>;
+};
 
 interface Supply { partNumber: string; type: string; sourceUrl: string }
 interface Printer { model: string; url: string }
@@ -153,5 +156,18 @@ function writeJsonAtomically(path: string, value: unknown): void {
 
 const invokedPath = process.argv[1] ? resolve(process.argv[1]) : '';
 if (invokedPath === fileURLToPath(import.meta.url)) {
-  try { processBrotherHtml(); } catch (error) { console.error(error instanceof Error ? error.message : String(error)); process.exitCode = 1; }
+  void runFromCommandLine().catch(error => { console.error(error instanceof Error ? error.message : String(error)); process.exitCode = 1; });
+}
+
+async function runFromCommandLine(): Promise<void> {
+  if (process.argv.includes('--collect')) {
+    await collectBrother({ limit: numberArgument('--max-pages', 20), delayMs: numberArgument('--delay-ms', 5000) });
+  }
+  processBrotherHtml();
+}
+
+function numberArgument(name: string, fallback: number): number {
+  const index = process.argv.indexOf(name);
+  const value = index >= 0 ? Number(process.argv[index + 1]) : fallback;
+  return Number.isFinite(value) ? value : fallback;
 }

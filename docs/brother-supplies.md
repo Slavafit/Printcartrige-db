@@ -54,15 +54,17 @@ pnpm.cmd prepare:brother-supplies
 
 ## Запуск из интерфейса
 
-В разделе **Importar → Fuentes oficiales → Brother España** кнопка **Procesar HTML** запускает только офлайн-обработчик. Он читает ранее сохранённые страницы из игнорируемой Git папки `data/brother-html`, вызывает существующие модули `scripts/parse-brother.cjs` и `scripts/rebuild-brother-data.cjs`, повторно строит коллекцию, аудит и единый импортный пакет. Сетевые запросы и браузерный сбор этой кнопкой не выполняются.
+В разделе **Importar → Fuentes oficiales → Brother España** кнопка **Recopilar y procesar** выполняет полный локально управляемый цикл. Она запускает установленный Microsoft Edge (либо Google Chrome) в отдельном временном профиле, получает до 20 ещё не сохранённых официальных страниц с паузой не менее пяти секунд, а затем вызывает `scripts/parse-brother.cjs` и `scripts/rebuild-brother-data.cjs`, повторно строит коллекцию, аудит и единый импортный пакет.
 
-UI показывает отсутствие входной папки и не позволяет начать обработку без HTML. Уже проверенный `brother-supplies.json` можно импортировать отдельно кнопкой **Importar resultado**. Перед записью сервер выполняет dry-run общего multi-source importer; запись проходит одной транзакцией и включает только связи `cross-referenced`. Статусы `candidate` и `not-checkable` сохраняются в аудите, но в SQLite не повышаются до официально подтверждённых.
+Сборщик не подключается к личному браузерному профилю и не использует сохранённые пароли. Допускаются только фиксированные HTTPS URL `store.brother.es` из `data/brother-candidates.json`. HTTP 403/429 и проверки доступа останавливают процесс без попыток обхода; страницы без явного `#related-products` сохраняются только для проверки. Зафиксированные HTML, история, отчёты и результаты находятся в `%APPDATA%\printcartridge-db\collector-workspace`.
+
+Уже проверенный `brother-supplies.json` импортируется отдельно кнопкой **Importar resultado**. Перед записью сервер выполняет dry-run общего multi-source importer; запись проходит одной транзакцией и включает только связи `cross-referenced`. Статусы `candidate` и `not-checkable` сохраняются в аудите, но в SQLite не повышаются до официально подтверждённых. Новые связи без сохранённой обратной проверки страницы принтера остаются кандидатами.
 
 Для ручного запуска используется тот же worker:
 
 ```powershell
 pnpm.cmd build:server
-node .\dist\src\collectors\brother.js
+node .\dist\src\collectors\brother.js --collect --max-pages 20 --delay-ms 5000
 ```
 
 Безопасная проверка в памяти:

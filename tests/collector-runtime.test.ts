@@ -34,11 +34,12 @@ describe('packaged collector runtime', () => {
     expect(readFileSync(join(workspace, 'data', 'verification.json'), 'utf8')).toBe('user data');
   });
 
-  it('reports the absolute Brother input folder in the writable workspace', () => {
+  it('does not require a pre-existing Brother HTML folder before starting the full cycle', () => {
     const workspace = temp('jobs');
     const jobs = new CollectorJobs({} as CartridgeDatabase, { appRoot: 'C:\\packaged-app', workspaceRoot: workspace });
     const brother = jobs.list().find(job => job.id === 'brother');
-    expect(brother?.input).toBe(join(workspace, 'data', 'brother-html'));
+    expect(brother?.input).toBeUndefined();
+    expect(brother?.inputExists).toBe(true);
   });
 
   it('refreshes the web client in a persistent runtime directory', () => {
@@ -61,7 +62,9 @@ describe('packaged collector runtime', () => {
       { from: 'scripts/parse-brother.cjs', to: 'collector-runtime/scripts/parse-brother.cjs' },
       { from: 'scripts/rebuild-brother-data.cjs', to: 'collector-runtime/scripts/rebuild-brother-data.cjs' },
       { from: 'scripts/brother-model.cjs', to: 'collector-runtime/scripts/brother-model.cjs' },
+      { from: 'scripts/collect-brother.cjs', to: 'collector-runtime/scripts/collect-brother.cjs' },
       { from: 'data/brother-verification.json', to: 'collector-runtime/data/brother-verification.json' },
+      { from: 'data/brother-candidates.json', to: 'collector-runtime/data/brother-candidates.json' },
     ]));
   });
 });

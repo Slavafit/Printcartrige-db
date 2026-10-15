@@ -1,226 +1,163 @@
-
 const fs = require('node:fs');
 const path = require('node:path');
-const { chromium } = require('playwright');
 
-const ROOT = process.cwd();
-const INPUT = path.join(ROOT, 'data', 'brother-candidates.json');
-const OUTPUT = path.join(ROOT, 'data', 'brother-html');
-const REVIEW = path.join(ROOT, 'data', 'brother-review');
-const REPORT = path.join(ROOT, 'data', 'brother-collection-report.json');
-const HISTORY = path.join(ROOT, 'data', 'brother-collection-history.json');
-
-function loadHistory() {
-  if (!fs.existsSync(HISTORY)) {
-    return { downloaded: {}, failed: {} };
-  }
-
-  return JSON.parse(
-    fs.readFileSync(HISTORY, 'utf8').replace(/^\uFEFF/, '')
-  );
-}
-
-function saveHistory(history) {
-  const temporary = `${HISTORY}.tmp`;
-
-  fs.writeFileSync(
-    temporary,
-    JSON.stringify(history, null, 2),
-    'utf8'
-  );
-
-  fs.renameSync(temporary, HISTORY);
-}
-
-const LIMIT = Math.min(
-  20,
-  Math.max(1, Number(process.env.BROTHER_LIMIT || 5))
-);
-const DELAY_MS = 5000;
-const TARGET = process.argv[2]?.trim().toUpperCase() || null;
-
+const DEFAULT_CHANNELS = ['msedge', 'chrome'];
 const sleep = ms => new Promise(resolve => setTimeout(resolve, ms));
 
-async function main() {
-  const candidates = JSON.parse(
-  fs.readFileSync(INPUT, 'utf8').replace(/^\uFEFF/, '')
-);
+function isAllowedBrotherSupplyUrl(value) {
+  try {
+    const url = new URL(value);
+    return url.protocol === 'https:'
+      && url.hostname === 'store.brother.es'
+      && /^\/supplies\/(?:laser\/toner|inkjet\/inkcartridgessinglepack)\//.test(url.pathname)
+      && !url.username && !url.password && !url.search && !url.hash;
+  } catch {
+    return false;
+  }
+}
 
-  if (!Array.isArray(candidates)) {
-    throw new Error('Ожидается массив в brother-candidates.json');
+async function launchInstalledBrowser(channels = DEFAULT_CHANNELS) {
+  const { chromium } = require('playwright-core');
+  const failures = [];
+  for (const channel of channels) {
+    try {
+      console.log(`[Brother] Abriendo ${channel} en un perfil temporal...`);
+      return await chromium.launch({ channel, headless: false });
+    } catch (error) {
+      failures.push(`${channel}: ${error.message}`);
+    }
+  }
+  throw new Error(`No se pudo abrir Microsoft Edge ni Google Chrome. ${failures.join(' | ')}`);
+}
+
+async function collectBrother(options = {}) {
+  const root = path.resolve(options.root || process.cwd());
+  const input = path.join(root, 'data', 'brother-candidates.json');
+  const output = path.join(root, 'data', 'brother-html');
+  const review = path.join(root, 'data', 'brother-review');
+  const reportPath = path.join(root, 'data', 'brother-collection-report.json');
+  const historyPath = path.join(root, 'data', 'brother-collection-history.json');
+  const checkpointPath = path.join(root, '.collector-state', 'brother-processing.json');
+  const limit = Math.min(20, Math.max(1, Number(options.limit ?? process.env.BROTHER_LIMIT ?? 5)));
+  const delayMs = Math.max(1000, Number(options.delayMs ?? 5000));
+  const target = String(options.target ?? process.env.BROTHER_TARGET ?? '').trim().toUpperCase() || null;
+  if (!fs.existsSync(input)) throw new Error(`No existe la lista Brother: ${input}`);
+  const candidates = readJson(input);
+  if (!Array.isArray(candidates)) throw new Error('Se esperaba un array en brother-candidates.json');
+  fs.mkdirSync(output, { recursive: true });
+  fs.mkdirSync(review, { recursive: true });
+  const history = fs.existsSync(historyPath) ? readJson(historyPath) : { downloaded: {}, failed: {} };
+  history.downloaded ||= {};
+  history.failed ||= {};
+  const report = { startedAt: new Date().toISOString(), downloaded: [], skipped: [], needsReview: [], failed: [] };
+  const queue = [];
+
+  for (const item of candidates) {
+    const partNumber = String(item.partNumber || '').trim().toUpperCase();
+    if (!partNumber || (target && partNumber !== target) || !isAllowedBrotherSupplyUrl(item.sourceUrl)) continue;
+    const destination = path.join(output, `${partNumber.toLowerCase()}.html`);
+    const previousFailure = history.failed[item.sourceUrl];
+    if (fs.existsSync(destination)) { report.skipped.push(partNumber); continue; }
+    if (previousFailure?.reason === 'related-products-not-found' && previousFailure.reviewFile && fs.existsSync(previousFailure.reviewFile)) {
+      report.skipped.push(partNumber); continue;
+    }
+    queue.push({ ...item, partNumber, destination });
+    if (queue.length >= limit) break;
   }
 
-  fs.mkdirSync(OUTPUT, { recursive: true });
-    fs.mkdirSync(REVIEW, { recursive: true });
+  if (!queue.length) {
+    report.finishedAt = new Date().toISOString();
+    writeJsonAtomically(reportPath, report);
+    console.log('[Brother] No hay páginas nuevas en este lote; se procesará la caché existente.');
+    return report;
+  }
 
-  const history = loadHistory();
-
-  const report = {
-    startedAt: new Date().toISOString(),
-    downloaded: [],
-    skipped: [],
-    needsReview: [],
-    failed: []
-  };
-
-  const browser = await chromium.launch({ headless: false });
-
+  writeCheckpoint(checkpointPath, queue, report, queue);
+  const launchBrowser = options.launchBrowser || (() => launchInstalledBrowser(options.channels));
+  const browser = await launchBrowser();
+  let blockedError;
   try {
     const page = await browser.newPage();
-
-    let attempted = 0;
-
-    for (const item of candidates) {
-        if (TARGET && item.partNumber.toUpperCase() !== TARGET) {
-  continue;
-}
-      if (attempted >= LIMIT) break;
-
-      const url = new URL(item.sourceUrl);
-
-      if (
-        url.hostname !== 'store.brother.es' ||
-        !/^\/supplies\/(?:laser\/toner|inkjet\/inkcartridgessinglepack)\//.test(url.pathname)
-      ) {
-        console.log(`[SKIP] Недопустимый URL: ${url.href}`);
-        continue;
-      }
-
-      const partNumber = item.partNumber.toLowerCase();
-      const filename = `${partNumber}.html`;
-      const destination = path.join(OUTPUT, filename);
-      const previousFailure = history.failed[url.href];
-
-        if (
-        previousFailure?.reason === 'related-products-not-found' &&
-        previousFailure.reviewFile &&
-        fs.existsSync(previousFailure.reviewFile)
-        ) {
-        console.log(`[REVIEW SKIP] ${partNumber} уже ожидает проверки`);
-        report.skipped.push(partNumber);
-        continue;
-        }
-      if (fs.existsSync(destination)) {
-        console.log(`[SKIP] ${partNumber} уже сохранён`);
-        report.skipped.push(partNumber);
-        continue;
-      }
-
-      attempted++;
-
-      console.log(`[${attempted}/${LIMIT}] ${partNumber}`);
-
+    for (let index = 0; index < queue.length; index += 1) {
+      const item = queue[index];
+      console.log(`[Brother] Descarga ${index + 1}/${queue.length}: ${item.partNumber}`);
       try {
-        const response = await page.goto(url.href, {
-          waitUntil: 'domcontentloaded',
-          timeout: 30000
-        });
-
+        const response = await page.goto(item.sourceUrl, { waitUntil: 'domcontentloaded', timeout: 30000 });
         const status = response?.status() ?? 0;
-
-        console.log(`HTTP: ${status}`);
-
+        console.log(`[Brother] HTTP ${status}: ${item.sourceUrl}`);
         if (status === 403 || status === 429) {
-          report.failed.push({ partNumber, status });
-          console.log('Сайт ограничил доступ. Останавливаем сбор.');
+          const failure = { partNumber: item.partNumber, status, reason: 'access-blocked' };
+          report.failed.push(failure); history.failed[item.sourceUrl] = { ...failure, failedAt: new Date().toISOString() };
+          blockedError = new Error(`Brother devolvió HTTP ${status}; la recopilación se detuvo sin intentar eludir la restricción.`);
+          writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
           break;
         }
-
         if (status !== 200) {
-          report.failed.push({ partNumber, status });
+          const failure = { partNumber: item.partNumber, status, reason: 'unexpected-status' };
+          report.failed.push(failure); history.failed[item.sourceUrl] = { ...failure, failedAt: new Date().toISOString() };
+          writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
           continue;
         }
-
-const html = await page.content();
-
-const hasRelatedProducts =
-  await page.locator('#related-products').count() > 0;
-
-if (!hasRelatedProducts) {
-  const reviewFile = path.join(REVIEW, filename);
-
-  fs.writeFileSync(reviewFile, html, 'utf8');
-
-  report.needsReview.push({
-    partNumber,
-    status,
-    reason: 'related-products-not-found',
-    reviewFile
-  });
-
-  history.failed[url.href] = {
-    partNumber,
-    reason: 'related-products-not-found',
-    reviewFile,
-    failedAt: new Date().toISOString()
-  };
-
-  saveHistory(history);
-
-  console.log(`[REVIEW] ${partNumber}: блок связанных товаров отсутствует`);
-  continue;
-}
-
-fs.writeFileSync(destination, html, 'utf8');
-
-        report.downloaded.push({
-          partNumber,
-          url: url.href,
-          file: filename
-        });
-
-        history.downloaded[url.href] = {
-            partNumber,
-            file: filename,
-            savedAt: new Date().toISOString()
-            };
-
-delete history.failed[url.href];
-saveHistory(history);
-
-        console.log(`[OK] ${filename}`);
-
+        const html = await page.content();
+        if (/captcha|verify you are human|access denied|acceso denegado/i.test(html)) {
+          const failure = { partNumber: item.partNumber, status, reason: 'access-challenge' };
+          report.failed.push(failure); history.failed[item.sourceUrl] = { ...failure, failedAt: new Date().toISOString() };
+          blockedError = new Error('Brother mostró una comprobación de acceso; la recopilación se detuvo sin intentar eludirla.');
+          writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
+          break;
+        }
+        if (await page.locator('#related-products').count() === 0) {
+          const reviewFile = path.join(review, `${item.partNumber.toLowerCase()}.html`);
+          fs.writeFileSync(reviewFile, html, 'utf8');
+          const failure = { partNumber: item.partNumber, status, reason: 'related-products-not-found', reviewFile };
+          report.needsReview.push(failure); history.failed[item.sourceUrl] = { ...failure, failedAt: new Date().toISOString() };
+          writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
+          continue;
+        }
+        fs.writeFileSync(item.destination, html, 'utf8');
+        report.downloaded.push({ partNumber: item.partNumber, url: item.sourceUrl, file: path.basename(item.destination) });
+        history.downloaded[item.sourceUrl] = { partNumber: item.partNumber, file: path.basename(item.destination), savedAt: new Date().toISOString() };
+        delete history.failed[item.sourceUrl];
+        saveHistory(historyPath, history);
+        writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
+        console.log(`[Brother] Guardado: ${path.basename(item.destination)}`);
       } catch (error) {
-        report.failed.push({
-          partNumber,
-          error: error.message
-        });
-        history.failed[url.href] = {
-            partNumber,
-            error: error.message,
-            failedAt: new Date().toISOString()
-            };
-
-saveHistory(history);
-
-        console.error(`[ERROR] ${error.message}`);
+        if (blockedError) break;
+        const failure = { partNumber: item.partNumber, error: error.message, reason: 'request-failed' };
+        report.failed.push(failure); history.failed[item.sourceUrl] = { ...failure, failedAt: new Date().toISOString() };
+        saveHistory(historyPath, history);
+        writeCheckpoint(checkpointPath, queue, report, queue.slice(index + 1));
+        console.error(`[Brother] Error: ${error.message}`);
       }
-
-      if (attempted < LIMIT) {
-        await sleep(DELAY_MS);
-      }
+      if (index + 1 < queue.length) await sleep(delayMs);
     }
-
   } finally {
     await browser.close();
-
     report.finishedAt = new Date().toISOString();
-
-    fs.writeFileSync(
-      REPORT,
-      JSON.stringify(report, null, 2),
-      'utf8'
-    );
-
-    console.log('Отчёт:', REPORT);
-    console.log('Загружено:', report.downloaded.length);
-    console.log('Пропущено:', report.skipped.length);
-    console.log('Ошибок:', report.failed.length);
-    console.log(`Требуют проверки: ${report.needsReview.length}`);
+    saveHistory(historyPath, history);
+    writeJsonAtomically(reportPath, report);
+    console.log(`[Brother] Descargadas: ${report.downloaded.length}; revisión: ${report.needsReview.length}; errores: ${report.failed.length}.`);
   }
+  if (blockedError) throw blockedError;
+  return report;
 }
 
-main().catch(error => {
-  console.error(error);
-  process.exitCode = 1;
-});
+function writeCheckpoint(pathname, queue, report, pending) {
+  const pages = [...report.downloaded, ...report.needsReview, ...report.failed];
+  const records = report.downloaded.map(item => ({ cartridgePartNumber: item.partNumber }));
+  writeJsonAtomically(pathname, { phase: 'download', total: queue.length, pages, pending: pending.map(item => item.partNumber), records, failures: report.failed });
+}
+function readJson(pathname) { return JSON.parse(fs.readFileSync(pathname, 'utf8').replace(/^\uFEFF/, '')); }
+function saveHistory(pathname, history) { writeJsonAtomically(pathname, history); }
+function writeJsonAtomically(pathname, value) {
+  fs.mkdirSync(path.dirname(pathname), { recursive: true });
+  const temporary = `${pathname}.${process.pid}.tmp`;
+  fs.writeFileSync(temporary, `${JSON.stringify(value, null, 2)}\n`, 'utf8');
+  fs.renameSync(temporary, pathname);
+}
+
+module.exports = { collectBrother, isAllowedBrotherSupplyUrl, launchInstalledBrowser };
+
+if (require.main === module) {
+  collectBrother().catch(error => { console.error(error.message); process.exitCode = 1; });
+}
